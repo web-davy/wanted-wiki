@@ -1,4 +1,3 @@
-// locations.js
 const locations = [
     {
         name: "Oasis Bank",
@@ -85,4 +84,5 @@ function renderLocations(order = "az") {
 
 function sortLocations(order) {
     document.getElementById("page-container").innerHTML = renderLocations(order);
+
 }

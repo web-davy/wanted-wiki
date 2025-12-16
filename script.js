@@ -1,100 +1,63 @@
-<script>
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("page-container");
     const garageIntro = document.getElementById("garage-intro");
-    const clickPrompt = document.getElementById("click-prompt");
     const bgm = document.getElementById("bgm");
     const clickSfx = document.getElementById("sfx-click");
     const hoverSfx = document.getElementById("sfx-hover");
     const loadSfx = document.getElementById("sfx-load");
     const volumeSlider = document.getElementById("bgm-volume");
     let audioUnlocked = false;
-    const contentWrapper = document.querySelector(".content");
 
-    const DEFAULT_VOLUME = 0.1;
-
-    if (volumeSlider) {
-        volumeSlider.value = DEFAULT_VOLUME;
-    }
-    if (bgm) {
-        bgm.volume = DEFAULT_VOLUME;
-    }
-
-    const savedVolume = localStorage.getItem("bgmVolume");
-    if (savedVolume !== null && volumeSlider && bgm) {
-        volumeSlider.value = savedVolume;
-        bgm.volume = savedVolume;
+    if (volumeSlider && bgm) {
+        const savedVolume = localStorage.getItem("bgmVolume");
+        if (savedVolume !== null) {
+            volumeSlider.value = savedVolume;
+            bgm.volume = savedVolume;
+        }
     }
 
     window.openGarage = () => {
         if (audioUnlocked) return;
         audioUnlocked = true;
-        if (clickPrompt) {
-            clickPrompt.classList.add("hidden");
-        }
-        if (garageIntro) {
-            garageIntro.classList.add("open");
-        }
+
+        if (garageIntro) garageIntro.classList.add("open");
        
         if (clickSfx) {
             clickSfx.currentTime = 0;
             clickSfx.play().catch(() => {});
         }
         if (bgm) {
-            bgm.volume = volumeSlider.value;
             bgm.play().catch(() => {});
         }
        
         setTimeout(() => {
-            setTimeout(() => {
-                if (garageIntro) garageIntro.remove();
-            }, 500);
-        }, 2800);
-        document.querySelector('.tab[data-page="home"]').classList.add("active");
+            if (garageIntro) garageIntro.style.display = 'none';
+        }, 3000);
+
+        const homeTab = document.querySelector('.tab[data-page="home"]');
+        if (homeTab) homeTab.classList.add("active");
         loadPage("home");
     };
 
     document.querySelectorAll(".tab").forEach(tab => {
         tab.addEventListener("click", () => {
             if (!audioUnlocked) return;
+            document.querySelector(".tab.active")?.classList.remove("active");
+            tab.classList.add("active");
             if (clickSfx) {
                 clickSfx.currentTime = 0;
                 clickSfx.play().catch(() => {});
             }
-            document.querySelector(".tab.active")?.classList.remove("active");
-            tab.classList.add("active");
             loadPage(tab.dataset.page);
         });
+
         tab.addEventListener("mouseenter", () => {
-            if (!audioUnlocked) return;
-            if (hoverSfx) {
+            if (audioUnlocked && hoverSfx) {
                 hoverSfx.currentTime = 0;
                 hoverSfx.play().catch(() => {});
             }
         });
     });
-
-    contentWrapper.addEventListener("click", (e) => {
-        const btn = e.target.closest(".sort-btn");
-        if (!btn) return;
-        if (!audioUnlocked) return;
-        if (clickSfx) {
-            clickSfx.currentTime = 0;
-            clickSfx.play().catch(() => {});
-        }
-        document.querySelector(".sort-btn.active")?.classList.remove("active");
-        btn.classList.add("active");
-    });
-
-    contentWrapper.addEventListener("mouseenter", (e) => {
-        const btn = e.target.closest(".sort-btn");
-        if (!btn) return;
-        if (!audioUnlocked) return;
-        if (hoverSfx) {
-            hoverSfx.currentTime = 0;
-            hoverSfx.play().catch(() => {});
-        }
-    }, true);
 
     if (volumeSlider && bgm) {
         volumeSlider.addEventListener("input", () => {
@@ -104,23 +67,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function loadPage(page) {
-        container.innerHTML = '<div class="loading glitch">LOADING...</div>';
-        if (audioUnlocked && loadSfx) {
+        container.innerHTML = '<div class="loading glitch">ACCESSING ENCRYPTED ARCHIVE...</div>';
+        
+        if (loadSfx && audioUnlocked) {
             loadSfx.currentTime = 0;
             loadSfx.play().catch(() => {});
         }
-        let content = "";
-        if (page === "home" && typeof renderHome === "function") {
-            content = renderHome();
-        } else if (page === "valuables" && typeof renderValuables === "function") content = renderValuables();
-        else if (page === "atms" && typeof renderATMs === "function") content = renderATMs();
-        else if (page === "weapons" && typeof renderWeapons === "function") content = renderWeapons();
-        else if (page === "vehicles" && typeof renderVehicles === "function") content = renderVehicles();
-        else if (page === "missions" && typeof renderMissions === "function") content = renderMissions();
-        else if (page === "npcs" && typeof renderNPCs === "function") content = renderNPCs();
-        else if (page === "locations" && typeof renderLocations === "function") content = renderLocations();
-        else content = `<h2>Work In Progress</h2><p>Under contruction...</p>`;
-        container.innerHTML = content;
+
+        setTimeout(() => {
+            let content = "";
+            try {
+                switch(page) {
+                    case "home":
+                        content = typeof renderHome === "function" ? renderHome() : defaultError(page);
+                        break;
+                    case "valuables":
+                        content = typeof renderValuables === "function" ? renderValuables() : defaultError(page);
+                        break;
+                    case "atms":
+                        content = typeof renderATMs === "function" ? renderATMs() : defaultError(page);
+                        break;
+                    case "weapons":
+                        content = typeof renderWeapons === "function" ? renderWeapons() : defaultError(page);
+                        break;
+                    case "vehicles":
+                        content = typeof renderVehicles === "function" ? renderVehicles() : defaultError(page);
+                        break;
+                    case "locations":
+                        content = typeof renderLocations === "function" ? renderLocations() : defaultError(page);
+                        break;
+                    case "npcs":
+                        content = typeof renderNPCs === "function" ? renderNPCs() : defaultError(page);
+                        break;
+                    case "missions":
+                        content = typeof renderMissions === "function" ? renderMissions() : defaultError(page);
+                        break;
+                    default:
+                        content = defaultError(page);
+                }
+            } catch (err) {
+                content = `<div class="error-msg"><h2>DECRYPTION FAILED</h2><p>${err.message}</p></div>`;
+            }
+            container.innerHTML = content;
+        }, 400);
+    }
+
+    function defaultError(page) {
+        return `<h2>ARCHIVE NOT FOUND</h2><p>The module for [${page.toUpperCase()}] is missing or corrupted.</p>`;
     }
 });
-</script>

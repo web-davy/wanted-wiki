@@ -3,7 +3,7 @@ const weapons = [
     { name: "Model 870", price: 2000, priceContract: 20000, ammo: "4/80", ammoPrice: "60$ for 4", damage: "7/6/4", firerate: 66, reload: 0.8, accuracy: "±0.40m @ 25m" },
     { name: "Uzi", price: 2500, priceContract: 25000, ammo: "25/250", ammoPrice: "250$ for 25", damage: "7/6/5", firerate: 1500, reload: 2.2, accuracy: "±3.50m @ 25m" },
     { name: "UMP 45", price: 3000, priceContract: 40000, ammo: "30/240", ammoPrice: "300$ for 30", damage: "10 8 6", firerate: 750, reload: 2, accuracy: "±1.70m @ 50m" },
-    { name: "Benelli M1014", price: 3500, priceContract: 40000, ammo: "30/270", ammoPrice: "120$ for 6", damage: "6/4/3", firerate: 230, reload: 0.8, accuracy: "±2.60m @ 25m" },
+    { name: "Benelli M1014", price: 6000, priceContract: 40000, ammo: "30/270", ammoPrice: "120$ for 6", damage: "6/4/3", firerate: 230, reload: 0.8, accuracy: "±2.60m @ 25m" },
     { name: "SPAS-12", price: 8000, priceContract: 2000000, ammo: "6/90", ammoPrice: "360$ for 6", damage: "7/6/5", firerate: 200, reload: 0.8, accuracy: "±2.60m @ 25m" },
     { name: "C4", price: 1000, priceContract: 50000, ammo: "1/10", ammoPrice: "1000$ for 1", damage: "?/?/?", firerate: 0, reload: 0, accuracy: "0" },
     { name: "AUG A1", price: 5000, priceContract: 350000, ammo: "30/270", ammoPrice: "450$ for 30", damage: "8/7/6", firerate: 681, reload: 3, accuracy: "±0.90m @ 50m" },
@@ -56,3 +56,4 @@ function renderWeapons(sort = "high") {
 function sortWeapons(order) {
     document.getElementById("page-container").innerHTML = renderWeapons(order);
 }
+

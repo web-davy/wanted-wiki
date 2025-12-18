@@ -330,7 +330,7 @@ function renderHome() {
                 opacity: 0.9;
                 color: white;
             ">
-                WANTED TERMINAL — TTY0
+                WANTED WIKI TERMINAL v4.7 — MEEPTECH CO.
             </div>
             <div id="terminal-history" style="
                 max-height: 460px;
@@ -354,4 +354,5 @@ function renderHome() {
         </div>
     `;
 }
+
 

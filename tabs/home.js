@@ -6,8 +6,6 @@ function renderHome() {
 
         if (!input || !history || !terminal) return;
 
-        input.focus();
-
         const startTime = Date.now();
         const sessionId = Math.random().toString(36).slice(2, 10);
 
@@ -330,7 +328,7 @@ function renderHome() {
                 opacity: 0.9;
                 color: white;
             ">
-                WANTED WIKI TERMINAL v4.7 — MEEPTECH CO.
+                WNTD. WIKI TERMINAL v4.7 — MEEPTECH CO.
             </div>
             <div id="terminal-history" style="
                 max-height: 460px;
@@ -354,5 +352,3 @@ function renderHome() {
         </div>
     `;
 }
-
-

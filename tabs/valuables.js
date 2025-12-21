@@ -70,7 +70,7 @@ function renderValuables(sort = "high") {
 
     sorted.forEach(v => {
         const slug = v.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        const safeRarity = v.rarity.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        const safeRarity = v.rarity.toLowerCase().replace(/\s+/g, "-");
 
         html += `
             <div class="card">
@@ -92,4 +92,5 @@ function sortValuables(order) {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("page-container").innerHTML = renderValuables("high");
+
 });

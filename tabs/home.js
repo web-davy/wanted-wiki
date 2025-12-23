@@ -12,24 +12,31 @@ function renderHome() {
         let sudoMode = false;
         let isDead = false;
 
-        const typeWrite = (text, color = "#39ff14", speed = 12) => {
-            return new Promise(resolve => {
-                const line = document.createElement("div");
-                line.style.color = color;
-                line.style.textShadow = `0 0 8px ${color}`;
-                line.style.minHeight = "1.2em";
-                history.appendChild(line);
-                let i = 0;
-                const timer = setInterval(() => {
-                    line.textContent = text.slice(0, ++i);
-                    history.scrollTop = history.scrollHeight;
-                    if (i >= text.length) {
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, speed);
-            });
-        };
+const typeWrite = (text, color = "#39ff14", speed = 12) => {
+    return new Promise(resolve => {
+        const line = document.createElement("div");
+        line.style.color = color;
+        line.style.textShadow = `0 0 8px ${color}`;
+        line.style.minHeight = "1.2em";
+        history.appendChild(line);
+
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                line.textContent = text.slice(0, ++i);
+                history.scrollTop = history.scrollHeight;
+                
+                const randomDelay = speed + (Math.random() * speed * 2);
+                setTimeout(type, randomDelay);
+            } else {
+                resolve();
+            }
+        }
+
+        type();
+    });
+};
 
         const instantBlock = (html, color = "#ffffff") => {
             const div = document.createElement("div");
@@ -40,29 +47,36 @@ function renderHome() {
             history.scrollTop = history.scrollHeight;
         };
 
-        const progressBar = (label, color = "#39ff14") => {
-            return new Promise(resolve => {
-                let progress = 0;
-                const line = document.createElement("div");
-                line.style.color = color;
-                line.style.textShadow = `0 0 8px ${color}`;
-                history.appendChild(line);
-                const timer = setInterval(() => {
-                    progress += Math.random() * 16 + 10;
-                    if (progress >= 100) {
-                        progress = 100;
-                        line.textContent = `${label} [██████████] 100%`;
-                        clearInterval(timer);
-                        resolve();
-                    } else {
-                        const filled = Math.floor(progress / 10);
-                        const bar = "█".repeat(filled).padEnd(10, "░");
-                        line.textContent = `${label} [${bar}] ${Math.floor(progress)}%`;
-                    }
-                    history.scrollTop = history.scrollHeight;
-                }, 60);
-            });
-        };
+const progressBar = (label, color = "#39ff14") => {
+    return new Promise(resolve => {
+        let progress = 0;
+        const line = document.createElement("div");
+        line.style.color = color;
+        line.style.textShadow = `0 0 8px ${color}`;
+        history.appendChild(line);
+
+        function update() {
+            progress += Math.random() * 15 + 5;
+            
+            if (progress >= 100) {
+                progress = 100;
+                line.textContent = `${label} [██████████] 100%`;
+                history.scrollTop = history.scrollHeight;
+                resolve();
+            } else {
+                const filled = Math.floor(progress / 10);
+                const bar = "█".repeat(filled).padEnd(10, "░");
+                line.textContent = `${label} [${bar}] ${Math.floor(progress)}%`;
+                history.scrollTop = history.scrollHeight;
+                
+                const randomDelay = 50 + (Math.random() * 400);
+                setTimeout(update, randomDelay);
+            }
+        }
+
+        update();
+    });
+};
 
         const powerOffSequence = async () => {
             if (isDead) return;

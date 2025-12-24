@@ -8,9 +8,8 @@ const missions = [
         difficulty: "Medium", 
         reward: "$20,000 and Meat Grinder Furniture" 
     },
-
     { 
-        title: "Artisan 1", 
+        title: "1 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "I've been brainstorming some ideas for gun modifications, but I'm too busy to test them myself. I want you to follow these instructions exactly, test them out, and then get back to me: Mod UMP 45 with Holographic Sight and a Tactical Laser.", 
         req: ["Criminal/Syndicate team"], 
@@ -18,9 +17,8 @@ const missions = [
         difficulty: "Easy", 
         reward: "$20,000" 
     },
-
     { 
-        title: "Artisan 2", 
+        title: "2 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "Back for more? Let's get to it. Same as last time: set up the gun, test it out, and head back here. Mod the Model 870 with 12 Gauge Slugs and Vertical Foregrip.", 
         req: ["Criminal/Syndicate team"], 
@@ -28,19 +26,17 @@ const missions = [
         difficulty: "Easy", 
         reward: "$25,000" 
     },
-
     { 
-        title: "Artisan 3", 
+        title: "3 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "Let's get right into it. Set up the gun, test it out, and come back: Mod Uzi with Mono Suppressor and Uzi Stock.", 
         req: ["Criminal/Syndicate team"], 
         how: "Mod Uzi with Mono Suppressor and Uzi Stock", 
-        difficulty: "Medium", 
+        difficulty: "Easy", 
         reward: "$40,000" 
     },
-
     { 
-        title: "Artisan 4", 
+        title: "4 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "Let's get right into it. Set up the gun, test it out, and come back: Bring me a modded AK-47 with Mono Suppressor, Tactical Laser, and Horizontal Foregrip.", 
         req: ["Criminal/Syndicate team"], 
@@ -48,19 +44,17 @@ const missions = [
         difficulty: "Medium", 
         reward: "$60,000" 
     },
-
     { 
-        title: "Artisan 5", 
+        title: "5 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "Let's get right into it. Set up the gun, test it out, and come back: Bring me a modded Glock 18c with Pistol Suppressor, Reflex Sight and Glock Stock.", 
         req: ["Criminal/Syndicate team"], 
         how: "Mod the Glock 18c with Pistol Suppressor, Reflex Sight and Glock Stock", 
-        difficulty: "Hard", 
+        difficulty: "Medium", 
         reward: "$75,000" 
     },
-
     { 
-        title: "Artisan 6", 
+        title: "6 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "Let's get right into it. Set up the gun, test it out, and come back: Bring me a modded M4A1 with ACOG, Horizontal Foregrip, and Tactical Laser.", 
         req: ["Criminal/Syndicate team"], 
@@ -68,9 +62,8 @@ const missions = [
         difficulty: "Hard", 
         reward: "$85,000" 
     },
-
     { 
-        title: "Artisan 7", 
+        title: "7 Artisan", 
         location: "Criminal Outpost – Talk to Erik", 
         desc: "Let's get right into it. Set up the gun, test it out, and come back: Bring me a modded AWM with Reflex Sight, Mono Suppressor and Tactical Laser.", 
         req: ["Criminal/Syndicate team"], 
@@ -78,8 +71,6 @@ const missions = [
         difficulty: "Hard", 
         reward: "$100,000" 
     },
-
-
     { 
         title: "Fuel Depot", 
         location: "Criminal Outpost – Talk to Sir.B", 
@@ -89,7 +80,6 @@ const missions = [
         difficulty: "Easy", 
         reward: "$25,000" 
     },
-
     { 
         title: "Loyalty Test", 
         location: "Police Station – Talk to Bert", 
@@ -99,12 +89,6 @@ const missions = [
         difficulty: "Easy", 
         reward: "$25,000 and access to the Police Team" 
     },
-
-
-
-
-
-
     { 
         title: "Santas Helper", 
         location: "Park", 
@@ -114,7 +98,6 @@ const missions = [
         difficulty: "Christmas-Limited", 
         reward: "$25.000" 
     },
-
     { 
         title: "Toy Drive", 
         location: "Park", 
@@ -124,7 +107,6 @@ const missions = [
         difficulty: "Christmas-Limited", 
         reward: "$60.000 and LED Reindeer Furniture" 
     },
-
     { 
         title: "Toy Drive 2", 
         location: "Park", 
@@ -133,22 +115,32 @@ const missions = [
         how: "Give Santa 1 GPU/Goldbook/Snowglobe", 
         difficulty: "Christmas-Limited", 
         reward: "$100.000 and Snowflake Rims" 
-    },
-
-
-
-
+    }
 ];
 
-
-const difficultyOrder = { "Easy": 1, "Medium": 2, "Hard": 3, "Extreme": 4 };
+const difficultyOrder = { 
+    "Christmas-Limited": 0,
+    "Easy": 1, 
+    "Medium": 2, 
+    "Hard": 3
+};
 
 function renderMissions(order = "hard") {
-    const sorted = [...missions].sort((a, b) =>
-        order === "hard"
-            ? difficultyOrder[b.difficulty] - difficultyOrder[a.difficulty]
-            : difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty]
-    );
+    const sorted = [...missions].sort((a, b) => {
+        const valA = difficultyOrder[a.difficulty] || 0;
+        const valB = difficultyOrder[b.difficulty] || 0;
+
+        if (valA === valB) {
+            const numA = parseInt(a.title) || 0;
+            const numB = parseInt(b.title) || 0;
+            if (numA !== 0 || numB !== 0) {
+                return order === "hard" ? numB - numA : numA - numB;
+            }
+        }
+
+        return order === "hard" ? valB - valA : valA - valB;
+    });
+
     let html = `
         <h2>MISSIONs</h2>
         <div class="sort-buttons">
@@ -157,9 +149,10 @@ function renderMissions(order = "hard") {
         </div>
         <div class="card-grid">
     `;
+
     sorted.forEach(m => {
         const diff = m.difficulty.toLowerCase();
-        const slug = m.title.toLowerCase().replace(/\s+/g, '-'); // Slugify title for image filename
+        const slug = m.title.toLowerCase().replace(/\s+/g, '-');
         html += `
             <div class="card">
                 <img src="images/${slug}.jpg" alt="${m.title}" style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; box-shadow:0 0 10px rgba(255,255,255,0.2);">
@@ -175,6 +168,7 @@ function renderMissions(order = "hard") {
     html += `</div>`;
     return html;
 }
+
 function sortMissions(order) {
     document.getElementById("page-container").innerHTML = renderMissions(order);
 }

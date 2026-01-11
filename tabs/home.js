@@ -377,7 +377,7 @@ const progressBar = (label, color = "#39ff14") => {
                     Welcome to our wiki,<br>
                     here we log all the info about the game Wanted.
                 </p>
-                <div style="font-size: 2rem; letter-spacing: 0.3em; opacity: 0.7; text-shadow: 0 0 10px white; animation: pulse 3s infinite;">
+                <div style="font-size: 1rem; letter-spacing: 0.3em; opacity: 0.7; text-shadow: 0 0 10px white; animation: pulse 3s infinite;">
                     <a href="https://www.roblox.com/games/14438406081/Wanted" target="_blank" style="color: white; text-shadow: 0 0 20px white; font-weight: bold; text-decoration: underline;">PLAY HERE</a>
                 </div>
             </div>
@@ -438,3 +438,4 @@ const progressBar = (label, color = "#39ff14") => {
         </style>
     `;
 }
+

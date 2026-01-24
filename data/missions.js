@@ -79,6 +79,16 @@ const MISSIONS_DATA = [
     difficulty: "HARD",
     rewards: ["$100,000"]
   },
+    {
+    id: "8-artisan",
+    title: "8 Artisan",
+    location: "Criminal Outpost – Talk to Erik",
+    description: "Let's get right into it. Set up the gun, test it out, and come back: Bring me a modded M60 with Rifle Scope and M60 Bipod.",
+    requirements: ["Criminal/Syndicate team"],
+    howToComplete: "Mod the M60 with Rifle Scope and M60 Bipod.",
+    difficulty: "HARD",
+    rewards: ["$200,000"]
+  },
   {
     id: "fuel-depot",
     title: "Fuel Depot",
@@ -129,4 +139,5 @@ const MISSIONS_DATA = [
     difficulty: "CHRISTMAS",
     rewards: ["$100,000", "Snowflake Rims"]
   }
+
 ];

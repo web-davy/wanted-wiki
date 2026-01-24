@@ -7,13 +7,13 @@
 
     <link rel="icon" type="image/png" href="images/logo.png">
 
-<meta property="og:title" content="Wanted Wiki">
-<meta property="og:description" content="Welcome to our wiki, here we log all the info about the game Wanted.">
-<meta property="og:url" content="https://davyjonesdevv.github.io/wanted-wiki/">
-<meta property="og:image" content="https://raw.githubusercontent.com/DavyJonesDevv/wanted-wiki/refs/heads/main/images/logo.png">
-<meta property="og:site_name" content="Official Website">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#000001">
+    <meta property="og:title" content="Wanted Wiki">
+    <meta property="og:description" content="Welcome to our wiki, here we log all the info about the game Wanted.">
+    <meta property="og:url" content="https://davyjonesdevv.github.io/wanted-wiki/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/DavyJonesDevv/wanted-wiki/refs/heads/main/images/logo.png">
+    <meta property="og:site_name" content="Official Website">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000001">
 
     <link rel="stylesheet" href="style.css">
     
@@ -212,11 +212,9 @@
             <div class="tab" data-page="weapons">WEAPONs</div>
             <div class="tab" data-page="vehicles">VEHICLEs</div>
             <div class="tab" data-page="locations">LOCATIONs</div>
-
             <div class="tab" data-page="npcs">NPCs</div>
             <div class="tab" data-page="missions">MISSIONs</div>
-
-            </nav>
+        </nav>
         <div class="volume-control">
             <input type="range" id="bgm-volume" min="0" max="1" step="0.01" value="0.4">
         </div>
@@ -237,19 +235,23 @@
     <audio id="sfx-hover" src="sounds/hover.mp3" preload="auto"></audio>
     <audio id="sfx-load" src="sounds/load.mp3" preload="auto"></audio>
 
+    <script defer src="config.js"></script>
+    <script defer src="data/valuables.js"></script>
+    <script defer src="data/atms.js"></script>
+    <script defer src="data/weapons.js"></script>
+    <script defer src="data/vehicles.js"></script>
+    <script defer src="data/missions.js"></script>
+    <script defer src="data/npcs.js"></script>
+    <script defer src="data/locations.js"></script>
+    <script defer src="renderer.js"></script>
     <script defer src="tabs/valuables.js"></script>
-    <script defer src="tabs/weapons.js"></script>
     <script defer src="tabs/atms.js"></script>
+    <script defer src="tabs/weapons.js"></script>
     <script defer src="tabs/vehicles.js"></script>
-    <script defer src="tabs/locations.js"></script>
-
-    <script defer src="tabs/npcs.js"></script>
     <script defer src="tabs/missions.js"></script>
-
+    <script defer src="tabs/npcs.js"></script>
+    <script defer src="tabs/locations.js"></script>
     <script defer src="tabs/home.js"></script>
     <script defer src="script.js"></script>
 </body>
-
 </html>
-
-

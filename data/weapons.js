@@ -104,7 +104,7 @@ const WEAPONS_DATA = [
     }
   },
   {
-    name: "RPG 7",
+    name: "RPG-7",
     repairPrice: 10000,
     contractPrice: 1200000,
     stats: {
@@ -143,7 +143,7 @@ const WEAPONS_DATA = [
     }
   },
   {
-    name: "ARX 160",
+    name: "ARX-160",
     repairPrice: 8000,
     contractPrice: 1800000,
     stats: {

@@ -14,8 +14,8 @@ const GUN_CRATES_DATA = [
     location: "Fort Emberreach Desert Area"
   },
   {
-    id: "rpg-crate",
-    name: "RPG Crate",
+    id: "rpg-7-crate",
+    name: "RPG-7 Crate",
     gun: "Default RPG",
     cooldown: "5 Days",
     location: "Fort Emberreach"

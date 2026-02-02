@@ -1,18 +1,25 @@
-# 🤠 Wanted Wiki
+## Wanted Wiki | Official Repository
 
-Welcome to the official repository for the **Wanted** Wiki! This project is dedicated to documenting everything within the Roblox game "Wanted" from weapons and vehicles to map locations.
+Welcome to the documentation repository for **[Wanted](https://www.roblox.com/games/14438406081/Wanted)**.
 
-## 📖 About the Project
-This wiki serves as the central hub for players to learn about game mechanics and stay updated on latest patches.
+---
 
-## 🤝 How You Can Help
-We are always looking for dedicated players and contributors to help us keep the information up to date! If you have knowledge about the game, data on items, or want to help with formatting, here is how you can get involved:
+## 📖 Project Scope
+The goal of this wiki is to provide players with a centralized, accurate resource for: **Technical Data, Live Updates** and more.
 
-### 1. Contact the Lead Developer
-You can reach out directly to **DavyDevv** on Discord for instructions on what needs to be documented.
+---
 
-### 2. Join the Community
-Join our official Discord server to chat with the team and other contributors:
-👉 **[Join the Wanted Discord Server](https://discord.com/invite/3NqFCz5sRx)**
+## 🤝 Contribution Guidelines
+We welcome contributions from the community to ensure our data remains current and precise.
 
-*Developed by Davy. Thank you for helping us make the Wanted Wiki the best resource for the community!*
+### Coordination
+To maintain a consistent standard across the wiki, use our discord server or contact us.
+* **Primary Contact:** Reach out to **DavyDevv** on Discord.
+
+### Community Hub
+The best way to stay updated on the wiki’s roadmap is to join our development community:
+👉 **[Join the Official Wiki Discord Server](https://discord.com/invite/3NqFCz5sRx)**
+
+---
+
+*Maintained by Davy.*

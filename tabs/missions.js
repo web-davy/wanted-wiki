@@ -1,8 +1,16 @@
 function renderMissions(order = "hard") {
   const sorted = [...MISSIONS_DATA].sort((a, b) => {
+    // Always put Christmas items at the bottom
+    const isChristmasA = a.difficulty === 'CHRISTMAS';
+    const isChristmasB = b.difficulty === 'CHRISTMAS';
+
+    if (isChristmasA && !isChristmasB) return 1;
+    if (!isChristmasA && isChristmasB) return -1;
+    if (isChristmasA && isChristmasB) return 0;
+
     const diffA = DIFFICULTIES[a.difficulty];
     const diffB = DIFFICULTIES[b.difficulty];
-    
+
     if (diffA.order === diffB.order) {
       const numA = parseInt(a.title) || 0;
       const numB = parseInt(b.title) || 0;
@@ -10,7 +18,7 @@ function renderMissions(order = "hard") {
         return order === "hard" ? numB - numA : numA - numB;
       }
     }
-    
+
     return order === "hard" ? diffB.order - diffA.order : diffA.order - diffB.order;
   });
 
@@ -24,7 +32,7 @@ function renderMissions(order = "hard") {
       ${renderStat('How', item.howToComplete)}
       ${renderStat('Reward', item.rewards.join(', '))}
     `;
-    
+
     return `
       <div class="card">
         <img src="images/${slug}.jpg" alt="${item.title}" 

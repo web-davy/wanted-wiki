@@ -167,7 +167,9 @@ function initMobileMenu() {
 
     if (!hamburger || !nav) return;
 
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        if (!audioUnlocked) return;
+        e.stopPropagation();
         hamburger.classList.toggle('active');
         nav.classList.toggle('active');
     });

@@ -9,8 +9,8 @@ const GUN_CRATES_DATA = [
     {
     id: "aug-a1-crate",
     name: "AUG A1 Crate",
-    gun: "AUG with Mono Supressor and Tactical Laser",
-    cooldown: "4 Days",
+    gun: "Default AUG A1",
+    cooldown: "3 Days",
     location: "Crystal Club & Resort"
   },
   {
@@ -57,3 +57,4 @@ const GUN_CRATES_DATA = [
   }
 
 ];
+

@@ -9,16 +9,16 @@ const VALUABLES_DATA = [
   { name: "Snowglobe", rarity: "CHRISTMAS", price: 8888, priceNonContract: true, weight: 6 },
   { name: "White Ornament", rarity: "CHRISTMAS", price: 15000, priceNonContract: true, weight: 1 },
   { name: "Bank Cash Pile", rarity: "COMMON", price: 200, weight: 0 },
-  { name: "Silver Bar", rarity: "COMMON", price: 300, weight: 2 },
-  { name: "PearWatch", rarity: "COMMON", price: 300, weight: 2 },
+  { name: "Silver Bar", rarity: "COMMON", price: 250, weight: 2 },
+  { name: "PearWatch", rarity: "COMMON", price: 200, weight: 2 },
   { name: "HDD", rarity: "COMMON", price: 400, weight: 2 },
   { name: "PearPods", rarity: "COMMON", price: 300, weight: 3 },
   { name: "PearPhone", rarity: "COMMON", price: 400, weight: 2 },
-  { name: "PearPad", rarity: "COMMON", price: 600, weight: 3 },
+  { name: "PearPad", rarity: "COMMON", price: 500, weight: 3 },
   { name: "GoldPhone", rarity: "COMMON", price: 700, weight: 2 },
   { name: "PSU", rarity: "COMMON", price: 800, weight: 6 },
-  { name: "Gold Bar", rarity: "UNCOMMON", price: 500, weight: 2 },
-  { name: "GoldWatch", rarity: "UNCOMMON", price: 600, weight: 2 },
+  { name: "Gold Bar", rarity: "UNCOMMON", price: 400, weight: 2 },
+  { name: "GoldWatch", rarity: "UNCOMMON", price: 400, weight: 2 },
   { name: "GoldPods", rarity: "UNCOMMON", price: 600, weight: 3 },
   { name: "PearBook", rarity: "UNCOMMON", price: 1000, weight: 6 },
   { name: "Flash Drive", rarity: "UNCOMMON", price: 1200, weight: 1 },
@@ -35,3 +35,4 @@ const VALUABLES_DATA = [
   { name: "Bitcoin", rarity: "LEGENDARY", price: 92000, weight: 1 }
 
 ];
+

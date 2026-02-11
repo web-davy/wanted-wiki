@@ -1,5 +1,5 @@
 function formatReward(reward) {
-  return reward.replace(/\$/g, '<img src="images/cash.png" alt="$" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">$');
+  return reward.replace(/\$/g, '<img src="images/cash.png" alt="$" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">');
 }
 
 function renderMissions(order = "hard") {

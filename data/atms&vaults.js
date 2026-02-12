@@ -9,13 +9,14 @@ const ATMS_DATA = [
 ];
 
 const VAULTS_DATA = [
-  { name: "Regular Vault", rarity: "COMMON", rarityPercent: "~53.5%", price: 5000-7500 },
-  { name: "Silver Vault", rarity: "COMMON", rarityPercent: "~26.5%", price: 7500-10000 },
-  { name: "Gold Vault", rarity: "UNCOMMON", rarityPercent: "~17%", price: 15000-25000 },
-  { name: "Sapphire Vault", rarity: "EPIC", rarityPercent: "~2.2%", price: 40000-50000 },
-  { name: "Ruby Vault", rarity: "MYTHIC", rarityPercent: "~0.45%", price: 80000-90000 },
-  { name: "Emerald Vault", rarity: "LEGENDARY", rarityPercent: "~0.25%", price: 125000-225000 },
-  { name: "Amethyst Vault", rarity: "LEGENDARY", rarityPercent: "~0.05%", price: 100000 }
+  { name: "Regular Vault", rarity: "COMMON", rarityPercent: "~53.5%", price: 5000 to 7500 },
+  { name: "Silver Vault", rarity: "COMMON", rarityPercent: "~26.5%", price: 7500 to 10000 },
+  { name: "Gold Vault", rarity: "UNCOMMON", rarityPercent: "~17%", price: 15000 to 25000 },
+  { name: "Sapphire Vault", rarity: "EPIC", rarityPercent: "~2.2%", price: 40000 to 50000 },
+  { name: "Ruby Vault", rarity: "MYTHIC", rarityPercent: "~0.45%", price: 80000 to 90000 },
+  { name: "Emerald Vault", rarity: "LEGENDARY", rarityPercent: "~0.25%", price: 125000 to 225000 },
+  { name: "Amethyst Vault", rarity: "LEGENDARY", rarityPercent: "~0.05%", price: ??? }
 ];
+
 
 

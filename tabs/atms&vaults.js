@@ -18,19 +18,16 @@ function renderATMs(sort = "high") {
     return renderCard(item, item.rarity, content);
   });
 
-  const vaultCards = sortedVaults.map(item => {
-    let priceDisplay = "???";
-    if (item.priceMin !== null && item.priceMax !== null) {
-      priceDisplay = `${formatPrice(item.priceMin)} - ${formatPrice(item.priceMax)}`;
-    }
+const vaultCards = sortedVaults.map(item => {
+  const priceDisplay = `${formatPrice(item.priceMin)} - ${formatPrice(item.priceMax)}`;
 
-    const content = `
-      <h3>${item.name}</h3>
-      ${renderStat('Rarity', item.rarityPercent)}
-      ${renderStat('Cash', priceDisplay)}
-    `;
-    return renderCard(item, item.rarity, content);
-  });
+  const content = `
+    <h3>${item.name}</h3>
+    ${renderStat('Rarity', item.rarityPercent)}
+    ${renderStat('Cash', priceDisplay)}
+  `;
+  return renderCard(item, item.rarity, content);
+});
 
   const sortButtons = renderSortButtons([
     { label: 'High to Low', value: 'high', onClick: "sortATMs('high')" },
@@ -61,3 +58,4 @@ function renderATMs(sort = "high") {
 function sortATMs(order) {
   document.getElementById("page-container").innerHTML = renderATMs(order);
 }
+

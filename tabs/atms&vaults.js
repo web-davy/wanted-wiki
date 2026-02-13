@@ -4,9 +4,9 @@ function renderATMs(sort = "high") {
   );
 
   const sortedVaults = [...VAULTS_DATA].sort((a, b) => {
-    const valA = a.priceMax || 0;
-    const valB = b.priceMax || 0;
-    return sort === "high" ? valB - valA : valA - valB;
+    const avgA = (typeof a.priceMin === 'number' && typeof a.priceMax === 'number') ? (a.priceMin + a.priceMax) / 2 : 0;
+    const avgB = (typeof b.priceMin === 'number' && typeof b.priceMax === 'number') ? (b.priceMin + b.priceMax) / 2 : 0;
+    return sort === "high" ? avgB - avgA : avgA - avgB;
   });
 
   const atmCards = sortedATMs.map(item => {
@@ -18,16 +18,17 @@ function renderATMs(sort = "high") {
     return renderCard(item, item.rarity, content);
   });
 
-const vaultCards = sortedVaults.map(item => {
-  const priceDisplay = `${formatPrice(item.priceMin)} - ${formatPrice(item.priceMax)}`;
-
-  const content = `
-    <h3>${item.name}</h3>
-    ${renderStat('Rarity', item.rarityPercent)}
-    ${renderStat('Cash', priceDisplay)}
-  `;
-  return renderCard(item, item.rarity, content);
-});
+  const vaultCards = sortedVaults.map(item => {
+    const priceDisplay = (typeof item.priceMin === 'number' && typeof item.priceMax === 'number')
+      ? `${formatPrice(item.priceMin)} - ${formatPrice(item.priceMax)}`
+      : '? - ?';
+    const content = `
+      <h3>${item.name}</h3>
+      ${renderStat('Rarity', item.rarityPercent)}
+      ${renderStat('Cash', priceDisplay)}
+    `;
+    return renderCard(item, item.rarity, content);
+  });
 
   const sortButtons = renderSortButtons([
     { label: 'High to Low', value: 'high', onClick: "sortATMs('high')" },
@@ -58,4 +59,3 @@ const vaultCards = sortedVaults.map(item => {
 function sortATMs(order) {
   document.getElementById("page-container").innerHTML = renderATMs(order);
 }
-

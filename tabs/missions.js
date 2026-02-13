@@ -3,15 +3,7 @@ function formatReward(reward) {
 }
 
 function renderMissions(order = "hard") {
-  const sorted = [...MISSIONS_DATA].sort((a, b) => {
-    // Always put Christmas items at the bottom
-    const isChristmasA = a.difficulty === 'CHRISTMAS';
-    const isChristmasB = b.difficulty === 'CHRISTMAS';
-
-    if (isChristmasA && !isChristmasB) return 1;
-    if (!isChristmasA && isChristmasB) return -1;
-    if (isChristmasA && isChristmasB) return 0;
-
+  const sortedRegular = [...MISSIONS_DATA].sort((a, b) => {
     const diffA = DIFFICULTIES[a.difficulty];
     const diffB = DIFFICULTIES[b.difficulty];
 
@@ -26,7 +18,33 @@ function renderMissions(order = "hard") {
     return order === "hard" ? diffB.order - diffA.order : diffA.order - diffB.order;
   });
 
-  const cards = sorted.map(item => {
+  const sortedChristmas = [...CHRISTMAS_MISSIONS_DATA].sort((a, b) => {
+    return 0;
+  });
+
+  const regularCards = sortedRegular.map(item => {
+    const slug = item.id;
+    const formattedRewards = item.rewards.map(formatReward).join(', ');
+    const content = `
+      <h3>${item.title}</h3>
+      ${renderStat('Location', item.location)}
+      ${renderStat('Description', item.description)}
+      ${renderStat('Requirements', item.requirements.join(', '))}
+      ${renderStat('How', item.howToComplete)}
+      ${renderStat('Reward', formattedRewards)}
+    `;
+
+    return `
+      <div class="card">
+        <img src="images/${slug}.jpg" alt="${item.title}" 
+             style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
+                    box-shadow:0 0 10px rgba(255,255,255,0.2);">
+        <div class="rarity ${DIFFICULTIES[item.difficulty].class}">${DIFFICULTIES[item.difficulty].name}</div>
+        ${content}
+      </div>`;
+  });
+
+  const christmasCards = sortedChristmas.map(item => {
     const slug = item.id;
     const formattedRewards = item.rewards.map(formatReward).join(', ');
     const content = `
@@ -53,7 +71,25 @@ function renderMissions(order = "hard") {
     { label: 'Easiest First', value: 'easy', onClick: "sortMissions('easy')" }
   ], order);
 
-  return renderPage('MISSIONs', sortButtons, cards);
+  const regularSection = `
+    <div class="card-grid">
+      ${regularCards.join('')}
+    </div>
+  `;
+
+  const christmasSection = `
+    <div style="margin: 40px 0; border-bottom: 2px solid #fff; opacity: 0.3;"></div>
+    <div class="card-grid">
+      ${christmasCards.join('')}
+    </div>
+  `;
+
+  return `
+    <h2>MISSIONs</h2>
+    ${sortButtons}
+    ${regularSection}
+    ${christmasSection}
+  `;
 }
 
 function sortMissions(order) {

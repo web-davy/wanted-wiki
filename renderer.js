@@ -14,6 +14,22 @@ function renderCard(item, rarityKey, content) {
     </div>`;
 }
 
+function renderCardJPG(item, rarityKey, content) {
+  const slug = generateSlug(item.name);
+  const rarity = RARITIES[rarityKey] || DIFFICULTIES[rarityKey] || TEAMS[rarityKey];
+  const rarityClass = rarity ? rarity.class : '';
+  const rarityName = rarity ? rarity.name : '';
+
+  return `
+    <div class="card">
+      <img src="images/${slug}.jpg" alt="${item.name}" 
+           style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
+                  box-shadow:0 0 10px rgba(255,255,255,0.2);">
+      ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
+      ${content}
+    </div>`;
+}
+
 function renderPriceTag(price) {
   return `<div class="price-tag">${formatPrice(price)}</div>`;
 }

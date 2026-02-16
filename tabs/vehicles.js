@@ -12,7 +12,13 @@ function renderVehicles(sort = "high") {
 
   const groundCards = sortedGround.map(item => {
     const slug = generateSlug(item.name);
-    const statsHtml = `
+
+    const visibleContent = `
+      ${renderPriceTag(item.contractPrice)}
+      <h3>${item.name}</h3>
+    `;
+    const hiddenContent = `
+      ${renderStat('Repair', formatPrice(item.repairPrice))}
       ${renderStat('Top Speed', `${item.stats.topSpeed} MPH`)}
       ${renderStat('Acceleration', `${item.stats.acceleration}%`)}
       ${renderStat('Braking', `${item.stats.braking}%`)}
@@ -20,25 +26,32 @@ function renderVehicles(sort = "high") {
       ${renderStat('Armor', item.stats.armor)}
     `;
 
-    const content = `
-      ${renderPriceTag(item.contractPrice)}
-      <h3>${item.name}</h3>
-      ${renderStat('Repair', formatPrice(item.repairPrice))}
-      ${statsHtml}
-    `;
+    const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
 
     return `
       <div class="card">
         <img src="images/${slug}.jpg" alt="${item.name}" 
              style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                     box-shadow:0 0 10px rgba(255,255,255,0.2);">
-        ${content}
+        ${visibleContent}
+        <div class="card-details collapsed" id="${cardId}-details">
+          ${hiddenContent}
+        </div>
+        <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">
+          Show more...
+        </button>
       </div>`;
   });
 
   const flyingCards = sortedFlying.map(item => {
     const slug = generateSlug(item.name);
-    const statsHtml = `
+
+    const visibleContent = `
+      ${renderPriceTag(item.contractPrice)}
+      <h3>${item.name}</h3>
+    `;
+    const hiddenContent = `
+      ${renderStat('Repair', formatPrice(item.repairPrice))}
       ${renderStat('Top Speed', `${item.stats.topSpeed} Knots`)}
       ${renderStat('Handling', `${item.stats.handling}%`)}
       ${renderStat('Spool Time', `${item.stats.spoolTime}s`)}
@@ -46,19 +59,20 @@ function renderVehicles(sort = "high") {
       ${renderStat('Armor', item.stats.armor)}
     `;
 
-    const content = `
-      ${renderPriceTag(item.contractPrice)}
-      <h3>${item.name}</h3>
-      ${renderStat('Repair', formatPrice(item.repairPrice))}
-      ${statsHtml}
-    `;
+    const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
 
     return `
       <div class="card">
         <img src="images/${slug}.jpg" alt="${item.name}" 
              style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                     box-shadow:0 0 10px rgba(255,255,255,0.2);">
-        ${content}
+        ${visibleContent}
+        <div class="card-details collapsed" id="${cardId}-details">
+          ${hiddenContent}
+        </div>
+        <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">
+          Show more...
+        </button>
       </div>`;
   });
 

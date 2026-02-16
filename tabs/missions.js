@@ -25,8 +25,9 @@ function renderMissions(order = "hard") {
   const regularCards = sortedRegular.map(item => {
     const slug = item.id;
     const formattedRewards = item.rewards.map(formatReward).join(', ');
-    const content = `
-      <h3>${item.title}</h3>
+
+    const visibleContent = `<h3>${item.title}</h3>`;
+    const hiddenContent = `
       ${renderStat('Location', item.location)}
       ${renderStat('Description', item.description)}
       ${renderStat('Requirements', item.requirements.join(', '))}
@@ -34,21 +35,33 @@ function renderMissions(order = "hard") {
       ${renderStat('Reward', formattedRewards)}
     `;
 
+    const rarity = DIFFICULTIES[item.difficulty];
+    const rarityClass = rarity ? rarity.class : '';
+    const rarityName = rarity ? rarity.name : '';
+    const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
+
     return `
       <div class="card">
         <img src="images/${slug}.jpg" alt="${item.title}" 
              style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                     box-shadow:0 0 10px rgba(255,255,255,0.2);">
-        <div class="rarity ${DIFFICULTIES[item.difficulty].class}">${DIFFICULTIES[item.difficulty].name}</div>
-        ${content}
+        ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
+        ${visibleContent}
+        <div class="card-details collapsed" id="${cardId}-details">
+          ${hiddenContent}
+        </div>
+        <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">
+          Show more...
+        </button>
       </div>`;
   });
 
   const christmasCards = sortedChristmas.map(item => {
     const slug = item.id;
     const formattedRewards = item.rewards.map(formatReward).join(', ');
-    const content = `
-      <h3>${item.title}</h3>
+
+    const visibleContent = `<h3>${item.title}</h3>`;
+    const hiddenContent = `
       ${renderStat('Location', item.location)}
       ${renderStat('Description', item.description)}
       ${renderStat('Requirements', item.requirements.join(', '))}
@@ -56,13 +69,24 @@ function renderMissions(order = "hard") {
       ${renderStat('Reward', formattedRewards)}
     `;
 
+    const rarity = DIFFICULTIES[item.difficulty];
+    const rarityClass = rarity ? rarity.class : '';
+    const rarityName = rarity ? rarity.name : '';
+    const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
+
     return `
       <div class="card">
         <img src="images/${slug}.jpg" alt="${item.title}" 
              style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                     box-shadow:0 0 10px rgba(255,255,255,0.2);">
-        <div class="rarity ${DIFFICULTIES[item.difficulty].class}">${DIFFICULTIES[item.difficulty].name}</div>
-        ${content}
+        ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
+        ${visibleContent}
+        <div class="card-details collapsed" id="${cardId}-details">
+          ${hiddenContent}
+        </div>
+        <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">
+          Show more...
+        </button>
       </div>`;
   });
 

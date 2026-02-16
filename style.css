@@ -485,10 +485,9 @@ h2 {
 }
 
 .low-end-toggle.active {
-    background: #0f0;
-    border-color: #0f0;
+    background: #fff;
+    border-color: #fff;
     color: #000;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
 .low-end-toggle .toggle-icon {
@@ -822,9 +821,19 @@ body.low-end-mode .sort-btn {
 .updates-wrapper {
     width: 100%;
     max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.updates-box {
+@media (max-width: 768px) {
+    .updates-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.updates-box,
+.countdown-box {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -833,23 +842,76 @@ body.low-end-mode .sort-btn {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.updates-header {
+.updates-header,
+.countdown-header {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
 }
 
-.updates-icon {
+.updates-icon,
+.countdown-icon {
     font-size: 1rem;
 }
 
-.updates-title {
+.updates-title,
+.countdown-title {
     font-size: 1rem;
     letter-spacing: 0.1em;
     color: white;
     margin: 0;
     text-shadow: 0 0 5px white;
+}
+
+.countdown-display {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.countdown-time {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14;
+    letter-spacing: 0.1em;
+}
+
+.countdown-finished {
+    font-size: 1.8rem;
+    color: #ff3333;
+    text-shadow: 0 0 15px #ff3333;
+    animation: pulse-glow 2s infinite;
+}
+
+.countdown-units {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-number {
+    font-family: 'Courier New', monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
 }
 
 .updates-list {

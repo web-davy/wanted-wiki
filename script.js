@@ -54,6 +54,22 @@ if (savedSize !== null && sizeSlider) {
     root.style.setProperty('--card-min-size', `${DEFAULT_SIZE}px`);
 }
 
+const skipGarageIntro = localStorage.getItem("skipGarageIntro") === "true";
+
+if (skipGarageIntro && garageIntro) {
+    garageIntro.remove();
+    audioUnlocked = true;
+    if (bgm) {
+        bgm.volume = volumeSlider ? volumeSlider.value : DEFAULT_VOLUME;
+        bgm.play().catch(() => { });
+    }
+    document.querySelector('.tab[data-page="home"]')?.classList.add("active");
+    setTimeout(() => {
+        loadPage("home");
+        preloadImages();
+    }, 100);
+}
+
 function preloadImages() {
     const imageSet = new Set();
     const datasets = [
@@ -102,6 +118,11 @@ function preloadImages() {
 window.openGarage = () => {
     if (audioUnlocked) return;
     audioUnlocked = true;
+
+    const neverShowCheckbox = document.getElementById("never-show-garage");
+    if (neverShowCheckbox && neverShowCheckbox.checked) {
+        localStorage.setItem("skipGarageIntro", "true");
+    }
 
     const scanner = document.querySelector('.hand-scanner');
     if (scanner) {
@@ -185,6 +206,131 @@ function initMobileMenu() {
             nav.classList.remove('active');
         }
     });
+}
+
+
+function initSettingsPanel() {
+    const settingsToggle = document.getElementById('settings-toggle');
+    const settingsPanel = document.getElementById('settings-panel');
+    const settingsClose = document.getElementById('settings-close');
+    const settingsBackdrop = document.querySelector('.settings-backdrop');
+    const resetGarageBtn = document.getElementById('reset-garage-intro');
+
+    if (!settingsToggle || !settingsPanel) return;
+
+    function openSettings() {
+        settingsPanel.classList.add('active');
+        if (audioUnlocked && clickSfx) {
+            clickSfx.currentTime = 0;
+            clickSfx.volume = 0.3;
+            clickSfx.play().catch(() => { });
+        }
+    }
+
+    function closeSettings() {
+        settingsPanel.classList.remove('active');
+        if (audioUnlocked && clickSfx) {
+            clickSfx.currentTime = 0;
+            clickSfx.volume = 0.3;
+            clickSfx.play().catch(() => { });
+        }
+    }
+
+    settingsToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openSettings();
+    });
+
+    if (settingsClose) {
+        settingsClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeSettings();
+        });
+    }
+
+    if (settingsBackdrop) {
+        settingsBackdrop.addEventListener('click', () => {
+            closeSettings();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && settingsPanel.classList.contains('active')) {
+            closeSettings();
+        }
+    });
+
+    if (resetGarageBtn) {
+        resetGarageBtn.addEventListener('click', () => {
+            localStorage.removeItem('skipGarageIntro');
+
+            if (audioUnlocked && clickSfx) {
+                clickSfx.currentTime = 0;
+                clickSfx.volume = 0.5;
+                clickSfx.play().catch(() => { });
+            }
+
+            resetGarageBtn.style.background = '#fff';
+            resetGarageBtn.style.borderColor = '#fff';
+            resetGarageBtn.style.color = '#000';
+            resetGarageBtn.innerHTML = '<span class="reset-icon">✓</span><span>Garage Intro Reset!</span>';
+
+            setTimeout(() => {
+                resetGarageBtn.style.background = '';
+                resetGarageBtn.style.borderColor = '';
+                resetGarageBtn.style.color = '';
+                resetGarageBtn.innerHTML = '<span class="reset-icon">↻</span><span>Reset Garage Intro</span>';
+            }, 2000);
+        });
+    }
+}
+
+
+function initCountdownTimer() {
+    const countdownDisplay = document.getElementById('countdown-display');
+    if (!countdownDisplay) return;
+
+    const targetDate = window.COUNTDOWN_TARGET || new Date('2026-02-20T17:00:00Z');
+
+    function updateCountdown() {
+        const now = new Date();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining <= 0) {
+            countdownDisplay.innerHTML = '<div class="countdown-time countdown-finished">UPDATE NOW!</div>';
+            return;
+        }
+
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        countdownDisplay.innerHTML = `
+            <div class="countdown-units">
+                <div class="countdown-unit">
+                    <div class="countdown-number">${days.toString().padStart(2, '0')}</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number">${hours.toString().padStart(2, '0')}</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number">${minutes.toString().padStart(2, '0')}</div>
+                    <div class="countdown-label">Mins</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number">${seconds.toString().padStart(2, '0')}</div>
+                    <div class="countdown-label">Secs</div>
+                </div>
+            </div>
+        `;
+
+        setTimeout(updateCountdown, 1000);
+    }
+
+    updateCountdown();
 }
 
 
@@ -411,6 +557,10 @@ function loadPage(page) {
 
     container.innerHTML = content;
 
+    if (page === "home" && typeof initCountdownTimer === "function") {
+        initCountdownTimer();
+    }
+
     const cards = container.querySelectorAll('.card');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -612,6 +762,7 @@ function renderSearchItem(item) {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof initMobileMenu === 'function') initMobileMenu();
+    if (typeof initSettingsPanel === 'function') initSettingsPanel();
     if (typeof initHeaderResize === 'function') initHeaderResize();
 
     const bgm = document.getElementById('bgm');

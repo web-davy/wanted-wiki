@@ -20,6 +20,14 @@
     <link rel="preload" as="image" href="images/background.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
+    <script>
+        if (localStorage.getItem("skipGarageIntro") === "true") {
+            var hideGarageStyle = document.createElement("style");
+            hideGarageStyle.textContent = "#garage-intro { display: none !important; }";
+            document.head.appendChild(hideGarageStyle);
+        }
+    </script>
+
     <style>
         .garage-intro::after {
             content: "";
@@ -197,6 +205,285 @@
                 opacity: 0.1;
             }
         }
+
+        .never-show-container {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #333;
+        }
+
+        .never-show-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 9px;
+            color: #888;
+            transition: color 0.3s;
+            user-select: none;
+        }
+
+        .never-show-label:hover {
+            color: #0f0;
+        }
+
+        .never-show-checkbox {
+            width: 12px;
+            height: 12px;
+            cursor: pointer;
+            accent-color: #0f0;
+        }
+
+        .checkbox-text {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .settings-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: #000;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.2s ease;
+            border-radius: 0;
+        }
+
+        .settings-toggle:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .settings-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .settings-panel.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .settings-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .settings-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            background: #000;
+            border: 1px solid #fff;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .settings-panel.active .settings-content {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .settings-header {
+            padding: 20px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .settings-header h2 {
+            margin: 0;
+            font-family: monospace;
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+
+        .settings-close {
+            background: transparent;
+            border: 1px solid #444;
+            color: #fff;
+            font-size: 24px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            line-height: 1;
+            padding: 0;
+        }
+
+        .settings-close:hover {
+            border-color: #fff;
+            background: #fff;
+            color: #000;
+            transform: rotate(90deg);
+        }
+
+        .settings-body {
+            padding: 20px;
+        }
+
+        .setting-item {
+            margin-bottom: 25px;
+        }
+
+        .setting-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .setting-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-family: monospace;
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .setting-icon {
+            font-size: 18px;
+            text-shadow: 0 0 5px #fff;
+        }
+
+        .setting-slider {
+            width: 100%;
+            height: 6px;
+            background: #222;
+            border: 1px solid #444;
+            outline: none;
+            cursor: pointer;
+            accent-color: #fff;
+        }
+
+        .setting-item-toggle {
+            display: block;
+        }
+
+        .setting-item-toggle .setting-label {
+            margin-bottom: 0;
+        }
+
+        .setting-toggle-btn {
+            width: 100%;
+            position: static;
+            margin: 0;
+            padding: 12px;
+            background: #000;
+            border: 1px solid #444;
+            color: #fff;
+            font-family: monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .setting-toggle-btn:hover {
+            border-color: #fff;
+            background: #fff;
+            color: #000;
+        }
+
+        .setting-toggle-btn.active {
+            background: #fff;
+            border-color: #fff;
+            color: #000;
+        }
+
+        .toggle-text {
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toggle-icon {
+            text-shadow: 0 0 5px currentColor;
+        }
+
+        .reset-garage-btn {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            border: 1px solid #444;
+            color: #fff;
+            font-family: monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .reset-garage-btn:hover {
+            border-color: #fff;
+            background: #fff;
+            color: #000;
+        }
+
+        .reset-icon {
+            font-size: 16px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            text-shadow: 0 0 5px currentColor;
+        }
+
+        .reset-garage-btn:hover .reset-icon {
+            transform: rotate(360deg);
+        }
+
+        @media (max-width: 768px) {
+            .settings-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 18px;
+            }
+
+            .settings-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .settings-header h2 {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -217,6 +504,12 @@
                 <div class="status-dot"></div>
                 <div class="status-dot"></div>
                 <div class="status-dot"></div>
+            </div>
+            <div class="never-show-container">
+                <label class="never-show-label">
+                    <input type="checkbox" id="never-show-garage" class="never-show-checkbox">
+                    <span class="checkbox-text">Never show again</span>
+                </label>
             </div>
         </div>
 
@@ -255,19 +548,53 @@
                 <div class="search-container">
                     <input type="text" id="search-input" class="search-input" placeholder="Search archive...">
                 </div>
-                <div class="volume-control">
-                    <input type="range" id="bgm-volume" min="0" max="1" step="0.01" value="0.4">
-                </div>
-                <div class="volume-control size-slider-control">
-                    <input type="range" id="card-size-slider" min="150" max="400" step="10" value="200">
-                </div>
-                <button id="low-end-toggle" class="low-end-toggle" title="Toggle Low-End Mode">
-                    <span class="toggle-icon">⚡︎</span>
-                </button>
             </div>
         </nav>
         <div class="header-resize-handle"></div>
     </header>
+
+    <button id="settings-toggle" class="settings-toggle" title="Settings">
+        <span class="settings-icon">⚙</span>
+    </button>
+
+    <div id="settings-panel" class="settings-panel">
+        <div class="settings-backdrop"></div>
+        <div class="settings-content">
+            <div class="settings-header">
+                <h2>SETTINGS</h2>
+                <button id="settings-close" class="settings-close" title="Close">&times;</button>
+            </div>
+            <div class="settings-body">
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span class="setting-icon">♪</span>
+                        <span class="setting-name">Music Volume</span>
+                    </label>
+                    <input type="range" id="bgm-volume" class="setting-slider" min="0" max="1" step="0.01" value="0.4">
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span class="setting-icon">▤</span>
+                        <span class="setting-name">Card Size</span>
+                    </label>
+                    <input type="range" id="card-size-slider" class="setting-slider" min="150" max="400" step="10"
+                        value="200">
+                </div>
+                <div class="setting-item setting-item-toggle">
+                    <button id="low-end-toggle" class="low-end-toggle setting-toggle-btn" title="Toggle Low-End Mode">
+                        <span class="toggle-icon">⚡</span>
+                        <span class="toggle-text">Low-End Mode</span>
+                    </button>
+                </div>
+                <div class="setting-item setting-item-button">
+                    <button id="reset-garage-intro" class="reset-garage-btn">
+                        <span class="reset-icon">↻</span>
+                        <span>Reset Garage Intro</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="page-wrapper">
         <main class="content">

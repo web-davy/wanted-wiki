@@ -1604,3 +1604,54 @@ body.left-sidebar-mode .search-input {
 body.left-sidebar-mode .search-input:focus {
     width: 85%;
 }
+
+.card-details {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 1;
+}
+
+.card-details.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.card-details-toggle {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: #888;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-details-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--fg);
+    border-color: var(--fg);
+}
+
+body.always-show-more .card-details {
+    max-height: 1000px !important;
+    opacity: 1 !important;
+    padding: 6px 0 !important;
+}
+
+body.always-show-more .card-details.collapsed {
+    max-height: 1000px !important;
+    opacity: 1 !important;
+    padding: 6px 0 !important;
+}
+
+body.always-show-more .card-details-toggle {
+    display: none;
+}

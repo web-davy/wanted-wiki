@@ -82,6 +82,28 @@ if (sidebarToggle) {
     });
 }
 
+const alwaysShowMoreToggle = document.getElementById("always-show-more-toggle");
+const savedAlwaysShowMore = localStorage.getItem("alwaysShowMore") === "true";
+
+if (savedAlwaysShowMore) {
+    document.body.classList.add("always-show-more");
+    if (alwaysShowMoreToggle) alwaysShowMoreToggle.classList.add("active");
+}
+
+if (alwaysShowMoreToggle) {
+    alwaysShowMoreToggle.addEventListener("click", () => {
+        const isAlwaysShowMore = document.body.classList.toggle("always-show-more");
+        alwaysShowMoreToggle.classList.toggle("active", isAlwaysShowMore);
+        localStorage.setItem("alwaysShowMore", isAlwaysShowMore);
+
+        if (audioUnlocked && clickSfx) {
+            clickSfx.currentTime = 0;
+            clickSfx.volume = 0.3;
+            clickSfx.play().catch(() => { });
+        }
+    });
+}
+
 if (volumeSlider) volumeSlider.value = DEFAULT_VOLUME;
 if (bgm) bgm.volume = DEFAULT_VOLUME;
 

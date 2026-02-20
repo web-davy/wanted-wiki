@@ -7,8 +7,10 @@ const CONTRIBUTORS_DATA = {
         { name: "", title: "" }
     ],
     contributors: [
+        { name: "Justin", contributions: "In-Game Cash" },
         { name: "RedRuby", contributions: "Vault Images" },
         { name: "MeepMeep", contributions: "Vault Cash" },
-        { name: "", contributions: "" }
+        { name: "Borgaboo", contributions: "FN-FAL and Deagle Images" }
     ]
 };
+

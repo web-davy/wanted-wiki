@@ -12,4 +12,3 @@ const CONTRIBUTORS_DATA = {
         { name: "", contributions: "" }
     ]
 };
-

@@ -10,7 +10,7 @@ const CONTRIBUTORS_DATA = {
         { name: "Justin", contributions: "In-Game Cash" },
         { name: "RedRuby", contributions: "Vault Images" },
         { name: "MeepMeep", contributions: "Vault Cash" },
-        { name: "Borgaboo", contributions: "FN-FAL and Deagle Images" }
+        { name: "Baboo", contributions: "Deagle and FN-FAL Images" },
+        { name: "Ravozir", contributions: "Profesional Robber" }
     ]
 };
-

@@ -249,6 +249,28 @@ const MISSIONS_DATA = [
     rewards: ["200 Syndicate XP", "$5,000"]
   },
   {
+    id: "2-smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "I have buyers waiting, so let's do some more business together.\n\nUp the volume to $100,000 this time. The more we flip, the more you're paid.",
+    howToComplete: "Sell $100,000 worth of loot to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$7,500"]
+  },
+  {
+    id: "3-smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 3",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "You've proven yourself capable, now let's really get serious. $300,000 of volume this time.\n\nMy buyers are waiting - don't disappoint me.",
+    howToComplete: "Sell $300,000 worth of loot to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["450 Syndicate XP", "$10,000"]
+  },
+  {
     id: "data-disk",
     showMoreButton: true,
     title: "Data Disk",
@@ -269,6 +291,17 @@ const MISSIONS_DATA = [
     difficulty: "MEDIUM",
     missionType: "Sir. B",
     rewards: ["300 Syndicate XP", "$6,000"]
+  },
+  {
+    id: "the-files",
+    showMoreButton: true,
+    title: "The Files",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "The government, the military - they've all been paid off. There's a black corporation conducting dangerous experiments: apparently they're who is responsible for the mysterious Anomaly.\n\nInfiltrate the Military Base and recover any documents you find on this. We need to figure out what's going on.",
+    howToComplete: "Find 3 Secret Files at the Military Base and bring them to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["450 Syndicate XP", "$7,500"]
   },
   {
     id: "1-syndicate-dogs",
@@ -299,9 +332,75 @@ const MISSIONS_DATA = [
     location: "Criminal Outpost – Talk to Sir.B",
     description: "Expensive rings fetch a high price on the black market. A client of mine wants some samples - could be a lucrative deal for both of us.",
     howToComplete: "Bring Sir B 2 Sapphire Rings, 2 Ruby Rings, and 2 Emerald Rings.",
-    difficulty: "MEDIUM",
+    difficulty: "EASY",
     missionType: "Sir. B",
     rewards: ["250 Syndicate XP", "$5,000"]
+  },
+  {
+    id: "1-gem-collector",
+    showMoreButton: true,
+    title: "Gem Collector - Part 1",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 10 Sapphires and bring them to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["400 Syndicate XP", "$8,000"]
+  },
+  {
+    id: "lights-out",
+    showMoreButton: true,
+    title: "Lights Out",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "We don't want the cops sniffing around our business, so let's hit them where it hurts.\n\nDisable three of their cruisers - that'll keep them from from interfering with our operations. Don't get caught.",
+    howToComplete: "Disable 3 police cars and escape 3 stars with $2,500 bounty.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$5,000"]
+  },
+  {
+    id: "1-crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 1",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "The Syndicate is growing - it's time you become a squad leader.\n\nRecruit others to the cause. We're going to need all the help we can get.",
+    howToComplete: "Make a crew with a friend and play with them, then return to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["350 Syndicate XP", "$15,000"]
+  },
+  {
+    id: "2-crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "You're part of a brotherhood now. From now on until the day you die, wherever you are, every member of the Syndicate is your brother.\n\nPeople die. The Syndicate lives forever.",
+    howToComplete: "Play with your crew for 60 minutes, rob 2 Vaults, and crack 1 Jewelry Vault.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["500 Syndicate XP", "$25,000"]
+  },
+  {
+    id: "1-oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 1",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "Every so often, a huge shipment of valuables comes through the the bank. We have intel that a shipment of gold is coming through soon. Break in, get the gold, and get out.",
+    howToComplete: "Rob 3 Gold Vaults.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$15,000"]
+  },
+  {
+    id: "payday",
+    showMoreButton: true,
+    title: "Payday",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "You're becoming a real pro... Let's try a bigger heist.\n\nSteal $50,000 from the bank vault. Don't forget about the gold.",
+    howToComplete: "Steal $50,000 from the bank vault and find 15 Gold Bars.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["500 Syndicate XP", "$12,000"]
   },
 
   // Bert Missions

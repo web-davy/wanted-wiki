@@ -266,7 +266,7 @@ const MISSIONS_DATA = [
     location: "Criminal Outpost – Talk to Sir.B",
     description: "You've proven yourself capable, now let's really get serious. $300,000 of volume this time.\n\nMy buyers are waiting - don't disappoint me.",
     howToComplete: "Sell $300,000 worth of loot to Sir B.",
-    difficulty: "MEDIUM",
+    difficulty: "EASY",
     missionType: "Sir. B",
     rewards: ["450 Syndicate XP", "$10,000"]
   },
@@ -401,6 +401,61 @@ const MISSIONS_DATA = [
     difficulty: "EASY",
     missionType: "Sir. B",
     rewards: ["500 Syndicate XP", "$12,000"]
+  },
+  {
+    id: "front-toward-enemy",
+    showMoreButton: true,
+    title: "Front Toward Enemy",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "We're going to need some more firepower. Establish a broker contract for the purchase of RPG-7 rocket launchers.",
+    howToComplete: "Unlock the RPG-7 contract and turn in to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$20,000"]
+  },
+  {
+    id: "hidden-cargo",
+    showMoreButton: true,
+    title: "Hidden Cargo",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "We received word that the government has a special order on the manifest at the cargo port sometime today.\n\nGo to the port and find what they're hiding.",
+    howToComplete: "Collect 1 Secret Files from a cargo crate and turn in to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,000 Syndicate XP", "$50,000"]
+  },
+  {
+    id: "2-weapons-cache",
+    showMoreButton: true,
+    title: "Weapons Cache - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "The Syndicate has hidden various weapons caches around the Oasis, but we've lost track of some of them.\n\nIf you can locate them, I'll be in your debt.",
+    howToComplete: "Locate the AUG A1, Locate the AWM, and Locate the RPG-7.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["500 Syndicate XP", "$10,000"]
+  },
+  {
+    id: "most-wanted",
+    showMoreButton: true,
+    title: "Most Wanted",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "Word of your exploits has gotten around - Captain Bert has put an APB out on you.\n\nDon't let them catch you. Escape and lay low for awhile.",
+    howToComplete: "Escape 5 stars with $20,000 bounty.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$9,000"]
+  },
+  {
+    id: "1-upgrade",
+    showMoreButton: true,
+    title: "Upgrade - Part 1",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "I have a client that wants to buy tech, but only in bulk. All or nothing.\n\nSell me a bag containing 2 PearBooks, 2 PearPads, and 2 Flash Drives.",
+    howToComplete: "Sell a bag containing 2 PearBooks, 2 PearPads, and 2 Flash Drives to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["400 Syndicate XP", "$6,000"]
   },
 
   // Bert Missions

@@ -9,8 +9,9 @@ function renderWeapons(sort = "high") {
   function makeCards(data) {
     return data.map(item => {
       const slug = generateSlug(item.name);
+      const hasAttachments = item.attachments && Object.keys(item.attachments).length > 0;
       const visibleContent = `
-        ${renderPriceTag(item.contractPrice)}
+        ${hasAttachments ? '' : renderPriceTag(item.contractPrice)}
         <h3>${item.name}</h3>
       `;
       const hiddenContent = `
@@ -24,8 +25,7 @@ function renderWeapons(sort = "high") {
         ${item.stats.reload ? renderStat('Reload', `${item.stats.reload}s`) : ''}
         ${renderStat('Accuracy', item.stats.accuracy)}
       `;
-      const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
-      return renderExpandableCardJPG(item, null, visibleContent, hiddenContent, 'weapons');
+      return renderWeaponCard(item, null, visibleContent, hiddenContent, 'weapons');
     });
   }
 

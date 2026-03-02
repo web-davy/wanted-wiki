@@ -11,6 +11,18 @@ const GUNS_DATA = [
       firerate: 400,
       reload: 2.5,
       accuracy: "±0.40m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Reflex Sight", price: 12500 },
+        { name: "Pistol Holo", price: 20000 }
+      ],
+      Muzzle: [
+        { name: "Pistol Suppressor", price: 16000 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -25,6 +37,28 @@ const GUNS_DATA = [
       firerate: 66,
       reload: 0.8,
       accuracy: "±3.50m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ],
+      Ammunition: [
+        { name: "Rubber Slugs", price: 25000 },
+        { name: "12 Gauge Slugs", price: 35000 },
+        { name: "Super Magnum", price: 750000 }
+      ]
     }
   },
   {
@@ -39,6 +73,14 @@ const GUNS_DATA = [
       firerate: 1500,
       reload: 2.2,
       accuracy: "±0.90m @ 50m"
+    },
+    attachments: {
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Stock: [
+        { name: "Uzi Stock", price: 35000 }
+      ]
     }
   },
   {
@@ -53,13 +95,30 @@ const GUNS_DATA = [
       firerate: 750,
       reload: 2,
       accuracy: "±1.70m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
     name: "Benelli M1014",
     showMoreButton: true,
     reBuyPrice: 6000,
-    contractPrice: 550000,
+    contractPrice: 40000,
     stats: {
       ammo: "30/270",
       ammoPrice: "120$ for 6",
@@ -67,6 +126,26 @@ const GUNS_DATA = [
       firerate: 230,
       reload: 0.8,
       accuracy: "±3.50m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ],
+      Ammunition: [
+        { name: "12 Gauge Slugs", price: 35000 }
+      ]
     }
   },
   {
@@ -81,6 +160,17 @@ const GUNS_DATA = [
       firerate: 681,
       reload: 3,
       accuracy: "±0.90m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "AUG Scope", price: 100000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -95,6 +185,23 @@ const GUNS_DATA = [
       firerate: 750,
       reload: 2,
       accuracy: "±1.50m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -109,13 +216,28 @@ const GUNS_DATA = [
       firerate: 750,
       reload: 3,
       accuracy: "±0.50m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Pistol Holo", price: 12500 },
+        { name: "Reflex Sight", price: 20000 }
+      ],
+      Muzzle: [
+        { name: "Pistol Suppressor", price: 16000 }
+      ],
+      Stock: [
+        { name: "Pistol Stock", price: 70000 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
     name: "M4A1",
     showMoreButton: true,
     reBuyPrice: 8000,
-    contractPrice: 1600000,
+    contractPrice: 1400000,
     stats: {
       ammo: "30/420",
       ammoPrice: "600$ for 30",
@@ -123,6 +245,23 @@ const GUNS_DATA = [
       firerate: 1000,
       reload: 2,
       accuracy: "±0.90m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -137,6 +276,23 @@ const GUNS_DATA = [
       firerate: 750,
       reload: 3,
       accuracy: "±1.10m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "N/A", price: 0 }
+      ],
+      Muzzle: [
+        { name: "N/A", price: 0 }
+      ],
+      Underbarrel: [
+        { name: "N/A", price: 0 }
+      ],
+      Tactical: [
+        { name: "N/A", price: 0 }
+      ],
+      Ammunition: [
+        { name: "N/A", price: 0 }
+      ]
     }
   },
   {
@@ -151,6 +307,28 @@ const GUNS_DATA = [
       firerate: 200,
       reload: 0.8,
       accuracy: "±3.50m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ],
+      Ammunition: [
+        { name: "Rubber Slugs", price: 25000 },
+        { name: "12 Gauge Slugs", price: 35000 },
+        { name: "Dragon's Breath", price: 750000 }
+      ]
     }
   },
   {
@@ -165,6 +343,24 @@ const GUNS_DATA = [
       firerate: 30,
       reload: 3.5,
       accuracy: "±0.40m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 },
+        { name: "Rifle Scope", price: 1250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -179,6 +375,23 @@ const GUNS_DATA = [
       firerate: 1200,
       reload: 2,
       accuracy: "±1.30m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -193,6 +406,23 @@ const GUNS_DATA = [
       firerate: 750,
       reload: 5,
       accuracy: "±4.40m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 },
+        { name: "Rifle Scope", price: 1250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "M60 Bipod", price: 5000 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -208,6 +438,23 @@ const GUNS_DATA = [
       firerate: 705,
       reload: 2.5,
       accuracy: "±1.10m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   },
   {
@@ -223,6 +470,18 @@ const GUNS_DATA = [
       firerate: 200,
       reload: 3,
       accuracy: "±0.70m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Pistol Holo", price: 12500 },
+        { name: "Reflex Sight", price: 20000 }
+      ],
+      Muzzle: [
+        { name: "Pistol Suppressor", price: 16000 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
     }
   }
 ];
@@ -246,7 +505,7 @@ const EXPLOSIVES_DATA = [
     name: "RPG-7",
     showMoreButton: true,
     reBuyPrice: 10000,
-    contractPrice: 1250000,
+    contractPrice: 1200000,
     stats: {
       ammo: "1/6",
       ammoPrice: "2000$ for 1",
@@ -267,7 +526,7 @@ const TOOLS_DATA = [
     stats: {
       ammo: "1/8",
       ammoPrice: "300$ for 1",
-      damage: "100-100-100",
+      damage: "10 per 0.2s",
     }
   },
   {
@@ -280,5 +539,4 @@ const TOOLS_DATA = [
       ammoPrice: "15000$ for 1",
     }
   }
-
 ];

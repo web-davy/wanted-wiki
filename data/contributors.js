@@ -11,8 +11,9 @@ const CONTRIBUTORS_DATA = {
         { name: "RedRuby", contributions: "Vault Images" },
         { name: "MeepMeep", contributions: "Vault Cash" },
         { name: "Baboo", contributions: "Deagle and FN-FAL Images" },
-        { name: "Skeelee", contributions: "Profesional in getting me in trouble 😭" },
-        { name: "Ravozir", contributions: "Profesional Jewerly Store Addict" }
+        { name: "Skeelee", contributions: "Spider-Ham" },
+        { name: "Ravozir", contributions: "Jewerly Store Addict" }
     ]
 };
+
 

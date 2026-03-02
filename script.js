@@ -370,7 +370,7 @@ function initCountdownTimer() {
     const countdownDisplay = document.getElementById('countdown-display');
     if (!countdownDisplay) return;
 
-    const targetDate = window.COUNTDOWN_TARGET || new Date('2026-02-20T17:00:00Z');
+    const targetDate = window.COUNTDOWN_TARGET || new Date('2026-03-06T17:00:00Z');
 
     function updateCountdown() {
         const now = new Date();

@@ -100,3 +100,80 @@ function renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent,
 function renderExpandableCardPNG(item, rarityKey, visibleContent, hiddenContent, folder = null) {
   return renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, 'png', folder);
 }
+
+function toggleWeaponMods(btn) {
+  const card = btn.closest('.card');
+  if (!card) return;
+  const front = card.querySelector('.weapon-front-content');
+  const overlay = card.querySelector('.weapon-mods-overlay');
+  if (front && overlay) {
+    front.classList.toggle('hidden');
+    overlay.classList.toggle('active');
+  }
+}
+
+function toggleAttachmentCategory(headerEl) {
+  const group = headerEl.closest('.attachment-group');
+  if (group) group.classList.toggle('open');
+}
+
+function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder = 'weapons') {
+  const name = item.name || item.title || "";
+  const slug = item.id || generateSlug(name);
+  const hasAttachments = item.attachments && Object.keys(item.attachments).length > 0;
+  const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
+  const showButton = item.showMoreButton !== false && hiddenContent && hiddenContent.trim() !== '';
+  const imagePath = folder ? `images/${folder}/${slug}.jpg` : `images/${slug}.jpg`;
+
+  if (!hasAttachments) {
+    return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
+  }
+
+  const categoryIcons = { Optics: '', Muzzle: '', Underbarrel: '', Tactical: '', Ammunition: '', Stock: '' };
+
+  const attachmentsHTML = Object.entries(item.attachments).map(([category, items]) => {
+    if (!items || items.length === 0) return '';
+    const itemsHTML = items.map(att => `
+      <div class="weapon-mod-item">
+        <span class="weapon-mod-name">${att.name}</span>
+        <span class="weapon-mod-price">${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</span>
+      </div>
+    `).join('');
+    const icon = categoryIcons[category] || '●';
+    return `
+      <div class="attachment-group">
+        <div class="attachment-category-header" onclick="toggleAttachmentCategory(this)">
+          <span>${category}</span>
+          <span class="attachment-chevron">▼</span>
+        </div>
+        <div class="attachment-category-items">
+          ${itemsHTML}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+  <div class="card">
+    ${renderPriceTag(item.contractPrice)}
+    <button class="weapon-mods-button" onclick="toggleWeaponMods(this)">ATTACHMENTS</button>
+    <img src="${imagePath}" alt="${name}"
+         style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
+                box-shadow:0 0 10px rgba(255,255,255,0.2);">
+    <div class="weapon-front-content">
+      ${visibleContent}
+      ${showButton ? `
+      <div class="card-details collapsed" id="${cardId}-details">
+        ${hiddenContent}
+      </div>
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">Show more...</button>
+      ` : ''}
+    </div>
+    <div class="weapon-mods-overlay">
+      <div class="weapon-mods-title">${name} ATTACHMENTS</div>
+      <div class="weapon-mods-list">
+        ${attachmentsHTML}
+      </div>
+    </div>
+  </div>`;
+}

@@ -18,476 +18,31 @@
     <meta name="theme-color" content="#000001">
 
     <link rel="preload" as="image" href="images/background.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/garage.css">
+    <link rel="stylesheet" href="css/settings.css">
     <script>
         if (localStorage.getItem("skipGarageIntro") === "true") {
-            var hideGarageStyle = document.createElement("style");
-            hideGarageStyle.textContent = "#garage-intro { display: none !important; }";
-            document.head.appendChild(hideGarageStyle);
+            document.write('<style>#garage-intro { display: none !important; }</style>');
         }
     </script>
-
-    <style>
-        .garage-intro::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 0%;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent);
-            transition: height 1s ease-out;
-            pointer-events: none;
-        }
-
-        .garage-intro.open::after {
-            height: 70%;
-            opacity: 0;
-            transition: height 0.8s ease-out, opacity 1.2s ease-out;
-        }
-
-        .door-panel {
-            filter: brightness(0.8) contrast(1.2);
-        }
-
-        .panel4::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 25px;
-            background: repeating-linear-gradient(45deg,
-                    #f1c40f,
-                    #f1c40f 15px,
-                    #000 15px,
-                    #000 30px);
-            border-top: 3px solid #000;
-        }
-
-        .biometric-terminal {
-            position: absolute;
-            z-index: 100001;
-            right: 10%;
-            top: 55%;
-            transform: translateY(-50%);
-            padding: 15px;
-            background: #0a0a0a;
-            border: 2px solid #333;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 1), inset 0 0 15px rgba(0, 255, 0, 0.05);
-        }
-
-        .hand-scanner {
-            width: 90px;
-            height: 130px;
-            background: #111;
-            border: 1px solid #444;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .hand-scanner:hover {
-            border-color: #0f0;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-        }
-
-        .hand-scanner .fingerprint {
-            width: 60px;
-            height: auto;
-            filter: sepia(1) saturate(10) hue-rotate(90deg) opacity(0.3);
-            transition: 0.3s;
-            user-select: none;
-        }
-
-        .hand-scanner:hover .fingerprint {
-            filter: sepia(1) saturate(10) hue-rotate(90deg) opacity(0.8);
-            animation: pulse 1.5s infinite;
-        }
-
-        .hand-scanner .scan-line {
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to bottom, transparent, #0f0, transparent);
-            box-shadow: 0 0 15px #0f0;
-            top: -10%;
-            left: 0;
-            animation: scan-vertical 2s linear infinite;
-        }
-
-        .terminal-header {
-            font-size: 8px;
-            color: #0f0;
-            margin-bottom: 8px;
-            text-align: center;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-family: monospace;
-        }
-
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4px;
-            margin-top: 10px;
-        }
-
-        .status-dot {
-            height: 4px;
-            background: #300;
-            border-radius: 2px;
-        }
-
-        .hand-scanner:hover~.status-grid .status-dot {
-            background: #030;
-            animation: status-blink 0.5s infinite alternate;
-        }
-
-        .click-prompt {
-            position: absolute;
-            bottom: 40px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #444;
-            text-shadow: 0 0 10px #fff;
-            animation: slow-blink 3s infinite;
-        }
-
-        @keyframes scan-vertical {
-            0% {
-                top: -10%;
-            }
-
-            100% {
-                top: 110%;
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-        }
-
-        @keyframes status-blink {
-            0% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0.3;
-            }
-        }
-
-        @keyframes slow-blink {
-
-            0%,
-            100% {
-                opacity: 0.8;
-            }
-
-            50% {
-                opacity: 0.1;
-            }
-        }
-
-        .never-show-container {
-            margin-top: 12px;
-            padding-top: 8px;
-            border-top: 1px solid #333;
-        }
-
-        .never-show-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-family: monospace;
-            font-size: 9px;
-            color: #888;
-            transition: color 0.3s;
-            user-select: none;
-        }
-
-        .never-show-label:hover {
-            color: #0f0;
-        }
-
-        .never-show-checkbox {
-            width: 12px;
-            height: 12px;
-            cursor: pointer;
-            accent-color: #0f0;
-        }
-
-        .checkbox-text {
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .settings-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            background: #000;
-            border: 1px solid #444;
-            color: #fff;
-            padding: 10px 14px;
-            cursor: pointer;
-            font-size: 20px;
-            transition: all 0.2s ease;
-            border-radius: 0;
-        }
-
-        .settings-toggle:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-            transform: rotate(90deg);
-        }
-
-        .settings-panel {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 100000;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .settings-panel.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .settings-backdrop {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-        }
-
-        .settings-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            background: #000;
-            border: 1px solid #fff;
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            transition: transform 0.2s ease;
-        }
-
-        .settings-panel.active .settings-content {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .settings-header {
-            padding: 20px;
-            border-bottom: 1px solid #444;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .settings-header h2 {
-            margin: 0;
-            font-family: monospace;
-            color: #fff;
-            font-size: 20px;
-            letter-spacing: 3px;
-        }
-
-        .settings-close {
-            background: transparent;
-            border: 1px solid #444;
-            color: #fff;
-            font-size: 24px;
-            width: 32px;
-            height: 32px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border-radius: 0;
-            line-height: 1;
-            padding: 0;
-        }
-
-        .settings-close:hover {
-            border-color: #fff;
-            background: #fff;
-            color: #000;
-            transform: rotate(90deg);
-        }
-
-        .settings-body {
-            padding: 20px;
-        }
-
-        .setting-item {
-            margin-bottom: 25px;
-        }
-
-        .setting-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .setting-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-family: monospace;
-            color: #fff;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .setting-icon {
-            font-size: 18px;
-            text-shadow: 0 0 5px #fff;
-        }
-
-        .setting-slider {
-            width: 100%;
-            height: 6px;
-            background: #222;
-            border: 1px solid #444;
-            outline: none;
-            cursor: pointer;
-            accent-color: #fff;
-        }
-
-        .setting-item-toggle {
-            display: block;
-        }
-
-        .setting-item-toggle .setting-label {
-            margin-bottom: 0;
-        }
-
-        .setting-toggle-btn {
-            width: 100%;
-            position: static;
-            margin: 0;
-            padding: 12px;
-            background: #000;
-            border: 1px solid #444;
-            color: #fff;
-            font-family: monospace;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .setting-toggle-btn:hover {
-            border-color: #fff;
-            background: #fff;
-            color: #000;
-        }
-
-        .setting-toggle-btn.active {
-            background: #fff;
-            border-color: #fff;
-            color: #000;
-        }
-
-        .toggle-text {
-            font-family: monospace;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .toggle-icon {
-            text-shadow: 0 0 5px currentColor;
-        }
-
-        .reset-garage-btn {
-            width: 100%;
-            padding: 12px;
-            background: #000;
-            border: 1px solid #444;
-            color: #fff;
-            font-family: monospace;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .reset-garage-btn:hover {
-            border-color: #fff;
-            background: #fff;
-            color: #000;
-        }
-
-        .reset-icon {
-            font-size: 16px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            text-shadow: 0 0 5px currentColor;
-        }
-
-        .reset-garage-btn:hover .reset-icon {
-            transform: rotate(360deg);
-        }
-
-        @media (max-width: 768px) {
-            .settings-toggle {
-                top: 15px;
-                right: 15px;
-                padding: 8px 12px;
-                font-size: 18px;
-            }
-
-            .settings-content {
-                width: 95%;
-                max-height: 90vh;
-            }
-
-            .settings-header h2 {
-                font-size: 16px;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <script>
+        (function () {
+            if (localStorage.getItem("sidebarMode") === "true") {
+                document.body.classList.add("left-sidebar-mode");
+                document.documentElement.classList.add("left-sidebar-mode");
+            }
+            if (localStorage.getItem("lowEndMode") === "true") {
+                document.body.classList.add("low-end-mode");
+            }
+            if (localStorage.getItem("alwaysShowMore") === "true") {
+                document.body.classList.add("always-show-more");
+            }
+        })();
+    </script>
     <div class="stripes"></div>
     <div class="scanlines"></div>
     <div class="static"></div>
@@ -624,6 +179,7 @@
     <audio id="sfx-hover" src="sounds/hover.mp3" preload="auto"></audio>
     <audio id="sfx-load" src="sounds/load.mp3" preload="auto"></audio>
 
+
     <script defer src="config.js"></script>
     <script defer src="data/atms&vaults.js"></script>
     <script defer src="data/contributors.js"></script>
@@ -644,7 +200,12 @@
     <script defer src="tabs/vehicles.js"></script>
     <script defer src="tabs/weapons.js"></script>
     <script defer src="tabs/home.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/settings.js"></script>
+    <script defer src="js/garage.js"></script>
+    <script defer src="js/visitor.js"></script>
+    <script defer src="js/search.js"></script>
+    <script defer src="js/app.js"></script>
 </body>
 
 

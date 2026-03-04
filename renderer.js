@@ -8,7 +8,7 @@ function renderCard(item, rarityKey, content, folder = null) {
 
   return `
     <div class="card">
-      <img src="${imagePath}" alt="${name}" 
+      <img src="${imagePath}" alt="${name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                   box-shadow:0 0 10px rgba(255,255,255,0.2);">
       ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
@@ -26,7 +26,7 @@ function renderCardJPG(item, rarityKey, content, folder = null) {
 
   return `
     <div class="card">
-      <img src="${imagePath}" alt="${name}" 
+      <img src="${imagePath}" alt="${name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                   box-shadow:0 0 10px rgba(255,255,255,0.2);">
       ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
@@ -77,7 +77,7 @@ function renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, ex
 
   return `
     <div class="card">
-      <img src="${imagePath}" alt="${item.name}" 
+      <img src="${imagePath}" alt="${item.name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
                   box-shadow:0 0 10px rgba(255,255,255,0.2);">
       ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
@@ -87,7 +87,7 @@ function renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, ex
         ${hiddenContent}
       </div>` : ''}
       ${showButton ? `
-      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">
         Show more...
       </button>` : ''}
     </div>`;
@@ -157,7 +157,7 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
   <div class="card">
     ${renderPriceTag(item.contractPrice)}
     <button class="weapon-mods-button" onclick="toggleWeaponMods(this)">ATTACHMENTS</button>
-    <img src="${imagePath}" alt="${name}"
+    <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
                 box-shadow:0 0 10px rgba(255,255,255,0.2);">
     <div class="weapon-front-content">
@@ -166,7 +166,7 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
       <div class="card-details collapsed" id="${cardId}-details">
         ${hiddenContent}
       </div>
-      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}')">Show more...</button>
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">Show more...</button>
       ` : ''}
     </div>
     <div class="weapon-mods-overlay">

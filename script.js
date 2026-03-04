@@ -943,34 +943,40 @@ async function trackVisit() {
     const NAMESPACE = 'wanted-wiki';
     const KEY = 'unique_visitors_v1';
 
-    // Using a CORS proxy to bypass cross-origin browser restrictions
-    const getCounterUrl = (action = '') => {
-        const targetUrl = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}${action}`;
-        return `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
+    const getUrl = (action = '') => `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}${action}`;
+
+    const fetchData = async (url) => {
+        try {
+            const directRes = await fetch(url);
+            if (directRes.ok) return await directRes.json();
+        } catch (e) {
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+            const proxyRes = await fetch(proxyUrl);
+            const proxyData = await proxyRes.json();
+            return JSON.parse(proxyData.contents);
+        }
+        return null;
     };
 
     try {
         const hasVisited = localStorage.getItem('wanted_wiki_visited_unique');
-        let response;
+        let data;
 
         if (!hasVisited) {
-            response = await fetch(getCounterUrl('/up'));
-            localStorage.setItem('wanted_wiki_visited_unique', 'true');
+            data = await fetchData(getUrl('/up'));
+            if (data) localStorage.setItem('wanted_wiki_visited_unique', 'true');
         } else {
-            response = await fetch(getCounterUrl());
+            data = await fetchData(getUrl());
         }
 
-        const data = await response.json();
         if (data && typeof data.count !== 'undefined') {
             visitorCountCached = data.count.toLocaleString();
             updateVisitorDisplay();
         }
 
-        // Start polling globally
         setInterval(async () => {
             try {
-                const res = await fetch(getCounterUrl());
-                const d = await res.json();
+                const d = await fetchData(getUrl());
                 if (d && typeof d.count !== 'undefined') {
                     visitorCountCached = d.count.toLocaleString();
                     updateVisitorDisplay();
@@ -978,7 +984,7 @@ async function trackVisit() {
             } catch (e) { }
         }, 30000);
     } catch (e) {
-        console.warn('Visitor tracking unavailable');
+        console.warn('Visitor tracking error:', e);
     }
 }
 

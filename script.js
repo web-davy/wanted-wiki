@@ -942,17 +942,22 @@ let visitorCountCached = "---";
 async function trackVisit() {
     const NAMESPACE = 'wanted-wiki';
     const KEY = 'unique_visitors_v1';
-    const BASE_URL = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}`;
+
+    // Using a CORS proxy to bypass cross-origin browser restrictions
+    const getCounterUrl = (action = '') => {
+        const targetUrl = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}${action}`;
+        return `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
+    };
 
     try {
         const hasVisited = localStorage.getItem('wanted_wiki_visited_unique');
         let response;
 
         if (!hasVisited) {
-            response = await fetch(`${BASE_URL}/up`);
+            response = await fetch(getCounterUrl('/up'));
             localStorage.setItem('wanted_wiki_visited_unique', 'true');
         } else {
-            response = await fetch(BASE_URL);
+            response = await fetch(getCounterUrl());
         }
 
         const data = await response.json();
@@ -964,7 +969,7 @@ async function trackVisit() {
         // Start polling globally
         setInterval(async () => {
             try {
-                const res = await fetch(BASE_URL);
+                const res = await fetch(getCounterUrl());
                 const d = await res.json();
                 if (d && typeof d.count !== 'undefined') {
                     visitorCountCached = d.count.toLocaleString();

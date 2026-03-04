@@ -1,6 +1,7 @@
 async function trackVisit(updateDisplayCallback) {
     const API_BASE = 'https://countapi.mileshilliard.com/api/v1';
     const KEY = 'wanted-wiki-unique-visitors';
+    const LOCAL_KEY = 'wanted_wiki_visited_v2';
 
     async function fetchCount(endpoint) {
         try {
@@ -14,14 +15,18 @@ async function trackVisit(updateDisplayCallback) {
     }
 
     try {
-        const hasVisited = localStorage.getItem('wanted_wiki_visited_unique');
+        const hasVisited = localStorage.getItem(LOCAL_KEY);
         let count;
 
         if (!hasVisited) {
             count = await fetchCount('hit');
-            if (count !== null) localStorage.setItem('wanted_wiki_visited_unique', 'true');
+            if (count !== null) localStorage.setItem(LOCAL_KEY, 'true');
         } else {
             count = await fetchCount('get');
+            if (count === null) {
+                count = await fetchCount('hit');
+                if (count !== null) localStorage.setItem(LOCAL_KEY, 'true');
+            }
         }
 
         if (count !== null) {

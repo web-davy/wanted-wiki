@@ -16,7 +16,7 @@ function renderValuables(sort = "high") {
 
   const categories = [
     { type: 'Gems', label: 'Gems' },
-    { type: 'Jewerly', label: 'Jewerly' },
+    { type: 'Jewelry', label: 'Jewelry' },
     { type: 'Electronics', label: 'Electronics' },
     { type: 'Miscellaneous', label: 'Miscellaneous' },
     { type: 'Mission Items', label: 'Mission Items' }
@@ -31,7 +31,10 @@ function renderValuables(sort = "high") {
         <h3>${item.name}</h3>
         ${renderStat('Price', formatPrice(item.price))}
       `;
-      const hiddenContent = renderStatSuffix('Weight', item.weight, ' kg');
+      const hiddenContent = `
+        ${renderStatSuffix('Weight', item.weight, ' kg')}
+        ${renderStat('Location', item.location)}
+      `;
       return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'valuables');
     });
 
@@ -55,7 +58,10 @@ function renderValuables(sort = "high") {
           <h3>${item.name}</h3>
           ${renderStat('Price', formatPrice(item.price))}
         `;
-    const hiddenContent = renderStatSuffix('Weight', item.weight, ' kg');
+    const hiddenContent = `
+          ${renderStatSuffix('Weight', item.weight, ' kg')}
+          ${renderStat('Location', item.location)}
+        `;
     return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'valuables');
   }).join('')}
     </div>

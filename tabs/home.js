@@ -43,6 +43,7 @@ function renderHome() {
                 <p class="hero-text">
                     Welcome to our wiki,<br>
                     here we log all the info about the game Wanted.
+                    This wiki is not affiliated with Roblox or the game Wanted or its studio DevvGames.
                 </p>
                 <div class="play-btn-container">
                     <a href="https://www.roblox.com/games/14438406081/Wanted" target="_blank" class="play-btn">PLAY HERE</a>

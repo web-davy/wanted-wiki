@@ -56,6 +56,13 @@ const GUN_CRATES_DATA = [
     location: "Harris Airport"
   },
   {
+    id: "aug-a1-crate",
+    name: "AUG A1 Crate",
+    gun: "Default AUG A1",
+    cooldown: "3 Days",
+    location: "Crystal Club & Resort"
+  },
+  {
     id: "benelli-m1014-crate",
     showMoreButton: true,
     name: "Benelli M1014 Crate",

@@ -28,6 +28,21 @@ const VEHICLES_DATA = [
     }
   },
   {
+    name: "Blade",
+    showMoreButton: true,
+    type: "ground",
+    requirements: "Syndicate Level 5",
+    repairPrice: 3000,
+    contractPrice: 0,
+    stats: {
+      topSpeed: 57,
+      acceleration: 44,
+      braking: 64,
+      maxHealth: "200 - 100 - 100",
+      armor: 0
+    }
+  },
+  {
     name: "Ranger",
     showMoreButton: true,
     type: "ground",
@@ -112,21 +127,6 @@ const VEHICLES_DATA = [
     }
   },
   {
-    name: "Blade",
-    showMoreButton: true,
-    type: "ground",
-    requirements: "Syndicate Level 5",
-    repairPrice: 3000,
-    contractPrice: 0,
-    stats: {
-      topSpeed: 57,
-      acceleration: 44,
-      braking: 64,
-      maxHealth: "1000 - 300 - 400",
-      armor: 5
-    }
-  },
-  {
     name: "Pulse 477",
     showMoreButton: true,
     type: "ground",
@@ -196,6 +196,4 @@ const VEHICLES_DATA = [
       armor: 1
     }
   }
-
 ];
-

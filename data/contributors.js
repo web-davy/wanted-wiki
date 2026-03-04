@@ -14,5 +14,3 @@ const CONTRIBUTORS_DATA = {
         { name: "Ravozir", contributions: "Blade Info" }
     ]
 };
-
-

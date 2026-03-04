@@ -122,8 +122,8 @@ const VEHICLES_DATA = [
       topSpeed: 57,
       acceleration: 44,
       braking: 64,
-      maxHealth: "200 - 100 - 100",
-      armor: 0
+      maxHealth: "1000 - 300 - 400",
+      armor: 5
     }
   },
   {
@@ -198,3 +198,4 @@ const VEHICLES_DATA = [
   }
 
 ];
+

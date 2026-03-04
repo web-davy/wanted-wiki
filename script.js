@@ -701,8 +701,9 @@ function loadPage(page) {
 
     container.innerHTML = content;
 
-    if (page === "home" && typeof initCountdownTimer === "function") {
-        initCountdownTimer();
+    if (page === "home") {
+        if (typeof initCountdownTimer === "function") initCountdownTimer();
+        if (typeof updateVisitorDisplay === "function") updateVisitorDisplay();
     }
 
     const cards = container.querySelectorAll('.card');
@@ -929,19 +930,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof initSettingsPanel === 'function') initSettingsPanel();
     if (typeof initHeaderResize === 'function') initHeaderResize();
 
-    const bgm = document.getElementById('bgm');
-    const volumeSlider = document.getElementById('bgm-volume');
     if (bgm && volumeSlider) {
         bgm.volume = volumeSlider.value;
     }
 
-    initVisitorCounter();
+    trackVisit();
 });
 
-async function initVisitorCounter() {
-    const counterValue = document.getElementById('visitor-count');
-    if (!counterValue) return;
+let visitorCountCached = "---";
 
+async function trackVisit() {
     const NAMESPACE = 'wanted-wiki';
     const KEY = 'unique_visitors_v1';
     const BASE_URL = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}`;
@@ -950,36 +948,39 @@ async function initVisitorCounter() {
         const hasVisited = localStorage.getItem('wanted_wiki_visited_unique');
         let response;
 
-        // If not visited before, increment the counter
         if (!hasVisited) {
             response = await fetch(`${BASE_URL}/up`);
             localStorage.setItem('wanted_wiki_visited_unique', 'true');
         } else {
-            // If already visited, just get the current count
             response = await fetch(BASE_URL);
         }
 
         const data = await response.json();
         if (data && typeof data.count !== 'undefined') {
-            counterValue.textContent = data.count.toLocaleString();
+            visitorCountCached = data.count.toLocaleString();
+            updateVisitorDisplay();
         }
 
-        // Poll for updates every 30 seconds to keep it "live"
+        // Start polling globally
         setInterval(async () => {
             try {
                 const res = await fetch(BASE_URL);
                 const d = await res.json();
                 if (d && typeof d.count !== 'undefined') {
-                    counterValue.textContent = d.count.toLocaleString();
+                    visitorCountCached = d.count.toLocaleString();
+                    updateVisitorDisplay();
                 }
-            } catch (e) {
-                // Silently handle polling errors
-            }
+            } catch (e) { }
         }, 30000);
-
     } catch (e) {
-        console.warn('Visitor counter unavailable');
-        counterValue.textContent = '---';
+        console.warn('Visitor tracking unavailable');
+    }
+}
+
+function updateVisitorDisplay() {
+    const counterValue = document.getElementById('visitor-count');
+    if (counterValue) {
+        counterValue.textContent = visitorCountCached;
     }
 }
 

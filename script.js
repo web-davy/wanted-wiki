@@ -934,7 +934,54 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bgm && volumeSlider) {
         bgm.volume = volumeSlider.value;
     }
+
+    initVisitorCounter();
 });
+
+async function initVisitorCounter() {
+    const counterValue = document.getElementById('visitor-count');
+    if (!counterValue) return;
+
+    const NAMESPACE = 'wanted-wiki';
+    const KEY = 'unique_visitors_v1';
+    const BASE_URL = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}`;
+
+    try {
+        const hasVisited = localStorage.getItem('wanted_wiki_visited_unique');
+        let response;
+
+        // If not visited before, increment the counter
+        if (!hasVisited) {
+            response = await fetch(`${BASE_URL}/up`);
+            localStorage.setItem('wanted_wiki_visited_unique', 'true');
+        } else {
+            // If already visited, just get the current count
+            response = await fetch(BASE_URL);
+        }
+
+        const data = await response.json();
+        if (data && typeof data.count !== 'undefined') {
+            counterValue.textContent = data.count.toLocaleString();
+        }
+
+        // Poll for updates every 30 seconds to keep it "live"
+        setInterval(async () => {
+            try {
+                const res = await fetch(BASE_URL);
+                const d = await res.json();
+                if (d && typeof d.count !== 'undefined') {
+                    counterValue.textContent = d.count.toLocaleString();
+                }
+            } catch (e) {
+                // Silently handle polling errors
+            }
+        }, 30000);
+
+    } catch (e) {
+        console.warn('Visitor counter unavailable');
+        counterValue.textContent = '---';
+    }
+}
 
 function toggleCardDetails(cardId) {
     const detailsElement = document.getElementById(`${cardId}-details`);

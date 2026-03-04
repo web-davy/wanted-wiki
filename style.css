@@ -546,6 +546,68 @@ body.low-end-mode .scanlines {
     border-color: var(--fg);
 }
 
+.views-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.views-wrapper {
+    width: 100%;
+    max-width: 440px;
+}
+
+.views-box {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.views-box:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.views-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.views-title {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: white;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.views-count {
+    font-family: 'Courier New', monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #39ff14;
+    text-shadow: 0 0 15px #39ff14;
+    letter-spacing: 0.1em;
+}
+
+.views-subtext {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+}
+
 body.low-end-mode::before,
 body.low-end-mode::after {
     display: none;

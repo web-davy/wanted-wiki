@@ -101,6 +101,20 @@ function renderHome() {
                     </div>
                 </div>
             </div>
+
+            <div class="views-section">
+                <div class="views-wrapper">
+                    <div class="views-box">
+                        <div class="views-header">
+                            <h3 class="views-title">VIEWERS COUNT</h3>
+                        </div>
+                        <div class="views-display">
+                            <div id="visitor-count" class="views-count">---</div>
+                            <div class="views-subtext">UNIQUE IDENTITIES RECORDED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     `;
 }

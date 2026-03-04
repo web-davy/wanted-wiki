@@ -116,7 +116,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     requirements: "Syndicate Level 5",
-    repairPrice: 15000,
+    repairPrice: 3000,
     contractPrice: 0,
     stats: {
       topSpeed: 57,
@@ -196,4 +196,5 @@ const VEHICLES_DATA = [
       armor: 1
     }
   }
+
 ];

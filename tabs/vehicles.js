@@ -1,4 +1,4 @@
-function renderVehicles(sort = "low") {
+function renderVehicles(sort = "high") {
   const renderStatSuffix = (label, val, suffix) => val !== undefined && val !== null ? renderStat(label, `${val}${suffix}`) : '';
 
   const groundVehicles = VEHICLES_DATA.filter(v => v.type === 'ground');
@@ -86,4 +86,5 @@ function renderVehicles(sort = "low") {
 
 function sortVehicles(order) {
   document.getElementById("page-container").innerHTML = renderVehicles(order);
+
 }

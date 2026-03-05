@@ -167,6 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const startAudioOnInteraction = () => {
+        if (window.audioUnlocked && bgm && bgm.paused) {
+            bgm.play().catch(() => { });
+        }
+    };
+    window.addEventListener('mousedown', startAudioOnInteraction, true);
+    window.addEventListener('keydown', startAudioOnInteraction, true);
+
 
     const lowEndToggle = document.getElementById("low-end-toggle");
     if (lowEndToggle) {

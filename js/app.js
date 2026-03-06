@@ -39,6 +39,7 @@ function loadPage(page) {
                 case "missions": content = typeof renderMissions === "function" ? renderMissions() : ""; break;
                 case "npcs": content = typeof renderNPCs === "function" ? renderNPCs() : ""; break;
                 case "locations": content = typeof renderLocations === "function" ? renderLocations() : ""; break;
+                case "store": content = typeof renderStore === "function" ? renderStore() : ""; break;
                 default: content = `<h2>Work In Progress</h2><p>Under construction...</p>`;
             }
         } catch (e) {

@@ -4,6 +4,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 0,
+    repairPriceGarage: 0,
     contractPrice: 0,
     stats: {
       topSpeed: 38,
@@ -18,6 +19,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 600,
+    repairPriceGarage: 180,
     contractPrice: 0,
     stats: {
       topSpeed: 32,
@@ -33,13 +35,14 @@ const VEHICLES_DATA = [
     type: "ground",
     requirements: "Syndicate Level 5",
     repairPrice: 3000,
+    repairPriceGarage: 900,
     contractPrice: 0,
     stats: {
       topSpeed: 57,
       acceleration: 44,
       braking: 64,
-      maxHealth: "200 - 100 - 100",
-      armor: 0
+      maxHealth: "1,000 - 300 - 400",
+      armor: 5
     }
   },
   {
@@ -47,6 +50,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 600,
+    repairPriceGarage: 180,
     contractPrice: 24000,
     stats: {
       topSpeed: 29,
@@ -61,6 +65,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 600,
+    repairPriceGarage: 180,
     contractPrice: 65000,
     stats: {
       topSpeed: 41,
@@ -75,6 +80,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 600,
+    repairPriceGarage: 180,
     contractPrice: 120000,
     stats: {
       topSpeed: 35,
@@ -89,6 +95,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 600,
+    repairPriceGarage: 180,
     contractPrice: 185000,
     stats: {
       topSpeed: 47,
@@ -103,6 +110,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 1500,
+    repairPriceGarage: 450,
     contractPrice: 240000,
     stats: {
       topSpeed: 42,
@@ -117,6 +125,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 3000,
+    repairPriceGarage: 900,
     contractPrice: 750000,
     stats: {
       topSpeed: 55,
@@ -127,10 +136,26 @@ const VEHICLES_DATA = [
     }
   },
   {
+    name: "Zoro",
+    showMoreButton: true,
+    type: "ground",
+    repairPrice: 3000,
+    repairPriceGarage: 900,
+    contractPrice: 900000,
+    stats: {
+      topSpeed: 50,
+      acceleration: 40,
+      braking: 53,
+      maxHealth: "400 - 100 - 100",
+      armor: 2
+    }
+  },
+  {
     name: "Pulse 477",
     showMoreButton: true,
     type: "ground",
     repairPrice: 3000,
+    repairPriceGarage: 900,
     contractPrice: 2400000,
     stats: {
       topSpeed: 62,
@@ -145,12 +170,28 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 7500,
+    repairPriceGarage: 2250,
     contractPrice: 3500000,
     stats: {
       topSpeed: 65,
-      acceleration: 53,
+      acceleration: 57,
       braking: 71,
       maxHealth: "200 - 100 - 100",
+      armor: 0
+    }
+  },
+  {
+    name: "Zorvello",
+    showMoreButton: true,
+    type: "ground",
+    repairPrice: 7500,
+    repairPriceGarage: 2250,
+    contractPrice: 5000000,
+    stats: {
+      topSpeed: 70,
+      acceleration: 64,
+      braking: 75,
+      maxHealth: "250 - 100 - 100",
       armor: 0
     }
   },
@@ -159,7 +200,8 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "ground",
     repairPrice: 7500,
-    contractPrice: 4800000,
+    repairPriceGarage: 2250,
+    contractPrice: 6200000,
     stats: {
       topSpeed: 77,
       acceleration: 67,
@@ -173,6 +215,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "flying",
     repairPrice: 0,
+    repairPriceGarage: 0,
     contractPrice: 1400000,
     stats: {
       topSpeed: 58,
@@ -187,6 +230,7 @@ const VEHICLES_DATA = [
     showMoreButton: true,
     type: "flying",
     repairPrice: 0,
+    repairPriceGarage: 0,
     contractPrice: 3200000,
     stats: {
       topSpeed: 100,

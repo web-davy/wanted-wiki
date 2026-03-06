@@ -1,0 +1,20 @@
+const STORE_DATA = [
+    { name: "Restore Lost Items", robuxPrice: 19 },
+    { name: "+30 Bag Boost: 1 Hour", robuxPrice: 999 },
+    { name: "+20 Bag Boost: 1 Hour", robuxPrice: 699 },
+    { name: "+15 Bag Boost: 1 Hour", robuxPrice: 399 },
+    { name: "+5 Bag Boost: 12 Hours", robuxPrice: 19 },
+    { name: "+10 Bag Boost: 1 Hour", robuxPrice: 99 },
+    { name: "Zoro + Zorvello", robuxPrice: 2499 },
+    { name: "Daily Printer", robuxPrice: 36 },
+    { name: "x10 Money Printer", robuxPrice: 675 },
+    { name: "Money Printer", robuxPrice: 75 },
+    { name: "Weapon Pack", robuxPrice: 199 },
+    { name: "Mini-Vec Pack", robuxPrice: 649 },
+    { name: "Vanguard Pack", robuxPrice: 1899 },
+    { name: "Get 2,500,000 Cash", robuxPrice: 3999 },
+    { name: "Get 1,000,000 Cash", robuxPrice: 1749 },
+    { name: "Get 400,000 Cash", robuxPrice: 749 },
+    { name: "Get 200,000 Cash", robuxPrice: 379 },
+    { name: "Get 50,000 Cash", robuxPrice: 99 }
+];

@@ -2,7 +2,7 @@ const ATMS_DATA = [
   { name: "Green ATM", showMoreButton: false, rarity: "COMMON", rarityPercent: "53.89%", price: 200 },
   { name: "Blue ATM", showMoreButton: false, rarity: "COMMON", rarityPercent: "26.94%", price: 300 },
   { name: "Purple ATM", showMoreButton: false, rarity: "UNCOMMON", rarityPercent: "16.16%", price: 500 },
-  { name: "Red ATM", showMoreButton: false, rarity: "EPIC", rarityPercent: "2.16%", price: 750 },
+  { name: "Red ATM", showMoreButton: false, rarity: "EPIC", rarityPercent: "2.16%", price: 650 },
   { name: "Gold ATM", showMoreButton: false, rarity: "MYTHIC", rarityPercent: "0.539%", price: 10000 },
   { name: "Diamond ATM", showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "0.269%", price: 100000 },
   { name: "Void ATM", showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "0.027%", price: 500000 }

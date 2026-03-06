@@ -27,7 +27,7 @@ function renderSearchItem(item) {
     if (item.searchType === 'weapon') {
         content = `
                 ${renderPriceTag(item.contractPrice)}
-                <h3>${item.name}</h3>
+                <h3>${item.highlightedName || item.name}</h3>
                 ${renderStat('Requirements', item.requirements)}
                 ${renderStat('Re-buy', formatPrice(item.reBuyPrice))}
                 ${renderStat('Ammo', item.stats.ammo)}
@@ -60,7 +60,7 @@ function renderSearchItem(item) {
 
         content = `
                 ${renderPriceTag(item.contractPrice)}
-                <h3>${item.name}</h3>
+                <h3>${item.highlightedName || item.name}</h3>
                 ${renderStat('Requirements', item.requirements)}
                 ${renderStat('Repair (fully destroyed)', formatPrice(item.repairPrice))}
                 ${statsHtml}
@@ -68,20 +68,20 @@ function renderSearchItem(item) {
         rarityKey = null;
     } else if (item.searchType === 'atm') {
         content = `
-              <h3>${item.name}</h3>
+              <h3>${item.highlightedName || item.name}</h3>
               ${renderStat('Cash', formatPrice(item.price))}
             `;
         rarityKey = item.rarity;
     } else if (item.searchType === 'valuable') {
         content = `
-              <h3>${item.name}</h3>
+              <h3>${item.highlightedName || item.name}</h3>
               ${renderStat('Price', formatPrice(item.price))}
               ${renderStat('Weight', `${item.weight} kg`)}
             `;
         rarityKey = item.rarity;
     } else if (item.searchType === 'guncrate') {
         content = `
-                <h3>${item.name}</h3>
+                <h3>${item.highlightedName || item.name}</h3>
                 ${renderStat('Contains', item.gun)}
                 ${renderStat('Cooldown', item.cooldown)}
                 ${renderStat('Location', item.location)}
@@ -90,7 +90,7 @@ function renderSearchItem(item) {
     } else if (item.searchType === 'mission') {
         slug = item.id;
         content = `
-                <h3>${item.title}</h3>
+                <h3>${item.highlightedName || item.title}</h3>
                 ${renderStat('Category', item.missionType)}
                 ${renderStat('Location', item.location)}
                 ${renderStat('Description', item.description)}
@@ -100,14 +100,14 @@ function renderSearchItem(item) {
         rarityKey = item.difficulty;
     } else if (item.searchType === 'npc') {
         content = `
-                <h3>${item.name}</h3>
+                <h3>${item.highlightedName || item.name}</h3>
                 ${renderStat('Location', item.location)}
                 ${renderStat('Description', item.description)}
             `;
         rarityKey = item.team;
     } else if (item.searchType === 'location') {
         content = `
-                <h3>${item.name}</h3>
+                <h3>${item.highlightedName || item.name}</h3>
                 ${renderStat('Description', item.description)}
              `;
         rarityKey = null;
@@ -164,7 +164,7 @@ function performSearch(query, container, renderSearchItem) {
     const cardsHTML = results.map(item => {
         const regex = new RegExp(`(${query})`, 'gi');
         const highlightedName = item.name.replace(regex, '<span class="highlight">$1</span>');
-        const itemWithHighlight = { ...item, name: highlightedName };
+        const itemWithHighlight = { ...item, highlightedName: highlightedName };
         return renderSearchItem(itemWithHighlight);
     }).join('');
 

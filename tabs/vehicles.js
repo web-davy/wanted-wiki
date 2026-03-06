@@ -22,6 +22,7 @@ function renderVehicles(sort = "high") {
     const hiddenContent = `
       ${renderStat('Requirements', item.requirements)}
       ${renderStat('Repair', formatPrice(item.repairPrice))}
+      ${renderStat('Garage Repair', formatPrice(item.repairPriceGarage))}
       ${renderStatSuffix('Top Speed', item.stats.topSpeed, '%')}
       ${renderStatSuffix('Acceleration', item.stats.acceleration, '%')}
       ${renderStatSuffix('Braking', item.stats.braking, '%')}
@@ -44,6 +45,7 @@ function renderVehicles(sort = "high") {
     const hiddenContent = `
       ${renderStat('Requirements', item.requirements)}
       ${renderStat('Repair', formatPrice(item.repairPrice))}
+      ${renderStat('Garage Repair', formatPrice(item.repairPriceGarage))}
       ${renderStatSuffix('Top Speed', item.stats.topSpeed, '%')}
       ${renderStatSuffix('Handling', item.stats.handling, '%')}
       ${renderStatSuffix('Spool Time', item.stats.spoolTime, 's')}
@@ -86,5 +88,4 @@ function renderVehicles(sort = "high") {
 
 function sortVehicles(order) {
   document.getElementById("page-container").innerHTML = renderVehicles(order);
-
 }

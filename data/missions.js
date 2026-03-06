@@ -25,7 +25,7 @@ const MISSIONS_DATA = [
 
   // Erik Missions
   {
-    id: "1-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 1",
     location: "Criminal Outpost – Talk to Erik",
@@ -36,7 +36,7 @@ const MISSIONS_DATA = [
     rewards: ["$20,000"]
   },
   {
-    id: "2-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 2",
     location: "Criminal Outpost – Talk to Erik",
@@ -47,7 +47,7 @@ const MISSIONS_DATA = [
     rewards: ["$25,000"]
   },
   {
-    id: "3-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 3",
     location: "Criminal Outpost – Talk to Erik",
@@ -58,7 +58,7 @@ const MISSIONS_DATA = [
     rewards: ["$40,000"]
   },
   {
-    id: "4-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 4",
     location: "Criminal Outpost – Talk to Erik",
@@ -69,7 +69,7 @@ const MISSIONS_DATA = [
     rewards: ["$60,000"]
   },
   {
-    id: "5-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 5",
     location: "Criminal Outpost – Talk to Erik",
@@ -80,7 +80,7 @@ const MISSIONS_DATA = [
     rewards: ["$75,000"]
   },
   {
-    id: "6-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 6",
     location: "Criminal Outpost – Talk to Erik",
@@ -91,7 +91,7 @@ const MISSIONS_DATA = [
     rewards: ["$85,000"]
   },
   {
-    id: "7-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 7",
     location: "Criminal Outpost – Talk to Erik",
@@ -102,7 +102,7 @@ const MISSIONS_DATA = [
     rewards: ["$100,000"]
   },
   {
-    id: "8-artisan",
+    id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 8",
     location: "Criminal Outpost – Talk to Erik",
@@ -150,7 +150,7 @@ const MISSIONS_DATA = [
     rewards: ["$25,000"]
   },
   {
-    id: "1-fence",
+    id: "fence",
     showMoreButton: true,
     title: "Fence - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -161,7 +161,7 @@ const MISSIONS_DATA = [
     rewards: ["100 Syndicate XP", "$3,000"]
   },
   {
-    id: "2-fence",
+    id: "fence",
     showMoreButton: true,
     title: "Fence - Part 2",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -183,7 +183,7 @@ const MISSIONS_DATA = [
     rewards: ["100 Syndicate XP", "$3,000"]
   },
   {
-    id: "1-teller",
+    id: "teller",
     showMoreButton: true,
     title: "Teller - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -194,7 +194,7 @@ const MISSIONS_DATA = [
     rewards: ["150 Syndicate XP", "$6,000"]
   },
   {
-    id: "2-teller",
+    id: "teller",
     showMoreButton: true,
     title: "Teller - Part 2",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -205,7 +205,7 @@ const MISSIONS_DATA = [
     rewards: ["300 Syndicate XP", "$15,000"]
   },
   {
-    id: "1-weapons-cache",
+    id: "weapons-cache",
     showMoreButton: true,
     title: "Weapons Cache - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -216,7 +216,7 @@ const MISSIONS_DATA = [
     rewards: ["300 Syndicate XP", "$5,000"]
   },
   {
-    id: "1-contraband",
+    id: "contraband",
     showMoreButton: true,
     title: "Contraband - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -227,7 +227,18 @@ const MISSIONS_DATA = [
     rewards: ["400 Syndicate XP", "$10,000"]
   },
   {
-    id: "1-lockpicker",
+    id: "contraband",
+    showMoreButton: true,
+    title: "Contraband - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "We have some clients looking to procure powerful firearms. Ghost guns only, no serial numbers, nothing store bought.\n\nWhen you find them, sell them to Rod at the port. He'll facilitate the transaction.",
+    howToComplete: "Sell 1 found Glock 18c, 1 found Benelli M1014, and 1 found SPAS-12 to Rod at the port.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["650 Syndicate XP", "$15,000"]
+  },
+  {
+    id: "lockpicker",
     showMoreButton: true,
     title: "Lockpicker - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -238,7 +249,18 @@ const MISSIONS_DATA = [
     rewards: ["200 Syndicate XP", "$8,000"]
   },
   {
-    id: "1-smuggler",
+    id: "lockpicker",
+    showMoreButton: true,
+    title: "Lockpicker - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "Every safe can be cracked, it just depends how skilled you are.\n\nThose luxury homes were more lucrative than I'd realized. Rob 30 more house safes and see what you find.",
+    howToComplete: "Rob 20 House Safes.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$20,000"]
+  },
+  {
+    id: "smuggler",
     showMoreButton: true,
     title: "Smuggler - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -249,7 +271,7 @@ const MISSIONS_DATA = [
     rewards: ["200 Syndicate XP", "$5,000"]
   },
   {
-    id: "2-smuggler",
+    id: "smuggler",
     showMoreButton: true,
     title: "Smuggler - Part 2",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -260,7 +282,7 @@ const MISSIONS_DATA = [
     rewards: ["300 Syndicate XP", "$7,500"]
   },
   {
-    id: "3-smuggler",
+    id: "smuggler",
     showMoreButton: true,
     title: "Smuggler - Part 3",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -304,7 +326,7 @@ const MISSIONS_DATA = [
     rewards: ["450 Syndicate XP", "$7,500"]
   },
   {
-    id: "1-syndicate-dogs",
+    id: "syndicate-dogs",
     showMoreButton: true,
     title: "Syndicate Dogs - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -315,7 +337,7 @@ const MISSIONS_DATA = [
     rewards: ["200 Syndicate XP", "$5,000"]
   },
   {
-    id: "2-syndicate-dogs",
+    id: "syndicate-dogs",
     showMoreButton: true,
     title: "Syndicate Dogs - Part 2",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -326,7 +348,7 @@ const MISSIONS_DATA = [
     rewards: ["350 Syndicate XP", "$10,000"]
   },
   {
-    id: "1-ring-collector",
+    id: "ring-collector",
     showMoreButton: true,
     title: "Ring Collector - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -337,15 +359,26 @@ const MISSIONS_DATA = [
     rewards: ["250 Syndicate XP", "$5,000"]
   },
   {
-    id: "1-gem-collector",
+    id: "gem-collector",
     showMoreButton: true,
     title: "Gem Collector - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
     description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
     howToComplete: "Find 10 Sapphires and bring them to Sir B.",
-    difficulty: "MEDIUM",
+    difficulty: "EASY",
     missionType: "Sir. B",
     rewards: ["400 Syndicate XP", "$8,000"]
+  },
+  {
+    id: "gem-collector",
+    showMoreButton: true,
+    title: "Gem Collector - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 6 Rubies and bring them to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["700 Syndicate XP", "$16,000"]
   },
   {
     id: "lights-out",
@@ -359,7 +392,7 @@ const MISSIONS_DATA = [
     rewards: ["300 Syndicate XP", "$5,000"]
   },
   {
-    id: "1-crime-squad",
+    id: "crime-squad",
     showMoreButton: true,
     title: "Crime Squad - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -370,7 +403,7 @@ const MISSIONS_DATA = [
     rewards: ["350 Syndicate XP", "$15,000"]
   },
   {
-    id: "2-crime-squad",
+    id: "crime-squad",
     showMoreButton: true,
     title: "Crime Squad - Part 2",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -381,7 +414,18 @@ const MISSIONS_DATA = [
     rewards: ["500 Syndicate XP", "$25,000"]
   },
   {
-    id: "1-oasis-eleven",
+    id: "crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 3",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "Your squad has been selected for a special operation. Hit the big ones: the bank and the jewelry store.",
+    howToComplete: "Play with your crew for 4 hours, Rob 6 Vaults, and Crack 3 Jewelry Vaults.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["900 Syndicate XP", "$40,000"]
+  },
+  {
+    id: "oasis-eleven",
     showMoreButton: true,
     title: "Oasis Eleven - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -425,7 +469,7 @@ const MISSIONS_DATA = [
     rewards: ["1,000 Syndicate XP", "$50,000"]
   },
   {
-    id: "2-weapons-cache",
+    id: "weapons-cache",
     showMoreButton: true,
     title: "Weapons Cache - Part 2",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -447,7 +491,7 @@ const MISSIONS_DATA = [
     rewards: ["600 Syndicate XP", "$9,000"]
   },
   {
-    id: "1-upgrade",
+    id: "upgrade",
     showMoreButton: true,
     title: "Upgrade - Part 1",
     location: "Criminal Outpost – Talk to Sir.B",
@@ -456,6 +500,17 @@ const MISSIONS_DATA = [
     difficulty: "EASY",
     missionType: "Sir. B",
     rewards: ["400 Syndicate XP", "$6,000"]
+  },
+  {
+    id: "upgrade",
+    showMoreButton: true,
+    title: "Upgrade - Part 2",
+    location: "Criminal Outpost – Talk to Sir.B",
+    description: "I have a client that wants to buy tech, but only in bulk. All or nothing.\n\nSell me a bag containing 2 GoldPads, 1 HDD, 1 PSU, and 1 GPU.",
+    howToComplete: "Sell a bag containing 2 GoldPads, 1 HDD, 1 PSU, and 1 GPU to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["700 Syndicate XP", "$10,000"]
   },
 
   // Bert Missions
@@ -495,7 +550,7 @@ const MISSIONS_DATA = [
     rewards: ["$25,000"]
   },
   {
-    id: "toy-drive",
+    id: "1-toy-drive",
     showMoreButton: true,
     title: "Toy Drive- Part 1",
     location: "Park – Talk to Santa",
@@ -506,7 +561,7 @@ const MISSIONS_DATA = [
     rewards: ["$60,000", "LED Reindeer Furniture"]
   },
   {
-    id: "toy-drive-2",
+    id: "2-toy-drive",
     showMoreButton: true,
     title: "Toy Drive - Part 2",
     location: "Park – Talk to Santa",
@@ -528,7 +583,7 @@ const MISSIONS_DATA = [
     rewards: ["$40,000", "Christmas 2025 Plate"]
   },
   {
-    id: "jingle-balls-2",
+    id: "jingle-balls",
     showMoreButton: true,
     title: "Jingle Balls - Part 2",
     location: "Park – Talk to Santa",

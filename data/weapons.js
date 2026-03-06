@@ -522,7 +522,7 @@ const TOOLS_DATA = [
     name: "Buzzsaw",
     showMoreButton: false,
     location: "Ofy's Value Pawn",
-    contractPrice: 5000,
+    contractPrice: 3000,
     stats: {
       ammo: "1/8",
       ammoPrice: "300$ for 1",
@@ -533,10 +533,10 @@ const TOOLS_DATA = [
     name: "Vault Cracker",
     showMoreButton: false,
     location: "Oasis City Port",
-    contractPrice: 15000,
+    contractPrice: 10000,
     stats: {
       ammo: "1/2",
-      ammoPrice: "15000$ for 1",
+      ammoPrice: "10000$ for 1",
     }
   }
 ];

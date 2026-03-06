@@ -41,9 +41,10 @@ function renderHome() {
                 <div class="hero-bg"></div>
                 <h1 class="hero-title">WANTED WIKI</h1>
                 <p class="hero-text">
-                    Welcome to our wiki,<br>
-                    here we log all the info about the game Wanted.
-                    This wiki is not affiliated with Roblox or the game Wanted or its studio DevvGames.
+                    Welcome to the ultimate <strong>Wanted Roblox Wiki</strong>.<br>
+                    Here we log all information about the Roblox game Wanted, including details on 
+                    weapons, vehicles, missions, ATMs, vaults, valuables, and NPCs. <br><br>
+                    <em>Note: This wiki is community-run and not affiliated with Roblox, the game Wanted, or DevvGames.</em>
                 </p>
                 <div class="play-btn-container">
                     <a href="https://www.roblox.com/games/14438406081/Wanted" target="_blank" class="play-btn">PLAY HERE</a>

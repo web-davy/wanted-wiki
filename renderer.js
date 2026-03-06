@@ -134,10 +134,7 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
   const attachmentsHTML = Object.entries(item.attachments).map(([category, items]) => {
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(att => `
-      <div class="weapon-mod-item">
-        <span class="weapon-mod-name">${att.name}</span>
-        <span class="weapon-mod-price">${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</span>
-      </div>
+      <p><strong>${att.name}:</strong> ${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</p>
     `).join('');
     const icon = categoryIcons[category] || '●';
     return `

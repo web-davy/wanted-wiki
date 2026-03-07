@@ -36,14 +36,25 @@
 .biometric-terminal {
     position: absolute;
     z-index: 100001;
-    right: 10%;
-    top: 55%;
-    transform: translateY(-50%);
-    padding: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
     background: #0a0a0a;
-    border: 2px solid #333;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 1), inset 0 0 15px rgba(0, 255, 0, 0.05);
+    border: 1px solid #0f0;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.1), inset 0 0 20px rgba(0, 255, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 200px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.garage-intro.open .biometric-terminal {
+    opacity: 0;
+    transform: translate(-50%, -60%);
 }
 
 .hand-scanner {
@@ -52,29 +63,29 @@
     background: #111;
     border: 1px solid #444;
     position: relative;
-    cursor: pointer;
+    cursor: default;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hand-scanner:hover {
+.hand-scanner.active {
     border-color: #0f0;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
 }
 
 .hand-scanner .fingerprint {
     width: 60px;
     height: auto;
     filter: sepia(1) saturate(10) hue-rotate(90deg) opacity(0.3);
-    transition: 0.3s;
+    transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     user-select: none;
 }
 
-.hand-scanner:hover .fingerprint {
-    filter: sepia(1) saturate(10) hue-rotate(90deg) opacity(0.8);
+.hand-scanner.active .fingerprint {
+    filter: sepia(1) saturate(15) hue-rotate(90deg) opacity(1);
     animation: pulse 1.5s infinite;
 }
 
@@ -112,7 +123,7 @@
     border-radius: 2px;
 }
 
-.hand-scanner:hover~.status-grid .status-dot {
+.hand-scanner.active~.status-grid .status-dot {
     background: #030;
     animation: status-blink 0.5s infinite alternate;
 }

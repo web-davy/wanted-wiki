@@ -190,41 +190,6 @@
     text-shadow: 0 0 5px currentColor;
 }
 
-.reset-garage-btn {
-    width: 100%;
-    padding: 12px;
-    background: #000;
-    border: 1px solid #444;
-    color: #fff;
-    font-family: monospace;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.reset-garage-btn:hover {
-    border-color: #fff;
-    background: #fff;
-    color: #000;
-}
-
-.reset-icon {
-    font-size: 16px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-    text-shadow: 0 0 5px currentColor;
-}
-
-.reset-garage-btn:hover .reset-icon {
-    transform: rotate(360deg);
-}
-
 @media (max-width: 768px) {
     .settings-toggle {
         top: 15px;

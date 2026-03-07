@@ -29,12 +29,6 @@ function initGarage(onOpen) {
             clickPrompt.style.transform = 'translateY(20px)';
         }
 
-        if (clickSfx) {
-            clickSfx.currentTime = 0;
-            clickSfx.volume = 0.5;
-            clickSfx.play().catch(() => { });
-        }
-
         setTimeout(() => {
             if (garageIntro) garageIntro.classList.add("open");
             if (onOpen) onOpen(false);

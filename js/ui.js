@@ -162,12 +162,6 @@ function initSidebarToggle(clickSfx) {
                     }
                 }
             }
-
-            if (window.audioUnlocked && clickSfx) {
-                clickSfx.currentTime = 0;
-                clickSfx.volume = 0.3;
-                clickSfx.play().catch(() => { });
-            }
         });
     }
 }

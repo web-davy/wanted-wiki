@@ -3,6 +3,7 @@ const container = document.getElementById("page-container");
 const bgm = document.getElementById("bgm");
 const loadSfx = document.getElementById("sfx-load");
 const clickSfx = document.getElementById("sfx-click");
+const hoverSfx = document.getElementById("sfx-hover");
 const volumeSlider = document.getElementById("bgm-volume");
 const sizeSlider = document.getElementById("card-size-slider");
 
@@ -90,12 +91,6 @@ function toggleCardDetails(cardId, btn) {
 
     const isCollapsed = detailsElement.classList.toggle('collapsed');
     button.textContent = isCollapsed ? 'Show more...' : 'Show less...';
-
-    if (window.audioUnlocked && clickSfx) {
-        clickSfx.currentTime = 0;
-        clickSfx.volume = 0.2;
-        clickSfx.play().catch(() => { });
-    }
 }
 
 
@@ -105,6 +100,65 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof initHeaderResize === 'function') initHeaderResize();
     if (typeof initSidebarToggle === 'function') initSidebarToggle(clickSfx);
     if (typeof initSearch === 'function') initSearch(container, window.renderSearchItem);
+
+
+    const initGlobalSounds = () => {
+        const interactiveSelectors = [
+            'button',
+            '.tab',
+            '.sort-btn',
+            '.card-details-toggle',
+            '.weapon-mods-button',
+            '.attachment-category-header',
+            '.settings-toggle',
+            '.settings-close',
+            '.reset-garage-btn',
+            '.low-end-toggle',
+            '.sidebar-toggle',
+            '.always-show-more-toggle',
+            '.hamburger',
+            '.hand-scanner',
+            '.settings-backdrop',
+            'a'
+        ].join(', ');
+
+        const resumeAudio = () => {
+            if (bgm && bgm.paused && window.audioUnlocked) {
+                bgm.play().catch(() => { });
+            }
+        };
+
+        document.addEventListener('click', (e) => {
+            resumeAudio();
+            const el = e.target.closest(interactiveSelectors);
+            if (el && window.audioUnlocked && clickSfx) {
+                clickSfx.currentTime = 0;
+                clickSfx.volume = 0.4;
+                clickSfx.play().catch(() => { });
+            }
+        }, true);
+
+        document.addEventListener('mouseover', (e) => {
+            const el = e.target.closest(interactiveSelectors);
+            if (el && window.audioUnlocked && hoverSfx) {
+                if (el.dataset.hovered === "true") return;
+                el.dataset.hovered = "true";
+
+                hoverSfx.currentTime = 0;
+                hoverSfx.volume = 0.2;
+                hoverSfx.play().catch(() => { });
+            }
+        }, true);
+
+        document.addEventListener('mouseout', (e) => {
+            const el = e.target.closest(interactiveSelectors);
+            if (el && !el.contains(e.relatedTarget)) {
+                el.dataset.hovered = "false";
+            }
+        }, true);
+    };
+
+    initGlobalSounds();
 
 
     if (typeof trackVisit === 'function') trackVisit(updateVisitorDisplay);

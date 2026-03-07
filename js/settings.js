@@ -7,22 +7,12 @@ function initSettingsPanel(clickSfx) {
 
     if (!settingsToggle || !settingsPanel) return;
 
-    const playClick = () => {
-        if (window.audioUnlocked && clickSfx) {
-            clickSfx.currentTime = 0;
-            clickSfx.volume = 0.3;
-            clickSfx.play().catch(() => { });
-        }
-    };
-
     const openSettings = () => {
         settingsPanel.classList.add('active');
-        playClick();
     };
 
     const closeSettings = () => {
         settingsPanel.classList.remove('active');
-        playClick();
     };
 
     settingsToggle.addEventListener('click', (e) => {
@@ -52,7 +42,6 @@ function initSettingsPanel(clickSfx) {
     if (resetGarageBtn) {
         resetGarageBtn.addEventListener('click', () => {
             localStorage.removeItem('skipGarageIntro');
-            playClick();
 
             resetGarageBtn.style.background = '#fff';
             resetGarageBtn.style.color = '#000';

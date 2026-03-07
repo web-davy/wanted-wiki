@@ -11,6 +11,7 @@ function renderStore(sort = "high") {
         const visibleContent = `
             <h3>${item.name}</h3>
             ${renderStat('Price', robuxPriceHtml)}
+            ${renderStat('Description', item.description)}
         `;
 
         const slug = generateSlug(item.name);

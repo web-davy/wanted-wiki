@@ -97,21 +97,27 @@ function initHeaderResize() {
         e.preventDefault();
     });
 
+    let animationFrameId = null;
     document.addEventListener('mousemove', (e) => {
         if (!isResizing) return;
-        if (isSidebarMode()) {
-            const deltaX = e.clientX - startX;
-            const newWidth = Math.max(MIN_WIDTH, Math.min(MAX_WIDTH, startWidth + deltaX));
-            header.style.width = newWidth + 'px';
-            updatePagePadding(newWidth, true);
-            updateSidebarScale(newWidth);
-        } else {
-            const deltaY = e.clientY - startY;
-            const newHeight = Math.max(100, Math.min(600, startHeight + deltaY));
-            header.style.height = newHeight + 'px';
-            updatePagePadding(newHeight, false);
-            updateScale(newHeight);
-        }
+        if (animationFrameId) return;
+
+        animationFrameId = requestAnimationFrame(() => {
+            if (isSidebarMode()) {
+                const deltaX = e.clientX - startX;
+                const newWidth = Math.max(MIN_WIDTH, Math.min(MAX_WIDTH, startWidth + deltaX));
+                header.style.width = newWidth + 'px';
+                updatePagePadding(newWidth, true);
+                updateSidebarScale(newWidth);
+            } else {
+                const deltaY = e.clientY - startY;
+                const newHeight = Math.max(100, Math.min(600, startHeight + deltaY));
+                header.style.height = newHeight + 'px';
+                updatePagePadding(newHeight, false);
+                updateScale(newHeight);
+            }
+            animationFrameId = null;
+        });
     });
 
     document.addEventListener('mouseup', () => {
@@ -129,15 +135,18 @@ function initHeaderResize() {
 
 function initSidebarToggle(clickSfx) {
     const sidebarToggle = document.getElementById("sidebar-toggle");
+    const sidebarStatus = document.getElementById("sidebar-status");
 
-    if (sidebarToggle && document.body.classList.contains("left-sidebar-mode")) {
+    if (sidebarToggle && sidebarStatus && document.body.classList.contains("left-sidebar-mode")) {
         sidebarToggle.classList.add("active");
+        sidebarStatus.textContent = "ON";
     }
 
-    if (sidebarToggle) {
+    if (sidebarToggle && sidebarStatus) {
         sidebarToggle.addEventListener("click", () => {
             const isSidebar = document.body.classList.toggle("left-sidebar-mode");
             sidebarToggle.classList.toggle("active", isSidebar);
+            sidebarStatus.textContent = isSidebar ? "ON" : "OFF";
             localStorage.setItem("sidebarMode", isSidebar);
 
             const header = document.querySelector('.fixed-header');

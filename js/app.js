@@ -55,8 +55,20 @@ function loadPage(page) {
             if (typeof updateVisitorDisplay === "function") updateVisitorDisplay(window.visitorCountCached || "---");
         }
 
-
+        const isLowEnd = document.body.classList.contains('low-end-mode');
         const cards = container.querySelectorAll('.card');
+
+        if (isLowEnd) {
+            container.style.opacity = '1';
+            container.style.transform = 'none';
+            cards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'none';
+                card.style.transition = 'none';
+            });
+            return;
+        }
+
         cards.forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px) skew(-1deg)';
@@ -112,12 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
             '.attachment-category-header',
             '.settings-toggle',
             '.settings-close',
-            '.reset-garage-btn',
             '.low-end-toggle',
             '.sidebar-toggle',
             '.always-show-more-toggle',
             '.hamburger',
-            '.hand-scanner',
             '.settings-backdrop',
             'a'
         ].join(', ');
@@ -232,35 +242,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const lowEndToggle = document.getElementById("low-end-toggle");
-    if (lowEndToggle) {
+    const lowEndStatus = document.getElementById("low-end-status");
+    if (lowEndToggle && lowEndStatus) {
         const isLowEnd = localStorage.getItem("lowEndMode") === "true";
         if (isLowEnd) {
             document.body.classList.add("low-end-mode");
             lowEndToggle.classList.add("active");
+            lowEndStatus.textContent = "ON";
         }
         lowEndToggle.addEventListener("click", () => {
             const active = document.body.classList.toggle("low-end-mode");
             lowEndToggle.classList.toggle("active", active);
+            lowEndStatus.textContent = active ? "ON" : "OFF";
             localStorage.setItem("lowEndMode", active);
         });
     }
 
 
     const showMoreToggle = document.getElementById("always-show-more-toggle");
-    if (showMoreToggle) {
+    const showMoreStatus = document.getElementById("always-show-more-status");
+    if (showMoreToggle && showMoreStatus) {
         const isAlwaysShow = localStorage.getItem("alwaysShowMore") === "true";
         if (isAlwaysShow) {
             document.body.classList.add("always-show-more");
             showMoreToggle.classList.add("active");
+            showMoreStatus.textContent = "ON";
         }
         showMoreToggle.addEventListener("click", () => {
             const active = document.body.classList.toggle("always-show-more");
             showMoreToggle.classList.toggle("active", active);
+            showMoreStatus.textContent = active ? "ON" : "OFF";
             localStorage.setItem("alwaysShowMore", active);
-
 
             const activeTab = document.querySelector(".tab.active");
             if (activeTab) loadPage(activeTab.dataset.page);
+        });
+    }
+
+    const introToggle = document.getElementById("intro-toggle");
+    const introStatus = document.getElementById("intro-status");
+    if (introToggle && introStatus) {
+        const isSkipped = localStorage.getItem("skipGarageIntro") === "true";
+        const isOn = !isSkipped;
+
+        if (isOn) introToggle.classList.add("active");
+        introStatus.textContent = isOn ? "ON" : "OFF";
+
+        introToggle.addEventListener("click", () => {
+            const nowOn = introToggle.classList.toggle("active");
+            introStatus.textContent = nowOn ? "ON" : "OFF";
+            localStorage.setItem("skipGarageIntro", nowOn ? "false" : "true");
         });
     }
 });

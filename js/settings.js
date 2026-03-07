@@ -3,7 +3,6 @@ function initSettingsPanel(clickSfx) {
     const settingsPanel = document.getElementById('settings-panel');
     const settingsClose = document.getElementById('settings-close');
     const settingsBackdrop = document.querySelector('.settings-backdrop');
-    const resetGarageBtn = document.getElementById('reset-garage-intro');
 
     if (!settingsToggle || !settingsPanel) return;
 
@@ -38,20 +37,4 @@ function initSettingsPanel(clickSfx) {
             closeSettings();
         }
     });
-
-    if (resetGarageBtn) {
-        resetGarageBtn.addEventListener('click', () => {
-            localStorage.removeItem('skipGarageIntro');
-
-            resetGarageBtn.style.background = '#fff';
-            resetGarageBtn.style.color = '#000';
-            resetGarageBtn.innerHTML = '<span class="reset-icon">✓</span><span>Reset!</span>';
-
-            setTimeout(() => {
-                resetGarageBtn.style.background = '';
-                resetGarageBtn.style.color = '';
-                resetGarageBtn.innerHTML = '<span class="reset-icon">↻</span><span>Reset Garage Intro</span>';
-            }, 2000);
-        });
-    }
 }

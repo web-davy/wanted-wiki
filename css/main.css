@@ -206,6 +206,7 @@ body::after {
     align-items: center;
     justify-content: center;
     text-align: center;
+    text-decoration: none;
 }
 
 .tab span {

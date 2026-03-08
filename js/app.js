@@ -199,7 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.querySelectorAll(".tab").forEach(tab => {
-        tab.addEventListener("click", () => {
+        tab.addEventListener("click", (e) => {
+            e.preventDefault();
             if (!window.audioUnlocked) return;
 
             // UI Active State

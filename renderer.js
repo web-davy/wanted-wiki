@@ -51,13 +51,18 @@ function renderSortButtons(buttons, activeSort) {
 }
 
 function renderPage(title, sortButtons, cards, disclaimer = null) {
-  return `
+  const html = `
     <h2>${title}</h2>
     ${disclaimer ? `<div class="page-disclaimer">${disclaimer}</div>` : ''}
     ${sortButtons}
     <div class="card-grid">
       ${cards.join('')}
     </div>`;
+
+  if (typeof window.applyTranslation === 'function') {
+    setTimeout(window.applyTranslation, 50);
+  }
+  return html;
 }
 
 function renderStat(label, value) {
@@ -109,6 +114,9 @@ function toggleWeaponMods(btn) {
   if (front && overlay) {
     front.classList.toggle('hidden');
     overlay.classList.toggle('active');
+    if (typeof window.applyTranslation === 'function') {
+      window.applyTranslation();
+    }
   }
 }
 

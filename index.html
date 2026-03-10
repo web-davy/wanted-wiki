@@ -19,7 +19,6 @@
         content="Wanted, Roblox, Wanted Wiki, Wanted Roblox Wiki, Roblox Wanted Wiki, Wanted game, Wanted weapons, Wanted vehicles, Wanted missions, Wanted NPCs, Wanted valuables">
     <meta name="robots" content="index, follow">
 
-    <!-- Thumbnail for Search Results -->
     <meta name="thumbnail" content="https://wantedrblx.com/images/locations/bank-of-oasis.jpg">
 
     <meta property="og:title" content="Wanted Wiki - Roblox Wanted Game Wiki">
@@ -37,7 +36,6 @@
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Wanted Wiki",
-            "alternateName": ["Wanted Roblox Wiki", "Roblox Wanted Wiki", "Wanted Game Wiki"],
             "url": "https://wantedrblx.com/",
             "description": "The ultimate Wanted Roblox wiki. Find all weapons, vehicles, missions, NPCs, valuables, locations, ATMs, vaults, and gun crates in the Roblox game Wanted.",
             "potentialAction": {
@@ -74,30 +72,6 @@
                     "position": 4,
                     "name": "Missions",
                     "url": "https://wantedrblx.com/#missions"
-                }
-            ]
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://wantedrblx.com/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Locations",
-                    "item": "https://wantedrblx.com/#locations"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "Weapons",
-                    "item": "https://wantedrblx.com/#weapons"
                 }
             ]
         }
@@ -144,7 +118,6 @@
     </script>
     <div class="stripes"></div>
     <div class="static"></div>
-
 
     <div id="garage-intro" class="garage-intro">
         <div id="garage-door-mover" class="garage-door-mover">
@@ -214,6 +187,26 @@
                     <input type="range" id="card-size-slider" class="setting-slider" min="150" max="400" step="10"
                         value="200">
                 </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span class="setting-icon">🌐</span>
+                        <span class="setting-name">Language</span>
+                    </label>
+                    <select id="language-select" class="setting-select">
+                        <option value="en">English</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="ru">Русский</option>
+                        <option value="de">Deutsch</option>
+                        <option value="ja">日本語</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="id">Bahasa Indonesia</option>
+                    </select>
+                </div>
                 <div class="setting-item setting-item-toggle">
                     <button id="low-end-toggle" class="low-end-toggle setting-toggle-btn" title="Toggle Low-End Mode">
                         <span class="toggle-icon">⚡</span>
@@ -239,8 +232,9 @@
                         <span class="toggle-text">Intro: <span id="intro-status">ON</span></span>
                     </button>
                 </div>
-
             </div>
+            <div id="google_translate_element"></div>
+
         </div>
     </div>
 
@@ -258,7 +252,6 @@
     <audio id="sfx-click" src="sounds/click.mp3" preload="auto"></audio>
     <audio id="sfx-hover" src="sounds/hover.mp3" preload="auto"></audio>
     <audio id="sfx-load" src="sounds/load.mp3" preload="auto"></audio>
-
 
     <script defer src="config.js"></script>
     <script defer src="data/atms&vaults.js"></script>
@@ -282,6 +275,7 @@
     <script defer src="tabs/weapons.js"></script>
     <script defer src="tabs/store.js"></script>
     <script defer src="tabs/home.js"></script>
+    <script src="js/i18n.js"></script>
     <script defer src="js/ui.js"></script>
     <script defer src="js/settings.js"></script>
     <script defer src="js/garage.js"></script>
@@ -290,6 +284,5 @@
     <script defer src="js/app.js"></script>
     <script defer src="js/birthday.js"></script>
 </body>
-
 
 </html>

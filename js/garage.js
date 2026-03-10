@@ -22,6 +22,5 @@ function initGarage(onOpen) {
         }, 1500);
     };
 
-    // Auto-open after half a second
     setTimeout(openSequence, 500);
 }

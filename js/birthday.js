@@ -33,7 +33,7 @@ const BIRTHDAY_ENABLED = false;
 
         const bdayText = document.createElement('div');
         bdayText.id = 'birthday-text';
-        bdayText.textContent = 'Happy Birthday Name! 🎉';
+        bdayText.textContent = 'Happy Birthday Username! 🎉';
         document.body.appendChild(bdayText);
 
         const shockwave = document.createElement('div');
@@ -204,4 +204,3 @@ const BIRTHDAY_ENABLED = false;
     }
 
 })();
-

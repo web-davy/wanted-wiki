@@ -1,4 +1,3 @@
-
 const container = document.getElementById("page-container");
 const bgm = document.getElementById("bgm");
 const loadSfx = document.getElementById("sfx-load");
@@ -8,7 +7,6 @@ const volumeSlider = document.getElementById("bgm-volume");
 const sizeSlider = document.getElementById("card-size-slider");
 
 window.audioUnlocked = false;
-
 
 window.loadPage = loadPage;
 window.toggleCardDetails = toggleCardDetails;
@@ -105,14 +103,12 @@ function toggleCardDetails(cardId, btn) {
     button.textContent = isCollapsed ? 'Show more...' : 'Show less...';
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof initMobileMenu === 'function') initMobileMenu();
     if (typeof initSettingsPanel === 'function') initSettingsPanel(clickSfx);
     if (typeof initHeaderResize === 'function') initHeaderResize();
     if (typeof initSidebarToggle === 'function') initSidebarToggle(clickSfx);
     if (typeof initSearch === 'function') initSearch(container, window.renderSearchItem);
-
 
     const initGlobalSounds = () => {
         const interactiveSelectors = [
@@ -129,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '.always-show-more-toggle',
             '.hamburger',
             '.settings-backdrop',
+            '.setting-select',
             'a'
         ].join(', ');
 
@@ -170,9 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initGlobalSounds();
 
-
     if (typeof trackVisit === 'function') trackVisit(updateVisitorDisplay);
-
 
     if (bgm && volumeSlider) {
         const savedVol = localStorage.getItem("bgmVolume") || 0.4;
@@ -185,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     if (sizeSlider) {
         const savedSize = localStorage.getItem("cardSize") || 200;
         sizeSlider.value = savedSize;
@@ -197,20 +191,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     document.querySelectorAll(".tab").forEach(tab => {
         tab.addEventListener("click", (e) => {
             e.preventDefault();
             if (!window.audioUnlocked) return;
 
-            // UI Active State
             document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
             tab.classList.add("active");
 
             loadPage(tab.dataset.page);
         });
     });
-
 
     if (typeof initGarage === 'function') {
         initGarage((skipped) => {
@@ -241,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousedown', startAudioOnInteraction, true);
     window.addEventListener('keydown', startAudioOnInteraction, true);
 
-
     const lowEndToggle = document.getElementById("low-end-toggle");
     const lowEndStatus = document.getElementById("low-end-status");
     if (lowEndToggle && lowEndStatus) {
@@ -258,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem("lowEndMode", active);
         });
     }
-
 
     const showMoreToggle = document.getElementById("always-show-more-toggle");
     const showMoreStatus = document.getElementById("always-show-more-status");

@@ -5,7 +5,6 @@ function initSearch(container, renderSearchItem) {
     searchInput.addEventListener("input", (e) => {
         const query = e.target.value.toLowerCase().trim();
         if (!query) {
-            // Reload active page if query is cleared
             const activeTab = document.querySelector(".tab.active");
             if (activeTab) window.loadPage(activeTab.dataset.page);
             return;
@@ -15,6 +14,10 @@ function initSearch(container, renderSearchItem) {
         clearTimeout(window.searchTimeout);
         window.searchTimeout = setTimeout(() => {
             performSearch(query, container, renderSearchItem);
+
+            if (typeof window.applyTranslation === 'function') {
+                setTimeout(window.applyTranslation, 100);
+            }
         }, 300);
     });
 }

@@ -140,6 +140,32 @@
     accent-color: #fff;
 }
 
+.setting-select {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    border: 1px solid #444;
+    color: #fff;
+    font-family: monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.setting-select:focus,
+.setting-select:hover {
+    border-color: #fff;
+    background: #111;
+}
+
+.setting-select option {
+    background: #000;
+    color: #fff;
+}
+
 .setting-item-toggle {
     display: block;
 }

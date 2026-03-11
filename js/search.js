@@ -14,10 +14,6 @@ function initSearch(container, renderSearchItem) {
         clearTimeout(window.searchTimeout);
         window.searchTimeout = setTimeout(() => {
             performSearch(query, container, renderSearchItem);
-
-            if (typeof window.applyTranslation === 'function') {
-                setTimeout(window.applyTranslation, 100);
-            }
         }, 300);
     });
 }

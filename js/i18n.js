@@ -4,6 +4,14 @@ function googleTranslateElementInit() {
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false
     }, 'google_translate_element');
+
+    window.googleTranslateReady = true;
+
+    if (window.pendingTranslation) {
+        const lang = window.pendingTranslation;
+        window.pendingTranslation = null;
+        setTimeout(() => applyGoogleTranslation(lang), 100);
+    }
 }
 
 (function () {
@@ -20,8 +28,25 @@ function setTranslateCookie(lang) {
     document.cookie = `${cookieValue}; path=/`;
 }
 
-function changeLanguage(lang) {
+function applyGoogleTranslation(lang) {
     const select = document.querySelector(".goog-te-combo");
+    if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+
+        const event = new Event("change", { bubbles: true, cancelable: true });
+        select.dispatchEvent(event);
+
+        setTimeout(() => {
+            const frame = document.querySelector(".goog-te-menu-frame");
+            if (frame) {
+                frame.style.display = "none";
+            }
+        }, 500);
+    }
+}
+
+function changeLanguage(lang) {
     setTranslateCookie(lang);
     localStorage.setItem("preferredLanguage", lang);
 
@@ -33,21 +58,32 @@ function changeLanguage(lang) {
         document.body.classList.remove('rtl-mode');
     }
 
-    if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
+    if (window.googleTranslateReady) {
+        applyGoogleTranslation(lang);
     } else {
-        setTimeout(() => changeLanguage(lang), 500);
+        window.pendingTranslation = lang;
+
+        setTimeout(() => {
+            if (window.googleTranslateReady && window.pendingTranslation) {
+                applyGoogleTranslation(lang);
+            }
+        }, 2000);
     }
 }
 
 window.applyTranslation = function () {
     const savedLang = localStorage.getItem("preferredLanguage") || "en";
     if (savedLang !== "en") {
-        const select = document.querySelector(".goog-te-combo");
-        if (select) {
-            select.value = savedLang;
-            select.dispatchEvent(new Event("change"));
+        if (window.googleTranslateReady) {
+            applyGoogleTranslation(savedLang);
+        } else {
+            window.pendingTranslation = savedLang;
+
+            setTimeout(() => {
+                if (window.googleTranslateReady) {
+                    applyGoogleTranslation(savedLang);
+                }
+            }, 3000);
         }
     }
 };

@@ -3,13 +3,12 @@ const CONTRIBUTORS_DATA = {
         { name: "DavyDevv", title: "Wiki Manager" }
     ],
     staff: [
-        { name: "", title: "" },
+        { name: "MeepMeep", title: "Wiki Staff" },
         { name: "", title: "" }
     ],
     contributors: [
         { name: "Justin", contributions: "In-Game Cash" },
         { name: "RedRuby", contributions: "Vault Images" },
-        { name: "MeepMeep", contributions: "Vault Cash" },
         { name: "Baboo", contributions: "Deagle and FN-FAL Images" },
         { name: "Ravozir", contributions: "Blade Info" }
     ]

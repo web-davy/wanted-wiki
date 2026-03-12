@@ -11,8 +11,12 @@ window.audioUnlocked = false;
 window.loadPage = loadPage;
 window.toggleCardDetails = toggleCardDetails;
 
-function loadPage(page) {
+function loadPage(page, saveToHistory = true) {
     if (!container) return;
+
+    document.querySelectorAll(".tab").forEach(t => {
+        t.classList.toggle("active", t.dataset.page === page);
+    });
 
     container.style.opacity = '0';
     container.style.transform = 'translateY(10px)';
@@ -47,6 +51,19 @@ function loadPage(page) {
         }
 
         container.innerHTML = content;
+
+        if (saveToHistory) {
+            try {
+                const isFileProtocol = window.location.protocol === 'file:';
+                const url = isFileProtocol 
+                    ? (page === "home" ? "#" : `#${page}`)
+                    : (page === "home" ? "/" : `/${page}`);
+                window.history.pushState({ page }, "", url);
+            } catch (e) {
+                console.warn("History API pushState failed, falling back to hash.");
+                window.location.hash = page === "home" ? "" : page;
+            }
+        }
 
         if (page === "home") {
             if (typeof initCountdownTimer === "function") initCountdownTimer();
@@ -85,6 +102,21 @@ function loadPage(page) {
         });
     }, 150);
 }
+
+window.addEventListener("popstate", (event) => {
+    const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store"];
+    let page = (event.state && event.state.page);
+    
+    if (!page) {
+        const hash = window.location.hash.replace(/^#/, '');
+        const path = window.location.pathname.split('/').pop().replace('.html', '');
+        if (validPages.includes(hash)) page = hash;
+        else if (validPages.includes(path)) page = path;
+        else page = "home";
+    }
+    
+    loadPage(page, false);
+});
 
 function updateVisitorDisplay(count) {
     window.visitorCountCached = count;
@@ -195,10 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener("click", (e) => {
             e.preventDefault();
             if (!window.audioUnlocked) return;
-
-            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-            tab.classList.add("active");
-
             loadPage(tab.dataset.page);
         });
     });
@@ -207,18 +235,28 @@ document.addEventListener('DOMContentLoaded', () => {
         initGarage((skipped) => {
             window.audioUnlocked = true;
 
-            const homeTab = document.querySelector('.tab[data-page="home"]');
-            if (homeTab) homeTab.classList.add("active");
+            const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store"];
+            const hash = window.location.hash.replace(/^#/, '');
+            const path = window.location.pathname.split('/').pop().replace('.html', '');
+            
+            let initialPage = "home";
+            if (validPages.includes(hash)) initialPage = hash;
+            else if (validPages.includes(path)) initialPage = path;
+
+            const targetTab = document.querySelector(`.tab[data-page="${initialPage}"]`);
+            if (targetTab) {
+                targetTab.classList.add("active");
+            }
 
             if (skipped) {
-                loadPage("home");
+                loadPage(initialPage, false);
             } else {
                 if (bgm) {
                     bgm.play().catch(() => { });
                 }
 
                 setTimeout(() => {
-                    loadPage("home");
+                    loadPage(initialPage, false);
                 }, 400);
             }
         });

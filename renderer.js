@@ -103,11 +103,11 @@ function renderExpandableCardPNG(item, rarityKey, visibleContent, hiddenContent,
   return renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, 'png', folder);
 }
 
-function toggleWeaponMods(btn) {
+function toggleCardOverlay(btn) {
   const card = btn.closest('.card');
   if (!card) return;
-  const front = card.querySelector('.weapon-front-content');
-  const overlay = card.querySelector('.weapon-mods-overlay');
+  const front = card.querySelector('.card-front-content');
+  const overlay = card.querySelector('.card-overlay');
   if (front && overlay) {
     front.classList.toggle('hidden');
     overlay.classList.toggle('active');
@@ -122,7 +122,7 @@ function toggleAttachmentCategory(headerEl) {
 function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 'npcs') {
   const name = item.name || "";
   const slug = generateSlug(name);
-  const hasDialogues = item.dialogues && Object.keys(item.dialogues).length > 0;
+  const hasDialogues = item.dialogue && Object.keys(item.dialogue).length > 0;
   const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
   const showButton = item.showMoreButton !== false && hiddenContent && hiddenContent.trim() !== '';
   const imagePath = `images/${folder}/${slug}.png`;
@@ -131,11 +131,11 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
     return renderExpandableCardPNG(item, rarityKey, visibleContent, hiddenContent, folder);
   }
 
-  const dialoguesHTML = Object.entries(item.dialogues).map(([category, items]) => {
+  const dialoguesHTML = Object.entries(item.dialogue).map(([category, items]) => {
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(d => `
-      <div class="weapon-mod-item">
-        <p style="white-space: normal; line-height: 1.5; word-break: break-word;"><strong>"${d.text}":</strong> ${d.reward}</p>
+      <div class="card-overlay-item">
+        <p style="white-space: normal; line-height: 1.5; word-break: break-word;"><strong>${d.title}:</strong> ${d.dialogue}</p>
       </div>
     `).join('');
     return `
@@ -153,11 +153,11 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
 
   return `
   <div class="card">
-    <button class="weapon-mods-button" onclick="toggleWeaponMods(this)">DIALOGUES</button>
+    <button class="card-overlay-button" onclick="toggleCardOverlay(this)">DIALOGUES</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
                 box-shadow:0 0 10px rgba(255,255,255,0.2);">
-    <div class="weapon-front-content">
+    <div class="card-front-content">
       ${visibleContent}
       ${showButton ? `
       <div class="card-details collapsed" id="${cardId}-details">
@@ -166,9 +166,9 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
       <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">Show more...</button>
       ` : ''}
     </div>
-    <div class="weapon-mods-overlay">
-      <div class="weapon-mods-title">${name} DIALOGUES</div>
-      <div class="weapon-mods-list">
+    <div class="card-overlay">
+      <div class="card-overlay-title">${name} DIALOGUES</div>
+      <div class="card-overlay-list">
         ${dialoguesHTML}
       </div>
     </div>
@@ -192,7 +192,7 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
   const attachmentsHTML = Object.entries(item.attachments).map(([category, items]) => {
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(att => `
-      <div class="weapon-mod-item">
+      <div class="card-overlay-item">
         <p><strong>${att.name}:</strong> ${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</p>
       </div>
     `).join('');
@@ -213,11 +213,11 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
   return `
   <div class="card">
     ${renderPriceTag(item.contractPrice)}
-    <button class="weapon-mods-button" onclick="toggleWeaponMods(this)">ATTACHMENTS</button>
+    <button class="card-overlay-button" onclick="toggleCardOverlay(this)">ATTACHMENTS</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
                 box-shadow:0 0 10px rgba(255,255,255,0.2);">
-    <div class="weapon-front-content">
+    <div class="card-front-content">
       ${visibleContent}
       ${showButton ? `
       <div class="card-details collapsed" id="${cardId}-details">
@@ -226,9 +226,9 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
       <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">Show more...</button>
       ` : ''}
     </div>
-    <div class="weapon-mods-overlay">
-      <div class="weapon-mods-title">${name} ATTACHMENTS</div>
-      <div class="weapon-mods-list">
+    <div class="card-overlay">
+      <div class="card-overlay-title">${name} ATTACHMENTS</div>
+      <div class="card-overlay-list">
         ${attachmentsHTML}
       </div>
     </div>

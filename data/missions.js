@@ -1,5 +1,5 @@
 const MISSIONS_DATA = [
-  // Game Missions
+
   {
     id: "bank-heist",
     showMoreButton: true,
@@ -23,7 +23,7 @@ const MISSIONS_DATA = [
     rewards: ["$5,000"]
   },
 
-  // Erik Missions
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -113,7 +113,7 @@ const MISSIONS_DATA = [
     rewards: ["$200,000"]
   },
 
-  // Dan Missions
+
   {
     id: "forbidden-meat",
     showMoreButton: true,
@@ -126,7 +126,7 @@ const MISSIONS_DATA = [
     rewards: ["$20,000", "Meat Grinder Furniture"]
   },
 
-  // Sir. B Missions
+
   {
     id: "the-deposit",
     showMoreButton: true,
@@ -513,7 +513,7 @@ const MISSIONS_DATA = [
     rewards: ["700 Syndicate XP", "$10,000"]
   },
 
-  // Bert Missions
+
   {
     id: "loyalty-test",
     showMoreButton: true,
@@ -537,7 +537,7 @@ const MISSIONS_DATA = [
     rewards: ["$50,000"]
   },
 
-  // Christmas Missions
+
   {
     id: "santas-helper",
     showMoreButton: true,

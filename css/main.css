@@ -1740,7 +1740,7 @@ body.always-show-more .card-details-toggle {
     display: none;
 }
 
-.weapon-mods-button {
+.card-overlay-button {
     position: absolute;
     bottom: -8px;
     right: 6px;
@@ -1761,14 +1761,14 @@ body.always-show-more .card-details-toggle {
     font-family: inherit;
 }
 
-.weapon-mods-button:hover {
+.card-overlay-button:hover {
     background: #fff;
     color: #000;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     text-shadow: none;
 }
 
-.weapon-mods-overlay {
+.card-overlay {
     display: none;
     padding: 10px 15px;
     width: 100%;
@@ -1776,11 +1776,11 @@ body.always-show-more .card-details-toggle {
     transform: none !important;
 }
 
-.weapon-mods-overlay.active {
+.card-overlay.active {
     display: block;
 }
 
-.weapon-mods-title {
+.card-overlay-title {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -1791,13 +1791,13 @@ body.always-show-more .card-details-toggle {
     transform: none !important;
 }
 
-.weapon-mods-list {
+.card-overlay-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.weapon-mod-item {
+.card-overlay-item {
     display: block;
     padding: 12px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1806,22 +1806,22 @@ body.always-show-more .card-details-toggle {
     transform: none !important;
 }
 
-.weapon-mod-item:first-child {
+.card-overlay-item:first-child {
     border-top: none;
 }
 
-.weapon-mod-name {
+.card-overlay-item-name {
     font-weight: bold;
     color: #fff;
 }
 
-.weapon-mod-price {
+.card-overlay-item-value {
     color: #0f0;
     text-shadow: 0 0 5px #0f0;
     font-weight: bold;
 }
 
-.back-to-weapon-btn {
+.back-to-card-btn {
     display: block;
     width: 100%;
     padding: 8px;
@@ -1838,18 +1838,16 @@ body.always-show-more .card-details-toggle {
     transition: 0.3s;
 }
 
-.back-to-weapon-btn:hover {
+.back-to-card-btn:hover {
     border-color: #fff;
     background: #fff;
     color: #000;
 }
 
-/* Hide front content when mods are shown */
-.weapon-front-content.hidden {
+.card-front-content.hidden {
     display: none;
 }
 
-/* Attachment Categories */
 .attachment-group {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 4px;
@@ -1901,14 +1899,14 @@ body.always-show-more .card-details-toggle {
     overflow-wrap: break-word;
 }
 
-.attachment-category-items .weapon-mod-item {
+.attachment-category-items .card-overlay-item {
     font-weight: normal;
     font-size: 1rem;
     letter-spacing: normal;
     opacity: 1;
 }
 
-.attachment-category-items .weapon-mod-name {
+.attachment-category-items .card-overlay-item-name {
     font-weight: normal;
     color: #fff;
 }

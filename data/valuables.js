@@ -1,5 +1,5 @@
 const VALUABLES_DATA = [
-  // Gems
+
   { name: "Silver Bar", showMoreButton: false, rarity: "COMMON", category: "Gems", price: 250, weight: 2, location: "Bank of Oasis Vault, Jewelry Store, Drawers, Safes, Dock Crates" },
   { name: "Gold Bar", showMoreButton: false, rarity: "UNCOMMON", category: "Gems", price: 400, weight: 2, location: "Bank of Oasis Vault, Jewelry Store, Drawers, Safes, Dock Crates" },
   { name: "Sapphire", showMoreButton: false, rarity: "EPIC", category: "Gems", price: 2500, weight: 4, location: "Bank of Oasis Vault, Jewelry Store, Drawers, Safes, Dock Crates" },
@@ -8,7 +8,7 @@ const VALUABLES_DATA = [
   { name: "Amethyst", showMoreButton: false, rarity: "LEGENDARY", category: "Gems", price: 30000, weight: 4, location: "Bank of Oasis Vault, Jewelry Store, Drawers, Safes, Dock Crates" },
   { name: "Diamond", showMoreButton: false, rarity: "LEGENDARY", category: "Gems", price: 50000, weight: 4, location: "Bank of Oasis Vault, Jewelry Store,Drawers, Safes,Dock Crates, Trash Cans, Daily Wheel" },
 
-  // Jewelry
+
   { name: "Silver Ring", showMoreButton: false, rarity: "COMMON", category: "Jewelry", price: 250, weight: 1, location: "Jewelry Store, Drawers, Safes" },
   { name: "Gold Ring", showMoreButton: false, rarity: "UNCOMMON", category: "Jewelry", price: 400, weight: 1, location: "Jewelry Store, Drawers, Safes" },
   { name: "Sapphire Ring", showMoreButton: false, rarity: "UNCOMMON", category: "Jewelry", price: 500, weight: 1, location: "Jewelry Store, Safes" },
@@ -21,7 +21,7 @@ const VALUABLES_DATA = [
   { name: "Diamond Ring", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 10000, weight: 1, location: "Jewelry Store, Dock Crates" },
   { name: "Rollie", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 50000, weight: 2, location: "Jewelry Store, Dock Crates" },
 
-  // Electronics
+
   { name: "PearWatch", showMoreButton: false, rarity: "COMMON", category: "Electronics", price: 200, weight: 2, location: "Drawers, Pear Store, Safes, Dock Crates" },
   { name: "PearPods", showMoreButton: false, rarity: "COMMON", category: "Electronics", price: 300, weight: 3, location: "Drawers, Pear Store, Safes, Dock Crates" },
   { name: "HDD", showMoreButton: false, rarity: "COMMON", category: "Electronics", price: 400, weight: 2, location: "Computers, Drawers, Dock Crates" },
@@ -37,13 +37,13 @@ const VALUABLES_DATA = [
   { name: "GoldBook", showMoreButton: false, rarity: "EPIC", category: "Electronics", price: 1500, weight: 6, location: "Drawers, Pear Store, Safes, Dock Crates" },
   { name: "GPU", showMoreButton: false, rarity: "EPIC", category: "Electronics", price: 9001, weight: 6, location: "Computers, Drawers, Military Crates, Safes, Dock Crates" },
 
-  // Miscellaneous
+
   { name: "Bank Cash Pile", showMoreButton: false, rarity: "COMMON", category: "Miscellaneous", price: 200, weight: 0, location: "Bank of Oasis Vault" },
   { name: "Military Cash Pile", showMoreButton: false, rarity: "EPIC", category: "Miscellaneous", price: 2500, weight: 0, location: "Military" },
   { name: "Secret Files", showMoreButton: false, rarity: "EPIC", category: "Miscellaneous", price: 5000, weight: 2, location: "Drawers, Military Crates, Dock Crates" },
   { name: "Bitcoin", showMoreButton: false, rarity: "LEGENDARY", category: "Miscellaneous", price: 92000, weight: 1, location: "Computers, Drawers, Dock Crates" },
 
-  // Mission Items
+
   { name: "Priceless Watch", showMoreButton: false, rarity: "MISSION", category: "Mission Items", price: 0, weight: 1, location: "Buck Moneymaker Office at Oasis Bank" },
   { name: "Data Disk", showMoreButton: false, rarity: "MISSION", category: "Mission Items", price: 0, weight: 1, location: "Crash Site at Snowy Mountain" }
 ];

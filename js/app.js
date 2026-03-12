@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '.tab',
             '.sort-btn',
             '.card-details-toggle',
-            '.weapon-mods-button',
+            '.card-overlay-button',
             '.attachment-category-header',
             '.settings-toggle',
             '.settings-close',

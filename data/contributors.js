@@ -1,10 +1,9 @@
 const CONTRIBUTORS_DATA = {
     managers: [
-        { name: "DavyDevv", title: "Wiki Manager" }
+        { name: "Davy", title: "Wiki Manager" }
     ],
     staff: [
-        { name: "MeepMeep", title: "Wiki Staff" },
-        { name: "", title: "" }
+        { name: "MeepMeep", title: "Wiki Staff" }
     ],
     contributors: [
         { name: "Justin", contributions: "In-Game Cash" },

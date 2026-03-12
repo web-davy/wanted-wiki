@@ -109,7 +109,7 @@ window.addEventListener("popstate", (event) => {
     
     if (!page) {
         const hash = window.location.hash.replace(/^#/, '');
-        const path = window.location.pathname.split('/').pop().replace('.html', '');
+        const path = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
         if (validPages.includes(hash)) page = hash;
         else if (validPages.includes(path)) page = path;
         else page = "home";
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store"];
             const hash = window.location.hash.replace(/^#/, '');
-            const path = window.location.pathname.split('/').pop().replace('.html', '');
+            const path = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
             
             let initialPage = "home";
             if (validPages.includes(hash)) initialPage = hash;

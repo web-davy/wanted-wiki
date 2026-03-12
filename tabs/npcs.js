@@ -13,7 +13,7 @@ function renderNPCs(order = "az") {
     `;
 
     const slug = generateSlug(item.name);
-    return renderExpandableCardPNG(item, item.team, visibleContent, hiddenContent, 'npcs');
+    return renderNPCCard(item, item.team, visibleContent, hiddenContent, 'npcs');
   });
 
   const sortButtons = renderSortButtons([

@@ -119,6 +119,62 @@ function toggleAttachmentCategory(headerEl) {
   if (group) group.classList.toggle('open');
 }
 
+function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 'npcs') {
+  const name = item.name || "";
+  const slug = generateSlug(name);
+  const hasDialogues = item.dialogues && Object.keys(item.dialogues).length > 0;
+  const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
+  const showButton = item.showMoreButton !== false && hiddenContent && hiddenContent.trim() !== '';
+  const imagePath = `images/${folder}/${slug}.png`;
+
+  if (!hasDialogues) {
+    return renderExpandableCardPNG(item, rarityKey, visibleContent, hiddenContent, folder);
+  }
+
+  const dialoguesHTML = Object.entries(item.dialogues).map(([category, items]) => {
+    if (!items || items.length === 0) return '';
+    const itemsHTML = items.map(d => `
+      <div class="weapon-mod-item">
+        <p style="white-space: normal; line-height: 1.5; word-break: break-word;"><strong>"${d.text}":</strong> ${d.reward}</p>
+      </div>
+    `).join('');
+    return `
+      <div class="attachment-group">
+        <div class="attachment-category-header" onclick="toggleAttachmentCategory(this)">
+          <span>${category}</span>
+          <span class="attachment-chevron">▼</span>
+        </div>
+        <div class="attachment-category-items">
+          ${itemsHTML}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+  <div class="card">
+    <button class="weapon-mods-button" onclick="toggleWeaponMods(this)">DIALOGUES</button>
+    <img src="${imagePath}" alt="${name}" loading="lazy"
+         style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
+                box-shadow:0 0 10px rgba(255,255,255,0.2);">
+    <div class="weapon-front-content">
+      ${visibleContent}
+      ${showButton ? `
+      <div class="card-details collapsed" id="${cardId}-details">
+        ${hiddenContent}
+      </div>
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">Show more...</button>
+      ` : ''}
+    </div>
+    <div class="weapon-mods-overlay">
+      <div class="weapon-mods-title">${name} DIALOGUES</div>
+      <div class="weapon-mods-list">
+        ${dialoguesHTML}
+      </div>
+    </div>
+  </div>`;
+}
+
 function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder = 'weapons') {
   const name = item.name || item.title || "";
   const slug = item.id || generateSlug(name);
@@ -136,7 +192,9 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
   const attachmentsHTML = Object.entries(item.attachments).map(([category, items]) => {
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(att => `
-      <p><strong>${att.name}:</strong> ${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</p>
+      <div class="weapon-mod-item">
+        <p><strong>${att.name}:</strong> ${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</p>
+      </div>
     `).join('');
     const icon = categoryIcons[category] || '●';
     return `

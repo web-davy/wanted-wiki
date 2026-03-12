@@ -60,7 +60,22 @@ const NPCS_DATA = [
     showMoreButton: true,
     team: "CRIMINAL",
     location: "Oasis City Port",
-    description: "The current manager of Oasis City Port, specializing in across the sea trading. You can sell guns to him, get random loot crates, and buy vault crackers from him."
+    description: "The current manager of Oasis City Port, specializing in across the sea trading. You can sell guns to him, get random loot crates, and buy vault crackers from him.",
+    dialogues: {
+      "Any valuable shipment today? ($200)": [
+        { text: "Theres a weird crate that hardly weighs anything", reward: "2 Bitcoin" },
+        { text: "Theres a strange order on the manifest. Looks to be Government", reward: "2 Secret Files and Flash Drive" },
+        { text: "There's a shipment of diamonds on the manifest today", reward: "2 Diamonds" },
+        { text: "Some illicit cargo came in today", reward: "1 Money Printer" },
+        { text: "Big shipment of gems just came in", reward: "4 Gems Total (Diamonds, Amethyst, Emeralds, Rubies, Sapphires)" },
+        { text: "An order from the bank came in - big cash shipment", reward: "+10K Cash" },
+        { text: "Saw an order from Oasis Jewelry", reward: "5 Jewelry Total (Rollie, Amethyst/Diamond/Emerald/Ruby/Sapphire Rings, Pearl Necklace, Gold Chain)" },
+        { text: "Theres an order here for some expensive tech parts", reward: "PearPods, HDDs, PearWatches, PSU (Chance at GPU? Bugged?)" },
+        { text: "There's some real heavy weapons", reward: "AWM, RPG, M60 (M4A1?)" },
+        { text: "I saw a shipment of some military-grade weapons", reward: "AWM, ARX, SPAS, RPG, AK47" },
+        { text: "Looks like a shipment of gold pear tech", reward: "(2 Goldbooks, 2 Goldphones, 2 Gold Pods, 2 Gold Watches)" }
+      ]
+    }
   },
   {
     name: "Ofy",

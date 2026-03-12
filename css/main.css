@@ -321,7 +321,6 @@ body::after {
     border: 1px solid;
     border-radius: 0;
     z-index: 10;
-    transform: skew(1deg);
 }
 
 .rarity {
@@ -1757,7 +1756,6 @@ body.always-show-more .card-details-toggle {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s;
-    transform: skew(1deg);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     text-shadow: none;
     font-family: inherit;
@@ -1772,7 +1770,10 @@ body.always-show-more .card-details-toggle {
 
 .weapon-mods-overlay {
     display: none;
-    padding: 10px 0;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transform: none !important;
 }
 
 .weapon-mods-overlay.active {
@@ -1787,7 +1788,7 @@ body.always-show-more .card-details-toggle {
     margin-bottom: 10px;
     color: #fff;
     text-align: center;
-    transform: skew(1deg);
+    transform: none !important;
 }
 
 .weapon-mods-list {
@@ -1797,12 +1798,12 @@ body.always-show-more .card-details-toggle {
 }
 
 .weapon-mod-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
+    display: block;
+    padding: 12px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    transform: skew(1deg);
+    width: 100%;
+    box-sizing: border-box;
+    transform: none !important;
 }
 
 .weapon-mod-item:first-child {
@@ -1835,7 +1836,6 @@ body.always-show-more .card-details-toggle {
     letter-spacing: 1px;
     cursor: pointer;
     transition: 0.3s;
-    transform: skew(1deg);
 }
 
 .back-to-weapon-btn:hover {
@@ -1866,12 +1866,12 @@ body.always-show-more .card-details-toggle {
     letter-spacing: normal;
     color: #fff;
     transition: opacity 0.2s;
-    transform: skew(1deg);
     user-select: none;
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-color: rgba(255, 255, 255, 0.2);
     text-transform: none;
+    transform: none !important;
 }
 
 .attachment-category-header:hover {
@@ -1896,8 +1896,9 @@ body.always-show-more .card-details-toggle {
 }
 
 .attachment-group.open .attachment-category-items {
-    max-height: 400px;
-    padding: 0 0 8px 8px;
+    max-height: 3000px;
+    padding: 10px 0 10px 5px;
+    overflow-wrap: break-word;
 }
 
 .attachment-category-items .weapon-mod-item {

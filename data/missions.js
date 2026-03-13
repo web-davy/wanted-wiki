@@ -403,6 +403,17 @@ const MISSIONS_DATA = [
     rewards: ["900 Syndicate XP", "$50,000"]
   },
   {
+    id: "gem-collector",
+    showMoreButton: true,
+    title: "Gem Collector - Part 4",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 6 Diamonds and bring them to Sir B.",
+    difficulty: "HARD",
+    missionType: "Sir. B",
+    rewards: ["1,300 Syndicate XP", "$100,000"]
+  },
+  {
     id: "lights-out",
     showMoreButton: true,
     title: "Lights Out",

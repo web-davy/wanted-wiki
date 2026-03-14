@@ -9,7 +9,7 @@ const VALUABLES_DATA = [
   { name: "Diamond", showMoreButton: false, rarity: "LEGENDARY", category: "Gems", price: 50000, weight: 4, location: "Bank of Oasis Vault, Jewelry Store,Drawers, Safes,Dock Crates, Trash Cans, Daily Wheel" },
 
 
-  { name: "Silver Ring", showMoreButton: false, rarity: "COMMON", category: "Jewelry", price: 250, weight: 1, location: "Jewelry Store, Drawers, Safes" },
+  { name: "Silver Ring", showMoreButton: false, rarity: "COMMON", category: "Jewelry", price: 200, weight: 1, location: "Jewelry Store, Drawers, Safes" },
   { name: "Gold Ring", showMoreButton: false, rarity: "UNCOMMON", category: "Jewelry", price: 400, weight: 1, location: "Jewelry Store, Drawers, Safes" },
   { name: "Sapphire Ring", showMoreButton: false, rarity: "UNCOMMON", category: "Jewelry", price: 500, weight: 1, location: "Jewelry Store, Safes" },
   { name: "Silver Chain", showMoreButton: false, rarity: "UNCOMMON", category: "Jewelry", price: 500, weight: 2, location: "Jewelry Store, Dock Crates" },

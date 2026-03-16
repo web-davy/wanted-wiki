@@ -135,7 +135,7 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(d => `
       <div class="card-overlay-item">
-        <p style="white-space: normal; line-height: 1.5; word-break: break-word;"><strong>${d.title}:</strong> ${d.dialogue}</p>
+        <p style="white-space: normal; line-height: 1.5; word-break: break-word;">${d.dialogue}</p>
       </div>
     `).join('');
     return `

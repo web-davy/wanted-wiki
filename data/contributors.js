@@ -3,7 +3,9 @@ const CONTRIBUTORS_DATA = {
         { name: "Davy", title: "Wiki Manager" }
     ],
     staff: [
-        { name: "MeepMeep", title: "Wiki Staff" }
+        { name: "MeepMeep", title: "Wiki Staff" },
+        { name: "Emperor", title: "Wiki Staff" },
+        { name: "Professor Proish", title: "Wiki Staff" }
     ],
     contributors: [
         { name: "Justin", contributions: "In-Game Cash" },

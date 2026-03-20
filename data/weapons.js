@@ -302,8 +302,8 @@ const GUNS_DATA = [
     stats: {
       ammo: "30/300",
       ammoPrice: "$450 for 30",
-      damage: "Head-10/Torso-9/Limbs-8",
-      firerate: 750,
+      damage: "Head-9/Torso-8/Limbs-7",
+      firerate: 1200,
       reload: 3,
       accuracy: "±1.10m @ 50m"
     },
@@ -371,7 +371,7 @@ const GUNS_DATA = [
     stats: {
       ammo: "5/40",
       ammoPrice: "$750 for 5",
-      damage: "Head-100/Torso-65/Limbs-50",
+      damage: "Head-150/Torso-65/Limbs-50",
       firerate: 30,
       reload: 3.5,
       accuracy: "±0.40m @ 50m"
@@ -439,7 +439,7 @@ const GUNS_DATA = [
       damage: "Head-15/Torso-11/Limbs-9",
       firerate: 750,
       reload: 5,
-      accuracy: "±4.40m @ 50m"
+      accuracy: "±5.30m @ 50m"
     },
     attachments: {
       Optics: [
@@ -535,7 +535,7 @@ const GUNS_DATA = [
     stats: {
       ammo: "8/160",
       ammoPrice: "$0 for 0",
-      damage: "Head-55/Torso-35/Limbs-25",
+      damage: "Head-40/Torso-25/Limbs-20",
       firerate: 200,
       reload: 3,
       accuracy: "±0.70m @ 25m"
@@ -628,7 +628,7 @@ const EXPLOSIVES_DATA = [
     stats: {
       ammo: "1/10",
       ammoPrice: "$1000 for 1",
-      damage: "Head-?/Torso-?/Limbs-?",
+      damage: "35",
       firerate: 0,
       reload: 0,
       accuracy: "0"
@@ -658,7 +658,7 @@ const EXPLOSIVES_DATA = [
     stats: {
       ammo: "1/6",
       ammoPrice: "$2000 for 1",
-      damage: "Head-18/Torso-12/Limbs-10",
+      damage: "80",
       firerate: 8,
       reload: 7,
       accuracy: "±12.20m @ 200m"

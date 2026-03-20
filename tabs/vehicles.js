@@ -4,13 +4,17 @@ function renderVehicles(sort = "high") {
   const groundVehicles = VEHICLES_DATA.filter(v => v.type === 'ground');
   const flyingVehicles = VEHICLES_DATA.filter(v => v.type === 'flying');
 
-  const sortedGround = [...groundVehicles].sort((a, b) =>
-    sort === "high" ? b.contractPrice - a.contractPrice : a.contractPrice - b.contractPrice
-  );
+  const sortedGround = [...groundVehicles].sort((a, b) => {
+    const pA = typeof a.contractPrice === 'number' ? a.contractPrice : 0;
+    const pB = typeof b.contractPrice === 'number' ? b.contractPrice : 0;
+    return sort === "high" ? pB - pA : pA - pB;
+  });
 
-  const sortedFlying = [...flyingVehicles].sort((a, b) =>
-    sort === "high" ? b.contractPrice - a.contractPrice : a.contractPrice - b.contractPrice
-  );
+  const sortedFlying = [...flyingVehicles].sort((a, b) => {
+    const pA = typeof a.contractPrice === 'number' ? a.contractPrice : 0;
+    const pB = typeof b.contractPrice === 'number' ? b.contractPrice : 0;
+    return sort === "high" ? pB - pA : pA - pB;
+  });
 
   const groundCards = sortedGround.map(item => {
     const slug = generateSlug(item.name);
@@ -20,7 +24,7 @@ function renderVehicles(sort = "high") {
       <h3>${item.name}</h3>
     `;
     const hiddenContent = `
-      ${renderStat('Requirements', item.requirements)}
+      ${renderStat('Obtaining', item.obtaining)}
       ${renderStat('Repair', formatPrice(item.repairPrice))}
       ${renderStat('Garage Repair', formatPrice(item.repairPriceGarage))}
       ${renderStatSuffix('Top Speed', item.stats.topSpeed, '%')}
@@ -43,7 +47,7 @@ function renderVehicles(sort = "high") {
       <h3>${item.name}</h3>
     `;
     const hiddenContent = `
-      ${renderStat('Requirements', item.requirements)}
+      ${renderStat('Obtaining', item.obtaining)}
       ${renderStat('Repair', formatPrice(item.repairPrice))}
       ${renderStat('Garage Repair', formatPrice(item.repairPriceGarage))}
       ${renderStatSuffix('Top Speed', item.stats.topSpeed, '%')}

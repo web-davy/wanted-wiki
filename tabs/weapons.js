@@ -1,6 +1,9 @@
 function renderWeapons(sort = "high") {
-  const sortFn = (a, b) =>
-    sort === "high" ? b.contractPrice - a.contractPrice : a.contractPrice - b.contractPrice;
+  const sortFn = (a, b) => {
+    const valA = typeof a.contractPrice === 'number' ? a.contractPrice : 0;
+    const valB = typeof b.contractPrice === 'number' ? b.contractPrice : 0;
+    return sort === "high" ? valB - valA : valA - valB;
+  };
 
   const sortedGuns = [...GUNS_DATA].sort(sortFn);
   const sortedExplosives = [...EXPLOSIVES_DATA].sort(sortFn);
@@ -15,9 +18,10 @@ function renderWeapons(sort = "high") {
         <h3>${item.name}</h3>
       `;
       const hiddenContent = `
-        ${renderStat('Requirements', item.requirements)}
+        ${renderStat('Obtaining', item.obtaining)}
         ${renderStat('Location', item.location || item.stats.location)}
         ${renderStat('Re-buy', formatPrice(item.reBuyPrice))}
+        ${renderStat('Sell Price', formatPrice(item.sellPrice))}
         ${renderStat('Ammo', item.stats.ammo)}
         ${renderStat('Ammo Cost', item.stats.ammoPrice)}
         ${renderStat('Damage', item.stats.damage)}

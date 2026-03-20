@@ -33,10 +33,10 @@ const VEHICLES_DATA = [
     name: "Blade",
     showMoreButton: true,
     type: "ground",
-    requirements: "Syndicate Level 5",
+    obtaining: "Syndicate Level 5",
     repairPrice: 3000,
     repairPriceGarage: 900,
-    contractPrice: 0,
+    contractPrice: "Un-Buyable",
     stats: {
       topSpeed: 57,
       acceleration: 44,
@@ -88,6 +88,21 @@ const VEHICLES_DATA = [
       braking: 53,
       maxHealth: "200 - 100 - 100",
       armor: 1
+    }
+  },
+  {
+    name: "Beam",
+    showMoreButton: true,
+    type: "ground",
+    repairPrice: 600,
+    repairPriceGarage: 180,
+    contractPrice: 80000,
+    stats: {
+      topSpeed: 44,
+      acceleration: 35,
+      braking: 58,
+      maxHealth: "200 - 100 - 100",
+      armor: 0
     }
   },
   {

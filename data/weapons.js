@@ -560,7 +560,7 @@ const GUNS_DATA = [
     contractPrice: "Un-Buyable",
     sellPrice: 30000,
     stats: {
-      ammo: "0/0",
+      ammo: "5/30",
       ammoPrice: "$1000 for 5",
       damage: "Head-200/Torso-100/Limbs-100",
       firerate: 30,
@@ -591,7 +591,7 @@ const GUNS_DATA = [
     contractPrice: "Un-Buyable",
     sellPrice: "?",
     stats: {
-      ammo: "0/0",
+      ammo: "5/30",
       ammoPrice: "$? for 5",
       damage: "Head-?/Torso-?/Limbs-?",
       firerate: 30,

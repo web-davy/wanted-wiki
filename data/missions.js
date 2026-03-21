@@ -306,11 +306,11 @@ const MISSIONS_DATA = [
   {
     id: "smuggler",
     showMoreButton: true,
-    title: "Smuggler - Part 3",
+    title: "Smuggler - Part 4",
     location: "Criminal Outpost – Talk to Sir. B",
     description: "You didn't seem to have any trouble with that, let's make it $500,000 this time. Remember, time is money. My money.",
     howToComplete: "Sell $500,000 worth of loot to Sir B.",
-    difficulty: "EASY",
+    difficulty: "MEDIUM",
     missionType: "Sir. B",
     rewards: ["600 Syndicate XP", "$50,000"]
   },

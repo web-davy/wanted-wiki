@@ -563,9 +563,40 @@ const GUNS_DATA = [
       ammo: "0/0",
       ammoPrice: "$1000 for 5",
       damage: "Head-200/Torso-100/Limbs-100",
-      firerate: 0,
-      reload: 0,
-      accuracy: "0"
+      firerate: 30,
+      reload: 3.5,
+      accuracy: "±0.40m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 },
+        { name: "Rifle Scope", price: 1250000 },
+        { name: "Nightforce Scope", price: 2500000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
+    }
+  },
+  {
+    name: "Golden Barrett M82",
+    showMoreButton: true,
+    obtaining: "Airdrop",
+    contractPrice: "Un-Buyable",
+    sellPrice: "?",
+    stats: {
+      ammo: "0/0",
+      ammoPrice: "$1000 for 5",
+      damage: "Head-200/Torso-100/Limbs-100",
+      firerate: 30,
+      reload: 3.5,
+      accuracy: "±0.40m @ 50m"
     },
     attachments: {
       Optics: [
@@ -594,9 +625,9 @@ const GUNS_DATA = [
       ammo: "30/300",
       ammoPrice: "$600 for 10",
       damage: "Head-15/Torso-12/Limbs-12",
-      firerate: 0,
-      reload: 0,
-      accuracy: "0"
+      firerate: 750,
+      reload: 2,
+      accuracy: "±1.50m @ 50m"
     },
     attachments: {
       Optics: [
@@ -610,6 +641,33 @@ const GUNS_DATA = [
       Underbarrel: [
         { name: "Horizontal Foregrip", price: 5000 },
         { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
+    }
+  },
+  {
+    name: "Golden Deagle",
+    showMoreButton: true,
+    obtaining: "Airdrop",
+    sellPrice: 21000,
+    contractPrice: "Un-Buyable",
+    stats: {
+      ammo: "8/160",
+      ammoPrice: "$160 for 8",
+      damage: "Head-80/Torso-50/Limbs-40",
+      firerate: 200,
+      reload: 3,
+      accuracy: "±0.70m @ 25m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Pistol Holo", price: 12500 },
+        { name: "Reflex Sight", price: 20000 }
+      ],
+      Muzzle: [
+        { name: "Pistol Suppressor", price: 16000 }
       ],
       Tactical: [
         { name: "Tactical Laser", price: 50000 }

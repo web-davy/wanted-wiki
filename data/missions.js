@@ -1,30 +1,6 @@
 const MISSIONS_DATA = [
 
   {
-    id: "bank-heist",
-    showMoreButton: true,
-    title: "Bank Heist",
-    location: "Tutorial",
-    description: "We've been watching you. Don't know who we are? Good, let's keep it that way for now. If you want to be a real criminal, you're going to have to prove you're worthy by doing a big job. Hit the central bank downtown and that will get you our respect.",
-    howToComplete: "Locate the Bank, use the elevator, rob the vault, and escape.",
-    difficulty: "EASY",
-    missionType: "Game",
-    rewards: ["$5,000"]
-  },
-  {
-    id: "get-rolling",
-    showMoreButton: true,
-    title: "Get Rolling",
-    location: "Tutorial",
-    description: "Navigating the terrain of the Oasis is challenging, so let's get you a new set of wheels. Go to the Bayview Dealership and ask for Cody. He'll be expecting you.",
-    howToComplete: "Locate the Dealership, talk to Cody, and purchase the Nomad for free.",
-    difficulty: "EASY",
-    missionType: "Game",
-    rewards: ["$5,000"]
-  },
-
-
-  {
     id: "artisan",
     showMoreButton: true,
     title: "Artisan - Part 1",
@@ -35,6 +11,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$20,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -46,6 +23,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$25,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -57,6 +35,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$40,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -68,6 +47,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$60,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -79,6 +59,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$75,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -90,6 +71,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$85,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -101,6 +83,7 @@ const MISSIONS_DATA = [
     missionType: "Erik",
     rewards: ["$100,000"]
   },
+
   {
     id: "artisan",
     showMoreButton: true,
@@ -113,6 +96,137 @@ const MISSIONS_DATA = [
     rewards: ["$200,000"]
   },
 
+  {
+    id: "bank-heist",
+    showMoreButton: true,
+    title: "Bank Heist",
+    location: "Tutorial",
+    description: "We've been watching you. Don't know who we are? Good, let's keep it that way for now. If you want to be a real criminal, you're going to have to prove you're worthy by doing a big job. Hit the central bank downtown and that will get you our respect.",
+    howToComplete: "Locate the Bank, use the elevator, rob the vault, and escape.",
+    difficulty: "EASY",
+    missionType: "Game",
+    rewards: ["$5,000"]
+  },
+
+  {
+    id: "bounty-hunt",
+    showMoreButton: true,
+    title: "Bounty Hunt",
+    location: "Police Station – Talk to Bert",
+    description: "There's been a major influx of criminal activity in the city and we need to find the source. Arrest three wanted criminals: then I'll put our interrogator to work and see if we can learn anything useful.",
+    howToComplete: "Arrest 3 criminals.",
+    difficulty: "MEDIUM",
+    missionType: "Bert",
+    rewards: ["$50,000"]
+  },
+
+  {
+    id: "contraband",
+    showMoreButton: true,
+    title: "Contraband - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "We have some clients looking to procure powerful firearms. Ghost guns only, no serial numbers, nothing store bought. When you find them, sell them to Rod at the port. He'll facilitate the transaction.",
+    howToComplete: "Sell 1 found Uzi, 1 found UMP 45, and 1 found AK-47 to Rod at the port.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["400 Syndicate XP", "$10,000"]
+  },
+
+  {
+    id: "contraband",
+    showMoreButton: true,
+    title: "Contraband - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "We have some clients looking to procure powerful firearms. Ghost guns only, no serial numbers, nothing store bought. When you find them, sell them to Rod at the port. He'll facilitate the transaction.",
+    howToComplete: "Sell 1 found Glock 18c, 1 found Benelli M1014, and 1 found SPAS-12 to Rod at the port.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["650 Syndicate XP", "$15,000"]
+  },
+
+  {
+    id: "crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The Syndicate is growing - it's time you become a squad leader. Recruit others to the cause. We're going to need all the help we can get.",
+    howToComplete: "Make a crew with a friend and play with them, then return to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["350 Syndicate XP", "$15,000"]
+  },
+
+  {
+    id: "crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You're part of a brotherhood now. From now on until the day you die, wherever you are, every member of the Syndicate is your brother. People die. The Syndicate lives forever.",
+    howToComplete: "Play with your crew for 60 minutes, rob 2 Vaults, and crack 1 Jewelry Vault.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["500 Syndicate XP", "$25,000"]
+  },
+
+  {
+    id: "crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Your squad has been selected for a special operation. Hit the big ones: the bank and the jewelry store.",
+    howToComplete: "Play with your crew for 4 hours, Rob 6 Vaults, and Crack 3 Jewelry Vaults.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["900 Syndicate XP", "$40,000"]
+  },
+
+  {
+    id: "crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 4",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Your squad is being deployed on a jewelry store operation. Crack the vault and kill any cops standing in your way.",
+    howToComplete: "Play with your crew for 6 hours, Eliminate 10 police while wanted, and Crack 5 Jewelry Vaults.",
+    difficulty: "HARD",
+    missionType: "Sir. B",
+    rewards: ["1,400 Syndicate XP", "$60,000"]
+  },
+
+  {
+    id: "data-disk",
+    showMoreButton: true,
+    title: "Data Disk",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "One of my agents was en route with critical information when their plane suddenly crash landed... no survivors. The plane went down somewhere around Frostspire Summit. Find out what happened and retrieve the data.",
+    howToComplete: "Locate the Crash Site and find the Data Disk.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["200 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "fence",
+    showMoreButton: true,
+    title: "Fence - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You're gonna need connections to survive and make a name for yourself as a criminal. Money talks. Work with my associate Ofy and sell $10,000 worth of stolen goods through the pawn shop.",
+    howToComplete: "Sell $10,000 worth of stolen goods to Ofy at the pawn shop.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["100 Syndicate XP", "$3,000"]
+  },
+
+  {
+    id: "fence",
+    showMoreButton: true,
+    title: "Fence - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "That was a good start, but now let's up the ante. This time, sell $30,000 worth of stolen goods through the pawn shop. Pull off biggers jobs, get paid more. That's the name of the game.",
+    howToComplete: "Sell $30,000 worth of stolen goods through the pawn shop.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["150 Syndicate XP", "$7,500"]
+  },
 
   {
     id: "forbidden-meat",
@@ -126,392 +240,6 @@ const MISSIONS_DATA = [
     rewards: ["$20,000", "Meat Grinder Furniture"]
   },
 
-
-  {
-    id: "the-deposit",
-    showMoreButton: true,
-    title: "The Deposit",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Petty theft isn't glamorous, but every master thief starts small. I'd rather be a thief than a slave with a white collar, wouldn't you? Hit 4 gas stations around Oasis. They keep their money in a safe in the back. Just dust for prints and crack the combo lock.",
-    howToComplete: "Rob 4 Gas Station Safes.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["150 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "fuel-depot",
-    showMoreButton: true,
-    title: "Fuel Depot",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "We've been in the shadows for far too long. I think it's time we come out of hiding. I want to put a real scare into those cops, so let's make some fireworks. Fuel Tankers are the target. You'll need explosives to really make them go boom. Find 3 different tankers and light them up.",
-    howToComplete: "Destroy 3 of the 5 tankers located at the Bank, Military, Airport, Gas Station (near Pawn Shop), and Crystal Resort.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["$25,000"]
-  },
-  {
-    id: "fence",
-    showMoreButton: true,
-    title: "Fence - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "You're gonna need connections to survive and make a name for yourself as a criminal. Money talks. Work with my associate Ofy and sell $10,000 worth of stolen goods through the pawn shop.",
-    howToComplete: "Sell $10,000 worth of stolen goods to Ofy at the pawn shop.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["100 Syndicate XP", "$3,000"]
-  },
-  {
-    id: "fence",
-    showMoreButton: true,
-    title: "Fence - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "That was a good start, but now let's up the ante. This time, sell $30,000 worth of stolen goods through the pawn shop. Pull off biggers jobs, get paid more. That's the name of the game.",
-    howToComplete: "Sell $30,000 worth of stolen goods through the pawn shop.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["150 Syndicate XP", "$7,500"]
-  },
-  {
-    id: "timepiece",
-    showMoreButton: true,
-    title: "Timepiece",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Ripping off rich people is the easiest way to make money in the crime game. There's this rich banking corporate type - Buck Moneymaker. He goes around flashing that watch of his, a priceless timepiece. I want you to steal it from him. Check his office in the bank and bring it to me.",
-    howToComplete: "Locate Buck's Office in the bank, steal the Priceless Watch, and return it to Sir B.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["100 Syndicate XP", "$3,000"]
-  },
-  {
-    id: "teller",
-    showMoreButton: true,
-    title: "Teller - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "I'll let you in on a little secret: the entire system is designed to keep you down and poor. Banks are charging you money to get your own money out of the machine. Who ever thought you'd pay cash to get cash? That's where we've gotten to. They own you.",
-    howToComplete: "Rob 20 ATMs and 20 Cash Registers.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["150 Syndicate XP", "$6,000"]
-  },
-  {
-    id: "teller",
-    showMoreButton: true,
-    title: "Teller - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "If people actually had any understanding of our banking and monetary system, there would be a revolution by tomorrow morning. You work hard, and your money gets deposited into a bank. They're stealing from you, too.",
-    howToComplete: "Rob 60 ATMs and 60 Cash Registers.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["300 Syndicate XP", "$15,000"]
-  },
-  {
-    id: "weapons-cache",
-    showMoreButton: true,
-    title: "Weapons Cache - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "The Syndicate has hidden various weapons caches around the Oasis, but we've lost track of some of them. If you can locate them, I'll be in your debt.",
-    howToComplete: "Locate the Glock 18c, AK 47, and Benelli M1014 hidden caches.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["300 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "contraband",
-    showMoreButton: true,
-    title: "Contraband - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "We have some clients looking to procure powerful firearms. Ghost guns only, no serial numbers, nothing store bought. When you find them, sell them to Rod at the port. He'll facilitate the transaction.",
-    howToComplete: "Sell 1 found Uzi, 1 found UMP 45, and 1 found AK-47 to Rod at the port.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["400 Syndicate XP", "$10,000"]
-  },
-  {
-    id: "contraband",
-    showMoreButton: true,
-    title: "Contraband - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "We have some clients looking to procure powerful firearms. Ghost guns only, no serial numbers, nothing store bought. When you find them, sell them to Rod at the port. He'll facilitate the transaction.",
-    howToComplete: "Sell 1 found Glock 18c, 1 found Benelli M1014, and 1 found SPAS-12 to Rod at the port.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["650 Syndicate XP", "$15,000"]
-  },
-  {
-    id: "lockpicker",
-    showMoreButton: true,
-    title: "Lockpicker - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "A real professional is one who can open a safe without destroying it. You did well with the last job, this time I want you to go after luxury homes. Rich people only. Search their houses, porches, garages and crack any safes you find.",
-    howToComplete: "Rob 10 Personal Safes.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["200 Syndicate XP", "$8,000"]
-  },
-  {
-    id: "lockpicker",
-    showMoreButton: true,
-    title: "Lockpicker - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every safe can be cracked, it just depends how skilled you are. Those luxury homes were more lucrative than I'd realized. Rob 30 more house safes and see what you find.",
-    howToComplete: "Rob 20 House Safes.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["300 Syndicate XP", "$20,000"]
-  },
-  {
-    id: "lockpicker",
-    showMoreButton: true,
-    title: "Lockpicker - Part 3",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "No lock is pick-proof, but high-security cylinders raise time, skill, and tool requirements significantly. Practice makes perfect - crack 100 house safes. Then you'll be a master locksmith.",
-    howToComplete: "Rob 50 House Safes.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["600 Syndicate XP", "$50,000"]
-  },
-  {
-    id: "smuggler",
-    showMoreButton: true,
-    title: "Smuggler - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "You're trusted now. From now on, bring all stolen goods to me. I'll pay a hefty premium, double what Ofy was paying. For your trouble.",
-    howToComplete: "Sell $30,000 worth of loot to Sir B.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["200 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "smuggler",
-    showMoreButton: true,
-    title: "Smuggler - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "I have buyers waiting, so let's do some more business together. Up the volume to $100,000 this time. The more we flip, the more you're paid.",
-    howToComplete: "Sell $100,000 worth of loot to Sir B.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["300 Syndicate XP", "$7,500"]
-  },
-  {
-    id: "smuggler",
-    showMoreButton: true,
-    title: "Smuggler - Part 3",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "You've proven yourself capable, now let's really get serious. $300,000 of volume this time. My buyers are waiting - don't disappoint me.",
-    howToComplete: "Sell $300,000 worth of loot to Sir B.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["450 Syndicate XP", "$10,000"]
-  },
-  {
-    id: "smuggler",
-    showMoreButton: true,
-    title: "Smuggler - Part 4",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "You didn't seem to have any trouble with that, let's make it $500,000 this time. Remember, time is money. My money.",
-    howToComplete: "Sell $500,000 worth of loot to Sir B.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["600 Syndicate XP", "$50,000"]
-  },
-  {
-    id: "data-disk",
-    showMoreButton: true,
-    title: "Data Disk",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "One of my agents was en route with critical information when their plane suddenly crash landed... no survivors. The plane went down somewhere around Frostspire Summit. Find out what happened and retrieve the data.",
-    howToComplete: "Locate the Crash Site and find the Data Disk.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["200 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "incriminating-data",
-    showMoreButton: true,
-    title: "Incriminating Data",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "From what I could decrypt on the disk, members of the city's government are implicated in some shady dealings - things they don't want to come to light. They'll do anything to keep the word from getting out, including going to war with The Syndicate. We need more evidence so we can stop them.",
-    howToComplete: "Find 3 Flash Drives and bring them to Sir B.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["300 Syndicate XP", "$6,000"]
-  },
-  {
-    id: "the-files",
-    showMoreButton: true,
-    title: "The Files",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "The government, the military - they've all been paid off. There's a black corporation conducting dangerous experiments: apparently they're who is responsible for the mysterious Anomaly. Infiltrate the Military Base and recover any documents you find on this. We need to figure out what's going on.",
-    howToComplete: "Find 3 Secret Files at the Military Base and bring them to Sir B.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["450 Syndicate XP", "$7,500"]
-  },
-  {
-    id: "syndicate-dogs",
-    showMoreButton: true,
-    title: "Syndicate Dogs - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "It's time for you to learn how to pull a proper jewel heist. You're gonna need the proper tools first. Go purchase the Buzzsaw from Ofy's pawn shop. It's the only thing strong enough to get through the display cases.",
-    howToComplete: "Purchase a Buzzsaw from Ofy's pawn shop, locate the Jewelry Store, and break 5 display cases.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["200 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "syndicate-dogs",
-    showMoreButton: true,
-    title: "Syndicate Dogs - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "The jewelry vault is reinforced - high explosives won't cut it. You'll need a specialized drill. Go see Rod at the Port. He'll have what you need to break in.",
-    howToComplete: "Find a Vault Cracker, break into the Jewelry Vault, and break 20 Jewelry Cases.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["350 Syndicate XP", "$10,000"]
-  },
-  {
-    id: "ring-collector",
-    showMoreButton: true,
-    title: "Ring Collector - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Expensive rings fetch a high price on the black market. A client of mine wants some samples - could be a lucrative deal for both of us.",
-    howToComplete: "Bring Sir B 2 Sapphire Rings, 2 Ruby Rings, and 2 Emerald Rings.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["250 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "gem-collector",
-    showMoreButton: true,
-    title: "Gem Collector - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
-    howToComplete: "Find 10 Sapphires and bring them to Sir B.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["400 Syndicate XP", "$8,000"]
-  },
-  {
-    id: "gem-collector",
-    showMoreButton: true,
-    title: "Gem Collector - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
-    howToComplete: "Find 6 Rubies and bring them to Sir B.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["700 Syndicate XP", "$16,000"]
-  },
-  {
-    id: "gem-collector",
-    showMoreButton: true,
-    title: "Gem Collector - Part 3",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
-    howToComplete: "Find 6 Emeralds and bring them to Sir B.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["900 Syndicate XP", "$50,000"]
-  },
-  {
-    id: "gem-collector",
-    showMoreButton: true,
-    title: "Gem Collector - Part 4",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
-    howToComplete: "Find 6 Diamonds and bring them to Sir B.",
-    difficulty: "HARD",
-    missionType: "Sir. B",
-    rewards: ["1,300 Syndicate XP", "$100,000"]
-  },
-  {
-    id: "lights-out",
-    showMoreButton: true,
-    title: "Lights Out",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "We don't want the cops sniffing around our business, so let's hit them where it hurts. Disable three of their cruisers - that'll keep them from from interfering with our operations. Don't get caught.",
-    howToComplete: "Disable 3 police cars and escape 3 stars with $2,500 bounty.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["300 Syndicate XP", "$5,000"]
-  },
-  {
-    id: "crime-squad",
-    showMoreButton: true,
-    title: "Crime Squad - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "The Syndicate is growing - it's time you become a squad leader. Recruit others to the cause. We're going to need all the help we can get.",
-    howToComplete: "Make a crew with a friend and play with them, then return to Sir B.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["350 Syndicate XP", "$15,000"]
-  },
-  {
-    id: "crime-squad",
-    showMoreButton: true,
-    title: "Crime Squad - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "You're part of a brotherhood now. From now on until the day you die, wherever you are, every member of the Syndicate is your brother. People die. The Syndicate lives forever.",
-    howToComplete: "Play with your crew for 60 minutes, rob 2 Vaults, and crack 1 Jewelry Vault.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["500 Syndicate XP", "$25,000"]
-  },
-  {
-    id: "crime-squad",
-    showMoreButton: true,
-    title: "Crime Squad - Part 3",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Your squad has been selected for a special operation. Hit the big ones: the bank and the jewelry store.",
-    howToComplete: "Play with your crew for 4 hours, Rob 6 Vaults, and Crack 3 Jewelry Vaults.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["900 Syndicate XP", "$40,000"]
-  },
-  {
-    id: "oasis-eleven",
-    showMoreButton: true,
-    title: "Oasis Eleven - Part 1",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every so often, a huge shipment of valuables comes through the the bank. We have intel that a shipment of gold is coming through soon. Break in, get the gold, and get out.",
-    howToComplete: "Rob 3 Gold Vaults.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["600 Syndicate XP", "$15,000"]
-  },
-  {
-    id: "oasis-eleven",
-    showMoreButton: true,
-    title: "Oasis Eleven - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every so often, a huge shipment of valuables comes through the the bank. This time, there's going to be a shipment of gems: sapphires. Steal as many as you can. ",
-    howToComplete: "Rob 2 Sapphire Vaults.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["1000 Syndicate XP", "$25,000"]
-  },
-  {
-    id: "oasis-eleven",
-    showMoreButton: true,
-    title: "Oasis Eleven - Part 3",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every so often, a huge shipment of valuables comes through the the bank. Ruby Vaults are particularly valuable. Comes with a larger amount of cash too. ",
-    howToComplete: "Rob 2 Ruby Vaults.",
-    difficulty: "MEDIUM",
-    missionType: "Sir. B",
-    rewards: ["1500 Syndicate XP", "$50,000"]
-  },
-  {
-    id: "payday",
-    showMoreButton: true,
-    title: "Payday",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "You're becoming a real pro... Let's try a bigger heist. Steal $50,000 from the bank vault. Don't forget about the gold.",
-    howToComplete: "Steal $50,000 from the bank vault and find 15 Gold Bars.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["500 Syndicate XP", "$12,000"]
-  },
   {
     id: "front-toward-enemy",
     showMoreButton: true,
@@ -523,61 +251,79 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["600 Syndicate XP", "$20,000"]
   },
+
   {
-    id: "hidden-cargo",
+    id: "fuel-depot",
     showMoreButton: true,
-    title: "Hidden Cargo",
+    title: "Fuel Depot",
     location: "Criminal Outpost – Talk to Sir. B",
-    description: "We received word that the government has a special order on the manifest at the cargo port sometime today. Go to the port and find what they're hiding.",
-    howToComplete: "Collect 1 Secret Files from a cargo crate and turn in to Sir B.",
+    description: "We've been in the shadows for far too long. I think it's time we come out of hiding. I want to put a real scare into those cops, so let's make some fireworks. Fuel Tankers are the target. You'll need explosives to really make them go boom. Find 3 different tankers and light them up.",
+    howToComplete: "Destroy 3 of the 5 tankers located at the Bank, Military, Airport, Gas Station (near Pawn Shop), and Crystal Resort.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["$25,000"]
+  },
+
+  {
+    id: "gem-collector",
+    showMoreButton: true,
+    title: "Gem Collector - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 10 Sapphires and bring them to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["400 Syndicate XP", "$8,000"]
+  },
+
+  {
+    id: "gem-collector",
+    showMoreButton: true,
+    title: "Gem Collector - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 6 Rubies and bring them to Sir B.",
     difficulty: "MEDIUM",
     missionType: "Sir. B",
-    rewards: ["1,000 Syndicate XP", "$50,000"]
+    rewards: ["700 Syndicate XP", "$16,000"]
   },
+
   {
-    id: "weapons-cache",
+    id: "gem-collector",
     showMoreButton: true,
-    title: "Weapons Cache - Part 2",
+    title: "Gem Collector - Part 3",
     location: "Criminal Outpost – Talk to Sir. B",
-    description: "The Syndicate has hidden various weapons caches around the Oasis, but we've lost track of some of them. If you can locate them, I'll be in your debt.",
-    howToComplete: "Locate the AUG A1, Locate the AWM, and Locate the RPG-7.",
-    difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["500 Syndicate XP", "$10,000"]
-  },
-  {
-    id: "most-wanted",
-    showMoreButton: true,
-    title: "Most Wanted",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "Word of your exploits has gotten around - Captain Bert has put an APB out on you. Don't let them catch you. Escape and lay low for awhile.",
-    howToComplete: "Escape 5 stars with $20,000 bounty.",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 6 Emeralds and bring them to Sir B.",
     difficulty: "MEDIUM",
     missionType: "Sir. B",
-    rewards: ["600 Syndicate XP", "$9,000"]
+    rewards: ["900 Syndicate XP", "$50,000"]
   },
+
   {
-    id: "upgrade",
+    id: "gem-collector",
     showMoreButton: true,
-    title: "Upgrade - Part 1",
+    title: "Gem Collector - Part 4",
     location: "Criminal Outpost – Talk to Sir. B",
-    description: "I have a client that wants to buy tech, but only in bulk. All or nothing. Sell me a bag containing 2 PearBooks, 2 PearPads, and 2 Flash Drives.",
-    howToComplete: "Sell a bag containing 2 PearBooks, 2 PearPads, and 2 Flash Drives to Sir B.",
-    difficulty: "EASY",
+    description: "There's high demand for rare gems on the black market. If you can bring me some, I'll make it worth your while.",
+    howToComplete: "Find 6 Diamonds and bring them to Sir B.",
+    difficulty: "HARD",
     missionType: "Sir. B",
-    rewards: ["400 Syndicate XP", "$6,000"]
+    rewards: ["1,300 Syndicate XP", "$100,000"]
   },
+
   {
-    id: "upgrade",
+    id: "get-rolling",
     showMoreButton: true,
-    title: "Upgrade - Part 2",
-    location: "Criminal Outpost – Talk to Sir. B",
-    description: "I have a client that wants to buy tech, but only in bulk. All or nothing. Sell me a bag containing 2 GoldPads, 1 HDD, 1 PSU, and 1 GPU.",
-    howToComplete: "Sell a bag containing 2 GoldPads, 1 HDD, 1 PSU, and 1 GPU to Sir B.",
+    title: "Get Rolling",
+    location: "Tutorial",
+    description: "Navigating the terrain of the Oasis is challenging, so let's get you a new set of wheels. Go to the Bayview Dealership and ask for Cody. He'll be expecting you.",
+    howToComplete: "Locate the Dealership, talk to Cody, and purchase the Nomad for free.",
     difficulty: "EASY",
-    missionType: "Sir. B",
-    rewards: ["700 Syndicate XP", "$10,000"]
+    missionType: "Game",
+    rewards: ["$5,000"]
   },
+
   {
     id: "going-loud",
     showMoreButton: true,
@@ -590,6 +336,77 @@ const MISSIONS_DATA = [
     rewards: ["600 Syndicate XP", "$7,000"]
   },
 
+  {
+    id: "hidden-cargo",
+    showMoreButton: true,
+    title: "Hidden Cargo",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "We received word that the government has a special order on the manifest at the cargo port sometime today. Go to the port and find what they're hiding.",
+    howToComplete: "Collect 1 Secret Files from a cargo crate and turn in to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,000 Syndicate XP", "$50,000"]
+  },
+
+  {
+    id: "incriminating-data",
+    showMoreButton: true,
+    title: "Incriminating Data",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "From what I could decrypt on the disk, members of the city's government are implicated in some shady dealings - things they don't want to come to light. They'll do anything to keep the word from getting out, including going to war with The Syndicate. We need more evidence so we can stop them.",
+    howToComplete: "Find 3 Flash Drives and bring them to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$6,000"]
+  },
+
+  {
+    id: "lights-out",
+    showMoreButton: true,
+    title: "Lights Out",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "We don't want the cops sniffing around our business, so let's hit them where it hurts. Disable three of their cruisers - that'll keep them from from interfering with our operations. Don't get caught.",
+    howToComplete: "Disable 3 police cars and escape 3 stars with $2,500 bounty.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "lockpicker",
+    showMoreButton: true,
+    title: "Lockpicker - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "A real professional is one who can open a safe without destroying it. You did well with the last job, this time I want you to go after luxury homes. Rich people only. Search their houses, porches, garages and crack any safes you find.",
+    howToComplete: "Rob 10 Personal Safes.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["200 Syndicate XP", "$8,000"]
+  },
+
+  {
+    id: "lockpicker",
+    showMoreButton: true,
+    title: "Lockpicker - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every safe can be cracked, it just depends how skilled you are. Those luxury homes were more lucrative than I'd realized. Rob 30 more house safes and see what you find.",
+    howToComplete: "Rob 20 House Safes.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$20,000"]
+  },
+
+  {
+    id: "lockpicker",
+    showMoreButton: true,
+    title: "Lockpicker - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "No lock is pick-proof, but high-security cylinders raise time, skill, and tool requirements significantly. Practice makes perfect - crack 100 house safes. Then you'll be a master locksmith.",
+    howToComplete: "Rob 50 House Safes.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$50,000"]
+  },
 
   {
     id: "loyalty-test",
@@ -602,19 +419,284 @@ const MISSIONS_DATA = [
     missionType: "Bert",
     rewards: ["$25,000", "Access to the Police Team"]
   },
+
   {
-    id: "bounty-hunt",
+    id: "most-wanted",
     showMoreButton: true,
-    title: "Bounty Hunt",
-    location: "Police Station – Talk to Bert",
-    description: "There's been a major influx of criminal activity in the city and we need to find the source. Arrest three wanted criminals: then I'll put our interrogator to work and see if we can learn anything useful.",
-    howToComplete: "Arrest 3 criminals.",
+    title: "Most Wanted",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Word of your exploits has gotten around - Captain Bert has put an APB out on you. Don't let them catch you. Escape and lay low for awhile.",
+    howToComplete: "Escape 5 stars with $20,000 bounty.",
     difficulty: "MEDIUM",
-    missionType: "Bert",
-    rewards: ["$50,000"]
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$9,000"]
   },
 
+  {
+    id: "oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every so often, a huge shipment of valuables comes through the the bank. We have intel that a shipment of gold is coming through soon. Break in, get the gold, and get out.",
+    howToComplete: "Rob 3 Gold Vaults.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$15,000"]
+  },
 
+  {
+    id: "oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every so often, a huge shipment of valuables comes through the the bank. This time, there's going to be a shipment of gems: sapphires. Steal as many as you can. ",
+    howToComplete: "Rob 2 Sapphire Vaults.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1000 Syndicate XP", "$25,000"]
+  },
+
+  {
+    id: "oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every so often, a huge shipment of valuables comes through the the bank. Ruby Vaults are particularly valuable. Comes with a larger amount of cash too. ",
+    howToComplete: "Rob 2 Ruby Vaults.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1500 Syndicate XP", "$50,000"]
+  },
+
+  {
+    id: "payday",
+    showMoreButton: true,
+    title: "Payday",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You're becoming a real pro... Let's try a bigger heist. Steal $50,000 from the bank vault. Don't forget about the gold.",
+    howToComplete: "Steal $50,000 from the bank vault and find 15 Gold Bars.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["500 Syndicate XP", "$12,000"]
+  },
+
+  {
+    id: "ring-collector",
+    showMoreButton: true,
+    title: "Ring Collector - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Expensive rings fetch a high price on the black market. A client of mine wants some samples - could be a lucrative deal for both of us.",
+    howToComplete: "Bring Sir B 2 Sapphire Rings, 2 Ruby Rings, and 2 Emerald Rings.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["250 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You're trusted now. From now on, bring all stolen goods to me. I'll pay a hefty premium, double what Ofy was paying. For your trouble.",
+    howToComplete: "Sell $30,000 worth of loot to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["200 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "I have buyers waiting, so let's do some more business together. Up the volume to $100,000 this time. The more we flip, the more you're paid.",
+    howToComplete: "Sell $100,000 worth of loot to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$7,500"]
+  },
+
+  {
+    id: "smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You've proven yourself capable, now let's really get serious. $300,000 of volume this time. My buyers are waiting - don't disappoint me.",
+    howToComplete: "Sell $300,000 worth of loot to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["450 Syndicate XP", "$10,000"]
+  },
+
+  {
+    id: "smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 4",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You didn't seem to have any trouble with that, let's make it $500,000 this time. Remember, time is money. My money.",
+    howToComplete: "Sell $500,000 worth of loot to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["600 Syndicate XP", "$50,000"]
+  },
+
+  {
+    id: "syndicate-dogs",
+    showMoreButton: true,
+    title: "Syndicate Dogs - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "It's time for you to learn how to pull a proper jewel heist. You're gonna need the proper tools first. Go purchase the Buzzsaw from Ofy's pawn shop. It's the only thing strong enough to get through the display cases.",
+    howToComplete: "Purchase a Buzzsaw from Ofy's pawn shop, locate the Jewelry Store, and break 5 display cases.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["200 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "syndicate-dogs",
+    showMoreButton: true,
+    title: "Syndicate Dogs - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The jewelry vault is reinforced - high explosives won't cut it. You'll need a specialized drill. Go see Rod at the Port. He'll have what you need to break in.",
+    howToComplete: "Find a Vault Cracker, break into the Jewelry Vault, and break 20 Jewelry Cases.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["350 Syndicate XP", "$10,000"]
+  },
+
+  {
+    id: "teller",
+    showMoreButton: true,
+    title: "Teller - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "I'll let you in on a little secret: the entire system is designed to keep you down and poor. Banks are charging you money to get your own money out of the machine. Who ever thought you'd pay cash to get cash? That's where we've gotten to. They own you.",
+    howToComplete: "Rob 20 ATMs and 20 Cash Registers.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["150 Syndicate XP", "$6,000"]
+  },
+
+  {
+    id: "teller",
+    showMoreButton: true,
+    title: "Teller - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "If people actually had any understanding of our banking and monetary system, there would be a revolution by tomorrow morning. You work hard, and your money gets deposited into a bank. They're stealing from you, too.",
+    howToComplete: "Rob 60 ATMs and 60 Cash Registers.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$15,000"]
+  },
+
+  {
+    id: "the-deposit",
+    showMoreButton: true,
+    title: "The Deposit",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Petty theft isn't glamorous, but every master thief starts small. I'd rather be a thief than a slave with a white collar, wouldn't you? Hit 4 gas stations around Oasis. They keep their money in a safe in the back. Just dust for prints and crack the combo lock.",
+    howToComplete: "Rob 4 Gas Station Safes.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["150 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "the-files",
+    showMoreButton: true,
+    title: "The Files",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The government, the military - they've all been paid off. There's a black corporation conducting dangerous experiments: apparently they're who is responsible for the mysterious Anomaly. Infiltrate the Military Base and recover any documents you find on this. We need to figure out what's going on.",
+    howToComplete: "Find 3 Secret Files at the Military Base and bring them to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["450 Syndicate XP", "$7,500"]
+  },
+
+  {
+    id: "timepiece",
+    showMoreButton: true,
+    title: "Timepiece",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Ripping off rich people is the easiest way to make money in the crime game. There's this rich banking corporate type - Buck Moneymaker. He goes around flashing that watch of his, a priceless timepiece. I want you to steal it from him. Check his office in the bank and bring it to me.",
+    howToComplete: "Locate Buck's Office in the bank, steal the Priceless Watch, and return it to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["100 Syndicate XP", "$3,000"]
+  },
+
+  {
+    id: "upgrade",
+    showMoreButton: true,
+    title: "Upgrade - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "I have a client that wants to buy tech, but only in bulk. All or nothing. Sell me a bag containing 2 PearBooks, 2 PearPads, and 2 Flash Drives.",
+    howToComplete: "Sell a bag containing 2 PearBooks, 2 PearPads, and 2 Flash Drives to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["400 Syndicate XP", "$6,000"]
+  },
+
+  {
+    id: "upgrade",
+    showMoreButton: true,
+    title: "Upgrade - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "I have a client that wants to buy tech, but only in bulk. All or nothing. Sell me a bag containing 2 GoldPads, 1 HDD, 1 PSU, and 1 GPU.",
+    howToComplete: "Sell a bag containing 2 GoldPads, 1 HDD, 1 PSU, and 1 GPU to Sir B.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["700 Syndicate XP", "$10,000"]
+  },
+
+  {
+    id: "upgrade",
+    showMoreButton: true,
+    title: "Upgrade - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "I have a client that wants to buy tech, but only in bulk. All or nothing. Sell me a bag containing 2 GoldBooks, 2 GoldPhones, 1 GoldPods, and 1 Bitcoin",
+    howToComplete: "Sell a bag containing 2 GoldBooks, 2 GoldPhones, 1 GoldPods, and 1 Bitcoin to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,000 Syndicate XP", "$20,000"]
+  },
+
+  {
+    id: "wargames",
+    showMoreButton: true,
+    title: "WarGames - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The Syndicate is gearing up for a raid on Fort Emberreach. We're going to need everyone we can get for this operation. Break into the base, plunder their weapons, and kill everyone you see.",
+    howToComplete: "Hack 1 Secure Crate, Open 10 Military Chests, and Get 10 kills at Military.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["700 Syndicate XP", "$10,000"]
+  },
+
+  {
+    id: "weapons-cache",
+    showMoreButton: true,
+    title: "Weapons Cache - Part 1",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The Syndicate has hidden various weapons caches around the Oasis, but we've lost track of some of them. If you can locate them, I'll be in your debt.",
+    howToComplete: "Locate the Glock 18c, AK 47, and Benelli M1014 hidden caches.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["300 Syndicate XP", "$5,000"]
+  },
+
+  {
+    id: "weapons-cache",
+    showMoreButton: true,
+    title: "Weapons Cache - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The Syndicate has hidden various weapons caches around the Oasis, but we've lost track of some of them. If you can locate them, I'll be in your debt.",
+    howToComplete: "Locate the AUG A1, Locate the AWM, and Locate the RPG-7.",
+    difficulty: "EASY",
+    missionType: "Sir. B",
+    rewards: ["500 Syndicate XP", "$10,000"]
+  },
+
+  // Christmas Missions
   {
     id: "santas-helper",
     showMoreButton: true,
@@ -626,6 +708,7 @@ const MISSIONS_DATA = [
     missionType: "Christmas",
     rewards: ["$25,000"]
   },
+
   {
     id: "1-toy-drive",
     showMoreButton: true,
@@ -637,6 +720,7 @@ const MISSIONS_DATA = [
     missionType: "Christmas",
     rewards: ["$60,000", "LED Reindeer Furniture"]
   },
+
   {
     id: "2-toy-drive",
     showMoreButton: true,
@@ -648,6 +732,7 @@ const MISSIONS_DATA = [
     missionType: "Christmas",
     rewards: ["$100,000", "Snowflake Rims"]
   },
+
   {
     id: "jingle-balls",
     showMoreButton: true,
@@ -659,6 +744,7 @@ const MISSIONS_DATA = [
     missionType: "Christmas",
     rewards: ["$40,000", "Christmas 2025 Plate"]
   },
+
   {
     id: "jingle-balls",
     showMoreButton: true,
@@ -670,4 +756,5 @@ const MISSIONS_DATA = [
     missionType: "Christmas",
     rewards: ["$250,000", "Nutcracker Furniture"]
   }
+
 ];

@@ -491,6 +491,17 @@ const MISSIONS_DATA = [
     rewards: ["1000 Syndicate XP", "$25,000"]
   },
   {
+    id: "oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every so often, a huge shipment of valuables comes through the the bank. Ruby Vaults are particularly valuable. Comes with a larger amount of cash too. ",
+    howToComplete: "Rob 2 Ruby Vaults.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1500 Syndicate XP", "$50,000"]
+  },
+  {
     id: "payday",
     showMoreButton: true,
     title: "Payday",

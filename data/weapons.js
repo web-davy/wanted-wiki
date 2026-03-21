@@ -592,8 +592,8 @@ const GUNS_DATA = [
     sellPrice: "?",
     stats: {
       ammo: "0/0",
-      ammoPrice: "$1000 for 5",
-      damage: "Head-200/Torso-100/Limbs-100",
+      ammoPrice: "$? for 5",
+      damage: "Head-?/Torso-?/Limbs-?",
       firerate: 30,
       reload: 3.5,
       accuracy: "±0.40m @ 50m"

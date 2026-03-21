@@ -562,7 +562,7 @@ const GUNS_DATA = [
     stats: {
       ammo: "0/0",
       ammoPrice: "$1000 for 5",
-      damage: "Head-200/Torso-200/Limbs-100",
+      damage: "Head-200/Torso-100/Limbs-100",
       firerate: 0,
       reload: 0,
       accuracy: "0"

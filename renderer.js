@@ -66,7 +66,7 @@ function renderStat(label, value) {
   if (value === undefined || value === null || value === '' || value === '?' || value === '? - ?') return '';
   let formattedValue = String(value);
   if (formattedValue.includes('$')) {
-    formattedValue = formattedValue.replace(/\$/g, `<img src="images/cash.png" alt="Cash" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">`);
+    formattedValue = formattedValue.replace(/\$(?=\d)/g, `<img src="images/cash.png" alt="Cash" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">`);
   }
 
   return `<p><strong>${label}:</strong> ${formattedValue}</p>`;

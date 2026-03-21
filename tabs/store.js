@@ -6,7 +6,7 @@ function renderStore(sort = "high") {
 
     const cards = sortedStoreItems.map(item => {
         const robuxIcon = `https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/e/d/f/edfae9388da4cd8496b885a8a2df613372500d9c.png`;
-        const robuxPriceHtml = `<img src="${robuxIcon}" alt="R$" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; border-radius: 0; padding: 0;" onerror="this.src=''; this.alt='R$'"/>${item.robuxPrice}`;
+        const robuxPriceHtml = `<img src="${robuxIcon}" alt="Robux" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; border-radius: 0; padding: 0;" onerror="this.src=''; this.alt='Robux'"/>${item.robuxPrice}`;
 
         const visibleContent = `
             <h3>${item.name}</h3>

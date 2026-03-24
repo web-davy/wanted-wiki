@@ -589,11 +589,11 @@ const GUNS_DATA = [
     showMoreButton: true,
     obtaining: "Airdrop",
     contractPrice: "Un-Buyable",
-    sellPrice: "?",
+    sellPrice: "300000",
     stats: {
       ammo: "5/30",
-      ammoPrice: "$? for 5",
-      damage: "Head-?/Torso-?/Limbs-?",
+      ammoPrice: "2000? for 5",
+      damage: "Head-200/Torso-200/Limbs-200",
       firerate: 30,
       reload: 3.5,
       accuracy: "±0.40m @ 50m"

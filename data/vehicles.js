@@ -30,22 +30,6 @@ const VEHICLES_DATA = [
     }
   },
   {
-    name: "Blade",
-    showMoreButton: true,
-    type: "ground",
-    obtaining: "Syndicate Level 5",
-    repairPrice: 3000,
-    repairPriceGarage: 900,
-    contractPrice: "Un-Buyable",
-    stats: {
-      topSpeed: 57,
-      acceleration: 44,
-      braking: 64,
-      maxHealth: "1,000 - 300 - 400",
-      armor: 5
-    }
-  },
-  {
     name: "Ranger",
     showMoreButton: true,
     type: "ground",
@@ -76,21 +60,6 @@ const VEHICLES_DATA = [
     }
   },
   {
-    name: "Crowline",
-    showMoreButton: true,
-    type: "ground",
-    repairPrice: 600,
-    repairPriceGarage: 180,
-    contractPrice: 120000,
-    stats: {
-      topSpeed: 35,
-      acceleration: 32,
-      braking: 53,
-      maxHealth: "200 - 100 - 100",
-      armor: 1
-    }
-  },
-  {
     name: "Beam",
     showMoreButton: true,
     type: "ground",
@@ -103,6 +72,21 @@ const VEHICLES_DATA = [
       braking: 58,
       maxHealth: "200 - 100 - 100",
       armor: 0
+    }
+  },
+  {
+    name: "Crowline",
+    showMoreButton: true,
+    type: "ground",
+    repairPrice: 600,
+    repairPriceGarage: 180,
+    contractPrice: 120000,
+    stats: {
+      topSpeed: 35,
+      acceleration: 32,
+      braking: 53,
+      maxHealth: "200 - 100 - 100",
+      armor: 1
     }
   },
   {
@@ -166,6 +150,21 @@ const VEHICLES_DATA = [
     }
   },
   {
+    name: "Mini Bird",
+    showMoreButton: true,
+    type: "flying",
+    repairPrice: 0,
+    repairPriceGarage: 0,
+    contractPrice: 1400000,
+    stats: {
+      topSpeed: 58,
+      handling: 50,
+      spoolTime: 3,
+      maxHealth: "250",
+      armor: 0
+    }
+  },
+  {
     name: "Pulse 477",
     showMoreButton: true,
     type: "ground",
@@ -178,6 +177,21 @@ const VEHICLES_DATA = [
       braking: 67,
       maxHealth: "200 - 100 - 100",
       armor: 0
+    }
+  },
+  {
+    name: "Scout",
+    showMoreButton: true,
+    type: "flying",
+    repairPrice: 0,
+    repairPriceGarage: 0,
+    contractPrice: 3200000,
+    stats: {
+      topSpeed: 100,
+      handling: 100,
+      spoolTime: 5,
+      maxHealth: "400",
+      armor: 1
     }
   },
   {
@@ -226,33 +240,19 @@ const VEHICLES_DATA = [
     }
   },
   {
-    name: "Mini Bird",
+    name: "Blade",
     showMoreButton: true,
-    type: "flying",
-    repairPrice: 0,
-    repairPriceGarage: 0,
-    contractPrice: 1400000,
+    type: "ground",
+    obtaining: "Syndicate Level 5",
+    repairPrice: 3000,
+    repairPriceGarage: 900,
+    contractPrice: "Un-Buyable",
     stats: {
-      topSpeed: 58,
-      handling: 50,
-      spoolTime: 3,
-      maxHealth: "250",
-      armor: 0
-    }
-  },
-  {
-    name: "Scout",
-    showMoreButton: true,
-    type: "flying",
-    repairPrice: 0,
-    repairPriceGarage: 0,
-    contractPrice: 3200000,
-    stats: {
-      topSpeed: 100,
-      handling: 100,
-      spoolTime: 5,
-      maxHealth: "400",
-      armor: 1
+      topSpeed: 57,
+      acceleration: 44,
+      braking: 64,
+      maxHealth: "1,000 - 300 - 400",
+      armor: 5
     }
   }
 ];

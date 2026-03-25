@@ -27,6 +27,39 @@ const GUNS_DATA = [
     }
   },
   {
+    name: "FN FAL",
+    showMoreButton: true,
+    obtaining: "Syndicate Level 4",
+    reBuyPrice: 9000,
+    sellPrice: 2700,
+    contractPrice: 0,
+    stats: {
+      ammo: "20/280",
+      ammoPrice: "$0 for 0",
+      damage: "Head-14/Torso-10/Limbs-9",
+      firerate: 705,
+      reload: 2.5,
+      accuracy: "±1.10m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "Holographic Sight", price: 12500 },
+        { name: "Reflex Sight", price: 20000 },
+        { name: "AGOC", price: 250000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Underbarrel: [
+        { name: "Horizontal Foregrip", price: 5000 },
+        { name: "Vertical Foregrip", price: 7500 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
+    }
+  },
+  {
     name: "Model 870",
     showMoreButton: true,
     reBuyPrice: 2000,
@@ -139,6 +172,32 @@ const GUNS_DATA = [
     }
   },
   {
+    name: "AUG A1",
+    showMoreButton: true,
+    reBuyPrice: 5000,
+    sellPrice: 1500,
+    contractPrice: 350000,
+    stats: {
+      ammo: "30/270",
+      ammoPrice: "$450 for 30",
+      damage: "Head-8/Torso-7/Limbs-6",
+      firerate: 681,
+      reload: 3,
+      accuracy: "±0.90m @ 50m"
+    },
+    attachments: {
+      Optics: [
+        { name: "AUG Scope", price: 100000 }
+      ],
+      Muzzle: [
+        { name: "Mono Suppressor", price: 32000 }
+      ],
+      Tactical: [
+        { name: "Tactical Laser", price: 50000 }
+      ]
+    }
+  },
+  {
     name: "Benelli M1014",
     showMoreButton: true,
     reBuyPrice: 6000,
@@ -170,32 +229,6 @@ const GUNS_DATA = [
       ],
       Ammunition: [
         { name: "12 Gauge Slugs", price: 35000 }
-      ]
-    }
-  },
-  {
-    name: "AUG A1",
-    showMoreButton: true,
-    reBuyPrice: 5000,
-    sellPrice: 1500,
-    contractPrice: 350000,
-    stats: {
-      ammo: "30/270",
-      ammoPrice: "$450 for 30",
-      damage: "Head-8/Torso-7/Limbs-6",
-      firerate: 681,
-      reload: 3,
-      accuracy: "±0.90m @ 50m"
-    },
-    attachments: {
-      Optics: [
-        { name: "AUG Scope", price: 100000 }
-      ],
-      Muzzle: [
-        { name: "Mono Suppressor", price: 32000 }
-      ],
-      Tactical: [
-        { name: "Tactical Laser", price: 50000 }
       ]
     }
   },
@@ -478,39 +511,6 @@ const GUNS_DATA = [
         { name: "Holographic Sight", price: 12500 },
         { name: "Reflex Sight", price: 20000 },
         { name: "PSO Scope", price: 0 },
-        { name: "AGOC", price: 250000 }
-      ],
-      Muzzle: [
-        { name: "Mono Suppressor", price: 32000 }
-      ],
-      Underbarrel: [
-        { name: "Horizontal Foregrip", price: 5000 },
-        { name: "Vertical Foregrip", price: 7500 }
-      ],
-      Tactical: [
-        { name: "Tactical Laser", price: 50000 }
-      ]
-    }
-  },
-  {
-    name: "FN FAL",
-    showMoreButton: true,
-    obtaining: "Syndicate Level 4",
-    reBuyPrice: 9000,
-    sellPrice: 2700,
-    contractPrice: 0,
-    stats: {
-      ammo: "20/280",
-      ammoPrice: "$0 for 0",
-      damage: "Head-14/Torso-10/Limbs-9",
-      firerate: 705,
-      reload: 2.5,
-      accuracy: "±1.10m @ 50m"
-    },
-    attachments: {
-      Optics: [
-        { name: "Holographic Sight", price: 12500 },
-        { name: "Reflex Sight", price: 20000 },
         { name: "AGOC", price: 250000 }
       ],
       Muzzle: [

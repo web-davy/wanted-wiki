@@ -1,12 +1,11 @@
 const UPDATES = [
-    { version: "20/03/2026", description: "Airdrop Update", color: "#ff6a00ff" },
-    { version: "06/03/2026", description: "Zoro and Zorvello Cars Added", color: "#39ff14" },
+    { version: "06/03/2026", description: "Zoro and Zorvello Cars Added", color: "#ff6a00ff" },
     { version: "20/02/2026", description: "Major Content Update", color: "#39ff14" },
     { version: "27/12/2025", description: "Removed Christmass Event", color: "#39ff14" },
     { version: "12/12/2025", description: "Added Christmass Event", color: "#39ff14" }
 ];
 
-const COUNTDOWN_TARGET = new Date('2026-03-20T18:00:00+02:00');
+const COUNTDOWN_TARGET = new Date('2026-03-06T17:00:00Z');
 window.COUNTDOWN_TARGET = COUNTDOWN_TARGET;
 
 
@@ -41,9 +40,6 @@ function renderHome() {
         <div class="home-container">
             <div class="hero-section">
                 <div class="hero-bg"></div>
-                <div class="hero-logo-container">
-                    <img src="images/logo.png" alt="WANTED Logo" class="hero-logo">
-                </div>
                 <h1 class="hero-title">WANTED WIKI</h1>
                 <p class="hero-text">
                     Welcome to the ultimate <strong>Wanted Wiki</strong>.<br>

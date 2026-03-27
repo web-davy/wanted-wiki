@@ -64,12 +64,7 @@ function renderPage(title, sortButtons, cards, disclaimer = null) {
 
 function renderStat(label, value) {
   if (value === undefined || value === null || value === '' || value === '?' || value === '? - ?') return '';
-  let formattedValue = String(value);
-  if (formattedValue.includes('$')) {
-    formattedValue = formattedValue.replace(/\$(?=\d)/g, `<img src="images/cash.png" alt="Cash" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">`);
-  }
-
-  return `<p><strong>${label}:</strong> ${formattedValue}</p>`;
+  return `<p><strong>${label}:</strong> ${value}</p>`;
 }
 
 function renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, ext = 'jpg', folder = null) {
@@ -140,7 +135,7 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(d => `
       <div class="card-overlay-item">
-        <p style="white-space: normal; line-height: 1.5; word-break: break-word;">${d.dialogue}</p>
+        <p style="white-space: normal; line-height: 1.5; word-break: break-word;"><strong>${d.title}:</strong> ${d.dialogue}</p>
       </div>
     `).join('');
     return `

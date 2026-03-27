@@ -34,6 +34,42 @@ function initDropdownNav() {
     
     document.querySelectorAll('.tab-group').forEach(group => {
         const trigger = group.querySelector('.tab-dropdown-trigger');
+function initMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('top-tabs');
+
+    if (!hamburger || !nav) return;
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    
+    nav.addEventListener('click', (e) => {
+        const item = e.target.closest('.tab-dropdown-item, .tab-direct');
+        if (item) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+            
+            document.querySelectorAll('.tab-dropdown.open').forEach(d => d.classList.remove('open'));
+            document.querySelectorAll('.tab-dropdown-trigger.open').forEach(t => t.classList.remove('open'));
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target) && nav.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        }
+    });
+}
+
+function initDropdownNav() {
+    
+    document.querySelectorAll('.tab-group').forEach(group => {
+        const trigger = group.querySelector('.tab-dropdown-trigger');
         const dropdown = group.querySelector('.tab-dropdown');
         if (!trigger || !dropdown) return;
 
@@ -41,6 +77,7 @@ function initDropdownNav() {
         let closeTimeout;
 
         group.addEventListener('mouseenter', () => {
+            if (window.matchMedia('(hover: none)').matches) return;
             clearTimeout(closeTimeout);
             
             document.querySelectorAll('.tab-dropdown').forEach(d => { if (d !== dropdown) d.classList.remove('open'); });
@@ -50,6 +87,7 @@ function initDropdownNav() {
         });
 
         group.addEventListener('mouseleave', () => {
+            if (window.matchMedia('(hover: none)').matches) return;
             closeTimeout = setTimeout(() => {
                 dropdown.classList.remove('open');
                 trigger.classList.remove('open');
@@ -62,19 +100,6 @@ function initDropdownNav() {
                 e.stopPropagation();
                 const isOpen = dropdown.classList.contains('open');
                 
-                document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
-                document.querySelectorAll('.tab-dropdown-trigger').forEach(t => t.classList.remove('open'));
-                if (!isOpen) {
-                    dropdown.classList.add('open');
-                    trigger.classList.add('open');
-                }
-            }
-        });
-    });
-
-    
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.tab-group')) {
             document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
             document.querySelectorAll('.tab-dropdown-trigger').forEach(t => t.classList.remove('open'));
         }

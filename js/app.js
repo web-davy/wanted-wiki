@@ -14,8 +14,16 @@ window.toggleCardDetails = toggleCardDetails;
 function loadPage(page, saveToHistory = true) {
     if (!container) return;
 
-    document.querySelectorAll(".tab").forEach(t => {
+    
+    document.querySelectorAll(".tab[data-page]").forEach(t => {
         t.classList.toggle("active", t.dataset.page === page);
+    });
+    
+    document.querySelectorAll(".tab-dropdown-item[data-page]").forEach(item => {
+        const isActive = item.dataset.page === page;
+        item.classList.toggle("active", isActive);
+        const trigger = item.closest('.tab-group')?.querySelector('.tab-dropdown-trigger');
+        if (trigger) trigger.classList.toggle("active", isActive);
     });
 
     container.style.opacity = '0';
@@ -137,6 +145,7 @@ function toggleCardDetails(cardId, btn) {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof initMobileMenu === 'function') initMobileMenu();
+    if (typeof initDropdownNav === 'function') initDropdownNav();
     if (typeof initSettingsPanel === 'function') initSettingsPanel(clickSfx);
     if (typeof initHeaderResize === 'function') initHeaderResize();
     if (typeof initSidebarToggle === 'function') initSidebarToggle(clickSfx);
@@ -223,12 +232,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.querySelectorAll(".tab").forEach(tab => {
+    document.querySelectorAll(".tab[data-page]").forEach(tab => {
         tab.addEventListener("click", (e) => {
             e.preventDefault();
             if (!window.audioUnlocked) return;
             loadPage(tab.dataset.page);
         });
+    });
+
+    
+    document.addEventListener('click', (e) => {
+        const item = e.target.closest('.tab-dropdown-item[data-page], .tab-direct[data-page]');
+        if (item && window.audioUnlocked) {
+            e.preventDefault();
+            loadPage(item.dataset.page);
+        }
     });
 
     if (typeof initGarage === 'function') {

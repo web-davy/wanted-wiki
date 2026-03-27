@@ -1,10 +1,11 @@
 function initSettingsPanel(clickSfx) {
     const settingsToggle = document.getElementById('settings-toggle');
+    const settingsToggleInline = document.getElementById('settings-toggle-inline');
     const settingsPanel = document.getElementById('settings-panel');
     const settingsClose = document.getElementById('settings-close');
     const settingsBackdrop = document.querySelector('.settings-backdrop');
 
-    if (!settingsToggle || !settingsPanel) return;
+    if (!settingsPanel) return;
 
     const openSettings = () => {
         settingsPanel.classList.add('active');
@@ -14,10 +15,19 @@ function initSettingsPanel(clickSfx) {
         settingsPanel.classList.remove('active');
     };
 
-    settingsToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openSettings();
-    });
+    if (settingsToggle) {
+        settingsToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openSettings();
+        });
+    }
+
+    if (settingsToggleInline) {
+        settingsToggleInline.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openSettings();
+        });
+    }
 
     if (settingsClose) {
         settingsClose.addEventListener('click', (e) => {

@@ -41,6 +41,9 @@ function renderHome() {
         <div class="home-container">
             <div class="hero-section">
                 <div class="hero-bg"></div>
+                <div class="hero-logo-container">
+                    <img src="images/logo.png" alt="WANTED Logo" class="hero-logo">
+                </div>
                 <h1 class="hero-title">WANTED WIKI</h1>
                 <p class="hero-text">
                     Welcome to the ultimate <strong>Wanted Wiki</strong>.<br>

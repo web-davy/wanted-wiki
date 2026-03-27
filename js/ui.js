@@ -1,7 +1,6 @@
 function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('top-tabs');
-    const tabs = document.querySelectorAll('.tab');
 
     if (!hamburger || !nav) return;
 
@@ -11,11 +10,16 @@ function initMobileMenu() {
         nav.classList.toggle('active');
     });
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
+    
+    nav.addEventListener('click', (e) => {
+        const item = e.target.closest('.tab-dropdown-item, .tab-direct');
+        if (item) {
             hamburger.classList.remove('active');
             nav.classList.remove('active');
-        });
+            
+            document.querySelectorAll('.tab-dropdown.open').forEach(d => d.classList.remove('open'));
+            document.querySelectorAll('.tab-dropdown-trigger.open').forEach(t => t.classList.remove('open'));
+        }
     });
 
     document.addEventListener('click', (e) => {
@@ -26,6 +30,70 @@ function initMobileMenu() {
     });
 }
 
+function initDropdownNav() {
+    
+    document.querySelectorAll('.tab-group').forEach(group => {
+        const trigger = group.querySelector('.tab-dropdown-trigger');
+        const dropdown = group.querySelector('.tab-dropdown');
+        if (!trigger || !dropdown) return;
+
+        
+        let closeTimeout;
+
+        group.addEventListener('mouseenter', () => {
+            clearTimeout(closeTimeout);
+            
+            document.querySelectorAll('.tab-dropdown').forEach(d => { if (d !== dropdown) d.classList.remove('open'); });
+            document.querySelectorAll('.tab-dropdown-trigger').forEach(t => { if (t !== trigger) t.classList.remove('open'); });
+            dropdown.classList.add('open');
+            trigger.classList.add('open');
+        });
+
+        group.addEventListener('mouseleave', () => {
+            closeTimeout = setTimeout(() => {
+                dropdown.classList.remove('open');
+                trigger.classList.remove('open');
+            }, 120);
+        });
+
+        
+        trigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.stopPropagation();
+                const isOpen = dropdown.classList.contains('open');
+                
+                document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
+                document.querySelectorAll('.tab-dropdown-trigger').forEach(t => t.classList.remove('open'));
+                if (!isOpen) {
+                    dropdown.classList.add('open');
+                    trigger.classList.add('open');
+                }
+            }
+        });
+    });
+
+    
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.tab-group')) {
+            document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
+            document.querySelectorAll('.tab-dropdown-trigger').forEach(t => t.classList.remove('open'));
+        }
+    });
+
+    
+    const mainSearch = document.getElementById('search-input');
+    const mobileSearch = document.getElementById('search-input-mobile');
+    if (mainSearch && mobileSearch) {
+        mobileSearch.addEventListener('input', () => {
+            mainSearch.value = mobileSearch.value;
+            mainSearch.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        mainSearch.addEventListener('input', () => {
+            mobileSearch.value = mainSearch.value;
+        });
+    }
+}
+
 function initHeaderResize() {
     const header = document.querySelector('.fixed-header');
     const resizeHandle = document.querySelector('.header-resize-handle');
@@ -33,21 +101,28 @@ function initHeaderResize() {
 
     if (!header || !resizeHandle || !pageWrapper) return;
 
-    const BASE_HEIGHT = 180;
-    const BASE_WIDTH = 250;
-    const MIN_WIDTH = 150;
-    const MAX_WIDTH = 600;
+    const BASE_WIDTH = 240;
+    const MIN_WIDTH = 160;
+    const MAX_WIDTH = 500;
+    const MIN_HEIGHT = 70;
+    const MAX_HEIGHT = 300;
 
     const isSidebarMode = () => document.body.classList.contains('left-sidebar-mode');
 
     const updateScale = (height) => {
-        const scale = Math.max(0.5, Math.min(1, height / BASE_HEIGHT));
+        const scale = Math.max(0.5, Math.min(1.5, height / 110)); 
         document.documentElement.style.setProperty('--header-scale', scale);
     };
+
 
     const updateSidebarScale = (width) => {
         const scale = Math.max(0.4, Math.min(1.2, width / BASE_WIDTH));
         document.documentElement.style.setProperty('--sidebar-scale', scale);
+    };
+
+    
+    const syncSidebarHandle = (width) => {
+        if (isSidebarMode()) resizeHandle.style.left = width + 'px';
     };
 
     const updatePagePadding = (size, isSidebar) => {
@@ -55,7 +130,7 @@ function initHeaderResize() {
             pageWrapper.style.paddingLeft = (size + 30) + 'px';
             pageWrapper.style.paddingTop = '';
         } else {
-            pageWrapper.style.paddingTop = (size + 30) + 'px';
+            pageWrapper.style.paddingTop = (size + 20) + 'px';
             pageWrapper.style.paddingLeft = '';
         }
     };
@@ -69,12 +144,21 @@ function initHeaderResize() {
         header.style.height = '';
         updatePagePadding(width, true);
         updateSidebarScale(width);
+        syncSidebarHandle(width);
     } else {
-        const height = parseInt(savedHeight) || BASE_HEIGHT;
-        header.style.height = height + 'px';
+        if (savedHeight) {
+            const height = parseInt(savedHeight);
+            header.style.height = height + 'px';
+            updatePagePadding(height, false);
+            updateScale(height);
+        } else {
+            requestAnimationFrame(() => {
+                const naturalH = header.offsetHeight;
+                updatePagePadding(naturalH, false);
+                updateScale(naturalH);
+            });
+        }
         header.style.width = '';
-        updatePagePadding(height, false);
-        updateScale(height);
     }
 
     let isResizing = false;
@@ -107,11 +191,13 @@ function initHeaderResize() {
                 const deltaX = e.clientX - startX;
                 const newWidth = Math.max(MIN_WIDTH, Math.min(MAX_WIDTH, startWidth + deltaX));
                 header.style.width = newWidth + 'px';
+                document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
                 updatePagePadding(newWidth, true);
                 updateSidebarScale(newWidth);
+                syncSidebarHandle(newWidth);
             } else {
                 const deltaY = e.clientY - startY;
-                const newHeight = Math.max(100, Math.min(600, startHeight + deltaY));
+                const newHeight = Math.max(MIN_HEIGHT, Math.min(MAX_HEIGHT, startHeight + deltaY));
                 header.style.height = newHeight + 'px';
                 updatePagePadding(newHeight, false);
                 updateScale(newHeight);
@@ -145,32 +231,9 @@ function initSidebarToggle(clickSfx) {
     if (sidebarToggle && sidebarStatus) {
         sidebarToggle.addEventListener("click", () => {
             const isSidebar = document.body.classList.toggle("left-sidebar-mode");
-            sidebarToggle.classList.toggle("active", isSidebar);
-            sidebarStatus.textContent = isSidebar ? "ON" : "OFF";
             localStorage.setItem("sidebarMode", isSidebar);
-
-            const header = document.querySelector('.fixed-header');
-            const pageWrapper = document.querySelector('.page-wrapper');
-
-            if (header && pageWrapper) {
-                if (isSidebar) {
-                    header.style.height = '';
-                    pageWrapper.style.paddingTop = '';
-                    const savedWidth = localStorage.getItem('headerWidth');
-                    if (savedWidth) {
-                        header.style.width = savedWidth + 'px';
-                        pageWrapper.style.paddingLeft = (parseInt(savedWidth) + 30) + 'px';
-                    }
-                } else {
-                    header.style.width = '';
-                    pageWrapper.style.paddingLeft = '';
-                    const savedHeight = localStorage.getItem('headerHeight');
-                    if (savedHeight) {
-                        header.style.height = savedHeight + 'px';
-                        pageWrapper.style.paddingTop = (parseInt(savedHeight) + 30) + 'px';
-                    }
-                }
-            }
+            
+            location.reload();
         });
     }
 }

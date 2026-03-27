@@ -1,6 +1,7 @@
 function initSettingsPanel(clickSfx) {
     const settingsToggle = document.getElementById('settings-toggle');
     const settingsToggleInline = document.getElementById('settings-toggle-inline');
+    const settingsToggleHeader = document.getElementById('settings-toggle-header');
     const settingsPanel = document.getElementById('settings-panel');
     const settingsClose = document.getElementById('settings-close');
     const settingsBackdrop = document.querySelector('.settings-backdrop');
@@ -24,6 +25,13 @@ function initSettingsPanel(clickSfx) {
 
     if (settingsToggleInline) {
         settingsToggleInline.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openSettings();
+        });
+    }
+
+    if (settingsToggleHeader) {
+        settingsToggleHeader.addEventListener('click', (e) => {
             e.stopPropagation();
             openSettings();
         });

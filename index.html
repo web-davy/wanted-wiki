@@ -131,7 +131,6 @@
     </div>
 
     <header class="fixed-header">
-        <!-- TOP BAR: logo | search | actions -->
         <div class="header-top">
             <div class="header-brand">
                 <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
@@ -150,58 +149,64 @@
                 </div>
             </div>
             <div class="header-actions">
-                <a href="https://discord.gg/3NqFCz5sRx" class="header-action-btn discord-btn" target="_blank" rel="noopener" title="Support/Community Server">
-                    <span>&#x1F4AC;</span>
+                <a href="https://discord.gg/3NqFCz5sRx" class="header-action-btn discord-btn" target="_blank"
+                    rel="noopener" title="Support/Community Server">
+                    <span>🗨️</span>
                 </a>
-                <button id="settings-toggle-inline" class="settings-toggle-inline" title="Settings">&#9881;</button>
+                <button id="settings-toggle-header" class="header-action-btn" title="Settings">&#9881;</button>
             </div>
         </div>
 
-        <!-- BOTTOM BAR: category nav -->
         <nav class="top-tabs" id="top-tabs">
-            <!-- Home -->
-            <a href="#home" class="tab tab-direct" data-page="home"><span><span class="nav-icon">&#127968;</span> HOME</span></a>
+            <a href="#home" class="tab tab-direct" data-page="home"><span><span class="nav-icon">&#127968;</span>
+                    HOME</span></a>
 
-            <!-- Combat -->
             <div class="tab-group">
                 <button class="tab tab-dropdown-trigger" data-group="combat">
                     <span><span class="nav-icon">&#128299;</span> COMBAT &#9660;</span>
                 </button>
                 <div class="tab-dropdown" id="dropdown-combat">
-                    <a href="#weapons" class="tab-dropdown-item" data-page="weapons"><span class="nav-icon">&#128299;</span> Weapons</a>
-                    <a href="#gun-crates" class="tab-dropdown-item" data-page="gun-crates"><span class="nav-icon">&#128230;</span> Gun Crates</a>
+                    <a href="#weapons" class="tab-dropdown-item" data-page="weapons"><span
+                            class="nav-icon">&#128299;</span> Weapons</a>
+                    <a href="#gun-crates" class="tab-dropdown-item" data-page="gun-crates"><span
+                            class="nav-icon">&#128230;</span> Gun Crates</a>
                 </div>
             </div>
 
-            <!-- World -->
             <div class="tab-group">
                 <button class="tab tab-dropdown-trigger" data-group="world">
                     <span><span class="nav-icon">&#127759;</span> WORLD &#9660;</span>
                 </button>
                 <div class="tab-dropdown" id="dropdown-world">
-                    <a href="#locations" class="tab-dropdown-item" data-page="locations"><span class="nav-icon">&#127979;</span> Locations</a>
-                    <a href="#atms" class="tab-dropdown-item" data-page="atms"><span class="nav-icon">&#127981;</span> ATMs &amp; Vaults</a>
-                    <a href="#missions" class="tab-dropdown-item" data-page="missions"><span class="nav-icon">&#128196;</span> Missions</a>
-                    <a href="#npcs" class="tab-dropdown-item" data-page="npcs"><span class="nav-icon">&#128100;</span> NPCs</a>
+                    <a href="#locations" class="tab-dropdown-item" data-page="locations"><span
+                            class="nav-icon">&#127979;</span> Locations</a>
+                    <a href="#atms" class="tab-dropdown-item" data-page="atms"><span class="nav-icon">&#127981;</span>
+                        ATMs &amp; Vaults</a>
+                    <a href="#missions" class="tab-dropdown-item" data-page="missions"><span
+                            class="nav-icon">&#128196;</span> Missions</a>
+                    <a href="#npcs" class="tab-dropdown-item" data-page="npcs"><span class="nav-icon">&#128100;</span>
+                        NPCs</a>
                 </div>
             </div>
 
-            <!-- Economy -->
             <div class="tab-group">
                 <button class="tab tab-dropdown-trigger" data-group="economy">
                     <span><span class="nav-icon">&#128176;</span> ECONOMY &#9660;</span>
                 </button>
                 <div class="tab-dropdown" id="dropdown-economy">
-                    <a href="#store" class="tab-dropdown-item" data-page="store"><span class="nav-icon">&#128722;</span> Store</a>
-                    <a href="#valuables" class="tab-dropdown-item" data-page="valuables"><span class="nav-icon">&#128142;</span> Valuables</a>
-                    <a href="#vehicles" class="tab-dropdown-item" data-page="vehicles"><span class="nav-icon">&#128663;</span> Vehicles</a>
+                    <a href="#store" class="tab-dropdown-item" data-page="store"><span class="nav-icon">&#128722;</span>
+                        Store</a>
+                    <a href="#valuables" class="tab-dropdown-item" data-page="valuables"><span
+                            class="nav-icon">&#128142;</span> Valuables</a>
+                    <a href="#vehicles" class="tab-dropdown-item" data-page="vehicles"><span
+                            class="nav-icon">&#128663;</span> Vehicles</a>
                 </div>
             </div>
 
-            <!-- Mobile controls (search shown in mobile dropdown) -->
             <div class="mobile-controls-group">
                 <div class="search-container mobile-search-only">
-                    <input type="text" id="search-input-mobile" class="search-input" placeholder="Search the archive...">
+                    <input type="text" id="search-input-mobile" class="search-input"
+                        placeholder="Search the archive...">
                 </div>
             </div>
         </nav>

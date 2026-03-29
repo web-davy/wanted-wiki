@@ -32,7 +32,7 @@ const GUNS_DATA = [
     obtaining: "Syndicate Level 4",
     reBuyPrice: 9000,
     sellPrice: 2700,
-    contractPrice: 0,
+    contractPrice: "Un-Buyable",
     stats: {
       ammo: "20/280",
       ammoPrice: "$0 for 0",

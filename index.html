@@ -173,14 +173,16 @@
                 <div class="search-container">
                     <input type="text" id="search-input" class="search-input" placeholder="Search archive...">
                 </div>
+                <div class="header-actions">
+                    <button id="settings-toggle" class="settings-toggle header-icon-btn"
+                        title="Settings">&#x2699;&#xFE0E;</button>
+                    <a href="https://discord.gg/3NqFCz5sRx" class="header-discord-btn header-icon-btn"
+                        title="Support/Community Server">&#x2609;&#xFE0E;</a>
+                </div>
             </div>
         </nav>
         <div class="header-resize-handle"></div>
     </header>
-
-    <button id="settings-toggle" class="settings-toggle" title="Settings">
-        <span class="settings-icon">⚙</span>
-    </button>
 
     <div id="settings-panel" class="settings-panel">
         <div class="settings-backdrop"></div>
@@ -242,8 +244,6 @@
         </main>
     </div>
 
-    <a href="https://discord.gg/3NqFCz5sRx" class="bottom-corner-link">Support/Community Server</a>
-
     <audio id="bgm" src="sounds/background.mp3" loop preload="auto"></audio>
     <audio id="sfx-click" src="sounds/click.mp3" preload="auto"></audio>
     <audio id="sfx-hover" src="sounds/hover.mp3" preload="auto"></audio>
@@ -278,6 +278,44 @@
     <script defer src="js/search.js"></script>
     <script defer src="js/app.js"></script>
     <script defer src="js/birthday.js"></script>
+    <script>
+        // Mobile dropdown: single tap to open/close (no hold needed)
+        (function () {
+            function isTouchDevice() {
+                return window.matchMedia('(max-width: 1024px)').matches || ('ontouchstart' in window);
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var dropdownBtns = document.querySelectorAll('.dropdown-btn');
+
+                dropdownBtns.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        if (!isTouchDevice()) return; // desktop handles via CSS :hover
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var dropdown = btn.closest('.dropdown');
+                        var isOpen = dropdown.classList.contains('open');
+
+                        // Close all other open dropdowns
+                        document.querySelectorAll('.dropdown.open').forEach(function (d) {
+                            if (d !== dropdown) d.classList.remove('open');
+                        });
+
+                        dropdown.classList.toggle('open', !isOpen);
+                    });
+                });
+
+                // Close dropdowns when tapping outside
+                document.addEventListener('click', function (e) {
+                    if (!e.target.closest('.dropdown')) {
+                        document.querySelectorAll('.dropdown.open').forEach(function (d) {
+                            d.classList.remove('open');
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

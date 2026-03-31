@@ -279,7 +279,6 @@
     <script defer src="js/app.js"></script>
     <script defer src="js/birthday.js"></script>
     <script>
-        // Mobile dropdown: single tap to open/close (no hold needed)
         (function () {
             function isTouchDevice() {
                 return window.matchMedia('(max-width: 1024px)').matches || ('ontouchstart' in window);
@@ -290,13 +289,12 @@
 
                 dropdownBtns.forEach(function (btn) {
                     btn.addEventListener('click', function (e) {
-                        if (!isTouchDevice()) return; // desktop handles via CSS :hover
+                        if (!isTouchDevice()) return;
                         e.preventDefault();
                         e.stopPropagation();
                         var dropdown = btn.closest('.dropdown');
                         var isOpen = dropdown.classList.contains('open');
 
-                        // Close all other open dropdowns
                         document.querySelectorAll('.dropdown.open').forEach(function (d) {
                             if (d !== dropdown) d.classList.remove('open');
                         });
@@ -305,7 +303,6 @@
                     });
                 });
 
-                // Close dropdowns when tapping outside
                 document.addEventListener('click', function (e) {
                     if (!e.target.closest('.dropdown')) {
                         document.querySelectorAll('.dropdown.open').forEach(function (d) {

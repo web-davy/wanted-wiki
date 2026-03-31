@@ -285,46 +285,27 @@
             }
 
             document.addEventListener('DOMContentLoaded', function () {
-                var topTabs = document.getElementById('top-tabs');
                 var hamburger = document.getElementById('hamburger');
+                var nav = document.getElementById('top-tabs');
                 var header = document.querySelector('.fixed-header');
 
-                function keepNavOpen() {
-                    if (topTabs) topTabs.classList.add('active');
-                    if (hamburger) hamburger.classList.add('active');
-                }
-
-                var clickedInsideHeader = false;
-
-                header.addEventListener('click', function () {
-                    clickedInsideHeader = true;
-                    setTimeout(function () { clickedInsideHeader = false; }, 100);
-                }, true);
-
-                window.addEventListener('hashchange', function () {
-                    if (isMobile() && clickedInsideHeader) {
-                        setTimeout(keepNavOpen, 0);
-                    }
-                });
-
-                document.addEventListener('click', function (e) {
-                    if (isMobile() && header.contains(e.target)) {
-                        setTimeout(keepNavOpen, 0);
-                    }
+                header.addEventListener('click', function (e) {
+                    if (!isMobile()) return;
+                    var isHamburger = hamburger && (e.target === hamburger || hamburger.contains(e.target));
+                    if (isHamburger) return;
+                    e.stopImmediatePropagation();
                 }, true);
 
                 document.querySelectorAll('.dropdown-btn').forEach(function (btn) {
                     btn.addEventListener('click', function (e) {
                         if (!isMobile()) return;
                         e.preventDefault();
-                        e.stopPropagation();
                         var dropdown = btn.closest('.dropdown');
                         var isOpen = dropdown.classList.contains('open');
                         document.querySelectorAll('.dropdown.open').forEach(function (d) {
                             if (d !== dropdown) d.classList.remove('open');
                         });
                         dropdown.classList.toggle('open', !isOpen);
-                        keepNavOpen();
                     });
                 });
 

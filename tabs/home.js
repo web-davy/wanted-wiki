@@ -1,4 +1,5 @@
 const UPDATES = [
+    { version: "03/04/2026", description: "Easter Event", color: "#ff80f7ff" },
     { version: "20/03/2026", description: "Airdrop Update", color: "#39ff14" },
     { version: "06/03/2026", description: "Zoro and Zorvello Cars Added", color: "#39ff14" },
     { version: "20/02/2026", description: "Major Content Update", color: "#39ff14" },
@@ -6,7 +7,7 @@ const UPDATES = [
     { version: "12/12/2025", description: "Added Christmass Event", color: "#39ff14" }
 ];
 
-const COUNTDOWN_TARGET = new Date('2026-03-06T17:00:00Z');
+const COUNTDOWN_TARGET = new Date('2026-04-03T17:00:00Z');
 window.COUNTDOWN_TARGET = COUNTDOWN_TARGET;
 
 

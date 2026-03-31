@@ -294,8 +294,6 @@
                     if (hamburger) hamburger.classList.add('active');
                 }
 
-                // Intercept hashchange — ui.js likely closes the nav here.
-                // If the click originated inside the header, re-open immediately.
                 var clickedInsideHeader = false;
 
                 header.addEventListener('click', function () {
@@ -309,14 +307,12 @@
                     }
                 });
 
-                // Also guard against ui.js document click listeners closing the nav
                 document.addEventListener('click', function (e) {
                     if (isMobile() && header.contains(e.target)) {
                         setTimeout(keepNavOpen, 0);
                     }
                 }, true);
 
-                // Dropdown open/close on single tap
                 document.querySelectorAll('.dropdown-btn').forEach(function (btn) {
                     btn.addEventListener('click', function (e) {
                         if (!isMobile()) return;
@@ -332,7 +328,6 @@
                     });
                 });
 
-                // Close open dropdowns when tapping outside the header entirely
                 document.addEventListener('click', function (e) {
                     if (!header.contains(e.target)) {
                         document.querySelectorAll('.dropdown.open').forEach(function (d) {

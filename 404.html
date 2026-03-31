@@ -279,35 +279,62 @@
     <script defer src="js/app.js"></script>
     <script defer src="js/birthday.js"></script>
     <script>
-        // Mobile dropdown: single tap to open/close (no hold needed)
         (function () {
-            function isTouchDevice() {
-                return window.matchMedia('(max-width: 1024px)').matches || ('ontouchstart' in window);
+            function isMobile() {
+                return window.matchMedia('(max-width: 1024px)').matches;
             }
 
             document.addEventListener('DOMContentLoaded', function () {
-                var dropdownBtns = document.querySelectorAll('.dropdown-btn');
+                var topTabs = document.getElementById('top-tabs');
+                var hamburger = document.getElementById('hamburger');
+                var header = document.querySelector('.fixed-header');
 
-                dropdownBtns.forEach(function (btn) {
+                function keepNavOpen() {
+                    if (topTabs) topTabs.classList.add('active');
+                    if (hamburger) hamburger.classList.add('active');
+                }
+
+                // Intercept hashchange — ui.js likely closes the nav here.
+                // If the click originated inside the header, re-open immediately.
+                var clickedInsideHeader = false;
+
+                header.addEventListener('click', function () {
+                    clickedInsideHeader = true;
+                    setTimeout(function () { clickedInsideHeader = false; }, 100);
+                }, true);
+
+                window.addEventListener('hashchange', function () {
+                    if (isMobile() && clickedInsideHeader) {
+                        setTimeout(keepNavOpen, 0);
+                    }
+                });
+
+                // Also guard against ui.js document click listeners closing the nav
+                document.addEventListener('click', function (e) {
+                    if (isMobile() && header.contains(e.target)) {
+                        setTimeout(keepNavOpen, 0);
+                    }
+                }, true);
+
+                // Dropdown open/close on single tap
+                document.querySelectorAll('.dropdown-btn').forEach(function (btn) {
                     btn.addEventListener('click', function (e) {
-                        if (!isTouchDevice()) return; // desktop handles via CSS :hover
+                        if (!isMobile()) return;
                         e.preventDefault();
                         e.stopPropagation();
                         var dropdown = btn.closest('.dropdown');
                         var isOpen = dropdown.classList.contains('open');
-
-                        // Close all other open dropdowns
                         document.querySelectorAll('.dropdown.open').forEach(function (d) {
                             if (d !== dropdown) d.classList.remove('open');
                         });
-
                         dropdown.classList.toggle('open', !isOpen);
+                        keepNavOpen();
                     });
                 });
 
-                // Close dropdowns when tapping outside
+                // Close open dropdowns when tapping outside the header entirely
                 document.addEventListener('click', function (e) {
-                    if (!e.target.closest('.dropdown')) {
+                    if (!header.contains(e.target)) {
                         document.querySelectorAll('.dropdown.open').forEach(function (d) {
                             d.classList.remove('open');
                         });

@@ -1,12 +1,13 @@
 const UPDATES = [
-    { version: "20/03/2026", description: "Airdrop Update", color: "#ff6a00ff" },
+    { version: "Who knows when", description: "Roblox fixes theyr AI", color: "#ff1414ff" },
+    { version: "20/03/2026", description: "Airdrop Update", color: "#39ff14" },
     { version: "06/03/2026", description: "Zoro and Zorvello Cars Added", color: "#39ff14" },
     { version: "20/02/2026", description: "Major Content Update", color: "#39ff14" },
     { version: "27/12/2025", description: "Removed Christmass Event", color: "#39ff14" },
     { version: "12/12/2025", description: "Added Christmass Event", color: "#39ff14" }
 ];
 
-const COUNTDOWN_TARGET = new Date('2026-03-06T17:00:00Z');
+const COUNTDOWN_TARGET = new Date('2069-03-06T17:00:00Z');
 window.COUNTDOWN_TARGET = COUNTDOWN_TARGET;
 
 

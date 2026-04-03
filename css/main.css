@@ -301,6 +301,16 @@ body::after {
     overflow: visible;
 }
 
+.card-large {
+    grid-column: span 2;
+}
+
+@media (max-width: 800px) {
+    .card-large {
+        grid-column: span 1;
+    }
+}
+
 .card>*,
 .card-details>* {
     display: block;
@@ -441,6 +451,11 @@ body::after {
 .rarity-christmas-limited {
     color: #0f0;
     border-color: #f00
+}
+
+.rarity-easter {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 80, 194)
 }
 
 h2 {

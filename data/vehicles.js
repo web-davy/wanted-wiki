@@ -120,6 +120,21 @@ const VEHICLES_DATA = [
     }
   },
   {
+    name: "Gemstone",
+    showMoreButton: true,
+    type: "ground",
+    repairPrice: 1500,
+    repairPriceGarage: 450,
+    contractPrice: 400000,
+    stats: {
+      topSpeed: 48,
+      acceleration: 37,
+      braking: 59,
+      maxHealth: "200 - 100 - 100",
+      armor: 0
+    }
+  },
+  {
     name: "Vanguard",
     showMoreButton: true,
     type: "ground",

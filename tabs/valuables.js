@@ -1,7 +1,7 @@
 function renderValuables(sort = "high") {
   const renderStatSuffix = (label, val, suffix) => val !== undefined && val !== null ? renderStat(label, `${val}${suffix}`) : '';
 
-  const sortedRegular = [...VALUABLES_DATA].sort((a, b) => {
+  const sortedRegular = [...VALUABLES_DATA, ...EASTER_VALUABLES_DATA].sort((a, b) => {
     const priceA = a.priceNonContract ? 0 : a.price;
     const priceB = b.priceNonContract ? 0 : b.price;
 
@@ -19,7 +19,8 @@ function renderValuables(sort = "high") {
     { type: 'Jewelry', label: 'Jewelry' },
     { type: 'Electronics', label: 'Electronics' },
     { type: 'Miscellaneous', label: 'Miscellaneous' },
-    { type: 'Mission Items', label: 'Mission Items' }
+    { type: 'Mission Items', label: 'Mission Items' },
+    { type: 'Easter', label: 'Easter' }
   ];
 
   const sections = categories.map((cat, index) => {

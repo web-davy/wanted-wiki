@@ -110,6 +110,13 @@ function renderSearchItem(item) {
                 ${renderStat('Description', item.description)}
              `;
         rarityKey = null;
+    } else if (item.searchType === 'event') {
+        content = `
+                <h3>${item.highlightedName || item.title}</h3>
+                ${renderStat('Date', item.date)}
+                ${renderStat('Description', item.description)}
+             `;
+        rarityKey = null;
     }
 
     const folderMap = {
@@ -120,7 +127,8 @@ function renderSearchItem(item) {
         'guncrate': 'crates',
         'mission': 'missions',
         'npc': 'npcs',
-        'location': 'locations'
+        'location': 'locations',
+        'event': 'events'
     };
     const folder = folderMap[item.searchType];
 
@@ -154,6 +162,7 @@ function performSearch(query, container, renderSearchItem) {
     checkData((typeof MISSIONS_DATA !== 'undefined' ? MISSIONS_DATA : window.MISSIONS), 'mission', 'MISSION');
     checkData((typeof NPCS_DATA !== 'undefined' ? NPCS_DATA : window.NPCS), 'npc', 'NPC');
     checkData((typeof LOCATIONS_DATA !== 'undefined' ? LOCATIONS_DATA : window.LOCATIONS), 'location', 'LOCATION');
+    checkData((typeof EVENTS_DATA !== 'undefined' ? EVENTS_DATA : []), 'event', 'EVENT');
 
     if (results.length === 0) {
         container.innerHTML = `<h2>NO MATCHES FOUND</h2><p style="text-align:center; color:#888;">No entries match "${query}"</p>`;

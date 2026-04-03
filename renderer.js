@@ -234,3 +234,31 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
     </div>
   </div>`;
 }
+
+function renderEventCard(item, visibleContent, hiddenContent, folder = 'events') {
+  const name = item.title || item.name || "";
+  const slug = item.id || generateSlug(name);
+  const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
+  const showButton = item.showMoreButton !== false && hiddenContent && hiddenContent.trim() !== '';
+  const imagePath = `images/${folder}/${slug}.jpg`;
+
+  return `
+    <div class="card card-large">
+      <img src="${imagePath}" alt="${name}" loading="lazy" 
+           style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
+                  box-shadow:0 0 10px rgba(255,255,255,0.2);">
+      ${item.date ? `
+        <div class="rarity" style="${item.dateColor ? `color: ${item.dateColor};` : ''} ${item.dateOutline ? `border-color: ${item.dateOutline}; box-shadow: 0 0 8px ${item.dateOutline}; text-shadow: 0 0 5px ${item.dateOutline};` : ''}">
+          ${item.date}
+        </div>` : ''}
+      ${visibleContent}
+      ${hiddenContent && hiddenContent.trim() !== '' ? `
+      <div class="card-details ${showButton ? 'collapsed' : ''}" id="${cardId}-details">
+        ${hiddenContent}
+      </div>` : ''}
+      ${showButton ? `
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">
+        Show more...
+      </button>` : ''}
+    </div>`;
+}

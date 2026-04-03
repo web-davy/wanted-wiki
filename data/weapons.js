@@ -562,7 +562,7 @@ const GUNS_DATA = [
     stats: {
       ammo: "5/30",
       ammoPrice: "$1000 for 5",
-      damage: "Head-200/Torso-100/Limbs-100",
+      damage: "Head-200/Torso-80/Limbs-80",
       firerate: 30,
       reload: 3.5,
       accuracy: "±0.40m @ 50m"
@@ -593,7 +593,7 @@ const GUNS_DATA = [
     stats: {
       ammo: "5/30",
       ammoPrice: "2000? for 5",
-      damage: "Head-200/Torso-200/Limbs-200",
+      damage: "Head-200/Torso-80/Limbs-80",
       firerate: 30,
       reload: 3.5,
       accuracy: "±0.40m @ 50m"

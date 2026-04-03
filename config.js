@@ -5,14 +5,16 @@ const RARITIES = {
   EPIC: { name: "Epic", class: "rarity-epic", color: "#c0f" },
   LEGENDARY: { name: "Legendary", class: "rarity-legendary", color: "#ff0" },
   MYTHIC: { name: "Mythic", class: "rarity-mythic", color: "#f00" },
-  CHRISTMAS: { name: "Christmas-Limited", class: "rarity-christmas-limited", color: "#0f0" }
+  CHRISTMAS: { name: "Christmas-Limited", class: "rarity-christmas-limited", color: "#0f0" },
+  EASTER: { name: "Easter-Limited", class: "rarity-easter", color: "#ff50c2" }
 };
 
 const DIFFICULTIES = {
   EASY: { name: "Easy", class: "rarity-easy", order: 1 },
   MEDIUM: { name: "Medium", class: "rarity-medium", order: 2 },
   HARD: { name: "Hard", class: "rarity-hard", order: 3 },
-  CHRISTMAS: { name: "Christmas-Limited", class: "rarity-christmas-limited", order: 0 }
+  CHRISTMAS: { name: "Christmas-Limited", class: "rarity-christmas-limited", order: 0 },
+  EASTER: { name: "Easter-Limited", class: "rarity-easter", order: 0 }
 };
 
 const TEAMS = {

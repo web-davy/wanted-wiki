@@ -45,6 +45,7 @@ function renderMissions(order = "hard") {
     { type: 'Dan', label: 'Dan Missions' },
     { type: 'Sir. B', label: 'Sir. B Missions' },
     { type: 'Bert', label: 'Bert Missions' },
+    { type: 'Easter', label: 'Easter Missions' },
     { type: 'Christmas', label: 'Christmas Missions' }
   ];
 

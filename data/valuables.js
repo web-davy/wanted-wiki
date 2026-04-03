@@ -48,6 +48,27 @@ const VALUABLES_DATA = [
   { name: "Data Disk", showMoreButton: false, rarity: "MISSION", category: "Mission Items", price: 0, weight: 1, location: "Crash Site at Snowy Mountain" }
 ];
 
+const EASTER_VALUABLES_DATA = [
+  { name: "Planetary Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Pear Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Soldier Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Waterfall Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Secure Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Void Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Cargo Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Golden Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Crypto Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Amethyst Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Parachute Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Canival Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Diamond Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Big Red Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Prisoner Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Contruction Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Glass Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
+  { name: "Syndicate Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" }
+];
+
 const CHRISTMAS_VALUABLES_DATA = [
   { name: "Green Ornament", showMoreButton: false, rarity: "CHRISTMAS", price: 75, priceNonContract: false, weight: 1, location: "Presents" },
   { name: "Blue Ornament", showMoreButton: false, rarity: "CHRISTMAS", price: 100, priceNonContract: false, weight: 1, location: "Presents" },

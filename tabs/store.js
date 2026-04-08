@@ -16,9 +16,9 @@ function renderStore(sort = "high") {
 
         const slug = generateSlug(item.name);
 
-        let imgTag = `<img src="images/${slug}.jpg" alt="${item.name}" loading="lazy" 
+        let imgTag = `<img src="images/store/${slug}.jpg" alt="${item.name}" loading="lazy" 
           style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; box-shadow:0 0 10px rgba(255,255,255,0.2);"
-          onerror="this.onerror=null; this.src='images/store/${slug}.jpg';"/>`;
+          onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';"/>`;
 
         return `
           <div class="card">

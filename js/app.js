@@ -52,6 +52,7 @@ function loadPage(page, saveToHistory = true) {
                 case "locations": content = typeof renderLocations === "function" ? renderLocations() : ""; break;
                 case "store": content = typeof renderStore === "function" ? renderStore() : ""; break;
                 case "events": content = typeof renderEvents === "function" ? renderEvents() : ""; break;
+                case "promo-codes": content = typeof renderPromoCodes === "function" ? renderPromoCodes() : ""; break;
                 default: content = `<h2>Work In Progress</h2><p>Under construction...</p>`;
             }
         } catch (e) {
@@ -113,7 +114,7 @@ function loadPage(page, saveToHistory = true) {
 }
 
 window.addEventListener("popstate", (event) => {
-    const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events"];
+    const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events", "promo-codes"];
     let page = (event.state && event.state.page);
     
     if (!page) {
@@ -254,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initGarage((skipped) => {
             window.audioUnlocked = true;
 
-            const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events"];
+            const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events", "promo-codes"];
             const hash = window.location.hash.replace(/^#/, '');
             const path = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
             

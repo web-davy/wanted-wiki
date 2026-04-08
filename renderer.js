@@ -10,7 +10,8 @@ function renderCard(item, rarityKey, content, folder = null) {
     <div class="card">
       <img src="${imagePath}" alt="${name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
-                  box-shadow:0 0 10px rgba(255,255,255,0.2);">
+                  box-shadow:0 0 10px rgba(255,255,255,0.2);"
+           onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';">
       ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
       ${content}
     </div>`;
@@ -28,7 +29,8 @@ function renderCardJPG(item, rarityKey, content, folder = null) {
     <div class="card">
       <img src="${imagePath}" alt="${name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
-                  box-shadow:0 0 10px rgba(255,255,255,0.2);">
+                  box-shadow:0 0 10px rgba(255,255,255,0.2);"
+           onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';">
       ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
       ${content}
     </div>`;
@@ -81,7 +83,8 @@ function renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, ex
     <div class="card">
       <img src="${imagePath}" alt="${item.name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
-                  box-shadow:0 0 10px rgba(255,255,255,0.2);">
+                  box-shadow:0 0 10px rgba(255,255,255,0.2);"
+           onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';">
       ${rarityName ? `<div class="rarity ${rarityClass}">${rarityName}</div>` : ''}
       ${visibleContent}
       ${hiddenContent && hiddenContent.trim() !== '' ? `
@@ -156,7 +159,8 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
     <button class="card-overlay-button" onclick="toggleCardOverlay(this)">DIALOGUES</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
-                box-shadow:0 0 10px rgba(255,255,255,0.2);">
+                box-shadow:0 0 10px rgba(255,255,255,0.2);"
+         onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';">
     <div class="card-front-content">
       ${visibleContent}
       ${showButton ? `
@@ -216,7 +220,8 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
     <button class="card-overlay-button" onclick="toggleCardOverlay(this)">ATTACHMENTS</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
-                box-shadow:0 0 10px rgba(255,255,255,0.2);">
+                box-shadow:0 0 10px rgba(255,255,255,0.2);"
+         onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';">
     <div class="card-front-content">
       ${visibleContent}
       ${showButton ? `
@@ -246,7 +251,8 @@ function renderEventCard(item, visibleContent, hiddenContent, folder = 'events')
     <div class="card card-large">
       <img src="${imagePath}" alt="${name}" loading="lazy" 
            style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; 
-                  box-shadow:0 0 10px rgba(255,255,255,0.2);">
+                  box-shadow:0 0 10px rgba(255,255,255,0.2);"
+           onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';">
       ${item.date ? `
         <div class="rarity" style="${item.dateColor ? `color: ${item.dateColor};` : ''} ${item.dateOutline ? `border-color: ${item.dateOutline}; box-shadow: 0 0 8px ${item.dateOutline}; text-shadow: 0 0 5px ${item.dateOutline};` : ''}">
           ${item.date}

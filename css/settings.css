@@ -127,7 +127,8 @@
 
 .setting-icon {
     font-size: 18px;
-    text-shadow: 0 0 5px #fff;
+    filter: grayscale(100%) brightness(1000%);
+    color: #fff;
 }
 
 .setting-slider {
@@ -213,7 +214,8 @@
 }
 
 .toggle-icon {
-    text-shadow: 0 0 5px currentColor;
+    filter: grayscale(100%) brightness(1000%);
+    color: #fff;
 }
 
 @media (max-width: 768px) {

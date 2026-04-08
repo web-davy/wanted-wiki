@@ -1,5 +1,5 @@
 const PROMO_CODES_DATA = [
-    { code: "DEVV", reward: "$10,000 Cash", description: "Free 10k Cash", active: true },
+    { code: "DEVV", reward: "DEVV Tire Rims", description: "Free DEVV tire rims", active: true },
     { code: "UZI", reward: "Uzi Weapon", description: "Free 1 life Uzi Gun", active: true },
     { code: "WANTED", reward: "$10,000 Cash", description: "Free 10k cash", active: true },
     { code: "BOOM", reward: "10 C4", description: "Free 10 C4", active: true },

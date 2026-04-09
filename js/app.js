@@ -14,11 +14,11 @@ window.toggleCardDetails = toggleCardDetails;
 function loadPage(page, saveToHistory = true) {
     if (!container) return;
 
-    
+
     document.querySelectorAll(".tab[data-page]").forEach(t => {
         t.classList.toggle("active", t.dataset.page === page);
     });
-    
+
     document.querySelectorAll(".tab-dropdown-item[data-page]").forEach(item => {
         const isActive = item.dataset.page === page;
         item.classList.toggle("active", isActive);
@@ -65,7 +65,7 @@ function loadPage(page, saveToHistory = true) {
         if (saveToHistory) {
             try {
                 const isFileProtocol = window.location.protocol === 'file:';
-                const url = isFileProtocol 
+                const url = isFileProtocol
                     ? (page === "home" ? "#" : `#${page}`)
                     : (page === "home" ? "/" : `/${page}`);
                 window.history.pushState({ page }, "", url);
@@ -116,7 +116,7 @@ function loadPage(page, saveToHistory = true) {
 window.addEventListener("popstate", (event) => {
     const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events", "promo-codes"];
     let page = (event.state && event.state.page);
-    
+
     if (!page) {
         const hash = window.location.hash.replace(/^#/, '');
         const path = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
@@ -124,7 +124,7 @@ window.addEventListener("popstate", (event) => {
         else if (validPages.includes(path)) page = path;
         else page = "home";
     }
-    
+
     loadPage(page, false);
 });
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
+
     document.addEventListener('click', (e) => {
         const item = e.target.closest('.tab-dropdown-item[data-page], .tab-direct[data-page]');
         if (item && window.audioUnlocked) {
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events", "promo-codes"];
             const hash = window.location.hash.replace(/^#/, '');
             const path = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
-            
+
             let initialPage = "home";
             if (validPages.includes(hash)) initialPage = hash;
             else if (validPages.includes(path)) initialPage = path;
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (bgm.dataset.customUrl) URL.revokeObjectURL(bgm.dataset.customUrl);
             bgm.src = url;
             bgm.dataset.customUrl = url;
-            if (window.audioUnlocked) bgm.play().catch(() => {});
+            if (window.audioUnlocked) bgm.play().catch(() => { });
         }
     };
 
@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (bgm.dataset.customUrl) URL.revokeObjectURL(bgm.dataset.customUrl);
                 delete bgm.dataset.customUrl;
                 bgm.src = "sounds/background.mp3";
-                if (window.audioUnlocked) bgm.play().catch(() => {});
+                if (window.audioUnlocked) bgm.play().catch(() => { });
             }
         });
     }

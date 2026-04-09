@@ -342,4 +342,90 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem("skipGarageIntro", nowOn ? "false" : "true");
         });
     }
+
+    // Custom Background Music Logic
+    const bgmUploadBtn = document.getElementById("bgm-upload-btn");
+    const bgmResetBtn = document.getElementById("bgm-reset-btn");
+    const bgmUpload = document.getElementById("bgm-upload");
+
+    const getCustomMusic = async () => {
+        return new Promise((resolve) => {
+            const request = indexedDB.open("audioStorage", 1);
+            request.onupgradeneeded = (e) => e.target.result.createObjectStore("audio");
+            request.onsuccess = (e) => {
+                const db = e.target.result;
+                const tx = db.transaction("audio", "readonly");
+                const getReq = tx.objectStore("audio").get("custom_bgm");
+                getReq.onsuccess = () => resolve(getReq.result);
+                getReq.onerror = () => resolve(null);
+            };
+            request.onerror = () => resolve(null);
+        });
+    };
+
+    const saveCustomMusic = async (data) => {
+        return new Promise((resolve) => {
+            const request = indexedDB.open("audioStorage", 1);
+            request.onupgradeneeded = (e) => e.target.result.createObjectStore("audio");
+            request.onsuccess = (e) => {
+                const db = e.target.result;
+                const tx = db.transaction("audio", "readwrite");
+                tx.objectStore("audio").put(data, "custom_bgm");
+                tx.oncomplete = () => resolve();
+            };
+        });
+    };
+
+    const deleteCustomMusic = async () => {
+        return new Promise((resolve) => {
+            const request = indexedDB.open("audioStorage", 1);
+            request.onsuccess = (e) => {
+                const db = e.target.result;
+                const tx = db.transaction("audio", "readwrite");
+                tx.objectStore("audio").delete("custom_bgm");
+                tx.oncomplete = () => resolve();
+            };
+        });
+    };
+
+    const updateBGM = async () => {
+        const customData = await getCustomMusic();
+        if (customData && bgm) {
+            const blob = new Blob([customData], { type: 'audio/mpeg' });
+            const url = URL.createObjectURL(blob);
+            if (bgm.dataset.customUrl) URL.revokeObjectURL(bgm.dataset.customUrl);
+            bgm.src = url;
+            bgm.dataset.customUrl = url;
+            if (window.audioUnlocked) bgm.play().catch(() => {});
+        }
+    };
+
+    if (bgmUploadBtn && bgmUpload) {
+        bgmUploadBtn.addEventListener("click", () => bgmUpload.click());
+        bgmUpload.addEventListener("change", async (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                    await saveCustomMusic(event.target.result);
+                    await updateBGM();
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        });
+    }
+
+    if (bgmResetBtn) {
+        bgmResetBtn.addEventListener("click", async () => {
+            await deleteCustomMusic();
+            if (bgm) {
+                if (bgm.dataset.customUrl) URL.revokeObjectURL(bgm.dataset.customUrl);
+                delete bgm.dataset.customUrl;
+                bgm.src = "sounds/background.mp3";
+                if (window.audioUnlocked) bgm.play().catch(() => {});
+            }
+        });
+    }
+
+    updateBGM();
 });

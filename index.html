@@ -99,7 +99,8 @@
         <h2>Weapons, Vehicles, and Equipment</h2>
         <p>Browse our comprehensive database of Wanted weapons, attachments, vehicle stats, and customizations.</p>
         <h2>Locations, ATMs, Vaults & Missions</h2>
-        <p>Discover ATMs, vaults, gun crates, promo codes and NPC locations. Read guides on completing Wanted missions.</p>
+        <p>Discover ATMs, vaults, gun crates, promo codes and NPC locations. Read guides on completing Wanted missions.
+        </p>
         <p>This community wiki logs every detail. Join us to learn how to master the Roblox game Wanted.</p>
     </div>
     <script>
@@ -145,29 +146,40 @@
             <div class="dropdown">
                 <a class="tab dropdown-btn"><span><span class="emoji-style">⚔️</span> COMBAT ▼</span></a>
                 <div class="dropdown-content">
-                    <a href="#weapons" class="tab dropdown-tab" data-page="weapons"><span><span class="emoji-style">🔫</span> WEAPONs</span></a>
-                    <a href="#vehicles" class="tab dropdown-tab" data-page="vehicles"><span><span class="emoji-style">🚗</span> VEHICLEs</span></a>
-                    <a href="#gun-crates" class="tab dropdown-tab" data-page="gun-crates"><span><span class="emoji-style">📦</span> GUN CRATEs</span></a>
+                    <a href="#weapons" class="tab dropdown-tab" data-page="weapons"><span><span
+                                class="emoji-style">🔫</span> WEAPONs</span></a>
+                    <a href="#vehicles" class="tab dropdown-tab" data-page="vehicles"><span><span
+                                class="emoji-style">🚗</span> VEHICLEs</span></a>
+                    <a href="#gun-crates" class="tab dropdown-tab" data-page="gun-crates"><span><span
+                                class="emoji-style">📦</span> GUN CRATEs</span></a>
                 </div>
             </div>
 
             <div class="dropdown">
                 <a class="tab dropdown-btn"><span><span class="emoji-style">🌍</span> WORLD ▼</span></a>
                 <div class="dropdown-content">
-                    <a href="#locations" class="tab dropdown-tab" data-page="locations"><span><span class="emoji-style">📍</span> LOCATIONs</span></a>
-                    <a href="#npcs" class="tab dropdown-tab" data-page="npcs"><span><span class="emoji-style">👥</span> NPCs</span></a>
-                    <a href="#missions" class="tab dropdown-tab" data-page="missions"><span><span class="emoji-style">📜</span> MISSIONs</span></a>
-                    <a href="#events" class="tab dropdown-tab" data-page="events"><span><span class="emoji-style">📅</span> EVENTs</span></a>
+                    <a href="#locations" class="tab dropdown-tab" data-page="locations"><span><span
+                                class="emoji-style">📍</span> LOCATIONs</span></a>
+                    <a href="#npcs" class="tab dropdown-tab" data-page="npcs"><span><span class="emoji-style">👥</span>
+                            NPCs</span></a>
+                    <a href="#missions" class="tab dropdown-tab" data-page="missions"><span><span
+                                class="emoji-style">📜</span> MISSIONs</span></a>
+                    <a href="#events" class="tab dropdown-tab" data-page="events"><span><span
+                                class="emoji-style">📅</span> EVENTs</span></a>
                 </div>
             </div>
 
             <div class="dropdown">
                 <a class="tab dropdown-btn"><span><span class="emoji-style">💰</span> ECONOMY ▼</span></a>
                 <div class="dropdown-content">
-                    <a href="#atms" class="tab dropdown-tab" data-page="atms"><span><span class="emoji-style">🏧</span> ATMs & VAULTs</span></a>
-                    <a href="#store" class="tab dropdown-tab" data-page="store"><span><span class="emoji-style">🛒</span> STORE</span></a>
-                    <a href="#valuables" class="tab dropdown-tab" data-page="valuables"><span><span class="emoji-style">💎</span> VALUABLEs</span></a>
-                    <a href="#promo-codes" class="tab dropdown-tab" data-page="promo-codes"><span><span class="emoji-style">🎟️</span> PROMO CODEs</span></a>
+                    <a href="#atms" class="tab dropdown-tab" data-page="atms"><span><span class="emoji-style">🏧</span>
+                            ATMs & VAULTs</span></a>
+                    <a href="#store" class="tab dropdown-tab" data-page="store"><span><span
+                                class="emoji-style">🛒</span> STORE</span></a>
+                    <a href="#valuables" class="tab dropdown-tab" data-page="valuables"><span><span
+                                class="emoji-style">💎</span> VALUABLEs</span></a>
+                    <a href="#promo-codes" class="tab dropdown-tab" data-page="promo-codes"><span><span
+                                class="emoji-style">🎟️</span> PROMO CODEs</span></a>
                 </div>
             </div>
 
@@ -200,6 +212,17 @@
                         <span class="setting-name">Music Volume</span>
                     </label>
                     <input type="range" id="bgm-volume" class="setting-slider" min="0" max="1" step="0.01" value="0.4">
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span class="setting-icon">📂</span>
+                        <span class="setting-name">Custom Music (.mp3)</span>
+                    </label>
+                    <div style="display: flex; gap: 10px;">
+                        <button id="bgm-upload-btn" class="setting-toggle-btn" style="flex: 1; padding: 10px;">Upload</button>
+                        <button id="bgm-reset-btn" class="setting-toggle-btn" style="flex: 1; padding: 10px;">Reset</button>
+                    </div>
+                    <input type="file" id="bgm-upload" accept="audio/mpeg" style="display: none;">
                 </div>
                 <div class="setting-item">
                     <label class="setting-label">

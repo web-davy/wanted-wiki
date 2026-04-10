@@ -1,23 +1,23 @@
 const tutorialSteps = [
     {
-        title: "Syndicate Briefing",
-        body: "Welcome, operative. We have detected a new connection. Would you like a guided tour of the Syndicate archives?",
+        title: "Wiki Tutorial",
+        body: "Welcome, I've detected you as a new user, would you like a tutorial?",
         target: ".neon-title",
         action: (cursor, highlight, animate) => {
             highlight.style.opacity = '0';
         }
     },
     {
-        title: "Wanted Wiki",
-        body: "This is your primary intel hub for all Syndicate assets.",
+        title: "The Website",
+        body: "This is the title of the website, it holds the navigation bar, which allows you to navigate through the website.",
         target: ".neon-title",
         action: (cursor, highlight, animate, toggleButtons) => {
             animate(cursor, ".neon-title", false, () => toggleButtons(true));
         }
     },
     {
-        title: "Access Archive",
-        body: "The database allows you to search for specific items or mission intel.",
+        title: "Search Bar",
+        body: "This is the search bar, it allows you to search for specific items.",
         target: "#search-input",
         action: (cursor, highlight, animate, toggleButtons) => {
             animate(cursor, "#search-input", true, () => {
@@ -46,7 +46,7 @@ const tutorialSteps = [
     },
     {
         title: "Navigation",
-        body: "Use the terminal categories to browse weapons, vehicles, and world locations.",
+        body: "Use the dropdown categories to browse weapons, vehicles, and world locations.",
         target: window.matchMedia("(max-width: 1024px)").matches ? "#hamburger" : ".dropdown-btn",
         action: (cursor, highlight, animate, toggleButtons) => {
             if (window.matchMedia("(max-width: 1024px)").matches) {
@@ -75,8 +75,8 @@ const tutorialSteps = [
         }
     },
     {
-        title: "Intelligence",
-        body: "Each entry contains classified details. Select an entry to view more information.",
+        title: "Cards",
+        body: "Each entry contains details. Select a card to view more information.",
         target: "#page-container",
         action: (cursor, highlight, animate, toggleButtons) => {
             const checkCards = setInterval(() => {
@@ -114,24 +114,24 @@ const tutorialSteps = [
         }
     },
     {
-        title: "Terminal Config",
-        body: "Access the system settings to customize your interface and audio levels.",
+        title: "Settings",
+        body: "Access the websites settings to customize your experience.",
         target: "#settings-toggle",
         action: (cursor, highlight, animate, toggleButtons) => {
             animate(cursor, "#settings-toggle", true, () => toggleButtons(true));
         }
     },
     {
-        title: "Exit Terminal",
-        body: "Configuration complete. Closing terminal access.",
+        title: "Exit Settings",
+        body: "You can now exit the settings.",
         target: "#settings-close",
         action: (cursor, highlight, animate, toggleButtons) => {
             animate(cursor, "#settings-close", true, () => toggleButtons(true));
         }
     },
     {
-        title: "Mission Ready",
-        body: "Returning to base. You are now prepared to explore the archive.",
+        title: "Tutorial Complete",
+        body: "You are now prepared to explore the wiki.",
         target: '.tab[data-page="home"]',
         action: (cursor, highlight, animate, toggleButtons) => {
             animate(cursor, '.tab[data-page="home"]', true, () => toggleButtons(true));
@@ -227,6 +227,12 @@ function initTutorial() {
 
     const updateStep = () => {
         const step = tutorialSteps[currentStep];
+
+        if (currentStep === 0) {
+            overlay.classList.add('intro-mode');
+        } else {
+            overlay.classList.remove('intro-mode');
+        }
 
         document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
         cursor.classList.remove('active');

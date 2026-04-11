@@ -20,7 +20,9 @@ const tutorialSteps = [
         body: "This is the search bar, it allows you to search for specific items.",
         target: "#search-input",
         action: (cursor, highlight, animate, toggleButtons) => {
-            animate(cursor, "#search-input", true, () => {
+            const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+
+            const typeSearch = () => {
                 const input = document.querySelector('#search-input');
                 if (input) {
                     input.focus();
@@ -41,16 +43,57 @@ const tutorialSteps = [
                 } else {
                     toggleButtons(true);
                 }
-            });
+            };
+
+            if (isMobile) {
+                const nav = document.getElementById('top-tabs');
+                if (!nav.classList.contains('active')) {
+                    animate(cursor, "#hamburger", true, () => {
+                        setTimeout(() => {
+                            animate(cursor, "#search-input", true, () => {
+                                typeSearch();
+                            });
+                        }, 400);
+                    });
+                } else {
+                    animate(cursor, "#search-input", true, () => {
+                        typeSearch();
+                    });
+                }
+            } else {
+                animate(cursor, "#search-input", true, () => {
+                    typeSearch();
+                });
+            }
         }
     },
     {
         title: "Navigation",
         body: "Use the dropdown categories to browse weapons, vehicles, and world locations.",
-        target: window.matchMedia("(max-width: 1024px)").matches ? "#hamburger" : ".dropdown-btn",
+        target: window.matchMedia("(max-width: 1024px)").matches ? ".dropdown-btn" : ".dropdown-btn",
         action: (cursor, highlight, animate, toggleButtons) => {
-            if (window.matchMedia("(max-width: 1024px)").matches) {
-                animate(cursor, "#hamburger", true, () => toggleButtons(true));
+            const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+            if (isMobile) {
+                const nav = document.getElementById('top-tabs');
+                const runNav = () => {
+                    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+                    const btn = dropdownBtns[0];
+                    if (btn) {
+                        animate(cursor, btn, true, () => {
+                            setTimeout(() => toggleButtons(true), 800);
+                        });
+                    } else {
+                        toggleButtons(true);
+                    }
+                };
+
+                if (!nav.classList.contains('active')) {
+                    animate(cursor, "#hamburger", true, () => {
+                        setTimeout(runNav, 400);
+                    });
+                } else {
+                    runNav();
+                }
             } else {
                 const dropdowns = document.querySelectorAll('.dropdown');
                 const dropdown = dropdowns[0];
@@ -79,38 +122,52 @@ const tutorialSteps = [
         body: "Each entry contains details. Select a card to view more information.",
         target: "#page-container",
         action: (cursor, highlight, animate, toggleButtons) => {
-            const checkCards = setInterval(() => {
-                const cards = document.querySelectorAll('#page-container .card');
-                if (cards.length > 0) {
-                    clearInterval(checkCards);
-                    const card = cards[0];
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+            const nav = document.getElementById('top-tabs');
 
-                    setTimeout(() => {
-                        const rect = card.getBoundingClientRect();
-                        cursor.style.left = `${rect.left + rect.width / 2}px`;
-                        cursor.style.top = `${rect.top + rect.height / 2}px`;
-                        cursor.classList.add('active');
+            const runCardStep = () => {
+                const checkCards = setInterval(() => {
+                    const cards = document.querySelectorAll('#page-container .card');
+                    if (cards.length > 0) {
+                        clearInterval(checkCards);
+                        const card = cards[0];
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
                         setTimeout(() => {
-                            card.style.transform = 'translateY(-8px) skew(-1deg) scale(1.02)';
-                            card.style.borderColor = 'var(--fg)';
-                            const btn = card.querySelector('.card-details-toggle');
-                            if (btn) {
-                                setTimeout(() => {
-                                    animate(cursor, btn, true, () => toggleButtons(true));
-                                }, 800);
-                            } else {
-                                toggleButtons(true);
-                            }
-                        }, 800);
-                    }, 600);
-                }
-            }, 500);
-            setTimeout(() => {
-                clearInterval(checkCards);
-                toggleButtons(true);
-            }, 5000);
+                            const rect = card.getBoundingClientRect();
+                            cursor.style.left = `${rect.left + rect.width / 2}px`;
+                            cursor.style.top = `${rect.top + rect.height / 2}px`;
+                            cursor.classList.add('active');
+
+                            setTimeout(() => {
+                                card.style.transform = 'translateY(-8px) skew(-1deg) scale(1.02)';
+                                card.style.borderColor = 'var(--fg)';
+                                const btn = card.querySelector('.card-details-toggle');
+                                if (btn) {
+                                    setTimeout(() => {
+                                        animate(cursor, btn, true, () => toggleButtons(true));
+                                    }, 800);
+                                } else {
+                                    toggleButtons(true);
+                                }
+                            }, 800);
+                        }, 600);
+                    }
+                }, 500);
+
+                setTimeout(() => {
+                    clearInterval(checkCards);
+                    if (!toggleButtons.called) toggleButtons(true);
+                }, 5000);
+            };
+
+            if (isMobile && nav.classList.contains('active')) {
+                animate(cursor, "#hamburger", true, () => {
+                    setTimeout(runCardStep, 400);
+                });
+            } else {
+                runCardStep();
+            }
         }
     },
     {
@@ -118,7 +175,18 @@ const tutorialSteps = [
         body: "Access the websites settings to customize your experience.",
         target: "#settings-toggle",
         action: (cursor, highlight, animate, toggleButtons) => {
-            animate(cursor, "#settings-toggle", true, () => toggleButtons(true));
+            const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+            const nav = document.getElementById('top-tabs');
+
+            if (isMobile && !nav.classList.contains('active')) {
+                animate(cursor, "#hamburger", true, () => {
+                    setTimeout(() => {
+                        animate(cursor, "#settings-toggle", true, () => toggleButtons(true));
+                    }, 400);
+                });
+            } else {
+                animate(cursor, "#settings-toggle", true, () => toggleButtons(true));
+            }
         }
     },
     {
@@ -134,7 +202,18 @@ const tutorialSteps = [
         body: "You are now prepared to explore the wiki.",
         target: '.tab[data-page="home"]',
         action: (cursor, highlight, animate, toggleButtons) => {
-            animate(cursor, '.tab[data-page="home"]', true, () => toggleButtons(true));
+            const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+            const nav = document.getElementById('top-tabs');
+
+            if (isMobile && !nav.classList.contains('active')) {
+                animate(cursor, "#hamburger", true, () => {
+                    setTimeout(() => {
+                        animate(cursor, '.tab[data-page="home"]', true, () => toggleButtons(true));
+                    }, 400);
+                });
+            } else {
+                animate(cursor, '.tab[data-page="home"]', true, () => toggleButtons(true));
+            }
         }
     }
 ];
@@ -199,7 +278,12 @@ function initTutorial() {
                     cursorEl.classList.add('clicking');
 
                     if (typeof target.click === 'function') {
-                        target.click();
+                        const event = new MouseEvent('click', {
+                            view: window,
+                            bubbles: true,
+                            cancelable: true
+                        });
+                        target.dispatchEvent(event);
                     }
 
                     const clickSfx = document.getElementById('sfx-click');
@@ -344,6 +428,11 @@ function initTutorial() {
         highlight.style.opacity = '0';
         content.style.opacity = '0';
         cursor.classList.remove('active');
+
+        const nav = document.getElementById('top-tabs');
+        if (nav) nav.classList.remove('active');
+        const hamburger = document.getElementById('hamburger');
+        if (hamburger) hamburger.classList.remove('active');
 
         localStorage.setItem('tutorial_completed', 'true');
 

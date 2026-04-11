@@ -13,6 +13,7 @@ function initMobileMenu() {
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
+            if (tab.classList.contains('dropdown-btn')) return;
             hamburger.classList.remove('active');
             nav.classList.remove('active');
         });
@@ -69,12 +70,18 @@ function initHeaderResize() {
         header.style.height = '';
         updatePagePadding(width, true);
         updateSidebarScale(width);
-    } else {
+    } else if (window.innerWidth > 1024) {
         const height = parseInt(savedHeight) || BASE_HEIGHT;
         header.style.height = height + 'px';
         header.style.width = '';
         updatePagePadding(height, false);
         updateScale(height);
+    } else {
+        header.style.height = '';
+        header.style.width = '';
+        pageWrapper.style.paddingTop = '';
+        pageWrapper.style.paddingLeft = '';
+        updateScale(1);
     }
 
     let isResizing = false;

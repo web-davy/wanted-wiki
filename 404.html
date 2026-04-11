@@ -333,7 +333,7 @@
                     if (!isMobile()) return;
                     var isHamburger = hamburger && (e.target === hamburger || hamburger.contains(e.target));
                     if (isHamburger) return;
-                    if (e.target.closest('.header-icon-btn') || e.target.closest('#settings-panel')) return;
+                    if (e.target.closest('.header-icon-btn') || e.target.closest('#settings-panel') || e.target.closest('.tab')) return;
                     e.stopImmediatePropagation();
                 }, true);
 

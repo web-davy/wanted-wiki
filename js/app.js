@@ -224,7 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (sizeSlider) {
-        const savedSize = localStorage.getItem("cardSize") || 200;
+        const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+        const defaultSize = isMobile ? 150 : 200;
+        const savedSize = localStorage.getItem("cardSize") || defaultSize;
         sizeSlider.value = savedSize;
         document.documentElement.style.setProperty('--card-min-size', `${savedSize}px`);
 

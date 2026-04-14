@@ -456,7 +456,7 @@ window.addEventListener('load', () => {
     const isTutorialDone = localStorage.getItem('tutorial_completed');
 
     if (isTutorialDone === 'true') {
-        console.log("Syndicate Briefing already completed. Skipping...");
+        console.log("Tutorial already completed. Skipping...");
         return;
     }
 

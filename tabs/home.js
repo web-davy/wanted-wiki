@@ -1,26 +1,35 @@
 const UPDATES = [
-    { version: "03/04/2026", description: "Easter Event", color: "#ff80f7ff" },
-    { version: "20/03/2026", description: "Airdrop Update", color: "#39ff14" },
-    { version: "06/03/2026", description: "Zoro and Zorvello Cars Added", color: "#39ff14" },
-    { version: "20/02/2026", description: "Major Content Update", color: "#39ff14" },
-    { version: "27/12/2025", description: "Removed Christmass Event", color: "#39ff14" },
-    { version: "12/12/2025", description: "Added Christmass Event", color: "#39ff14" }
+    { version: "D.18/M.04/Y.2026", description: "Unknown Update", color: "#000000ff", color2: "#ffffffff" },
+    { version: "D.03/M.04/Y.2026", description: "Easter Event", color: "#ff80f7ff", color2: "#ffffffff" },
+    { version: "D.20/M.03/Y.2026", description: "Airdrop Update", color: "#ff0000ff", color2: "#ffffffff" },
+    { version: "D.06/M.03/Y.2026", description: "Zoro and Zorvello Cars Update", color: "#f97316ff", color2: "#ffffffff" },
+    { version: "D.20/M.02/Y.2026", description: "Docks & Jewerly Update", color: "#00e1ffff", color2: "#ffffffff" },
+    { version: "D.12/M.12/Y.2025", description: "Christmas Event", color: "#00ffaaff", color2: "#ffffffff" }
 ];
 
-const COUNTDOWN_TARGET = new Date('2026-04-03T17:00:00Z');
+const COUNTDOWN_TARGET = new Date('2026-04-18T20:00:00+03:00');
 window.COUNTDOWN_TARGET = COUNTDOWN_TARGET;
 
 
 function renderHome() {
-    const updatesHTML = UPDATES.map(update => `
+    const updatesHTML = UPDATES.map(update => {
+        const isRainbow = !!update.color2;
+        const colorVars = isRainbow ? `--color-1: ${update.color}; --color-2: ${update.color2};` : '';
+        const textClass = isRainbow ? 'rainbow-text' : '';
+        const textColorStyle = isRainbow ? '' : `color: ${update.color};`;
+
+        return `
         <div class="update-row">
             <div class="update-dot" style="background: ${update.color}; box-shadow: 0 0 6px ${update.color};"></div>
             <div>
-                <div class="update-version" style="color: ${update.color};">${update.version}</div>
+                <div class="update-version ${textClass}" style="${colorVars}${textColorStyle}">
+                    ${update.version}
+                </div>
                 <div class="update-desc">${update.description}</div>
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 
     const managersHTML = (window.CONTRIBUTORS_DATA?.managers || CONTRIBUTORS_DATA?.managers || []).map(m => `
         <div class="staff-card">

@@ -20,7 +20,7 @@ const EVENTS_DATA = [
     date: "December 2025",
     dateColor: "#ffffffff",
     dateOutline: "#59ff00ff",
-    description: "The first annual Christmas event in Wanted! Santa crashed his sleigh and needed help recovering presents and ornaments scattered across the map. Players could earn exclusive festive rewards by helping Santa in the Park.",
+    description: "The first annual Christmas event in Wanted! Santa crashed his sleigh and needed help recovering presents and ornaments scattered across the map.",
     features: [
       "New NPC: Santa (located in the Park)",
       "Limited Time Christmas Missions",

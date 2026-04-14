@@ -187,7 +187,7 @@ const MISSIONS_DATA = [
     location: "Criminal Outpost – Talk to Sir. B",
     description: "Your squad is being deployed on a jewelry store operation. Crack the vault and kill any cops standing in your way.",
     howToComplete: "Play with your crew for 6 hours, Eliminate 10 police while wanted, and Crack 5 Jewelry Vaults.",
-    difficulty: "HARD",
+    difficulty: "MEDIUM",
     missionType: "Sir. B",
     rewards: ["1,400 Syndicate XP", "$60,000"]
   },
@@ -431,13 +431,25 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["600 Syndicate XP", "$9,000"]
   },
+  {
+    id: "nightstalker",
+    showMoreButton: true,
+    title: "Nightstalker",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "It's time to clean house. Operating under the cover of darkness gives us the element of surprise. Kill anyone you deem dangerous to The Syndicate.",
+    howToComplete: "Get 20 kills at night.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,000 Syndicate XP", "$100,000"]
+  },
+
 
   {
     id: "oasis-eleven",
     showMoreButton: true,
     title: "Oasis Eleven - Part 1",
     location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every so often, a huge shipment of valuables comes through the the bank. We have intel that a shipment of gold is coming through soon. Break in, get the gold, and get out.",
+    description: "Every so often, a huge shipment of valuables comes through the bank. We have intel that a shipment of gold is coming through soon. Break in, get the gold, and get out.",
     howToComplete: "Rob 3 Gold Vaults.",
     difficulty: "EASY",
     missionType: "Sir. B",
@@ -449,7 +461,7 @@ const MISSIONS_DATA = [
     showMoreButton: true,
     title: "Oasis Eleven - Part 2",
     location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every so often, a huge shipment of valuables comes through the the bank. This time, there's going to be a shipment of gems: sapphires. Steal as many as you can. ",
+    description: "Every so often, a huge shipment of valuables comes through the bank. This time, there's going to be a shipment of gems: sapphires. Steal as many as you can. ",
     howToComplete: "Rob 2 Sapphire Vaults.",
     difficulty: "MEDIUM",
     missionType: "Sir. B",
@@ -461,12 +473,24 @@ const MISSIONS_DATA = [
     showMoreButton: true,
     title: "Oasis Eleven - Part 3",
     location: "Criminal Outpost – Talk to Sir. B",
-    description: "Every so often, a huge shipment of valuables comes through the the bank. Ruby Vaults are particularly valuable. Comes with a larger amount of cash too. ",
+    description: "Every so often, a huge shipment of valuables comes through the bank. Ruby Vaults are particularly valuable. Comes with a larger amount of cash too. ",
     howToComplete: "Rob 2 Ruby Vaults.",
     difficulty: "MEDIUM",
     missionType: "Sir. B",
     rewards: ["1500 Syndicate XP", "$50,000"]
   },
+  {
+    id: "oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 4",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every so often, a huge shipment of valuables comes through the bank. Emeralds are among the rarest and most expensive gems. Bring back as many as you can.",
+    howToComplete: "Rob 1 Emerald Vault.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["2,000 Syndicate XP", "$100,000"]
+  },
+
 
   {
     id: "payday",
@@ -539,6 +563,30 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["600 Syndicate XP", "$50,000"]
   },
+  {
+    id: "smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 5",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "We're in the big leagues now: seven figures. One million. You know what they say: the first million is always the hardest.",
+    howToComplete: "Sell $1,000,000 worth of loot to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,000 Syndicate XP", "$100,000"]
+  },
+  {
+    id: "stealth-pilot",
+    showMoreButton: true,
+    title: "Stealth Pilot",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "The Syndicate needs a vehicle that can conduct airborne raids. Go speak to Davis, our contact at the heliport. He'll walk you through the licensing and red tape.",
+    howToComplete: "Purchase the MD 500 helicopter.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,400 Syndicate XP", "$300,000"]
+  },
+
+
 
   {
     id: "syndicate-dogs",
@@ -599,6 +647,18 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["150 Syndicate XP", "$5,000"]
   },
+  {
+    id: "the-estate",
+    showMoreButton: true,
+    title: "The Estate",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "I need you to establish a new Syndicate safehouse. Somewhere nicer than this: somewhere low heat, where we can broker more deals.",
+    howToComplete: "Purchase the Modern Brickstone house.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,100 Syndicate XP", "$100,000"]
+  },
+
 
   {
     id: "the-files",
@@ -611,6 +671,18 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["450 Syndicate XP", "$7,500"]
   },
+  {
+    id: "the-heaviest-bag",
+    showMoreButton: true,
+    title: "The Heaviest Bag",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Money doesn't buy happiness - it buys freedom. Fill your loot bag to the brim - $500,000 worth.",
+    howToComplete: "Get a bag with a total value of $500,000.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["2,200 Syndicate XP", "$100,000"]
+  },
+
 
   {
     id: "timepiece",
@@ -719,6 +791,18 @@ const MISSIONS_DATA = [
     difficulty: "EASTER",
     missionType: "Easter",
     rewards: ["Easter Bag", "$125,000"]
+  },
+
+  {
+    id: "the-egg-hunt",
+    showMoreButton: true,
+    title: "The Egg Hunt - Part 3",
+    location: "Park – Talk to The Easter Bunny",
+    description: "i'm looking for my eggs, have you seen them??? i've been looking all over!! if you can find them, i have lots of cool rewards!!! :O",
+    howToComplete: "Give the Easter Bunny 18 Eggs.",
+    difficulty: "EASTER",
+    missionType: "Easter",
+    rewards: ["Bunny Ears Car Mod", "2026 Egg Hunt Trophy Furniture", "$125,000"]
   },
 
   {

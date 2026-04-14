@@ -49,24 +49,24 @@ const VALUABLES_DATA = [
 ];
 
 const EASTER_VALUABLES_DATA = [
-  { name: "Planetary Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Pear Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Soldier Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Waterfall Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Secure Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Void Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Cargo Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Golden Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Crypto Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Amethyst Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Parachute Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Canival Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Diamond Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Big Red Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Prisoner Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Contruction Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Glass Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" },
-  { name: "Syndicate Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "???" }
+  { name: "Planetary Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Hidden within the Orrery Observatory (Requires 1 Diamond)" },
+  { name: "Pear Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Found inside the Pear Store" },
+  { name: "Soldier Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Tucked inside hackable crates at Fort Emberreach" },
+  { name: "Waterfall Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Hidden behind the waterfall near Frostpire Mountain" },
+  { name: "Secure Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "A rare find discovered within safes" },
+  { name: "Void Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Recovered from the Anomaly at Frostpire Mountain" },
+  { name: "Cargo Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Stashed inside shipping boxes at the Docks" },
+  { name: "Golden Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Locked within the Oasis Bank vault" },
+  { name: "Crypto Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Earned by successfully selling a Bitcoin" },
+  { name: "Amethyst Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Locked within the Oasis Bank vault" },
+  { name: "Parachute Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Recovering from falling Airdrop crates" },
+  { name: "Canival Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "At the top of the Ferris Wheel near the Jewelry Store" },
+  { name: "Diamond Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Secured within the Oasis City Jewelry Store" },
+  { name: "Big Red Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 20, location: "Resting atop the bridge near the Police Station" },
+  { name: "Prisoner Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Locked inside a jail cell at the Police Station" },
+  { name: "Construction Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Perched on the construction crane near Oasis Bank" },
+  { name: "Glass Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Displayed inside Ofys Value Pawn" },
+  { name: "Syndicate Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Granted upon completing the Syndicegg Mission" }
 ];
 
 const CHRISTMAS_VALUABLES_DATA = [

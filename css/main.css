@@ -1101,6 +1101,22 @@ body.low-end-mode * {
     margin-top: 3px;
 }
 
+/* Rainbow Text Animation */
+.rainbow-text {
+    background: linear-gradient(90deg, var(--color-1), var(--color-2), var(--color-1));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-move 3s linear infinite;
+    font-weight: 800;
+    text-shadow: none !important; /* Shadows break background-clip: text */
+}
+
+@keyframes rainbow-move {
+    to { background-position: 200% center; }
+}
+
 .admin-section {
     background: transparent;
     padding: 60px 20px;

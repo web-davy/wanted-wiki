@@ -8,25 +8,25 @@ function renderPromoCodes(filter = "all") {
     }
 
     const cards = filteredCodes.map(item => {
-        const statusHtml = item.active
-            ? `<span style="color: #00ffaa; text-shadow: 0 0 5px #00ffaa;">ACTIVE</span>`
-            : `<span style="color: #ff3333; text-shadow: 0 0 5px #ff3333;">EXPIRED</span>`;
+        const statusText  = item.active ? t('status_active') : t('status_expired');
+        const statusColor = item.active ? '#00ffaa' : '#ff3333';
+        const statusHtml  = `<span style="color: ${statusColor}; text-shadow: 0 0 5px ${statusColor};">${statusText}</span>`;
 
         const visibleContent = `
             <h3>${item.code}</h3>
-            ${renderStat('Status', statusHtml)}
-            ${renderStat('Reward', item.reward)}
-            ${renderStat('Description', item.description)}
+            ${renderStat(t('stat_status'),      statusHtml)}
+            ${renderStat(t('stat_code_reward'), item.reward)}
+            ${renderStat(t('stat_description'), item.description)}
         `;
 
         const slug = generateSlug(item.code);
 
-        let imgTag = `<img src="images/promocodes/${slug}.jpg" alt="${item.code}" loading="lazy" 
+        const imgTag = `<img src="images/promocodes/${slug}.jpg" alt="${item.code}" loading="lazy"
           style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; box-shadow:0 0 10px rgba(255,255,255,0.2);"
           onerror="this.onerror=null; this.src='images/favicon.png'; this.style.opacity='0.5'; this.style.objectFit='contain'; this.style.height='150px';"/>`;
 
         return `
-          <div class="card" style="border-top: 3px solid ${item.active ? '#00ffaa' : '#ff3333'};">
+          <div class="card" style="border-top: 3px solid ${statusColor};">
             ${imgTag}
             ${visibleContent}
           </div>
@@ -34,17 +34,15 @@ function renderPromoCodes(filter = "all") {
     });
 
     const filterButtons = renderSortButtons([
-        { label: 'All Codes', value: 'all', onClick: "filterPromoCodes('all')" },
-        { label: 'Active', value: 'active', onClick: "filterPromoCodes('active')" },
-        { label: 'Expired', value: 'expired', onClick: "filterPromoCodes('expired')" }
+        { label: t('filter_all'),     value: 'all',     onClick: "filterPromoCodes('all')" },
+        { label: t('filter_active'),  value: 'active',  onClick: "filterPromoCodes('active')" },
+        { label: t('filter_expired'), value: 'expired', onClick: "filterPromoCodes('expired')" }
     ], filter);
 
-    return renderPage("PROMO CODES", filterButtons, cards, "New codes are added periodically. Keep an eye out for updates!");
+    return renderPage(t('page_promo_codes'), filterButtons, cards, t('promo_disclaimer'));
 }
 
 function filterPromoCodes(status) {
     const container = document.getElementById("page-container");
-    if (container) {
-        container.innerHTML = renderPromoCodes(status);
-    }
+    if (container) container.innerHTML = renderPromoCodes(status);
 }

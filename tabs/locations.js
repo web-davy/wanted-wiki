@@ -6,22 +6,17 @@ function renderLocations(order = "az") {
   );
 
   const cards = sorted.map(item => {
-    const slug = generateSlug(item.name);
-
     const visibleContent = `<h3>${item.name}</h3>`;
-    const hiddenContent = `<p>${item.description}</p>`;
-
-    const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
-
+    const hiddenContent  = `<p>${item.description}</p>`;
     return renderExpandableCardJPG(item, null, visibleContent, hiddenContent, 'locations');
   });
 
   const sortButtons = renderSortButtons([
-    { label: 'A-Z', value: 'az', onClick: "sortLocations('az')" },
-    { label: 'Z-A', value: 'za', onClick: "sortLocations('za')" }
+    { label: t('sort_az'), value: 'az', onClick: "sortLocations('az')" },
+    { label: t('sort_za'), value: 'za', onClick: "sortLocations('za')" }
   ], order);
 
-  return renderPage('LOCATIONs', sortButtons, cards);
+  return renderPage(t('page_locations'), sortButtons, cards);
 }
 
 function sortLocations(order) {

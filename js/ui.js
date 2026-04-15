@@ -146,14 +146,16 @@ function initSidebarToggle(clickSfx) {
 
     if (sidebarToggle && sidebarStatus && document.body.classList.contains("left-sidebar-mode")) {
         sidebarToggle.classList.add("active");
-        sidebarStatus.textContent = "ON";
+        sidebarStatus.textContent = typeof t === 'function' ? t('toggle_on') : 'ON';
     }
 
     if (sidebarToggle && sidebarStatus) {
         sidebarToggle.addEventListener("click", () => {
             const isSidebar = document.body.classList.toggle("left-sidebar-mode");
             sidebarToggle.classList.toggle("active", isSidebar);
-            sidebarStatus.textContent = isSidebar ? "ON" : "OFF";
+            sidebarStatus.textContent = isSidebar
+                ? (typeof t === 'function' ? t('toggle_on') : 'ON')
+                : (typeof t === 'function' ? t('toggle_off') : 'OFF');
             localStorage.setItem("sidebarMode", isSidebar);
 
             const header = document.querySelector('.fixed-header');

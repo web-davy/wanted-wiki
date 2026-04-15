@@ -8,26 +8,20 @@ function renderGunCrates(sort = "a-z") {
   }
 
   const cards = sorted.map(item => {
-    const slug = generateSlug(item.name);
-
     const visibleContent = `<h3>${item.name}</h3>`;
-    const hiddenContent = `
-      ${renderStat('Contains', item.gun)}
-      ${renderStat('Cooldown', item.cooldown)}
-      ${renderStat('Location', item.location)}
+    const hiddenContent  = `
+      ${renderStat(t('stat_content'),  item.gun)}
+      ${renderStat(t('stat_location'), item.location)}
     `;
-
-    const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
-
     return renderExpandableCardJPG(item, null, visibleContent, hiddenContent, 'crates');
   });
 
   const sortButtons = renderSortButtons([
-    { label: 'A-Z', value: 'a-z', onClick: "sortGunCrates('a-z')" },
-    { label: 'Z-A', value: 'z-a', onClick: "sortGunCrates('z-a')" }
+    { label: t('sort_az'), value: 'a-z', onClick: "sortGunCrates('a-z')" },
+    { label: t('sort_za'), value: 'z-a', onClick: "sortGunCrates('z-a')" }
   ], sort);
 
-  return renderPage('GUN CRATEs', sortButtons, cards);
+  return renderPage(t('page_gun_crates'), sortButtons, cards);
 }
 
 function sortGunCrates(order) {

@@ -11,7 +11,20 @@ window.audioUnlocked = false;
 window.loadPage = loadPage;
 window.toggleCardDetails = toggleCardDetails;
 
+/** Returns the slug of the currently visible page */
+function getCurrentPage() {
+    const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events", "promo-codes"];
+    const hash = window.location.hash.replace(/^#/, '');
+    const path = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
+    if (validPages.includes(hash)) return hash;
+    if (validPages.includes(path)) return path;
+    return 'home';
+}
+window.getCurrentPage = getCurrentPage;
+
 function loadPage(page, saveToHistory = true) {
+    // Support { force: true } as second arg from i18n.setLang()
+    if (saveToHistory && typeof saveToHistory === 'object') saveToHistory = true;
     if (!container) return;
 
 
@@ -142,10 +155,13 @@ function toggleCardDetails(cardId, btn) {
     if (!detailsElement || !button) return;
 
     const isCollapsed = detailsElement.classList.toggle('collapsed');
-    button.textContent = isCollapsed ? 'Show more...' : 'Show less...';
+    button.textContent = isCollapsed
+        ? (typeof t === 'function' ? t('show_more') : 'Show more...')
+        : (typeof t === 'function' ? t('show_less') : 'Show less');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof i18n !== 'undefined') i18n.init();
     if (typeof initMobileMenu === 'function') initMobileMenu();
     if (typeof initDropdownNav === 'function') initDropdownNav();
     if (typeof initSettingsPanel === 'function') initSettingsPanel(clickSfx);
@@ -299,12 +315,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isLowEnd) {
             document.body.classList.add("low-end-mode");
             lowEndToggle.classList.add("active");
-            lowEndStatus.textContent = "ON";
+            lowEndStatus.textContent = typeof t === 'function' ? t('toggle_on') : 'ON';
         }
         lowEndToggle.addEventListener("click", () => {
             const active = document.body.classList.toggle("low-end-mode");
             lowEndToggle.classList.toggle("active", active);
-            lowEndStatus.textContent = active ? "ON" : "OFF";
+            lowEndStatus.textContent = active
+                ? (typeof t === 'function' ? t('toggle_on') : 'ON')
+                : (typeof t === 'function' ? t('toggle_off') : 'OFF');
             localStorage.setItem("lowEndMode", active);
         });
     }
@@ -316,12 +334,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isAlwaysShow) {
             document.body.classList.add("always-show-more");
             showMoreToggle.classList.add("active");
-            showMoreStatus.textContent = "ON";
+            showMoreStatus.textContent = typeof t === 'function' ? t('toggle_on') : 'ON';
         }
         showMoreToggle.addEventListener("click", () => {
             const active = document.body.classList.toggle("always-show-more");
             showMoreToggle.classList.toggle("active", active);
-            showMoreStatus.textContent = active ? "ON" : "OFF";
+            showMoreStatus.textContent = active
+                ? (typeof t === 'function' ? t('toggle_on') : 'ON')
+                : (typeof t === 'function' ? t('toggle_off') : 'OFF');
             localStorage.setItem("alwaysShowMore", active);
 
             const activeTab = document.querySelector(".tab.active");
@@ -336,11 +356,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const isOn = !isSkipped;
 
         if (isOn) introToggle.classList.add("active");
-        introStatus.textContent = isOn ? "ON" : "OFF";
+        introStatus.textContent = isOn
+            ? (typeof t === 'function' ? t('toggle_on') : 'ON')
+            : (typeof t === 'function' ? t('toggle_off') : 'OFF');
 
         introToggle.addEventListener("click", () => {
             const nowOn = introToggle.classList.toggle("active");
-            introStatus.textContent = nowOn ? "ON" : "OFF";
+            introStatus.textContent = nowOn
+                ? (typeof t === 'function' ? t('toggle_on') : 'ON')
+                : (typeof t === 'function' ? t('toggle_off') : 'OFF');
             localStorage.setItem("skipGarageIntro", nowOn ? "false" : "true");
         });
     }

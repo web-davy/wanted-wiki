@@ -8,20 +8,18 @@ function renderNPCs(order = "az") {
   const cards = sorted.map(item => {
     const visibleContent = `<h3>${item.name}</h3>`;
     const hiddenContent = `
-      ${renderStat('Location', item.location)}
-      ${renderStat('Description', item.description)}
+      ${renderStat(t('stat_location'),    item.location)}
+      ${renderStat(t('stat_description'), item.description)}
     `;
-
-    const slug = generateSlug(item.name);
     return renderNPCCard(item, item.team, visibleContent, hiddenContent, 'npcs');
   });
 
   const sortButtons = renderSortButtons([
-    { label: 'A-Z', value: 'az', onClick: "sortNPCs('az')" },
-    { label: 'Z-A', value: 'za', onClick: "sortNPCs('za')" }
+    { label: t('sort_az'), value: 'az', onClick: "sortNPCs('az')" },
+    { label: t('sort_za'), value: 'za', onClick: "sortNPCs('za')" }
   ], order);
 
-  return renderPage('NPCs', sortButtons, cards, 'This page is curently unfinished and being worked on');
+  return renderPage(t('page_npcs'), sortButtons, cards, t('disclaimer_wip'));
 }
 
 function sortNPCs(order) {

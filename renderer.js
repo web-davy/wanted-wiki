@@ -93,7 +93,7 @@ function renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, ex
       </div>` : ''}
       ${showButton ? `
       <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">
-        Show more...
+        ${t('show_more')}
       </button>` : ''}
     </div>`;
 }
@@ -156,7 +156,7 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
 
   return `
   <div class="card">
-    <button class="card-overlay-button" onclick="toggleCardOverlay(this)">DIALOGUES</button>
+    <button class="card-overlay-button" onclick="toggleCardOverlay(this)">${t('card_dialogues')}</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
                 box-shadow:0 0 10px rgba(255,255,255,0.2);"
@@ -167,11 +167,11 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
       <div class="card-details collapsed" id="${cardId}-details">
         ${hiddenContent}
       </div>
-      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">Show more...</button>
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">${t('show_more')}</button>
       ` : ''}
     </div>
     <div class="card-overlay">
-      <div class="card-overlay-title">${name} DIALOGUES</div>
+      <div class="card-overlay-title">${name} ${t('card_dialogues')}</div>
       <div class="card-overlay-list">
         ${dialoguesHTML}
       </div>
@@ -217,7 +217,7 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
   return `
   <div class="card">
     ${renderPriceTag(item.contractPrice)}
-    <button class="card-overlay-button" onclick="toggleCardOverlay(this)">ATTACHMENTS</button>
+    <button class="card-overlay-button" onclick="toggleCardOverlay(this)">${t('card_attachments')}</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;
                 box-shadow:0 0 10px rgba(255,255,255,0.2);"
@@ -228,11 +228,11 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
       <div class="card-details collapsed" id="${cardId}-details">
         ${hiddenContent}
       </div>
-      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">Show more...</button>
+      <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">${t('show_more')}</button>
       ` : ''}
     </div>
     <div class="card-overlay">
-      <div class="card-overlay-title">${name} ATTACHMENTS</div>
+      <div class="card-overlay-title">${name} ${t('card_attachments')}</div>
       <div class="card-overlay-list">
         ${attachmentsHTML}
       </div>
@@ -264,7 +264,7 @@ function renderEventCard(item, visibleContent, hiddenContent, folder = 'events')
       </div>` : ''}
       ${showButton ? `
       <button class="card-details-toggle" onclick="toggleCardDetails('${cardId}', this)">
-        Show more...
+        ${t('show_more')}
       </button>` : ''}
     </div>`;
 }

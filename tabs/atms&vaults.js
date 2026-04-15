@@ -14,7 +14,7 @@ function renderATMs(sort = "high") {
       <h3>${item.name}</h3>
       ${renderStat('Cash', formatPrice(item.price))}
     `;
-    const hiddenContent = renderStat('Rarity', item.rarityPercent);
+    const hiddenContent = renderStat(t('stat_rarity'), item.rarityPercent);
     return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'atms&vaults');
   });
 
@@ -26,35 +26,25 @@ function renderATMs(sort = "high") {
       <h3>${item.name}</h3>
       ${renderStat('Cash', priceDisplay)}
     `;
-    const hiddenContent = renderStat('Rarity', item.rarityPercent);
+    const hiddenContent = renderStat(t('stat_rarity'), item.rarityPercent);
     return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'atms&vaults');
   });
 
   const sortButtons = renderSortButtons([
-    { label: 'High to Low', value: 'high', onClick: "sortATMs('high')" },
-    { label: 'Low to High', value: 'low', onClick: "sortATMs('low')" }
+    { label: t('sort_expensive'), value: 'high', onClick: "sortATMs('high')" },
+    { label: t('sort_cheap'),     value: 'low',  onClick: "sortATMs('low')" }
   ], sort);
 
-  const atmSection = `
-    <h3 style="margin: 20px 0 10px;">ATMs</h3>
-    <div class="card-grid">
-      ${atmCards.join('')}
-    </div>
-  `;
-
-  const vaultSection = `
-    <div style="margin: 40px 0; border-bottom: 2px solid #fff; opacity: 0.3;"></div>
-    <h3 style="margin: 20px 0 10px;">Vaults</h3>
-    <div class="card-grid">
-      ${vaultCards.join('')}
-    </div>
-  `;
+  const divider = `<div style="margin: 40px 0; border-bottom: 2px solid #fff; opacity: 0.3;"></div>`;
 
   return `
-    <h2>ATMs & VAULTs</h2>
+    <h2>${t('page_atms')}</h2>
     ${sortButtons}
-    ${atmSection}
-    ${vaultSection}
+    <h3 style="margin: 20px 0 10px;">ATMs</h3>
+    <div class="card-grid">${atmCards.join('')}</div>
+    ${divider}
+    <h3 style="margin: 20px 0 10px;">Vaults</h3>
+    <div class="card-grid">${vaultCards.join('')}</div>
   `;
 }
 

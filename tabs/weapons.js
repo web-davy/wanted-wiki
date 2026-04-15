@@ -5,74 +5,55 @@ function renderWeapons(sort = "high") {
     return sort === "high" ? valB - valA : valA - valB;
   };
 
-  const sortedGuns = [...GUNS_DATA].sort(sortFn);
+  const sortedGuns       = [...GUNS_DATA].sort(sortFn);
   const sortedExplosives = [...EXPLOSIVES_DATA].sort(sortFn);
-  const sortedTools = [...TOOLS_DATA].sort(sortFn);
+  const sortedTools      = [...TOOLS_DATA].sort(sortFn);
 
   function makeCards(data) {
     return data.map(item => {
-      const slug = generateSlug(item.name);
       const hasAttachments = item.attachments && Object.keys(item.attachments).length > 0;
       const visibleContent = `
         ${hasAttachments ? '' : renderPriceTag(item.contractPrice)}
         <h3>${item.name}</h3>
       `;
       const hiddenContent = `
-        ${renderStat('Obtaining', item.obtaining)}
-        ${renderStat('Location', item.location || item.stats.location)}
-        ${renderStat('Re-buy', formatPrice(item.reBuyPrice))}
-        ${renderStat('Sell Price', formatPrice(item.sellPrice))}
-        ${renderStat('Ammo', item.stats.ammo)}
-        ${renderStat('Ammo Cost', item.stats.ammoPrice)}
-        ${renderStat('Damage', item.stats.damage)}
-        ${renderStat('RPM', item.stats.firerate)}
-        ${item.stats.reload ? renderStat('Reload', `${item.stats.reload}s`) : ''}
-        ${renderStat('Accuracy', item.stats.accuracy)}
+        ${renderStat(t('stat_obtaining'),  item.obtaining)}
+        ${renderStat(t('stat_location'),   item.location || item.stats.location)}
+        ${renderStat(t('stat_rebuy'),      formatPrice(item.reBuyPrice))}
+        ${renderStat(t('stat_sell'),       formatPrice(item.sellPrice))}
+        ${renderStat(t('stat_ammo'),       item.stats.ammo)}
+        ${renderStat(t('stat_ammo_cost'),  item.stats.ammoPrice)}
+        ${renderStat(t('stat_damage'),     item.stats.damage)}
+        ${renderStat(t('stat_rpm'),        item.stats.firerate)}
+        ${item.stats.reload ? renderStat(t('stat_reload'), `${item.stats.reload}s`) : ''}
+        ${renderStat(t('stat_accuracy'),   item.stats.accuracy)}
       `;
       return renderWeaponCard(item, null, visibleContent, hiddenContent, 'weapons');
     });
   }
 
-  const gunCards = makeCards(sortedGuns);
+  const gunCards       = makeCards(sortedGuns);
   const explosiveCards = makeCards(sortedExplosives);
-  const toolCards = makeCards(sortedTools);
+  const toolCards      = makeCards(sortedTools);
 
   const sortButtons = renderSortButtons([
-    { label: 'Expensive to Cheap', value: 'high', onClick: "sortWeapons('high')" },
-    { label: 'Cheap to Expensive', value: 'low', onClick: "sortWeapons('low')" }
+    { label: t('sort_expensive'), value: 'high', onClick: "sortWeapons('high')" },
+    { label: t('sort_cheap'),     value: 'low',  onClick: "sortWeapons('low')" }
   ], sort);
 
   const divider = `<div style="margin: 40px 0; border-bottom: 2px solid #fff; opacity: 0.3;"></div>`;
 
-  const gunsSection = `
-    <h3 style="margin: 20px 0 10px;">Guns</h3>
-    <div class="card-grid">
-      ${gunCards.join('')}
-    </div>
-  `;
-
-  const explosivesSection = `
-    ${divider}
-    <h3 style="margin: 20px 0 10px;">Explosives</h3>
-    <div class="card-grid">
-      ${explosiveCards.join('')}
-    </div>
-  `;
-
-  const toolsSection = `
-    ${divider}
-    <h3 style="margin: 20px 0 10px;">Tools</h3>
-    <div class="card-grid">
-      ${toolCards.join('')}
-    </div>
-  `;
-
   return `
-    <h2>WEAPONs</h2>
+    <h2>${t('page_weapons')}</h2>
     ${sortButtons}
-    ${gunsSection}
-    ${explosivesSection}
-    ${toolsSection}
+    <h3 style="margin: 20px 0 10px;">${t('cat_guns')}</h3>
+    <div class="card-grid">${gunCards.join('')}</div>
+    ${divider}
+    <h3 style="margin: 20px 0 10px;">${t('cat_explosives')}</h3>
+    <div class="card-grid">${explosiveCards.join('')}</div>
+    ${divider}
+    <h3 style="margin: 20px 0 10px;">${t('cat_tools')}</h3>
+    <div class="card-grid">${toolCards.join('')}</div>
   `;
 }
 

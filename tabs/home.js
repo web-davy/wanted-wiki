@@ -10,8 +10,8 @@ const UPDATES = [
 const COUNTDOWN_TARGET = new Date('2026-04-18T20:00:00+03:00');
 window.COUNTDOWN_TARGET = COUNTDOWN_TARGET;
 
-
 function renderHome() {
+
     const updatesHTML = UPDATES.map(update => {
         const isRainbow = !!update.color2;
         const colorVars = isRainbow ? `--color-1: ${update.color}; --color-2: ${update.color2};` : '';
@@ -46,7 +46,6 @@ function renderHome() {
         <li><strong>${c.name}</strong> - ${c.contributions}</li>
     `).join('');
 
-
     return `
         <div class="home-container">
             <div class="hero-section">
@@ -54,15 +53,13 @@ function renderHome() {
                 <div class="hero-logo-container">
                     <img src="images/logo.png" alt="WANTED Logo" class="hero-logo">
                 </div>
-                <h1 class="hero-title">WANTED WIKI</h1>
+                <h1 class="hero-title">${t('home_hero_title')}</h1>
                 <p class="hero-text">
-                    Welcome to the ultimate <strong>Wanted Wiki</strong>.<br>
-                    Here we log all information about the Roblox game Wanted, including details on 
-                    weapons, vehicles & more. <br><br>
-                    <em>Note: This wiki is community-run and not affiliated with Roblox, the game Wanted, or DevvGames.</em>
+                    ${t('home_hero_text')}<br><br>
+                    ${t('home_hero_disclaimer')}
                 </p>
                 <div class="play-btn-container">
-                    <a href="https://www.roblox.com/games/14438406081/Wanted" target="_blank" class="play-btn">PLAY HERE</a>
+                    <a href="https://www.roblox.com/games/14438406081/Wanted" target="_blank" class="play-btn">${t('home_play_btn')}</a>
                 </div>
             </div>
 
@@ -71,7 +68,7 @@ function renderHome() {
                     <div class="updates-box">
                         <div class="updates-header">
                             <span class="updates-icon">ⴵ</span>
-                            <h3 class="updates-title">RECENT UPDATES</h3>
+                            <h3 class="updates-title">${t('home_recent_updates')}</h3>
                         </div>
                         <div class="updates-list">
                             ${updatesHTML}
@@ -80,10 +77,10 @@ function renderHome() {
                     <div class="countdown-box">
                         <div class="countdown-header">
                             <span class="countdown-icon">⏱</span>
-                            <h3 class="countdown-title">NEXT UPDATE</h3>
+                            <h3 class="countdown-title">${t('home_next_update')}</h3>
                         </div>
                         <div id="countdown-display" class="countdown-display">
-                            <div class="countdown-time">Calculating...</div>
+                            <div class="countdown-time">${t('home_calculating')}</div>
                         </div>
                     </div>
                 </div>
@@ -95,24 +92,24 @@ function renderHome() {
                     <div class="admin-icon-container">
                          <img src="images/wikiadmin.png" alt="Wiki Icon" class="admin-icon">
                     </div>
-                    <h2 class="admin-title">Administration and Management</h2>
-                    <p class="admin-text">Information about the team behind the Wanted Wiki.</p>
+                    <h2 class="admin-title">${t('home_admin_title')}</h2>
+                    <p class="admin-text">${t('home_admin_text')}</p>
                     
                     <div class="staff-grid">
                         ${managersHTML}
                         <div class="staff-card">
-                            <h3 class="staff-card-title">WIKI STAFF</h3>
+                            <h3 class="staff-card-title">${t('home_wiki_staff')}</h3>
                             <ul class="staff-list">
-                                ${staffHTML || '<li>No staff listed.</li>'}
+                                ${staffHTML || `<li>${t('home_no_staff')}</li>`}
                             </ul>
                         </div>
                     </div>
 
                     <div class="contributors-grid">
                         <div class="contributor-card">
-                            <h3 class="staff-card-title">WIKI CONTRIBUTORS</h3>
+                            <h3 class="staff-card-title">${t('home_wiki_contributors')}</h3>
                             <ul class="contributor-list">
-                                ${contributorsHTML || '<li>No contributors listed.</li>'}
+                                ${contributorsHTML || `<li>${t('home_no_contributors')}</li>`}
                             </ul>
                         </div>
                     </div>
@@ -123,11 +120,11 @@ function renderHome() {
                 <div class="views-wrapper">
                     <div class="views-box">
                         <div class="views-header">
-                            <h3 class="views-title">VIEWERS COUNT</h3>
+                            <h3 class="views-title">${t('home_viewers_title')}</h3>
                         </div>
                         <div class="views-display">
                             <div id="visitor-count" class="views-count">---</div>
-                            <div class="views-subtext">UNIQUE IDENTITIES RECORDED</div>
+                            <div class="views-subtext">${t('home_viewers_subtext')}</div>
                         </div>
                     </div>
                 </div>

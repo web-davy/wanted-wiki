@@ -26,7 +26,7 @@ function renderVehicles(sort = "high") {
       ${renderStatSuffix(t('stat_top_speed'),   item.stats.topSpeed, '%')}
       ${renderStatSuffix(t('stat_handling'),    item.stats.handling, '%')}
       ${renderStatSuffix(t('stat_spool_time'),  item.stats.spoolTime, 's')}
-      ${renderStat(t('stat_max_health'), item.stats.maxHealth)}
+      ${renderStat(t('stat_health'), item.stats.Health)}
       ${renderStat(t('stat_armor'),      item.stats.armor)}
     ` : `
       ${renderStat(t('stat_obtaining'),     item.obtaining)}
@@ -35,7 +35,7 @@ function renderVehicles(sort = "high") {
       ${renderStatSuffix(t('stat_top_speed'),   item.stats.topSpeed, '%')}
       ${renderStatSuffix(t('stat_acceleration'),item.stats.acceleration, '%')}
       ${renderStatSuffix(t('stat_braking'),     item.stats.braking, '%')}
-      ${renderStat(t('stat_max_health'), item.stats.maxHealth)}
+      ${renderStat(t('stat_health'), item.stats.Health)}
       ${renderStat(t('stat_armor'),      item.stats.armor)}
     `;
     return renderExpandableCardJPG(item, null, visibleContent, hiddenContent, 'vehicles');

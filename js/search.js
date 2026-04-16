@@ -44,7 +44,7 @@ function renderSearchItem(item) {
                     ${renderStat('Top Speed', `${item.stats.topSpeed} MPH`)}
                     ${renderStat('Acceleration', `${item.stats.acceleration}%`)}
                     ${renderStat('Braking', `${item.stats.braking}%`)}
-                    ${renderStat('Max Health', item.stats.maxHealth)}
+                    ${renderStat('Health', item.stats.Health)}
                     ${renderStat('Armor', item.stats.armor)}
                 `;
         } else if (item.type === 'flying') {
@@ -52,7 +52,7 @@ function renderSearchItem(item) {
                     ${renderStat('Top Speed', `${item.stats.topSpeed}%`)}
                     ${renderStat('Handling', `${item.stats.handling}%`)}
                     ${renderStat('Spool Time', `${item.stats.spoolTime}s`)}
-                    ${renderStat('Max Health', item.stats.maxHealth)}
+                    ${renderStat('Health', item.stats.Health)}
                     ${renderStat('Armor', item.stats.armor)}
                 `;
         }

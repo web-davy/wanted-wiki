@@ -92,7 +92,7 @@ const TRANSLATIONS = {
         stat_braking: 'Braking',
         stat_handling: 'Handling',
         stat_spool_time: 'Spool Time',
-        stat_max_health: 'Max Health',
+        stat_health: 'Health',
         stat_armor: 'Armor',
 
         //  Gun Crates Page 
@@ -239,7 +239,7 @@ const TRANSLATIONS = {
         stat_braking: 'Freinage',
         stat_handling: 'Maniabilité',
         stat_spool_time: 'Temps de bobinage',
-        stat_max_health: 'Santé max',
+        stat_health: 'Santé',
         stat_armor: 'Armure',
 
         page_gun_crates: 'CAISSES D\'ARMES',
@@ -374,7 +374,7 @@ const TRANSLATIONS = {
         stat_braking: 'Bremsung',
         stat_handling: 'Handling',
         stat_spool_time: 'Spulzeit',
-        stat_max_health: 'Max. Gesundheit',
+        stat_health: 'Gesundheit',
         stat_armor: 'Panzerung',
 
         page_gun_crates: 'WAFFENKISTEN',
@@ -509,7 +509,7 @@ const TRANSLATIONS = {
         stat_braking: 'Frenado',
         stat_handling: 'Manejo',
         stat_spool_time: 'Tiempo de bobinado',
-        stat_max_health: 'Salud máxima',
+        stat_health: 'Salud',
         stat_armor: 'Armadura',
 
         page_gun_crates: 'CAJAS DE ARMAS',
@@ -644,7 +644,7 @@ const TRANSLATIONS = {
         stat_braking: 'Frenagem',
         stat_handling: 'Manuseio',
         stat_spool_time: 'Tempo de spool',
-        stat_max_health: 'Saúde máxima',
+        stat_health: 'Saúde',
         stat_armor: 'Armadura',
 
         page_gun_crates: 'CAIXAS DE ARMAS',
@@ -779,7 +779,7 @@ const TRANSLATIONS = {
         stat_braking: 'Торможение',
         stat_handling: 'Управляемость',
         stat_spool_time: 'Время раскрутки',
-        stat_max_health: 'Макс. здоровье',
+        stat_health: 'Здоровье',
         stat_armor: 'Броня',
 
         page_gun_crates: 'ЯЩИКИ С ОРУЖИЕМ',
@@ -914,7 +914,7 @@ const TRANSLATIONS = {
         stat_braking: 'الكبح',
         stat_handling: 'التحكم',
         stat_spool_time: 'وقت الدوران',
-        stat_max_health: 'الصحة القصوى',
+        stat_health: 'الصحة',
         stat_armor: 'الدرع',
 
         page_gun_crates: 'صناديق الأسلحة',
@@ -1049,7 +1049,7 @@ const TRANSLATIONS = {
         stat_braking: 'Fren',
         stat_handling: 'Kullanım',
         stat_spool_time: 'Spool Süresi',
-        stat_max_health: 'Maks. Sağlık',
+        stat_health: 'Sağlık',
         stat_armor: 'Zırh',
 
         page_gun_crates: 'SANDIKLAR',

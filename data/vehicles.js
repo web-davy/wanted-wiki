@@ -10,7 +10,7 @@ const VEHICLES_DATA = [
       topSpeed: 38,
       acceleration: 31,
       braking: 53,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -25,7 +25,7 @@ const VEHICLES_DATA = [
       topSpeed: 32,
       acceleration: 28,
       braking: 49,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 1
     }
   },
@@ -40,7 +40,7 @@ const VEHICLES_DATA = [
       topSpeed: 29,
       acceleration: 29,
       braking: 44,
-      maxHealth: "300 - 100 - 100",
+      maxHealth: "Body-300/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -55,7 +55,7 @@ const VEHICLES_DATA = [
       topSpeed: 41,
       acceleration: 33,
       braking: 56,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -70,7 +70,7 @@ const VEHICLES_DATA = [
       topSpeed: 44,
       acceleration: 35,
       braking: 58,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -85,7 +85,7 @@ const VEHICLES_DATA = [
       topSpeed: 35,
       acceleration: 32,
       braking: 53,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 1
     }
   },
@@ -100,7 +100,7 @@ const VEHICLES_DATA = [
       topSpeed: 47,
       acceleration: 36,
       braking: 57,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -115,7 +115,7 @@ const VEHICLES_DATA = [
       topSpeed: 42,
       acceleration: 29,
       braking: 49,
-      maxHealth: "400 - 100 - 100",
+      maxHealth: "Body-400/Wheels-100/Windows-100",
       armor: 2
     }
   },
@@ -130,7 +130,7 @@ const VEHICLES_DATA = [
       topSpeed: 48,
       acceleration: 37,
       braking: 59,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -145,7 +145,7 @@ const VEHICLES_DATA = [
       topSpeed: 55,
       acceleration: 37,
       braking: 60,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -160,7 +160,7 @@ const VEHICLES_DATA = [
       topSpeed: 50,
       acceleration: 40,
       braking: 53,
-      maxHealth: "400 - 100 - 100",
+      maxHealth: "Body-400/Wheels-100/Windows-100",
       armor: 2
     }
   },
@@ -190,7 +190,7 @@ const VEHICLES_DATA = [
       topSpeed: 62,
       acceleration: 47,
       braking: 67,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -220,7 +220,7 @@ const VEHICLES_DATA = [
       topSpeed: 65,
       acceleration: 57,
       braking: 71,
-      maxHealth: "200 - 100 - 100",
+      maxHealth: "Body-200/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -235,7 +235,7 @@ const VEHICLES_DATA = [
       topSpeed: 70,
       acceleration: 64,
       braking: 75,
-      maxHealth: "250 - 100 - 100",
+      maxHealth: "Body-250/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -250,7 +250,7 @@ const VEHICLES_DATA = [
       topSpeed: 77,
       acceleration: 67,
       braking: 80,
-      maxHealth: "250 - 100 - 100",
+      maxHealth: "Body-250/Wheels-100/Windows-100",
       armor: 0
     }
   },
@@ -266,7 +266,7 @@ const VEHICLES_DATA = [
       topSpeed: 57,
       acceleration: 44,
       braking: 64,
-      maxHealth: "1,000 - 300 - 400",
+      maxHealth: "Body-1,000/Wheels-300/Windows-400",
       armor: 5
     }
   }

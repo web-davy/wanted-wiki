@@ -60,7 +60,7 @@ const EASTER_VALUABLES_DATA = [
   { name: "Crypto Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Earned by successfully selling a Bitcoin" },
   { name: "Amethyst Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Locked within the Oasis Bank vault" },
   { name: "Parachute Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Recovering from falling Airdrop crates" },
-  { name: "Canival Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "At the top of the Ferris Wheel near the Jewelry Store" },
+  { name: "Carnival Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "At the top of the Ferris Wheel near the Jewelry Store" },
   { name: "Diamond Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 8888, priceNonContract: false, weight: 1, location: "Secured within the Oasis City Jewelry Store" },
   { name: "Big Red Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 20, location: "Resting atop the bridge near the Police Station" },
   { name: "Prisoner Egg", showMoreButton: false, rarity: "EASTER", category: "Easter", price: 0, priceNonContract: false, weight: 1, location: "Locked inside a jail cell at the Police Station" },

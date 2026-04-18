@@ -490,6 +490,17 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["2,000 Syndicate XP", "$100,000"]
   },
+  {
+    id: "oasis-eleven",
+    showMoreButton: true,
+    title: "Oasis Eleven - Part 5",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Every so often, a huge shipment of valuables comes through the bank. Amethysts are as rare as it gets. Pulling off just one Amethyst heist will make you rich.",
+    howToComplete: "Rob 1 Amethyst Vault.",
+    difficulty: "HARD",
+    missionType: "Sir. B",
+    rewards: ["3,000 Syndicate XP", "$150,000"]
+  },
 
 
   {

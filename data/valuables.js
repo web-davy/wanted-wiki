@@ -36,7 +36,12 @@ const VALUABLES_DATA = [
   { name: "Flash Drive", showMoreButton: false, rarity: "UNCOMMON", category: "Electronics", price: 1200, weight: 1, location: "Computers, Drawers, Military Crates, Safes, Dock Crates, Fort Emberreach Crates" },
   { name: "GoldBook", showMoreButton: false, rarity: "EPIC", category: "Electronics", price: 1500, weight: 6, location: "Drawers, Pear Store, Safes, Dock Crates, Fort Emberreach Crates" },
   { name: "GPU", showMoreButton: false, rarity: "EPIC", category: "Electronics", price: 9001, weight: 6, location: "Computers, Drawers, Military Crates, Safes, Dock Crates, Fort Emberreach Crates" },
-
+  { name: "Cheap Laptop", showMoreButton: false, rarity: "UNCOMMON", category: "Tech", price: 200, weight: 2, location: "Tech Shack" },
+  { name: "CPU Fan", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 40, weight: 2, location: "Tech Shack" },
+  { name: "Batteries", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 20, weight: 1, location: "Tech Shack" },
+  { name: "Capacitors", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 30, weight: 1, location: "Tech Shack" },
+  { name: "Wires", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 40, weight: 2, location: "Tech Shack" },
+  { name: "RAM", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 100, weight: 1, location: "Tech Shack" },
 
   { name: "Bank Cash Pile", showMoreButton: false, rarity: "COMMON", category: "Miscellaneous", price: 200, weight: 0, location: "Bank of Oasis Vault" },
   { name: "Military Cash Pile", showMoreButton: false, rarity: "EPIC", category: "Miscellaneous", price: 2500, weight: 0, location: "Fort Emberreach" },
@@ -45,7 +50,17 @@ const VALUABLES_DATA = [
 
 
   { name: "Priceless Watch", showMoreButton: false, rarity: "MISSION", category: "Mission Items", price: 0, weight: 1, location: "Buck Moneymaker Office at Oasis Bank" },
-  { name: "Data Disk", showMoreButton: false, rarity: "MISSION", category: "Mission Items", price: 0, weight: 1, location: "Crash Site at Snowy Mountain" }
+  { name: "Data Disk", showMoreButton: false, rarity: "MISSION", category: "Mission Items", price: 0, weight: 1, location: "Crash Site at Snowy Mountain" },
+
+  { name: "Sky James Golds", showMoreButton: false, rarity: "EPIC", category: "Shoes", price: 400, weight: 4, location: "Shoe  Locker Shop" },
+  { name: "Sky James Reds", showMoreButton: false, rarity: "EPIC", category: "Shoes", price: 200, weight: 4, location: "Shoe  Locker Shop" },
+  { name: "Black Boots", showMoreButton: false, rarity: "UNCOMMON", category: "Shoes", price: 50, weight: 4, location: "Shoe  Locker Shop" },
+  { name: "Brown Boots", showMoreButton: false, rarity: "UNCOMMON", category: "Shoes", price: 80, weight: 4, location: "Shoe  Locker Shop" },
+  { name: "Cheap White Sneakers", showMoreButton: false, rarity: "COMMON", category: "Shoes", price: 30, weight: 2, location: "Shoe  Locker Shop" },
+  { name: "Cheap Black Sneakers", showMoreButton: false, rarity: "COMMON", category: "Shoes", price: 30, weight: 2, location: "Shoe  Locker Shop" },
+  { name: "Cheap Brown Sneakers", showMoreButton: false, rarity: "COMMON", category: "Shoes", price: 30, weight: 2, location: "Shoe  Locker Shop" },
+
+
 ];
 
 const EASTER_VALUABLES_DATA = [

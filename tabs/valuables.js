@@ -13,12 +13,14 @@ function renderValuables(sort = "high") {
   });
 
   const categories = [
-    { type: 'Gems',          label: 'Gems' },
-    { type: 'Jewelry',       label: 'Jewelry' },
-    { type: 'Electronics',   label: 'Electronics' },
+    { type: 'Gems', label: 'Gems' },
+    { type: 'Jewelry', label: 'Jewelry' },
+    { type: 'Electronics', label: 'Electronics' },
+    { type: 'Tech', label: 'Tech' },
+    { type: 'Shoes', label: 'Shoes' },
     { type: 'Miscellaneous', label: 'Miscellaneous' },
     { type: 'Mission Items', label: 'Mission Items' },
-    { type: 'Easter',        label: 'Easter' },
+    { type: 'Easter', label: 'Easter' },
   ];
 
   const makeValuableCard = (item) => {
@@ -37,8 +39,8 @@ function renderValuables(sort = "high") {
     const itemsInCategory = sortedRegular.filter(item => item.category === cat.type);
     if (itemsInCategory.length === 0) return '';
 
-    const cards    = itemsInCategory.map(makeValuableCard);
-    const divider  = index > 0 ? '<div style="margin: 40px 0; border-bottom: 2px solid #fff; opacity: 0.3;"></div>' : '';
+    const cards = itemsInCategory.map(makeValuableCard);
+    const divider = index > 0 ? '<div style="margin: 40px 0; border-bottom: 2px solid #fff; opacity: 0.3;"></div>' : '';
 
     return `
       ${divider}
@@ -59,7 +61,7 @@ function renderValuables(sort = "high") {
 
   const sortButtons = renderSortButtons([
     { label: t('sort_expensive'), value: 'high', onClick: "sortValuables('high')" },
-    { label: t('sort_cheap'),     value: 'low',  onClick: "sortValuables('low')" }
+    { label: t('sort_cheap'), value: 'low', onClick: "sortValuables('low')" }
   ], sort);
 
   return `

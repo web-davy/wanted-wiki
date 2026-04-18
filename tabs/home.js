@@ -1,5 +1,5 @@
 const UPDATES = [
-    { version: "D.18/M.04/Y.2026", description: "Unknown Update", color: "#000000ff", color2: "#ffffffff" },
+    { version: "D.18/M.04/Y.2026", description: "Bayview Revamp", color: "#006affff", color2: "#ffffffff" },
     { version: "D.03/M.04/Y.2026", description: "Easter Event", color: "#ff80f7ff", color2: "#ffffffff" },
     { version: "D.20/M.03/Y.2026", description: "Airdrop Update", color: "#ff0000ff", color2: "#ffffffff" },
     { version: "D.06/M.03/Y.2026", description: "Zoro and Zorvello Cars Update", color: "#f97316ff", color2: "#ffffffff" },

@@ -69,6 +69,10 @@ function renderStat(label, value) {
   return `<p><strong>${label}:</strong> ${value}</p>`;
 }
 
+function renderStatSuffix(label, val, suffix) {
+  return val !== undefined && val !== null ? renderStat(label, `${val}${suffix}`) : '';
+}
+
 function renderExpandableCard(item, rarityKey, visibleContent, hiddenContent, ext = 'jpg', folder = null) {
   const name = item.name || item.title || "";
   const slug = item.id || generateSlug(name);

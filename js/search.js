@@ -19,105 +19,11 @@ function initSearch(container, renderSearchItem) {
 }
 
 function renderSearchItem(item) {
-    let slug = generateSlug(item.name || item.title);
-    let content = '';
-    let rarityKey = null;
-
-    if (item.searchType === 'weapon') {
-        content = `
-                ${renderPriceTag(item.contractPrice)}
-                <h3>${item.highlightedName || item.name}</h3>
-                ${renderStat('Requirements', item.requirements)}
-                ${renderStat('Re-buy', formatPrice(item.reBuyPrice))}
-                ${renderStat('Ammo', item.stats.ammo)}
-                ${renderStat('Ammo Cost', item.stats.ammoPrice)}
-                ${renderStat('Damage', item.stats.damage)}
-                ${renderStat('RPM', item.stats.firerate)}
-                ${renderStat('Reload', `${item.stats.reload}s`)}
-                ${renderStat('Accuracy', item.stats.accuracy)}
-            `;
-        rarityKey = null;
-    } else if (item.searchType === 'vehicle') {
-        let statsHtml = '';
-        if (item.type === 'ground') {
-            statsHtml = `
-                    ${renderStat('Top Speed', `${item.stats.topSpeed} MPH`)}
-                    ${renderStat('Acceleration', `${item.stats.acceleration}%`)}
-                    ${renderStat('Braking', `${item.stats.braking}%`)}
-                    ${renderStat('Health', item.stats.Health)}
-                    ${renderStat('Armor', item.stats.armor)}
-                `;
-        } else if (item.type === 'flying') {
-            statsHtml = `
-                    ${renderStat('Top Speed', `${item.stats.topSpeed}%`)}
-                    ${renderStat('Handling', `${item.stats.handling}%`)}
-                    ${renderStat('Spool Time', `${item.stats.spoolTime}s`)}
-                    ${renderStat('Health', item.stats.Health)}
-                    ${renderStat('Armor', item.stats.armor)}
-                `;
-        }
-
-        content = `
-                ${renderPriceTag(item.contractPrice)}
-                <h3>${item.highlightedName || item.name}</h3>
-                ${renderStat('Requirements', item.requirements)}
-                ${renderStat('Repair (fully destroyed)', formatPrice(item.repairPrice))}
-                ${statsHtml}
-            `;
-        rarityKey = null;
-    } else if (item.searchType === 'atm') {
-        content = `
-              <h3>${item.highlightedName || item.name}</h3>
-              ${renderStat('Cash', formatPrice(item.price))}
-            `;
-        rarityKey = item.rarity;
-    } else if (item.searchType === 'valuable') {
-        content = `
-              <h3>${item.highlightedName || item.name}</h3>
-              ${renderStat('Price', formatPrice(item.price))}
-              ${renderStat('Weight', `${item.weight} kg`)}
-            `;
-        rarityKey = item.rarity;
-    } else if (item.searchType === 'guncrate') {
-        content = `
-                <h3>${item.highlightedName || item.name}</h3>
-                ${renderStat('Contains', item.gun)}
-                ${renderStat('Cooldown', item.cooldown)}
-                ${renderStat('Location', item.location)}
-            `;
-        rarityKey = null;
-    } else if (item.searchType === 'mission') {
-        slug = item.id;
-        content = `
-                <h3>${item.highlightedName || item.title}</h3>
-                ${renderStat('Category', item.missionType)}
-                ${renderStat('Location', item.location)}
-                ${renderStat('Description', item.description)}
-                ${renderStat('How', item.howToComplete)}
-                ${renderStat('Reward', (item.rewards || []).join(', '))}
-            `;
-        rarityKey = item.difficulty;
-    } else if (item.searchType === 'npc') {
-        content = `
-                <h3>${item.highlightedName || item.name}</h3>
-                ${renderStat('Location', item.location)}
-                ${renderStat('Description', item.description)}
-            `;
-        rarityKey = item.team;
-    } else if (item.searchType === 'location') {
-        content = `
-                <h3>${item.highlightedName || item.name}</h3>
-                ${renderStat('Description', item.description)}
-             `;
-        rarityKey = null;
-    } else if (item.searchType === 'event') {
-        content = `
-                <h3>${item.highlightedName || item.title}</h3>
-                ${renderStat('Date', item.date)}
-                ${renderStat('Description', item.description)}
-             `;
-        rarityKey = null;
-    }
+    const displayName = item.highlightedName || item.name || item.title || "";
+    let visibleContent = `<h3>${displayName}</h3>`;
+    let hiddenContent = '';
+    let rarityKey = item.rarity || item.difficulty || item.team || null;
+    let type = item.searchType;
 
     const folderMap = {
         'weapon': 'weapons',
@@ -130,12 +36,106 @@ function renderSearchItem(item) {
         'location': 'locations',
         'event': 'events'
     };
-    const folder = folderMap[item.searchType];
+    const folder = folderMap[type];
 
-    if (item.searchType === 'npc') {
-        return renderCard(item, rarityKey, content, folder);
+    if (type === 'weapon') {
+        const hasAttachments = item.attachments && Object.keys(item.attachments).length > 0;
+        visibleContent = `
+            ${hasAttachments ? '' : renderPriceTag(item.contractPrice)}
+            <h3>${displayName}</h3>
+        `;
+        hiddenContent = `
+            ${renderStat(t('stat_obtaining'),  item.obtaining)}
+            ${renderStat(t('stat_location'),   item.location || (item.stats && item.stats.location))}
+            ${renderStat(t('stat_rebuy'),      formatPrice(item.reBuyPrice))}
+            ${renderStat(t('stat_sell'),       formatPrice(item.sellPrice))}
+            ${item.stats ? `
+                ${renderStat(t('stat_ammo'),       item.stats.ammo)}
+                ${renderStat(t('stat_ammo_cost'),  item.stats.ammoPrice)}
+                ${renderStat(t('stat_damage'),     item.stats.damage)}
+                ${renderStat(t('stat_rpm'),        item.stats.firerate)}
+                ${item.stats.reload ? renderStat(t('stat_reload'), `${item.stats.reload}s`) : ''}
+                ${renderStat(t('stat_accuracy'),   item.stats.accuracy)}
+            ` : ''}
+        `;
+        return renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder);
+
+    } else if (type === 'vehicle') {
+        visibleContent = `
+            ${renderPriceTag(item.contractPrice)}
+            <h3>${displayName}</h3>
+        `;
+        const isFlying = item.type === 'flying';
+        hiddenContent = `
+            ${renderStat(t('stat_obtaining'),     item.obtaining)}
+            ${renderStat(t('stat_repair'),        formatPrice(item.repairPrice))}
+            ${renderStat(t('stat_garage_repair'), formatPrice(item.repairPriceGarage))}
+            ${renderStatSuffix(t('stat_top_speed'),   item.stats.topSpeed, isFlying ? '%' : ' MPH')}
+            ${isFlying ? `
+                ${renderStatSuffix(t('stat_handling'),    item.stats.handling, '%')}
+                ${renderStatSuffix(t('stat_spool_time'),  item.stats.spoolTime, 's')}
+            ` : `
+                ${renderStatSuffix(t('stat_acceleration'),item.stats.acceleration, '%')}
+                ${renderStatSuffix(t('stat_braking'),     item.stats.braking, '%')}
+            `}
+            ${renderStat(t('stat_health'), item.stats.Health)}
+            ${renderStat(t('stat_armor'),      item.stats.armor)}
+        `;
+        return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
+
+    } else if (type === 'mission') {
+        const formattedRewards = (item.rewards || []).map(formatReward).join(', ');
+        hiddenContent = `
+            ${renderStat(t('stat_location'), item.location)}
+            ${renderStat(t('stat_description'), item.description)}
+            ${renderStat(t('stat_how'), item.howToComplete)}
+            ${renderStat(t('stat_reward'), formattedRewards)}
+        `;
+        return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
+
+    } else if (type === 'valuable') {
+        visibleContent = `
+            <h3>${displayName}</h3>
+            ${renderStat(t('stat_sell'), formatPrice(item.price))}
+        `;
+        hiddenContent = `
+            ${renderStatSuffix('Weight', item.weight, ' kg')}
+            ${renderStat(t('stat_location'), item.location)}
+        `;
+        return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
+
+    } else if (type === 'npc') {
+        hiddenContent = `
+            ${renderStat(t('stat_location'), item.location)}
+            ${renderStat(t('stat_description'), item.description)}
+        `;
+        return renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder);
+
+    } else if (type === 'event') {
+        hiddenContent = `
+            ${renderStat(t('stat_description'), item.description)}
+        `;
+        return renderEventCard(item, visibleContent, hiddenContent, folder);
+
+    } else if (type === 'atm') {
+        visibleContent = `
+            <h3>${displayName}</h3>
+            ${renderStat(t('stat_value'), formatPrice(item.price))}
+        `;
+        return renderExpandableCardJPG(item, rarityKey, visibleContent, '', folder);
+
+    } else if (type === 'guncrate') {
+        hiddenContent = `
+            ${renderStat(t('stat_content'), item.gun)}
+            ${renderStat('Cooldown', item.cooldown)}
+            ${renderStat(t('stat_location'), item.location)}
+        `;
+        return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
+
     } else {
-        return renderCardJPG(item, rarityKey, content, folder);
+        // Fallback for location or unknown types
+        hiddenContent = item.description ? renderStat(t('stat_description'), item.description) : '';
+        return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
     }
 }
 

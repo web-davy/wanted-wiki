@@ -33,6 +33,11 @@ const formatPrice = (price) => {
   return `<img src="images/cash.png" alt="Cash" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">${price.toLocaleString()}`;
 };
 
+const formatReward = (reward) => {
+  if (typeof reward !== 'string') return reward;
+  return reward.replace(/\$/g, '<img src="images/cash.png" alt="$" style="height: 16px; width: auto; vertical-align: middle; margin-right: 2px;">');
+};
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { RARITIES, DIFFICULTIES, TEAMS, generateSlug, formatPrice };
+  module.exports = { RARITIES, DIFFICULTIES, TEAMS, generateSlug, formatPrice, formatReward };
 }

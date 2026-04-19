@@ -17,7 +17,7 @@ const VALUABLES_DATA = [
   { name: "Gold Chain", showMoreButton: false, rarity: "EPIC", category: "Jewelry", price: 900, weight: 2, commonLocation: "Oasis City Jewelry" },
   { name: "Emerald Ring", showMoreButton: false, rarity: "EPIC", category: "Jewelry", price: 2000, weight: 2, commonLocation: "Oasis City Jewelry" },
   { name: "Pearl Necklace", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 6666, weight: 2, commonLocation: "Oasis City Jewelry" },
-  { name: "Amethyst Ring", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 7000, weight: 1, commonLocation: "Oasis City Jewelry" },
+  { name: "Amethyst Ring", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 20000, weight: 1, commonLocation: "Oasis City Jewelry" },
   { name: "Diamond Ring", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 10000, weight: 1, commonLocation: "Oasis City Jewelry" },
   { name: "Rollie", showMoreButton: false, rarity: "LEGENDARY", category: "Jewelry", price: 50000, weight: 2, commonLocation: "Oasis City Jewelry" },
 

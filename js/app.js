@@ -11,7 +11,6 @@ window.audioUnlocked = false;
 window.loadPage = loadPage;
 window.toggleCardDetails = toggleCardDetails;
 
-/** Returns the slug of the currently visible page */
 function getCurrentPage() {
     const validPages = ["home", "valuables", "atms", "weapons", "vehicles", "gun-crates", "missions", "npcs", "locations", "store", "events", "promo-codes"];
     const hash = window.location.hash.replace(/^#/, '');
@@ -23,7 +22,6 @@ function getCurrentPage() {
 window.getCurrentPage = getCurrentPage;
 
 function loadPage(page, saveToHistory = true) {
-    // Support { force: true } as second arg from i18n.setLang()
     if (saveToHistory && typeof saveToHistory === 'object') saveToHistory = true;
     if (!container) return;
 

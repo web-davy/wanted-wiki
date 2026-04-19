@@ -3,8 +3,9 @@ const RARITIES = {
   COMMON: { name: "Common", class: "rarity-common", color: "#999" },
   UNCOMMON: { name: "Uncommon", class: "rarity-uncommon", color: "#0f0" },
   EPIC: { name: "Epic", class: "rarity-epic", color: "#c0f" },
-  LEGENDARY: { name: "Legendary", class: "rarity-legendary", color: "#ff0" },
   MYTHIC: { name: "Mythic", class: "rarity-mythic", color: "#f00" },
+  LEGENDARY: { name: "Legendary", class: "rarity-legendary", color: "#ff0" },
+  UNOBTAINABLE: { name: "Unobtainable", class: "rarity-unobtainable", color: "#000000ff" },
   CHRISTMAS: { name: "Christmas-Limited", class: "rarity-christmas-limited", color: "#0f0" },
   EASTER: { name: "Easter-Limited", class: "rarity-easter", color: "#ff50c2" }
 };

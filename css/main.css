@@ -412,16 +412,22 @@ body::after {
     border-color: #c0f
 }
 
+.rarity-mythic {
+    color: #f00;
+    border-color: #f00;
+    text-shadow: 0 0 10px #f00
+}
+
 .rarity-legendary {
     color: #ff0;
     border-color: #ff0;
     text-shadow: 0 0 15px #ff0
 }
 
-.rarity-mythic {
-    color: #f00;
-    border-color: #f00;
-    text-shadow: 0 0 10px #f00
+.rarity-unobtainable {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgb(0, 0, 0)
 }
 
 .rarity-easy {
@@ -1110,11 +1116,14 @@ body.low-end-mode * {
     -webkit-text-fill-color: transparent;
     animation: rainbow-move 3s linear infinite;
     font-weight: 800;
-    text-shadow: none !important; /* Shadows break background-clip: text */
+    text-shadow: none !important;
+    /* Shadows break background-clip: text */
 }
 
 @keyframes rainbow-move {
-    to { background-position: 200% center; }
+    to {
+        background-position: 200% center;
+    }
 }
 
 .admin-section {

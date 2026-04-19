@@ -141,6 +141,7 @@ const TRANSLATIONS = {
         page_valuables: 'VALUABLES',
         stat_value: 'Value',
         stat_rarity: 'Rarity',
+        stat_common_location: 'Common Location',
 
         //  Promo Codes Page 
         page_promo_codes: 'PROMO CODES',

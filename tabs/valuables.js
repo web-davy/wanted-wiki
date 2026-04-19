@@ -30,7 +30,7 @@ function renderValuables(sort = "high") {
     `;
     const hiddenContent = `
       ${renderStatSuffix('Weight', item.weight, ' kg')}
-      ${renderStat(t('stat_location'), item.location)}
+      ${renderStat(t('stat_common_location'), item.commonLocation)}
     `;
     return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'valuables');
   };

@@ -36,12 +36,12 @@ function renderMissions(order = "hard") {
   };
 
   const categories = [
-    { type: 'Game',      key: 'cat_game_missions' },
-    { type: 'Erik',      key: 'cat_erik_missions' },
-    { type: 'Dan',       key: 'cat_dan_missions' },
-    { type: 'Sir. B',    key: 'cat_sirb_missions' },
-    { type: 'Bert',      key: 'cat_bert_missions' },
-    { type: 'Easter',    key: 'cat_easter_missions' },
+    { type: 'Game', key: 'cat_game_missions' },
+    { type: 'Erik', key: 'cat_erik_missions' },
+    { type: 'Dan', key: 'cat_dan_missions' },
+    { type: 'Sir. B', key: 'cat_sirb_missions' },
+    { type: 'Bert', key: 'cat_bert_missions' },
+    { type: 'Easter', key: 'cat_easter_missions' },
     { type: 'Christmas', key: 'cat_christmas_missions' },
   ];
 

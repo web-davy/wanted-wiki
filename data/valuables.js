@@ -37,7 +37,7 @@ const VALUABLES_DATA = [
   { name: "GoldBook", showMoreButton: false, rarity: "EPIC", category: "Electronics", price: 1500, weight: 6, commonLocation: "Pear Store" },
   { name: "GPU", showMoreButton: false, rarity: "EPIC", category: "Electronics", price: 9001, weight: 6, commonLocation: "Computers" },
 
-
+  { name: "TPU", showMoreButton: false, rarity: "LEGENDARY", category: "Tech", price: 15000, weight: 4, commonLocation: "Tech Shack Store" },
   { name: "Cheap Laptop", showMoreButton: false, rarity: "UNCOMMON", category: "Tech", price: 200, weight: 2, commonLocation: "Tech Shack Store" },
   { name: "CPU Fan", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 40, weight: 2, commonLocation: "Tech Shack Store" },
   { name: "Batteries", showMoreButton: false, rarity: "COMMON", category: "Tech", price: 20, weight: 1, commonLocation: "Tech Shack Store" },

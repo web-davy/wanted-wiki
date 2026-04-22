@@ -145,6 +145,18 @@ const MISSIONS_DATA = [
   },
 
   {
+    id: "contraband",
+    showMoreButton: true,
+    title: "Contraband - Part 3",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "We have some clients looking to procure powerful firearms. Ghost guns only, no serial numbers, nothing store bought. When you find them, sell them to Rod at the port. He'll facilitate the transaction.",
+    howToComplete: "Sell 1 found AWM, 1 found RPG-7, and 1 found ARX-160 to Rod at the port.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,050 Syndicate XP", "$30,000"]
+  },
+
+  {
     id: "crime-squad",
     showMoreButton: true,
     title: "Crime Squad - Part 1",
@@ -190,6 +202,18 @@ const MISSIONS_DATA = [
     difficulty: "MEDIUM",
     missionType: "Sir. B",
     rewards: ["1,400 Syndicate XP", "$60,000"]
+  },
+
+  {
+    id: "crime-squad",
+    showMoreButton: true,
+    title: "Crime Squad - Part 5",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Today you're being sent directly into enemy territory. Deploy your squad to Fort Emberreach and hack the secure crates. Kill everyone you see.",
+    howToComplete: "Play with your crew for 12 hours, Hack 3 Secure Crates",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,600 Syndicate XP", "$80,000"]
   },
 
   {
@@ -635,6 +659,18 @@ const MISSIONS_DATA = [
   },
 
   {
+    id: "submariner",
+    showMoreButton: true,
+    title: "Submariner",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "This time the bulk order is going to Ofy. Ofy has a client who is in need of some new fancy watches. Sell Ofy a bag containing 3 Rollies, all at once.",
+    howToComplete: "Sell Ofy a bag containing 3 Rollies, all at once.",
+    difficulty: "HARD",
+    missionType: "Sir. B",
+    rewards: ["1,400 Syndicate XP", "$30,000"]
+  },
+
+  {
     id: "teller",
     showMoreButton: true,
     title: "Teller - Part 1",
@@ -764,6 +800,18 @@ const MISSIONS_DATA = [
     difficulty: "MEDIUM",
     missionType: "Sir. B",
     rewards: ["700 Syndicate XP", "$10,000"]
+  },
+
+  {
+    id: "wargames",
+    showMoreButton: true,
+    title: "WarGames - Part 2",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "Fort Emberreach is at the heart of the entire government operation. Raze the base. This raid will be a bullet straight though their hearts.",
+    howToComplete: "Hack 5 Secure Crate, Open 15 Military Chests, and Get 20 kills at Military.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,500 Syndicate XP", "$50,000"]
   },
 
   {

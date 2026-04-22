@@ -620,6 +620,19 @@ const MISSIONS_DATA = [
     missionType: "Sir. B",
     rewards: ["1,000 Syndicate XP", "$100,000"]
   },
+
+  {
+    id: "smuggler",
+    showMoreButton: true,
+    title: "Smuggler - Part 6",
+    location: "Criminal Outpost – Talk to Sir. B",
+    description: "You're probably wondering by now why I keep badgering you to make money. That's because the Syndicate is an expensive operation - it takes a lot of money to keep our little rebellion afloat. You're a key player now. Don't disappoint us.",
+    howToComplete: "Sell $1,000,000 worth of loot to Sir B.",
+    difficulty: "MEDIUM",
+    missionType: "Sir. B",
+    rewards: ["1,600 Syndicate XP", "$400,000"]
+  },
+
   {
     id: "stealth-pilot",
     showMoreButton: true,

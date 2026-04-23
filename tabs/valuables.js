@@ -29,7 +29,7 @@ function renderValuables(sort = "high") {
       ${renderStat(t('stat_sell'), formatPrice(item.price))}
     `;
     const hiddenContent = `
-      ${renderStatSuffix('Weight', item.weight, ' kg')}
+      ${renderStatSuffix(t('stat_weight'), item.weight, ' kg')}
       ${renderStat(t('stat_common_location'), item.commonLocation)}
     `;
     return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'valuables');

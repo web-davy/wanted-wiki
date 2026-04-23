@@ -7,6 +7,7 @@ const SUPPORTED_LANGUAGES = [
     { code: 'ru', label: 'Русский', flag: '🇷🇺' },
     { code: 'ar', label: 'العربية', flag: '🇸🇦' },
     { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
+    { code: 'zh', label: '中文', flag: '🇨🇳' },
 ];
 
 const TRANSLATIONS = {
@@ -131,6 +132,7 @@ const TRANSLATIONS = {
 
         //  ATMs & Vaults Page 
         page_atms: 'ATMs & VAULTS',
+        stat_cash: 'Cash',
 
         //  Store Page 
         page_store: 'STORE',
@@ -141,6 +143,7 @@ const TRANSLATIONS = {
         page_valuables: 'VALUABLES',
         stat_value: 'Value',
         stat_rarity: 'Rarity',
+        stat_weight: 'Weight',
         stat_common_location: 'Common Location',
 
         //  Promo Codes Page 
@@ -272,6 +275,7 @@ const TRANSLATIONS = {
 
         page_events: 'ÉVÉNEMENTS',
         page_atms: 'DAB & COFFRES',
+        stat_cash: 'Argent',
         page_store: 'BOUTIQUE',
         stat_price: 'Prix',
         stat_category: 'Catégorie',
@@ -279,6 +283,8 @@ const TRANSLATIONS = {
         page_valuables: 'OBJETS DE VALEUR',
         stat_value: 'Valeur',
         stat_rarity: 'Rareté',
+        stat_weight: 'Poids',
+        stat_common_location: 'Lieu Commun',
 
         page_promo_codes: 'CODES PROMO',
         filter_all: 'Tous les codes',
@@ -407,6 +413,7 @@ const TRANSLATIONS = {
 
         page_events: 'EVENTS',
         page_atms: 'ATMs & TRESORE',
+        stat_cash: 'Bargeld',
         page_store: 'LADEN',
         stat_price: 'Preis',
         stat_category: 'Kategorie',
@@ -414,6 +421,8 @@ const TRANSLATIONS = {
         page_valuables: 'WERTSACHEN',
         stat_value: 'Wert',
         stat_rarity: 'Seltenheit',
+        stat_weight: 'Gewicht',
+        stat_common_location: 'Häufiger Ort',
 
         page_promo_codes: 'PROMO-CODES',
         filter_all: 'Alle Codes',
@@ -542,6 +551,7 @@ const TRANSLATIONS = {
 
         page_events: 'EVENTOS',
         page_atms: 'ATMs Y BÓVEDAS',
+        stat_cash: 'Dinero',
         page_store: 'TIENDA',
         stat_price: 'Precio',
         stat_category: 'Categoría',
@@ -549,6 +559,8 @@ const TRANSLATIONS = {
         page_valuables: 'OBJETOS VALIOSOS',
         stat_value: 'Valor',
         stat_rarity: 'Rareza',
+        stat_weight: 'Peso',
+        stat_common_location: 'Ubicación Común',
 
         page_promo_codes: 'CÓDIGOS PROMO',
         filter_all: 'Todos los códigos',
@@ -677,6 +689,7 @@ const TRANSLATIONS = {
 
         page_events: 'EVENTOS',
         page_atms: 'ATMs E COFRES',
+        stat_cash: 'Dinheiro',
         page_store: 'LOJA',
         stat_price: 'Preço',
         stat_category: 'Categoria',
@@ -684,6 +697,8 @@ const TRANSLATIONS = {
         page_valuables: 'OBJETOS VALIOSOS',
         stat_value: 'Valor',
         stat_rarity: 'Raridade',
+        stat_weight: 'Peso',
+        stat_common_location: 'Local Comum',
 
         page_promo_codes: 'CÓDIGOS PROMO',
         filter_all: 'Todos os códigos',
@@ -812,6 +827,7 @@ const TRANSLATIONS = {
 
         page_events: 'СОБЫТИЯ',
         page_atms: 'БАНКОМАТЫ И СЕЙФЫ',
+        stat_cash: 'Наличные',
         page_store: 'МАГАЗИН',
         stat_price: 'Цена',
         stat_category: 'Категория',
@@ -819,6 +835,8 @@ const TRANSLATIONS = {
         page_valuables: 'ЦЕННОСТИ',
         stat_value: 'Ценность',
         stat_rarity: 'Редкость',
+        stat_weight: 'Вес',
+        stat_common_location: 'Обычное Местоположение',
 
         page_promo_codes: 'ПРОМОКОДЫ',
         filter_all: 'Все коды',
@@ -947,6 +965,7 @@ const TRANSLATIONS = {
 
         page_events: 'الأحداث',
         page_atms: 'الصرافات والخزائن',
+        stat_cash: 'النقد',
         page_store: 'المتجر',
         stat_price: 'السعر',
         stat_category: 'الفئة',
@@ -954,6 +973,8 @@ const TRANSLATIONS = {
         page_valuables: 'الأشياء الثمينة',
         stat_value: 'القيمة',
         stat_rarity: 'الندرة',
+        stat_weight: 'الوزن',
+        stat_common_location: 'الموقع الشائع',
 
         page_promo_codes: 'رموز العروض',
         filter_all: 'جميع الرموز',
@@ -1082,6 +1103,7 @@ const TRANSLATIONS = {
 
         page_events: 'ETKİNLİKLER',
         page_atms: 'ATM\'ler VE KASALAR',
+        stat_cash: 'Nakit',
         page_store: 'MAĞAZA',
         stat_price: 'Fiyat',
         stat_category: 'Kategori',
@@ -1089,6 +1111,8 @@ const TRANSLATIONS = {
         page_valuables: 'DEĞERLİ EŞYALAR',
         stat_value: 'Değer',
         stat_rarity: 'Nadirlik',
+        stat_weight: 'Ağırlık',
+        stat_common_location: 'Yaygın Konum',
 
         page_promo_codes: 'PROMO KODLAR',
         filter_all: 'Tüm Kodlar',
@@ -1104,5 +1128,143 @@ const TRANSLATIONS = {
         show_less: 'Daha az göster',
         card_attachments: 'AKSESUARLAR',
         label_free: 'Ücretsiz',
+    },
+
+    // ══════════════════════════════════════════════════════
+    //  CHINESE-SIMPLIFIED
+    // ══════════════════════════════════════════════════════
+    zh: {
+        nav_home: '主页',
+        nav_combat: '战斗',
+        nav_world: '世界',
+        nav_economy: '经济',
+        nav_weapons: '武器',
+        nav_vehicles: '载具',
+        nav_gun_crates: '武器箱',
+        nav_locations: '重要地点',
+        nav_npcs: 'NPC',
+        nav_missions: '任务',
+        nav_events: '活动',
+        nav_atms: 'ATM&金库',
+        nav_store: '商店',
+        nav_valuables: '高价值物品',
+        nav_promo_codes: '兑换码',
+        nav_search: '搜索档案库……',
+
+        settings_title: '设置',
+        settings_music_volume: '音乐音量',
+        settings_custom_music: '自定义音乐(.mp3)',
+        settings_upload: '上传',
+        settings_reset: '重置',
+        settings_card_size: '卡片大小',
+        settings_low_end: '低端设备支持',
+        settings_sidebar: '使用左侧边栏',
+        settings_always_more: '始终开启“显示更多”',
+        settings_intro: '开场',
+        settings_language: '语言（Language）',
+        toggle_on: '开启',
+        toggle_off: '关闭',
+
+        home_hero_title: 'WANTED 维基',
+        home_hero_text: '欢迎来到 <strong>Wanted 维基</strong>.<br>我们在此收录Roblox游戏Wanted的所有内容，包括武器细节、载具，以及更多内容',
+        home_hero_disclaimer: '<em>请注意：该维基由玩家社区运营，并且与Roblox、Wanted游戏、DevvGames开发组无关</em>',
+        home_play_btn: '跳转到游戏页面',
+        home_recent_updates: '近期更新',
+        home_next_update: '下一次版本更新',
+        home_calculating: '计算中...',
+        home_admin_title: '管理组',
+        home_admin_text: 'WANTED 维基团队成员',
+        home_wiki_staff: '维基人员',
+        home_wiki_contributors: '维基贡献者',
+        home_no_staff: 'No staff listed.',
+        home_no_contributors: 'No contributors listed.',
+        home_viewers_title: '访客数量',
+        home_viewers_subtext: '个个体已记录',
+
+        page_weapons: '武器',
+        cat_guns: '枪械',
+        cat_explosives: '爆炸物',
+        cat_tools: '工具',
+        sort_expensive: '价格：由高到低',
+        sort_cheap: '价格：由低到高',
+
+        stat_obtaining: '获取方式',
+        stat_location: '获取位置',
+        stat_rebuy: '单价',
+        stat_sell: '贩卖价值',
+        stat_ammo: '备弹',
+        stat_ammo_cost: '弹药价格',
+        stat_damage: '伤害',
+        stat_rpm: '射速（每分钟/发）',
+        stat_reload: '换弹时间',
+        stat_accuracy: '精准度',
+
+        page_vehicles: '载具',
+        cat_ground_vehicles: '车辆',
+        cat_air_vehicles: '飞行器',
+        stat_repair: '维修价格（手机）',
+        stat_garage_repair: '维修价格（汽修店）',
+        stat_top_speed: '最高时速',
+        stat_acceleration: '加速',
+        stat_braking: '刹车',
+        stat_handling: '操控',
+        stat_spool_time: '起飞耗时',
+        stat_health: '生命值',
+        stat_armor: '装甲',
+
+        page_gun_crates: '武器箱',
+        stat_cost: 'Cost',
+        stat_content: '包含',
+
+        page_locations: '重要地点',
+        stat_type: '类型',
+        stat_description: '描述',
+
+        page_npcs: 'NPC',
+        sort_az: 'A-Z',
+        sort_za: 'Z-A',
+        card_dialogues: '对话',
+        disclaimer_wip: '仍在施工ing',
+
+        page_missions: '任务',
+        cat_game_missions: '系统任务线',
+        cat_erik_missions: '埃里克任务线',
+        cat_dan_missions: '丹任务线',
+        cat_sirb_missions: 'B先生任务线',
+        cat_bert_missions: '博特任务线',
+        cat_easter_missions: '复活节活动任务线',
+        cat_christmas_missions: '圣诞节活动任务线',
+        sort_hardest: '由难至简',
+        sort_easiest: '由简至难',
+        stat_how: '如何完成',
+        stat_reward: '奖励',
+
+        page_events: '活动',
+        page_atms: 'ATM&金库',
+        stat_cash: '现金',
+        page_store: '商店',
+        stat_price: '价格',
+        stat_category: '类型',
+
+        page_valuables: '高价值物品',
+        stat_value: '价格',
+        stat_rarity: '稀有程度',
+        stat_weight: '重量',
+        stat_common_location: '常见地点',
+
+        page_promo_codes: '兑换码',
+        filter_all: '所有兑换码',
+        filter_active: '有效',
+        filter_expired: '已过期',
+        promo_disclaimer: '新的兑换码会定期推出，敬请留意新的更新！',
+        status_active: '有效',
+        status_expired: '已过期',
+        stat_status: '状态',
+        stat_code_reward: '奖励',
+
+        show_more: '显示更多',
+        show_less: '关闭',
+        card_attachments: '可用配件',
+        label_free: '免费',
     },
 };

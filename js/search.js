@@ -99,8 +99,8 @@ function renderSearchItem(item) {
             ${renderStat(t('stat_sell'), formatPrice(item.price))}
         `;
         hiddenContent = `
-            ${renderStatSuffix('Weight', item.weight, ' kg')}
-            ${renderStat(t('stat_location'), item.location)}
+            ${renderStatSuffix(t('stat_weight'), item.weight, ' kg')}
+            ${renderStat(t('stat_common_location'), typeof tv === 'function' ? tv(item, 'commonLocation') : item.commonLocation)}
         `;
         return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
 

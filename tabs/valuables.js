@@ -25,12 +25,12 @@ function renderValuables(sort = "high") {
 
   const makeValuableCard = (item) => {
     const visibleContent = `
-      <h3>${item.name}</h3>
+      <h3>${tv(item, 'name')}</h3>
       ${renderStat(t('stat_sell'), formatPrice(item.price))}
     `;
     const hiddenContent = `
       ${renderStatSuffix(t('stat_weight'), item.weight, ' kg')}
-      ${renderStat(t('stat_common_location'), item.commonLocation)}
+      ${renderStat(t('stat_common_location'), tv(item, 'commonLocation'))}
     `;
     return renderExpandableCardJPG(item, item.rarity, visibleContent, hiddenContent, 'valuables');
   };

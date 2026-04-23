@@ -11,6 +11,9 @@ const SUPPORTED_LANGUAGES = [
 ];
 
 const TRANSLATIONS = {
+    // ══════════════════════════════════════════════════════
+    //  ENGLISH
+    // ══════════════════════════════════════════════════════
     en: {
 
         //  Navigation 
@@ -70,7 +73,6 @@ const TRANSLATIONS = {
         cat_tools: 'Tools',
         sort_expensive: 'Expensive to Cheap',
         sort_cheap: 'Cheap to Expensive',
-
         stat_obtaining: 'Obtaining',
         stat_location: 'Location',
         stat_rebuy: 'Re-buy',
@@ -162,12 +164,15 @@ const TRANSLATIONS = {
         show_less: 'Show less',
         card_attachments: 'ATTACHMENTS',
         label_free: 'Free',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  FRENCH
     // ══════════════════════════════════════════════════════
     fr: {
+
+        //  Navigation 
         nav_home: 'ACCUEIL',
         nav_combat: 'COMBAT',
         nav_world: 'MONDE',
@@ -185,6 +190,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'CODES PROMO',
         nav_search: 'Rechercher...',
 
+        //  Settings Panel 
         settings_title: 'PARAMÈTRES',
         settings_music_volume: 'Volume de la musique',
         settings_custom_music: 'Musique personnalisée (.mp3)',
@@ -199,6 +205,7 @@ const TRANSLATIONS = {
         toggle_on: 'ON',
         toggle_off: 'OFF',
 
+        //  Home Page 
         home_hero_title: 'WIKI WANTED',
         home_hero_text: 'Bienvenue sur le <strong>Wiki Wanted</strong> ultime.<br>Ici, nous consignons toutes les informations sur le jeu Roblox Wanted.',
         home_hero_disclaimer: '<em>Note : Ce wiki est géré par la communauté et n\'est pas affilié à Roblox, au jeu Wanted ou DevvGames.</em>',
@@ -215,13 +222,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'COMPTEUR DE VISITEURS',
         home_viewers_subtext: 'IDENTITÉS UNIQUES ENREGISTRÉES',
 
+        //  Weapons Page 
         page_weapons: 'ARMES',
         cat_guns: 'Fusils',
         cat_explosives: 'Explosifs',
         cat_tools: 'Outils',
         sort_expensive: 'Du plus cher au moins cher',
         sort_cheap: 'Du moins cher au plus cher',
-
         stat_obtaining: 'Obtention',
         stat_location: 'Lieu',
         stat_rebuy: 'Rachat',
@@ -233,6 +240,7 @@ const TRANSLATIONS = {
         stat_reload: 'Rechargement',
         stat_accuracy: 'Précision',
 
+        //  Vehicles Page 
         page_vehicles: 'VÉHICULES',
         cat_ground_vehicles: 'Véhicules terrestres',
         cat_air_vehicles: 'Véhicules aériens',
@@ -246,20 +254,24 @@ const TRANSLATIONS = {
         stat_health: 'Santé',
         stat_armor: 'Armure',
 
+        //  Gun Crates Page 
         page_gun_crates: 'CAISSES D\'ARMES',
         stat_cost: 'Coût',
         stat_content: 'Contenu',
 
+        //  Locations Page 
         page_locations: 'LIEUX',
         stat_type: 'Type',
         stat_description: 'Description',
 
+        //  NPCs Page 
         page_npcs: 'PNJ',
         sort_az: 'A-Z',
         sort_za: 'Z-A',
         card_dialogues: 'DIALOGUES',
         disclaimer_wip: 'Cette page est en cours de construction',
 
+        //  Missions Page 
         page_missions: 'MISSIONS',
         cat_game_missions: 'Missions du jeu',
         cat_erik_missions: 'Missions d\'Erik',
@@ -273,19 +285,26 @@ const TRANSLATIONS = {
         stat_how: 'Comment',
         stat_reward: 'Récompense',
 
+        //  Events Page 
         page_events: 'ÉVÉNEMENTS',
+
+        //  ATMs & Vaults Page 
         page_atms: 'DAB & COFFRES',
         stat_cash: 'Argent',
+
+        //  Store Page 
         page_store: 'BOUTIQUE',
         stat_price: 'Prix',
         stat_category: 'Catégorie',
 
+        //  Valuables Page 
         page_valuables: 'OBJETS DE VALEUR',
         stat_value: 'Valeur',
         stat_rarity: 'Rareté',
         stat_weight: 'Poids',
         stat_common_location: 'Lieu Commun',
 
+        //  Promo Codes Page 
         page_promo_codes: 'CODES PROMO',
         filter_all: 'Tous les codes',
         filter_active: 'Actifs',
@@ -296,16 +315,20 @@ const TRANSLATIONS = {
         stat_status: 'Statut',
         stat_code_reward: 'Récompense',
 
+        //  Generic 
         show_more: 'Voir plus...',
         show_less: 'Voir moins',
         card_attachments: 'ACCESSOIRES',
         label_free: 'Gratuit',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  GERMAN
     // ══════════════════════════════════════════════════════
     de: {
+
+        //  Navigation 
         nav_home: 'START',
         nav_combat: 'KAMPF',
         nav_world: 'WELT',
@@ -323,6 +346,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'PROMO-CODES',
         nav_search: 'Archiv durchsuchen...',
 
+        //  Settings Panel 
         settings_title: 'EINSTELLUNGEN',
         settings_music_volume: 'Musiklautstärke',
         settings_custom_music: 'Eigene Musik (.mp3)',
@@ -337,6 +361,7 @@ const TRANSLATIONS = {
         toggle_on: 'AN',
         toggle_off: 'AUS',
 
+        //  Home Page 
         home_hero_title: 'WANTED WIKI',
         home_hero_text: 'Willkommen im ultimativen <strong>Wanted Wiki</strong>.<br>Hier erfassen wir alle Informationen über das Roblox-Spiel Wanted.',
         home_hero_disclaimer: '<em>Hinweis: Dieses Wiki wird von der Community betrieben und ist nicht mit Roblox, dem Spiel Wanted oder DevvGames verbunden.</em>',
@@ -353,13 +378,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'ZUSCHAUERZAHL',
         home_viewers_subtext: 'ERFASSTE EINDEUTIGE IDENTITÄTEN',
 
+        //  Weapons Page 
         page_weapons: 'WAFFEN',
         cat_guns: 'Schusswaffen',
         cat_explosives: 'Sprengstoff',
         cat_tools: 'Werkzeuge',
         sort_expensive: 'Teuerste zuerst',
         sort_cheap: 'Günstigste zuerst',
-
         stat_obtaining: 'Erhalt',
         stat_location: 'Ort',
         stat_rebuy: 'Nachkauf',
@@ -371,6 +396,7 @@ const TRANSLATIONS = {
         stat_reload: 'Nachladen',
         stat_accuracy: 'Genauigkeit',
 
+        //  Vehicles Page 
         page_vehicles: 'FAHRZEUGE',
         cat_ground_vehicles: 'Landfahrzeuge',
         cat_air_vehicles: 'Luftfahrzeuge',
@@ -384,20 +410,24 @@ const TRANSLATIONS = {
         stat_health: 'Gesundheit',
         stat_armor: 'Panzerung',
 
+        //  Gun Crates Page 
         page_gun_crates: 'WAFFENKISTEN',
         stat_cost: 'Kosten',
         stat_content: 'Inhalt',
 
+        //  Locations Page 
         page_locations: 'ORTE',
         stat_type: 'Typ',
         stat_description: 'Beschreibung',
 
+        //  NPCs Page 
         page_npcs: 'NPCs',
         sort_az: 'A-Z',
         sort_za: 'Z-A',
         card_dialogues: 'DIALOGE',
         disclaimer_wip: 'Diese Seite ist noch nicht fertig und wird noch bearbeitet',
 
+        //  Missions Page 
         page_missions: 'MISSIONEN',
         cat_game_missions: 'Spielmissionen',
         cat_erik_missions: 'Eriks Missionen',
@@ -411,19 +441,26 @@ const TRANSLATIONS = {
         stat_how: 'Wie',
         stat_reward: 'Belohnung',
 
+        //  Events Page 
         page_events: 'EVENTS',
+
+        //  ATMs & Vaults Page 
         page_atms: 'ATMs & TRESORE',
         stat_cash: 'Bargeld',
+
+        //  Store Page 
         page_store: 'LADEN',
         stat_price: 'Preis',
         stat_category: 'Kategorie',
 
+        //  Valuables Page 
         page_valuables: 'WERTSACHEN',
         stat_value: 'Wert',
         stat_rarity: 'Seltenheit',
         stat_weight: 'Gewicht',
         stat_common_location: 'Häufiger Ort',
 
+        //  Promo Codes Page 
         page_promo_codes: 'PROMO-CODES',
         filter_all: 'Alle Codes',
         filter_active: 'Aktiv',
@@ -434,16 +471,20 @@ const TRANSLATIONS = {
         stat_status: 'Status',
         stat_code_reward: 'Belohnung',
 
+        //  Generic 
         show_more: 'Mehr anzeigen...',
         show_less: 'Weniger anzeigen',
         card_attachments: 'ZUBEHÖR',
         label_free: 'Kostenlos',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  SPANISH
     // ══════════════════════════════════════════════════════
     es: {
+
+        //  Navigation 
         nav_home: 'INICIO',
         nav_combat: 'COMBATE',
         nav_world: 'MUNDO',
@@ -461,6 +502,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'CÓDIGOS PROMO',
         nav_search: 'Buscar en el archivo...',
 
+        //  Settings Panel 
         settings_title: 'CONFIGURACIÓN',
         settings_music_volume: 'Volumen de música',
         settings_custom_music: 'Música personalizada (.mp3)',
@@ -475,6 +517,7 @@ const TRANSLATIONS = {
         toggle_on: 'ON',
         toggle_off: 'OFF',
 
+        //  Home Page 
         home_hero_title: 'WIKI WANTED',
         home_hero_text: 'Bienvenido al <strong>Wiki Wanted</strong> definitivo.<br>Aquí registramos toda la información sobre el juego de Roblox Wanted.',
         home_hero_disclaimer: '<em>Nota: Este wiki es gestionado por la comunidad y no está afiliado a Roblox, al juego Wanted ni a DevvGames.</em>',
@@ -491,13 +534,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'CONTADOR DE VISITANTES',
         home_viewers_subtext: 'IDENTIDADES ÚNICAS REGISTRADAS',
 
+        //  Weapons Page 
         page_weapons: 'ARMAS',
         cat_guns: 'Armas de fuego',
         cat_explosives: 'Explosivos',
         cat_tools: 'Herramientas',
         sort_expensive: 'De más caro a más barato',
         sort_cheap: 'De más barato a más caro',
-
         stat_obtaining: 'Obtención',
         stat_location: 'Lugar',
         stat_rebuy: 'Recompra',
@@ -509,6 +552,7 @@ const TRANSLATIONS = {
         stat_reload: 'Recarga',
         stat_accuracy: 'Precisión',
 
+        //  Vehicles Page 
         page_vehicles: 'VEHÍCULOS',
         cat_ground_vehicles: 'Vehículos terrestres',
         cat_air_vehicles: 'Vehículos aéreos',
@@ -522,20 +566,24 @@ const TRANSLATIONS = {
         stat_health: 'Salud',
         stat_armor: 'Armadura',
 
+        //  Gun Crates Page 
         page_gun_crates: 'CAJAS DE ARMAS',
         stat_cost: 'Coste',
         stat_content: 'Contenido',
 
+        //  Locations Page 
         page_locations: 'LUGARES',
         stat_type: 'Tipo',
         stat_description: 'Descripción',
 
+        //  NPCs Page 
         page_npcs: 'NPCs',
         sort_az: 'A-Z',
         sort_za: 'Z-A',
         card_dialogues: 'DIÁLOGOS',
         disclaimer_wip: 'Esta página está actualmente sin terminar y en construcción',
 
+        //  Missions Page 
         page_missions: 'MISIONES',
         cat_game_missions: 'Misiones del juego',
         cat_erik_missions: 'Misiones de Erik',
@@ -549,19 +597,26 @@ const TRANSLATIONS = {
         stat_how: 'Cómo',
         stat_reward: 'Recompensa',
 
+        //  Events Page 
         page_events: 'EVENTOS',
+
+        //  ATMs & Vaults Page 
         page_atms: 'ATMs Y BÓVEDAS',
         stat_cash: 'Dinero',
+
+        //  Store Page 
         page_store: 'TIENDA',
         stat_price: 'Precio',
         stat_category: 'Categoría',
 
+        //  Valuables Page 
         page_valuables: 'OBJETOS VALIOSOS',
         stat_value: 'Valor',
         stat_rarity: 'Rareza',
         stat_weight: 'Peso',
         stat_common_location: 'Ubicación Común',
 
+        //  Promo Codes Page 
         page_promo_codes: 'CÓDIGOS PROMO',
         filter_all: 'Todos los códigos',
         filter_active: 'Activos',
@@ -572,16 +627,20 @@ const TRANSLATIONS = {
         stat_status: 'Estado',
         stat_code_reward: 'Recompensa',
 
+        //  Generic 
         show_more: 'Ver más...',
         show_less: 'Ver menos',
         card_attachments: 'ACCESORIOS',
         label_free: 'Gratis',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  PORTUGUESE (Brazilian)
     // ══════════════════════════════════════════════════════
     pt: {
+
+        //  Navigation 
         nav_home: 'INÍCIO',
         nav_combat: 'COMBATE',
         nav_world: 'MUNDO',
@@ -599,6 +658,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'CÓDIGOS PROMO',
         nav_search: 'Pesquisar no arquivo...',
 
+        //  Settings Panel 
         settings_title: 'CONFIGURAÇÕES',
         settings_music_volume: 'Volume da música',
         settings_custom_music: 'Música personalizada (.mp3)',
@@ -613,6 +673,7 @@ const TRANSLATIONS = {
         toggle_on: 'ON',
         toggle_off: 'OFF',
 
+        //  Home Page 
         home_hero_title: 'WIKI WANTED',
         home_hero_text: 'Bem-vindo ao <strong>Wiki Wanted</strong> definitivo.<br>Aqui registramos todas as informações sobre o jogo Roblox Wanted.',
         home_hero_disclaimer: '<em>Nota: Este wiki é gerenciado pela comunidade e não é afiliado à Roblox, ao jogo Wanted ou à DevvGames.</em>',
@@ -629,13 +690,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'CONTADOR DE VISITANTES',
         home_viewers_subtext: 'IDENTIDADES ÚNICAS REGISTRADAS',
 
+        //  Weapons Page 
         page_weapons: 'ARMAS',
         cat_guns: 'Armas de fogo',
         cat_explosives: 'Explosivos',
         cat_tools: 'Ferramentas',
         sort_expensive: 'Mais caro ao mais barato',
         sort_cheap: 'Mais barato ao mais caro',
-
         stat_obtaining: 'Obtenção',
         stat_location: 'Local',
         stat_rebuy: 'Recompra',
@@ -647,6 +708,7 @@ const TRANSLATIONS = {
         stat_reload: 'Recarga',
         stat_accuracy: 'Precisão',
 
+        //  Vehicles Page 
         page_vehicles: 'VEÍCULOS',
         cat_ground_vehicles: 'Veículos terrestres',
         cat_air_vehicles: 'Veículos aéreos',
@@ -660,20 +722,24 @@ const TRANSLATIONS = {
         stat_health: 'Saúde',
         stat_armor: 'Armadura',
 
+        //  Gun Crates Page 
         page_gun_crates: 'CAIXAS DE ARMAS',
         stat_cost: 'Custo',
         stat_content: 'Conteúdo',
 
+        //  Locations Page 
         page_locations: 'LOCAIS',
         stat_type: 'Tipo',
         stat_description: 'Descrição',
 
+        //  NPCs Page 
         page_npcs: 'NPCs',
         sort_az: 'A-Z',
         sort_za: 'Z-A',
         card_dialogues: 'DIÁLOGOS',
         disclaimer_wip: 'Esta página está atualmente inacabada e sendo trabalhada',
 
+        //  Missions Page 
         page_missions: 'MISSÕES',
         cat_game_missions: 'Missões do jogo',
         cat_erik_missions: 'Missões do Erik',
@@ -687,19 +753,26 @@ const TRANSLATIONS = {
         stat_how: 'Como',
         stat_reward: 'Recompensa',
 
+        //  Events Page 
         page_events: 'EVENTOS',
+
+        //  ATMs & Vaults Page 
         page_atms: 'ATMs E COFRES',
         stat_cash: 'Dinheiro',
+
+        //  Store Page 
         page_store: 'LOJA',
         stat_price: 'Preço',
         stat_category: 'Categoria',
 
+        //  Valuables Page 
         page_valuables: 'OBJETOS VALIOSOS',
         stat_value: 'Valor',
         stat_rarity: 'Raridade',
         stat_weight: 'Peso',
         stat_common_location: 'Local Comum',
 
+        //  Promo Codes Page 
         page_promo_codes: 'CÓDIGOS PROMO',
         filter_all: 'Todos os códigos',
         filter_active: 'Ativos',
@@ -710,16 +783,20 @@ const TRANSLATIONS = {
         stat_status: 'Status',
         stat_code_reward: 'Recompensa',
 
+        //  Generic 
         show_more: 'Ver mais...',
         show_less: 'Ver menos',
         card_attachments: 'ACESSÓRIOS',
         label_free: 'Grátis',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  RUSSIAN
     // ══════════════════════════════════════════════════════
     ru: {
+
+        //  Navigation 
         nav_home: 'ГЛАВНАЯ',
         nav_combat: 'БОЙ',
         nav_world: 'МИР',
@@ -737,6 +814,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'ПРОМОКОДЫ',
         nav_search: 'Поиск по архиву...',
 
+        //  Settings Panel 
         settings_title: 'НАСТРОЙКИ',
         settings_music_volume: 'Громкость музыки',
         settings_custom_music: 'Своя музыка (.mp3)',
@@ -751,6 +829,7 @@ const TRANSLATIONS = {
         toggle_on: 'ВКЛ',
         toggle_off: 'ВЫКЛ',
 
+        //  Home Page 
         home_hero_title: 'WANTED WIKI',
         home_hero_text: 'Добро пожаловать на главную <strong>Wanted Wiki</strong>.<br>Здесь мы собираем всю информацию об игре Roblox Wanted.',
         home_hero_disclaimer: '<em>Примечание: этот вики управляется сообществом и не аффилирован с Roblox, игрой Wanted или DevvGames.</em>',
@@ -767,13 +846,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'СЧЁТЧИК ПРОСМОТРОВ',
         home_viewers_subtext: 'УНИКАЛЬНЫХ ИДЕНТИФИКАЦИЙ ЗАПИСАНО',
 
+        //  Weapons Page 
         page_weapons: 'ОРУЖИЕ',
         cat_guns: 'Огнестрельное',
         cat_explosives: 'Взрывчатка',
         cat_tools: 'Инструменты',
         sort_expensive: 'Сначала дорогие',
         sort_cheap: 'Сначала дешёвые',
-
         stat_obtaining: 'Получение',
         stat_location: 'Локация',
         stat_rebuy: 'Цена покупки',
@@ -785,6 +864,7 @@ const TRANSLATIONS = {
         stat_reload: 'Перезарядка',
         stat_accuracy: 'Точность',
 
+        //  Vehicles Page 
         page_vehicles: 'ТРАНСПОРТ',
         cat_ground_vehicles: 'Наземный транспорт',
         cat_air_vehicles: 'Воздушный транспорт',
@@ -798,20 +878,24 @@ const TRANSLATIONS = {
         stat_health: 'Здоровье',
         stat_armor: 'Броня',
 
+        //  Gun Crates Page 
         page_gun_crates: 'ЯЩИКИ С ОРУЖИЕМ',
         stat_cost: 'Стоимость',
         stat_content: 'Содержимое',
 
+        //  Locations Page 
         page_locations: 'ЛОКАЦИИ',
         stat_type: 'Тип',
         stat_description: 'Описание',
 
+        //  NPCs Page 
         page_npcs: 'НПС',
         sort_az: 'А-Я',
         sort_za: 'Я-А',
         card_dialogues: 'ДИАЛОГИ',
         disclaimer_wip: 'Эта страница ещё не завершена и находится в разработке',
 
+        //  Missions Page 
         page_missions: 'МИССИИ',
         cat_game_missions: 'Игровые миссии',
         cat_erik_missions: 'Миссии Эрика',
@@ -825,19 +909,26 @@ const TRANSLATIONS = {
         stat_how: 'Как',
         stat_reward: 'Награда',
 
+        //  Events Page 
         page_events: 'СОБЫТИЯ',
+
+        //  ATMs & Vaults Page 
         page_atms: 'БАНКОМАТЫ И СЕЙФЫ',
         stat_cash: 'Наличные',
+
+        //  Store Page 
         page_store: 'МАГАЗИН',
         stat_price: 'Цена',
         stat_category: 'Категория',
 
+        //  Valuables Page 
         page_valuables: 'ЦЕННОСТИ',
         stat_value: 'Ценность',
         stat_rarity: 'Редкость',
         stat_weight: 'Вес',
         stat_common_location: 'Обычное Местоположение',
 
+        //  Promo Codes Page 
         page_promo_codes: 'ПРОМОКОДЫ',
         filter_all: 'Все коды',
         filter_active: 'Активные',
@@ -848,16 +939,20 @@ const TRANSLATIONS = {
         stat_status: 'Статус',
         stat_code_reward: 'Награда',
 
+        //  Generic 
         show_more: 'Показать больше...',
         show_less: 'Показать меньше',
         card_attachments: 'ОБВЕСЫ',
         label_free: 'Бесплатно',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  ARABIC
     // ══════════════════════════════════════════════════════
     ar: {
+
+        //  Navigation 
         nav_home: 'الرئيسية',
         nav_combat: 'القتال',
         nav_world: 'العالم',
@@ -875,6 +970,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'رموز العروض',
         nav_search: 'ابحث في الأرشيف...',
 
+        //  Settings Panel 
         settings_title: 'الإعدادات',
         settings_music_volume: 'مستوى الصوت',
         settings_custom_music: 'موسيقى مخصصة (.mp3)',
@@ -889,6 +985,7 @@ const TRANSLATIONS = {
         toggle_on: 'مفعّل',
         toggle_off: 'معطّل',
 
+        //  Home Page 
         home_hero_title: 'ويكي وانتد',
         home_hero_text: 'مرحبًا بك في <strong>ويكي وانتد</strong> الشامل.<br>هنا نسجّل كل المعلومات عن لعبة Roblox Wanted.',
         home_hero_disclaimer: '<em>ملاحظة: هذا الويكي مُدار من قِبل المجتمع وغير تابع لـ Roblox أو لعبة Wanted أو DevvGames.</em>',
@@ -905,13 +1002,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'عداد الزوار',
         home_viewers_subtext: 'هويات فريدة مسجّلة',
 
+        //  Weapons Page 
         page_weapons: 'الأسلحة',
         cat_guns: 'البنادق',
         cat_explosives: 'المتفجرات',
         cat_tools: 'الأدوات',
         sort_expensive: 'من الأغلى إلى الأرخص',
         sort_cheap: 'من الأرخص إلى الأغلى',
-
         stat_obtaining: 'طريقة الحصول',
         stat_location: 'الموقع',
         stat_rebuy: 'إعادة الشراء',
@@ -923,6 +1020,7 @@ const TRANSLATIONS = {
         stat_reload: 'إعادة التحميل',
         stat_accuracy: 'الدقة',
 
+        //  Vehicles Page 
         page_vehicles: 'المركبات',
         cat_ground_vehicles: 'المركبات البرية',
         cat_air_vehicles: 'المركبات الجوية',
@@ -936,20 +1034,24 @@ const TRANSLATIONS = {
         stat_health: 'الصحة',
         stat_armor: 'الدرع',
 
+        //  Gun Crates Page 
         page_gun_crates: 'صناديق الأسلحة',
         stat_cost: 'التكلفة',
         stat_content: 'المحتوى',
 
+        //  Locations Page 
         page_locations: 'المواقع',
         stat_type: 'النوع',
         stat_description: 'الوصف',
 
+        //  NPCs Page 
         page_npcs: 'الشخصيات',
         sort_az: 'أ-ي',
         sort_za: 'ي-أ',
         card_dialogues: 'الحوارات',
         disclaimer_wip: 'هذه الصفحة غير مكتملة وقيد العمل',
 
+        //  Missions Page 
         page_missions: 'المهام',
         cat_game_missions: 'مهام اللعبة',
         cat_erik_missions: 'مهام إريك',
@@ -963,19 +1065,26 @@ const TRANSLATIONS = {
         stat_how: 'كيفية',
         stat_reward: 'المكافأة',
 
+        //  Events Page 
         page_events: 'الأحداث',
+
+        //  ATMs & Vaults Page 
         page_atms: 'الصرافات والخزائن',
         stat_cash: 'النقد',
+
+        //  Store Page 
         page_store: 'المتجر',
         stat_price: 'السعر',
         stat_category: 'الفئة',
 
+        //  Valuables Page 
         page_valuables: 'الأشياء الثمينة',
         stat_value: 'القيمة',
         stat_rarity: 'الندرة',
         stat_weight: 'الوزن',
         stat_common_location: 'الموقع الشائع',
 
+        //  Promo Codes Page 
         page_promo_codes: 'رموز العروض',
         filter_all: 'جميع الرموز',
         filter_active: 'النشطة',
@@ -986,16 +1095,20 @@ const TRANSLATIONS = {
         stat_status: 'الحالة',
         stat_code_reward: 'المكافأة',
 
+        //  Generic 
         show_more: 'عرض المزيد...',
         show_less: 'عرض أقل',
         card_attachments: 'الملحقات',
         label_free: 'مجاني',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  TURKISH
     // ══════════════════════════════════════════════════════
     tr: {
+
+        //  Navigation 
         nav_home: 'ANA SAYFA',
         nav_combat: 'SAVAŞ',
         nav_world: 'DÜNYA',
@@ -1013,6 +1126,7 @@ const TRANSLATIONS = {
         nav_promo_codes: 'PROMO KODLAR',
         nav_search: 'Arşivde ara...',
 
+        //  Settings Panel 
         settings_title: 'AYARLAR',
         settings_music_volume: 'Müzik Ses Düzeyi',
         settings_custom_music: 'Özel Müzik (.mp3)',
@@ -1027,6 +1141,7 @@ const TRANSLATIONS = {
         toggle_on: 'AÇIK',
         toggle_off: 'KAPALI',
 
+        //  Home Page 
         home_hero_title: 'WANTED WİKİ',
         home_hero_text: 'Nihai <strong>Wanted Wiki</strong>\'ye hoş geldiniz.<br>Burada Roblox oyunu Wanted hakkında tüm bilgileri kayıt altına alıyoruz.',
         home_hero_disclaimer: '<em>Not: Bu wiki topluluk tarafından yönetilmektedir ve Roblox, Wanted oyunu veya DevvGames ile bağlantısı yoktur.</em>',
@@ -1043,13 +1158,13 @@ const TRANSLATIONS = {
         home_viewers_title: 'ZİYARETÇİ SAYACI',
         home_viewers_subtext: 'KAYDEDİLEN BENZERSİZ KİMLİKLER',
 
+        //  Weapons Page 
         page_weapons: 'SİLAHLAR',
         cat_guns: 'Silahlar',
         cat_explosives: 'Patlayıcılar',
         cat_tools: 'Aletler',
         sort_expensive: 'En Pahalıdan En Ucuza',
         sort_cheap: 'En Ucuzdan En Pahalıya',
-
         stat_obtaining: 'Edinim',
         stat_location: 'Konum',
         stat_rebuy: 'Yeniden Satın Alma',
@@ -1061,6 +1176,7 @@ const TRANSLATIONS = {
         stat_reload: 'Şarjör Değiştirme',
         stat_accuracy: 'İsabet',
 
+        //  Vehicles Page 
         page_vehicles: 'ARAÇLAR',
         cat_ground_vehicles: 'Kara Araçları',
         cat_air_vehicles: 'Hava Araçları',
@@ -1074,20 +1190,24 @@ const TRANSLATIONS = {
         stat_health: 'Sağlık',
         stat_armor: 'Zırh',
 
+        //  Gun Crates Page 
         page_gun_crates: 'SANDIKLAR',
         stat_cost: 'Maliyet',
         stat_content: 'İçerik',
 
+        //  Locations Page 
         page_locations: 'KONUMLAR',
         stat_type: 'Tür',
         stat_description: 'Açıklama',
 
+        //  NPCs Page 
         page_npcs: 'NPCler',
         sort_az: 'A-Z',
         sort_za: 'Z-A',
         card_dialogues: 'DIYALOGLAR',
         disclaimer_wip: 'Bu sayfa henüz tamamlanmamış ve üzerinde çalışılmaktadır',
 
+        //  Missions Page 
         page_missions: 'GÖREVLER',
         cat_game_missions: 'Oyun Görevleri',
         cat_erik_missions: 'Erik\'in Görevleri',
@@ -1101,19 +1221,26 @@ const TRANSLATIONS = {
         stat_how: 'Nasıl',
         stat_reward: 'Ödül',
 
+        //  Events Page 
         page_events: 'ETKİNLİKLER',
+
+        //  ATMs & Vaults Page 
         page_atms: 'ATM\'ler VE KASALAR',
         stat_cash: 'Nakit',
+
+        //  Store Page 
         page_store: 'MAĞAZA',
         stat_price: 'Fiyat',
         stat_category: 'Kategori',
 
+        //  Valuables Page 
         page_valuables: 'DEĞERLİ EŞYALAR',
         stat_value: 'Değer',
         stat_rarity: 'Nadirlik',
         stat_weight: 'Ağırlık',
         stat_common_location: 'Yaygın Konum',
 
+        //  Promo Codes Page 
         page_promo_codes: 'PROMO KODLAR',
         filter_all: 'Tüm Kodlar',
         filter_active: 'Aktif',
@@ -1124,16 +1251,20 @@ const TRANSLATIONS = {
         stat_status: 'Durum',
         stat_code_reward: 'Ödül',
 
+        //  Generic 
         show_more: 'Daha fazla göster...',
         show_less: 'Daha az göster',
         card_attachments: 'AKSESUARLAR',
         label_free: 'Ücretsiz',
+
     },
 
     // ══════════════════════════════════════════════════════
     //  CHINESE-SIMPLIFIED
     // ══════════════════════════════════════════════════════
     zh: {
+
+        //  Navigation 
         nav_home: '主页',
         nav_combat: '战斗',
         nav_world: '世界',
@@ -1151,6 +1282,7 @@ const TRANSLATIONS = {
         nav_promo_codes: '兑换码',
         nav_search: '搜索档案库……',
 
+        //  Settings Panel 
         settings_title: '设置',
         settings_music_volume: '音乐音量',
         settings_custom_music: '自定义音乐(.mp3)',
@@ -1165,6 +1297,7 @@ const TRANSLATIONS = {
         toggle_on: '开启',
         toggle_off: '关闭',
 
+        //  Home Page 
         home_hero_title: 'WANTED 维基',
         home_hero_text: '欢迎来到 <strong>Wanted 维基</strong>.<br>我们在此收录Roblox游戏Wanted的所有内容，包括武器细节、载具，以及更多内容',
         home_hero_disclaimer: '<em>请注意：该维基由玩家社区运营，并且与Roblox、Wanted游戏、DevvGames开发组无关</em>',
@@ -1181,13 +1314,13 @@ const TRANSLATIONS = {
         home_viewers_title: '访客数量',
         home_viewers_subtext: '个个体已记录',
 
+        //  Weapons Page 
         page_weapons: '武器',
         cat_guns: '枪械',
         cat_explosives: '爆炸物',
         cat_tools: '工具',
         sort_expensive: '价格：由高到低',
         sort_cheap: '价格：由低到高',
-
         stat_obtaining: '获取方式',
         stat_location: '获取位置',
         stat_rebuy: '单价',
@@ -1199,6 +1332,7 @@ const TRANSLATIONS = {
         stat_reload: '换弹时间',
         stat_accuracy: '精准度',
 
+        //  Vehicles Page 
         page_vehicles: '载具',
         cat_ground_vehicles: '车辆',
         cat_air_vehicles: '飞行器',
@@ -1212,20 +1346,24 @@ const TRANSLATIONS = {
         stat_health: '生命值',
         stat_armor: '装甲',
 
+        //  Gun Crates Page 
         page_gun_crates: '武器箱',
         stat_cost: 'Cost',
         stat_content: '包含',
 
+        //  Locations Page 
         page_locations: '重要地点',
         stat_type: '类型',
         stat_description: '描述',
 
+        //  NPCs Page 
         page_npcs: 'NPC',
         sort_az: 'A-Z',
         sort_za: 'Z-A',
         card_dialogues: '对话',
         disclaimer_wip: '仍在施工ing',
 
+        //  Missions Page 
         page_missions: '任务',
         cat_game_missions: '系统任务线',
         cat_erik_missions: '埃里克任务线',
@@ -1239,19 +1377,26 @@ const TRANSLATIONS = {
         stat_how: '如何完成',
         stat_reward: '奖励',
 
+        //  Events Page 
         page_events: '活动',
+
+        //  ATMs & Vaults Page 
         page_atms: 'ATM&金库',
         stat_cash: '现金',
+
+        //  Store Page 
         page_store: '商店',
         stat_price: '价格',
         stat_category: '类型',
 
+        //  Valuables Page 
         page_valuables: '高价值物品',
         stat_value: '价格',
         stat_rarity: '稀有程度',
         stat_weight: '重量',
         stat_common_location: '常见地点',
 
+        //  Promo Codes Page 
         page_promo_codes: '兑换码',
         filter_all: '所有兑换码',
         filter_active: '有效',
@@ -1262,9 +1407,11 @@ const TRANSLATIONS = {
         stat_status: '状态',
         stat_code_reward: '奖励',
 
+        //  Generic 
         show_more: '显示更多',
         show_less: '关闭',
         card_attachments: '可用配件',
         label_free: '免费',
+
     },
 };

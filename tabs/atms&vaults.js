@@ -11,7 +11,7 @@ function renderATMs(sort = "high") {
 
   const atmCards = sortedATMs.map(item => {
     const visibleContent = `
-      <h3>${item.name}</h3>
+      <h3>${tv(item, 'name')}</h3>
       ${renderStat(t('stat_cash'), formatPrice(item.price))}
     `;
     const hiddenContent = renderStat(t('stat_rarity'), item.rarityPercent);
@@ -23,7 +23,7 @@ function renderATMs(sort = "high") {
       ? `${formatPrice(item.priceMin)} - ${formatPrice(item.priceMax)}`
       : '? - ?';
     const visibleContent = `
-      <h3>${item.name}</h3>
+      <h3>${tv(item, 'name')}</h3>
       ${renderStat(t('stat_cash'), priceDisplay)}
     `;
     const hiddenContent = renderStat(t('stat_rarity'), item.rarityPercent);

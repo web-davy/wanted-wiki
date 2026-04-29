@@ -8,8 +8,8 @@ function renderNPCs(order = "az") {
   const cards = sorted.map(item => {
     const visibleContent = `<h3>${item.name}</h3>`;
     const hiddenContent = `
-      ${renderStat(t('stat_location'),    item.location)}
-      ${renderStat(t('stat_description'), item.description)}
+      ${renderStat(t('stat_location'),    tv(item, 'location'))}
+      ${renderStat(t('stat_description'), tv(item, 'description'))}
     `;
     return renderNPCCard(item, item.team, visibleContent, hiddenContent, 'npcs');
   });

@@ -13,20 +13,20 @@ function renderWeapons(sort = "high") {
     return data.map(item => {
       const hasAttachments = item.attachments && Object.keys(item.attachments).length > 0;
       const visibleContent = `
-        ${hasAttachments ? '' : renderPriceTag(item.contractPrice)}
-        <h3>${item.name}</h3>
+        ${hasAttachments ? '' : renderPriceTag(tv(item, 'contractPrice'))}
+        <h3>${tv(item, 'name')}</h3>
       `;
       const hiddenContent = `
-        ${renderStat(t('stat_obtaining'),  item.obtaining)}
-        ${renderStat(t('stat_location'),   item.location || item.stats.location)}
+        ${renderStat(t('stat_obtaining'),  tv(item, 'obtaining'))}
+        ${renderStat(t('stat_location'),   tv(item, 'location') || tv(item.stats, 'location'))}
         ${renderStat(t('stat_rebuy'),      formatPrice(item.reBuyPrice))}
         ${renderStat(t('stat_sell'),       formatPrice(item.sellPrice))}
         ${renderStat(t('stat_ammo'),       item.stats.ammo)}
-        ${renderStat(t('stat_ammo_cost'),  item.stats.ammoPrice)}
-        ${renderStat(t('stat_damage'),     item.stats.damage)}
+        ${renderStat(t('stat_ammo_cost'),  tv(item.stats, 'ammoPrice'))}
+        ${renderStat(t('stat_damage'),     tv(item.stats, 'damage'))}
         ${renderStat(t('stat_rpm'),        item.stats.firerate)}
         ${item.stats.reload ? renderStat(t('stat_reload'), `${item.stats.reload}s`) : ''}
-        ${renderStat(t('stat_accuracy'),   item.stats.accuracy)}
+        ${renderStat(t('stat_accuracy'),   tv(item.stats, 'accuracy'))}
       `;
       return renderWeaponCard(item, null, visibleContent, hiddenContent, 'weapons');
     });

@@ -37,8 +37,12 @@ function loadPage(page, saveToHistory = true) {
         if (trigger) trigger.classList.toggle("active", isActive);
     });
 
-    container.style.opacity = '0';
-    container.style.transform = 'translateY(10px)';
+    const isLowEnd = document.body.classList.contains('low-end-mode');
+
+    if (!isLowEnd) {
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(10px)';
+    }
 
     setTimeout(() => {
         container.innerHTML = '<div class="loading glitch" data-text="LOADING...">LOADING ARCHIVE...</div>';
@@ -91,7 +95,6 @@ function loadPage(page, saveToHistory = true) {
             if (typeof updateVisitorDisplay === "function") updateVisitorDisplay(window.visitorCountCached || "---");
         }
 
-        const isLowEnd = document.body.classList.contains('low-end-mode');
         const cards = container.querySelectorAll('.card');
 
         if (isLowEnd) {
@@ -121,7 +124,7 @@ function loadPage(page, saveToHistory = true) {
                 }, index * 20);
             });
         });
-    }, 150);
+    }, isLowEnd ? 0 : 150);
 }
 
 window.addEventListener("popstate", (event) => {

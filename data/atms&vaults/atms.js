@@ -11,7 +11,7 @@ const ATMS_DATA = [
       tr: { name: "Yeşil ATM" },
       zh: { name: "绿色ATM" },
     },
-    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 in 2 [calculated]", price: 200
+    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 / 2", price: 200
   },
   {
     name: "Blue ATM",
@@ -25,7 +25,7 @@ const ATMS_DATA = [
       tr: { name: "Mavi ATM" },
       zh: { name: "蓝色ATM" },
     },
-    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 in 3 [calculated]", price: 300
+    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 / 3", price: 300
   },
   {
     name: "Purple ATM",
@@ -39,7 +39,7 @@ const ATMS_DATA = [
       tr: { name: "Mor ATM" },
       zh: { name: "紫色ATM" },
     },
-    showMoreButton: false, rarity: "UNCOMMON", rarityPercent: "1 in 6 [calculated]", price: 400
+    showMoreButton: false, rarity: "UNCOMMON", rarityPercent: "1 / 6", price: 400
   },
   {
     name: "Red ATM",
@@ -53,7 +53,7 @@ const ATMS_DATA = [
       tr: { name: "Kırmızı ATM" },
       zh: { name: "红色ATM" },
     },
-    showMoreButton: false, rarity: "EPIC", rarityPercent: "1 in 20 [calculated]", price: 650
+    showMoreButton: false, rarity: "EPIC", rarityPercent: "1 / 20", price: 650
   },
   {
     name: "Gold ATM",
@@ -67,7 +67,7 @@ const ATMS_DATA = [
       tr: { name: "Altın ATM" },
       zh: { name: "金色ATM" },
     },
-    showMoreButton: false, rarity: "MYTHIC", rarityPercent: "1 in 500 [calculated]", price: 10000
+    showMoreButton: false, rarity: "MYTHIC", rarityPercent: "1 / 500", price: 10000
   },
   {
     name: "Diamond ATM",
@@ -81,7 +81,7 @@ const ATMS_DATA = [
       tr: { name: "Elmas ATM" },
       zh: { name: "钻石ATM" },
     },
-    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 in 1500 [calculated]", price: 100000
+    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 / 1500", price: 100000
   },
   {
     name: "Void ATM",
@@ -95,6 +95,6 @@ const ATMS_DATA = [
       tr: { name: "Boşluk ATM" },
       zh: { name: "虚空ATM" },
     },
-    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 in 10000 [calculated]", price: 500000
+    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 / 10000", price: 500000
   },
 ];

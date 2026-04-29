@@ -129,7 +129,8 @@ function toggleAttachmentCategory(headerEl) {
 function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 'npcs') {
   const name = item.name || "";
   const slug = generateSlug(name);
-  const hasDialogues = item.dialogue && Object.keys(item.dialogue).length > 0;
+  const dialogueData = tv(item, 'dialogue');
+  const hasDialogues = dialogueData && Object.keys(dialogueData).length > 0;
   const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
   const showButton = item.showMoreButton !== false && hiddenContent && hiddenContent.trim() !== '';
   const imagePath = `images/${folder}/${slug}.png`;
@@ -138,11 +139,13 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
     return renderExpandableCardPNG(item, rarityKey, visibleContent, hiddenContent, folder);
   }
 
-  const dialoguesHTML = Object.entries(item.dialogue).map(([category, items]) => {
+  const dialoguesHTML = Object.entries(dialogueData).map(([category, items]) => {
     if (!items || items.length === 0) return '';
     const itemsHTML = items.map(d => `
       <div class="card-overlay-item">
-        <p style="white-space: normal; line-height: 1.5; word-break: break-word;"><strong>${d.title}:</strong> ${d.dialogue}</p>
+        <p style="white-space: normal; line-height: 1.5; word-break: break-word;">
+          ${d.title ? `<strong>${d.title}:</strong> ` : ''}${d.dialogue}
+        </p>
       </div>
     `).join('');
     return `
@@ -184,8 +187,8 @@ function renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder = 
 }
 
 function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder = 'weapons') {
-  const name = item.name || item.title || "";
-  const slug = item.id || generateSlug(name);
+  const name = tv(item, 'name') || item.title || "";
+  const slug = item.id || generateSlug(item.name || item.title || "");
   const hasAttachments = item.attachments && Object.keys(item.attachments).length > 0;
   const cardId = `card-${slug}-${Math.random().toString(36).substr(2, 9)}`;
   const showButton = item.showMoreButton !== false && hiddenContent && hiddenContent.trim() !== '';
@@ -197,18 +200,19 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
 
   const categoryIcons = { Optics: '', Muzzle: '', Underbarrel: '', Tactical: '', Ammunition: '', Stock: '' };
 
-  const attachmentsHTML = Object.entries(item.attachments).map(([category, items]) => {
+  const attachmentsHTML = Object.entries(item.attachments || {}).map(([category, items]) => {
     if (!items || items.length === 0) return '';
+    const localizedCategory = t(`attr_${category.toLowerCase()}`) || category;
     const itemsHTML = items.map(att => `
       <div class="card-overlay-item">
-        <p><strong>${att.name}:</strong> ${att.price === 0 ? '<span style="color:#666">Free</span>' : formatPrice(att.price)}</p>
+        <p><strong>${tv(att, 'name')}:</strong> ${att.price === 0 ? `<span style="color:#666">${t('free')}</span>` : formatPrice(att.price)}</p>
       </div>
     `).join('');
     const icon = categoryIcons[category] || '●';
     return `
       <div class="attachment-group">
         <div class="attachment-category-header" onclick="toggleAttachmentCategory(this)">
-          <span>${category}</span>
+          <span>${localizedCategory}</span>
           <span class="attachment-chevron">▼</span>
         </div>
         <div class="attachment-category-items">
@@ -220,7 +224,7 @@ function renderWeaponCard(item, rarityKey, visibleContent, hiddenContent, folder
 
   return `
   <div class="card">
-    ${renderPriceTag(item.contractPrice)}
+    ${renderPriceTag(tv(item, 'contractPrice'))}
     <button class="card-overlay-button" onclick="toggleCardOverlay(this)">${t('card_attachments')}</button>
     <img src="${imagePath}" alt="${name}" loading="lazy"
          style="width:100%; height:auto; margin-bottom:15px; border-radius:4px;

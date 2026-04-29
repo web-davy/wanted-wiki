@@ -84,11 +84,20 @@ function renderSearchItem(item) {
         return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
 
     } else if (type === 'mission') {
+        const title = typeof tv === 'function' ? tv(item, 'title') : (item.title || item.name);
+        const location = typeof tv === 'function' ? tv(item, 'location') : item.location;
+        const description = typeof tv === 'function' ? tv(item, 'description') : item.description;
+        const howToComplete = typeof tv === 'function' ? tv(item, 'howToComplete') : item.howToComplete;
+        
         const formattedRewards = (item.rewards || []).map(formatReward).join(', ');
+
+        visibleContent = `
+            <h3>${title}</h3>
+        `;
         hiddenContent = `
-            ${renderStat(t('stat_location'), item.location)}
-            ${renderStat(t('stat_description'), item.description)}
-            ${renderStat(t('stat_how'), item.howToComplete)}
+            ${renderStat(t('stat_location'), location)}
+            ${renderStat(t('stat_description'), description)}
+            ${renderStat(t('stat_how'), howToComplete)}
             ${renderStat(t('stat_reward'), formattedRewards)}
         `;
         return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
@@ -112,8 +121,11 @@ function renderSearchItem(item) {
         return renderNPCCard(item, rarityKey, visibleContent, hiddenContent, folder);
 
     } else if (type === 'event') {
+        const title = typeof tv === 'function' ? tv(item, 'title') : (item.title || item.name);
+        const description = typeof tv === 'function' ? tv(item, 'description') : item.description;
+        visibleContent = `<h3>${title}</h3>`;
         hiddenContent = `
-            ${renderStat(t('stat_description'), item.description)}
+            ${renderStat(t('stat_description'), description)}
         `;
         return renderEventCard(item, visibleContent, hiddenContent, folder);
 
@@ -125,16 +137,28 @@ function renderSearchItem(item) {
         return renderExpandableCardJPG(item, rarityKey, visibleContent, '', folder);
 
     } else if (type === 'guncrate') {
+        const name = typeof tv === 'function' ? tv(item, 'name') : (item.name || item.title);
+        const gun = typeof tv === 'function' ? tv(item, 'gun') : item.gun;
+        const cooldown = typeof tv === 'function' ? tv(item, 'cooldown') : item.cooldown;
+        const location = typeof tv === 'function' ? tv(item, 'location') : item.location;
+
+        visibleContent = `
+            <h3>${name}</h3>
+        `;
         hiddenContent = `
-            ${renderStat(t('stat_content'), item.gun)}
-            ${renderStat('Cooldown', item.cooldown)}
-            ${renderStat(t('stat_location'), item.location)}
+            ${renderStat(t('stat_content'),  gun)}
+            ${renderStat(t('stat_cooldown'), cooldown)}
+            ${renderStat(t('stat_location'), location)}
         `;
         return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
 
     } else {
         // Fallback for location or unknown types
-        hiddenContent = item.description ? renderStat(t('stat_description'), item.description) : '';
+        const name = typeof tv === 'function' ? tv(item, 'name') : (item.name || item.title);
+        const description = typeof tv === 'function' ? tv(item, 'description') : item.description;
+        
+        visibleContent = `<h3>${name}</h3>`;
+        hiddenContent = description ? renderStat(t('stat_description'), description) : '';
         return renderExpandableCardJPG(item, rarityKey, visibleContent, hiddenContent, folder);
     }
 }

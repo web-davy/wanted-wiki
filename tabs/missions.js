@@ -23,11 +23,16 @@ function renderMissions(order = "hard") {
     return list.map(item => {
       const formattedRewards = (item.rewards || []).map(formatReward).join(', ');
 
-      const visibleContent = `<h3>${item.title}</h3>`;
+      const title = typeof tv === 'function' ? tv(item, 'title') : item.title;
+      const location = typeof tv === 'function' ? tv(item, 'location') : item.location;
+      const description = typeof tv === 'function' ? tv(item, 'description') : item.description;
+      const howToComplete = typeof tv === 'function' ? tv(item, 'howToComplete') : item.howToComplete;
+
+      const visibleContent = `<h3>${title}</h3>`;
       const hiddenContent = `
-        ${renderStat(t('stat_location'), item.location)}
-        ${renderStat(t('stat_description'), item.description)}
-        ${renderStat(t('stat_how'), item.howToComplete)}
+        ${renderStat(t('stat_location'), location)}
+        ${renderStat(t('stat_description'), description)}
+        ${renderStat(t('stat_how'), howToComplete)}
         ${renderStat(t('stat_reward'), formattedRewards)}
       `;
 

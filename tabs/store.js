@@ -9,9 +9,9 @@ function renderStore(sort = "high") {
         const robuxPriceHtml = `<img src="${robuxIcon}" alt="Robux" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; border-radius: 0; padding: 0;" onerror="this.src=''; this.alt='Robux'"/>${item.robuxPrice}`;
 
         const visibleContent = `
-            <h3>${item.name}</h3>
+            <h3>${tv(item, 'name')}</h3>
             ${renderStat(t('stat_price'),       robuxPriceHtml)}
-            ${renderStat(t('stat_description'), item.description)}
+            ${renderStat(t('stat_description'), tv(item, 'description'))}
         `;
 
         const slug = generateSlug(item.name);

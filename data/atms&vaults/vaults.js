@@ -11,7 +11,7 @@ const VAULTS_DATA = [
       tr: { name: "Normal Kasa" },
       zh: { name: "普通金库" },
     },
-    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 in 1.86 [calculated]", priceMin: 5000, priceMax: 7500
+    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 / 1.86", priceMin: 5000, priceMax: 7500
   },
   {
     name: "Silver Vault",
@@ -25,7 +25,7 @@ const VAULTS_DATA = [
       tr: { name: "Gümüş Kasa" },
       zh: { name: "银色金库" },
     },
-    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 in 3.76 [calculated]", priceMin: 7500, priceMax: 9000
+    showMoreButton: false, rarity: "COMMON", rarityPercent: "1 / 3.76", priceMin: 7500, priceMax: 9000
   },
   {
     name: "Gold Vault",
@@ -39,7 +39,7 @@ const VAULTS_DATA = [
       tr: { name: "Altın Kasa" },
       zh: { name: "金色金库" },
     },
-    showMoreButton: false, rarity: "UNCOMMON", rarityPercent: "1 in 6.00 [calculated]", priceMin: 10000, priceMax: 20000
+    showMoreButton: false, rarity: "UNCOMMON", rarityPercent: "1 / 6", priceMin: 10000, priceMax: 20000
   },
   {
     name: "Sapphire Vault",
@@ -53,7 +53,7 @@ const VAULTS_DATA = [
       tr: { name: "Safir Kasa" },
       zh: { name: "蓝宝石金库" },
     },
-    showMoreButton: false, rarity: "EPIC", rarityPercent: "1 in 47.46 [calculated]", priceMin: 30000, priceMax: 40000
+    showMoreButton: false, rarity: "EPIC", rarityPercent: "1 / 47.46", priceMin: 30000, priceMax: 40000
   },
   {
     name: "Ruby Vault",
@@ -67,7 +67,7 @@ const VAULTS_DATA = [
       tr: { name: "Yakut Kasa" },
       zh: { name: "红宝石金库" },
     },
-    showMoreButton: false, rarity: "MYTHIC", rarityPercent: "1 in 230.50 [calculated]", priceMin: 60000, priceMax: 70000
+    showMoreButton: false, rarity: "MYTHIC", rarityPercent: "1 / 230.50", priceMin: 60000, priceMax: 70000
   },
   {
     name: "Emerald Vault",
@@ -81,7 +81,7 @@ const VAULTS_DATA = [
       tr: { name: "Zümrüt Kasa" },
       zh: { name: "祖母绿金库" },
     },
-    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 in 403.38 [calculated]", priceMin: 100000, priceMax: 150000
+    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 / 403.38", priceMin: 100000, priceMax: 150000
   },
   {
     name: "Amethyst Vault",
@@ -95,7 +95,7 @@ const VAULTS_DATA = [
       tr: { name: "Ametist Kasa" },
       zh: { name: "紫水晶金库" },
     },
-    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 in 1613.50 [calculated]", priceMin: 250000, priceMax: 275000
+    showMoreButton: false, rarity: "LEGENDARY", rarityPercent: "1 / 1613.50", priceMin: 250000, priceMax: 275000
   },
   {
     name: "Diamond Vault",

@@ -65,6 +65,18 @@ const TRANSLATIONS = {
         home_no_contributors: 'No contributors listed.',
         home_viewers_title: 'VIEWERS COUNT',
         home_viewers_subtext: 'UNIQUE IDENTITIES RECORDED',
+        home_featured_videos: 'FEATURED VIDEOS',
+        home_combat_desc: 'Weapon stats, attachments, and prices.',
+        home_vehicles_desc: 'Vehicle stats, handling, and modifications (upcoming).',
+        home_gun_crates_desc: 'Gun crates, their locations.',
+        home_locations_desc: 'The map of key locations.',
+        home_npcs_desc: 'NPCs and their dialogs.',
+        home_missions_desc: 'Info about missions and how to complete them.',
+        home_events_desc: 'Info about game festive events.',
+        home_atms_desc: 'Info about ATMs and Vaults.',
+        home_store_desc: 'Info about the in-game store.',
+        home_valuables_desc: 'Info about valuables and their prices.',
+        home_promo_codes_desc: 'Active promotional codes and rewards.',
 
         //  Weapons Page 
         page_weapons: 'WEAPONS',
@@ -102,6 +114,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'GUN CRATES',
         stat_cost: 'Cost',
         stat_content: 'Content',
+        stat_cooldown: 'Cooldown',
 
         //  Locations Page 
         page_locations: 'LOCATIONS',
@@ -147,6 +160,13 @@ const TRANSLATIONS = {
         stat_rarity: 'Rarity',
         stat_weight: 'Weight',
         stat_common_location: 'Common Location',
+        free: 'Free',
+        attr_optics: 'Optics',
+        attr_muzzle: 'Muzzle',
+        attr_underbarrel: 'Underbarrel',
+        attr_tactical: 'Tactical',
+        attr_ammunition: 'Ammunition',
+        attr_stock: 'Stock',
 
         //  Promo Codes Page 
         page_promo_codes: 'PROMO CODES',
@@ -221,6 +241,18 @@ const TRANSLATIONS = {
         home_no_contributors: 'Aucun contributeur répertorié.',
         home_viewers_title: 'COMPTEUR DE VISITEURS',
         home_viewers_subtext: 'IDENTITÉS UNIQUES ENREGISTRÉES',
+        home_featured_videos: 'VIDÉOS EN VEDETTE',
+        home_combat_desc: 'Stats des armes, accessoires et prix.',
+        home_vehicles_desc: 'Stats des véhicules, maniabilité et modifications (à venir).',
+        home_gun_crates_desc: "Caisses d'armes et leurs emplacements.",
+        home_locations_desc: 'La carte des lieux clés.',
+        home_npcs_desc: 'PNJ et leurs dialogues.',
+        home_missions_desc: 'Infos sur les missions et comment les terminer.',
+        home_events_desc: 'Infos sur les événements festifs du jeu.',
+        home_atms_desc: 'Infos sur les DAB et les coffres-forts.',
+        home_store_desc: 'Infos sur la boutique en jeu.',
+        home_valuables_desc: 'Infos sur les objets de valeur et leurs prix.',
+        home_promo_codes_desc: 'Codes promotionnels actifs et récompenses.',
 
         //  Weapons Page 
         page_weapons: 'ARMES',
@@ -258,6 +290,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'CAISSES D\'ARMES',
         stat_cost: 'Coût',
         stat_content: 'Contenu',
+        stat_cooldown: 'Temps de recharge',
 
         //  Locations Page 
         page_locations: 'LIEUX',
@@ -302,7 +335,14 @@ const TRANSLATIONS = {
         stat_value: 'Valeur',
         stat_rarity: 'Rareté',
         stat_weight: 'Poids',
-        stat_common_location: 'Lieu Commun',
+        stat_common_location: 'Emplacement Commun',
+        free: 'Gratuit',
+        attr_optics: 'Optiques',
+        attr_muzzle: 'Bouche',
+        attr_underbarrel: 'Accessoire canon',
+        attr_tactical: 'Tactique',
+        attr_ammunition: 'Munitions',
+        attr_stock: 'Crosse',
 
         //  Promo Codes Page 
         page_promo_codes: 'CODES PROMO',
@@ -377,6 +417,18 @@ const TRANSLATIONS = {
         home_no_contributors: 'Keine Mitwirkenden aufgelistet.',
         home_viewers_title: 'ZUSCHAUERZAHL',
         home_viewers_subtext: 'ERFASSTE EINDEUTIGE IDENTITÄTEN',
+        home_featured_videos: 'AUSGEWÄHLTE VIDEOS',
+        home_combat_desc: 'Waffenstatistiken, Zubehör und Preise.',
+        home_vehicles_desc: 'Fahrzeugstatistiken, Handling und Modifikationen (demnächst).',
+        home_gun_crates_desc: 'Waffenkisten und ihre Standorte.',
+        home_locations_desc: 'Die Karte der wichtigsten Orte.',
+        home_npcs_desc: 'NPCs und ihre Dialoge.',
+        home_missions_desc: 'Infos zu Missionen und wie man sie abschließt.',
+        home_events_desc: 'Infos zu festlichen Spiele-Events.',
+        home_atms_desc: 'Infos zu Geldautomaten und Tresoren.',
+        home_store_desc: 'Infos über den In-Game-Shop.',
+        home_valuables_desc: 'Infos über Wertsachen und ihre Preise.',
+        home_promo_codes_desc: 'Aktive Promo-Codes und Belohnungen.',
 
         //  Weapons Page 
         page_weapons: 'WAFFEN',
@@ -414,6 +466,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'WAFFENKISTEN',
         stat_cost: 'Kosten',
         stat_content: 'Inhalt',
+        stat_cooldown: 'Abklingzeit',
 
         //  Locations Page 
         page_locations: 'ORTE',
@@ -458,7 +511,14 @@ const TRANSLATIONS = {
         stat_value: 'Wert',
         stat_rarity: 'Seltenheit',
         stat_weight: 'Gewicht',
-        stat_common_location: 'Häufiger Ort',
+        stat_common_location: 'Häufiger Fundort',
+        free: 'Kostenlos',
+        attr_optics: 'Optik',
+        attr_muzzle: 'Mündung',
+        attr_underbarrel: 'Unterlauf',
+        attr_tactical: 'Taktisch',
+        attr_ammunition: 'Munition',
+        attr_stock: 'Schaft',
 
         //  Promo Codes Page 
         page_promo_codes: 'PROMO-CODES',
@@ -533,6 +593,18 @@ const TRANSLATIONS = {
         home_no_contributors: 'No hay colaboradores listados.',
         home_viewers_title: 'CONTADOR DE VISITANTES',
         home_viewers_subtext: 'IDENTIDADES ÚNICAS REGISTRADAS',
+        home_featured_videos: 'VIDEOS DESTACADOS',
+        home_combat_desc: 'Estadísticas de armas, accesorios y precios.',
+        home_vehicles_desc: 'Estadísticas de vehículos, manejo y modificaciones (próximamente).',
+        home_gun_crates_desc: 'Cajas de armas y sus ubicaciones.',
+        home_locations_desc: 'El mapa de ubicaciones clave.',
+        home_npcs_desc: 'NPCs y sus diálogos.',
+        home_missions_desc: 'Información sobre misiones y cómo completarlas.',
+        home_events_desc: 'Información sobre eventos festivos del juego.',
+        home_atms_desc: 'Información sobre cajeros automáticos y cajas fuertes.',
+        home_store_desc: 'Información sobre la tienda del juego.',
+        home_valuables_desc: 'Información sobre objetos valiosos y sus precios.',
+        home_promo_codes_desc: 'Códigos promocionales activos y recompensas.',
 
         //  Weapons Page 
         page_weapons: 'ARMAS',
@@ -570,6 +642,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'CAJAS DE ARMAS',
         stat_cost: 'Coste',
         stat_content: 'Contenido',
+        stat_cooldown: 'Tiempo de espera',
 
         //  Locations Page 
         page_locations: 'LUGARES',
@@ -615,6 +688,13 @@ const TRANSLATIONS = {
         stat_rarity: 'Rareza',
         stat_weight: 'Peso',
         stat_common_location: 'Ubicación Común',
+        free: 'Gratis',
+        attr_optics: 'Óptica',
+        attr_muzzle: 'Cañón',
+        attr_underbarrel: 'Bajo cañón',
+        attr_tactical: 'Táctico',
+        attr_ammunition: 'Munición',
+        attr_stock: 'Culata',
 
         //  Promo Codes Page 
         page_promo_codes: 'CÓDIGOS PROMO',
@@ -689,6 +769,18 @@ const TRANSLATIONS = {
         home_no_contributors: 'Nenhum contribuidor listado.',
         home_viewers_title: 'CONTADOR DE VISITANTES',
         home_viewers_subtext: 'IDENTIDADES ÚNICAS REGISTRADAS',
+        home_featured_videos: 'VÍDEOS EM DESTAQUE',
+        home_combat_desc: 'Estatísticas de armas, acessórios e preços.',
+        home_vehicles_desc: 'Estatísticas de veículos, dirigibilidade e modificações (em breve).',
+        home_gun_crates_desc: 'Caixas de armas e suas localizações.',
+        home_locations_desc: 'O mapa dos principais locais.',
+        home_npcs_desc: 'NPCs e seus diálogos.',
+        home_missions_desc: 'Informações sobre missões e como completá-las.',
+        home_events_desc: 'Informações sobre eventos festivos do jogo.',
+        home_atms_desc: 'Informações sobre ATMs e Cofres.',
+        home_store_desc: 'Informações sobre a loja do jogo.',
+        home_valuables_desc: 'Informações sobre objetos valiosos e seus preços.',
+        home_promo_codes_desc: 'Códigos promocionais ativos e recompensas.',
 
         //  Weapons Page 
         page_weapons: 'ARMAS',
@@ -726,6 +818,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'CAIXAS DE ARMAS',
         stat_cost: 'Custo',
         stat_content: 'Conteúdo',
+        stat_cooldown: 'Recarga',
 
         //  Locations Page 
         page_locations: 'LOCAIS',
@@ -771,6 +864,13 @@ const TRANSLATIONS = {
         stat_rarity: 'Raridade',
         stat_weight: 'Peso',
         stat_common_location: 'Local Comum',
+        free: 'Grátis',
+        attr_optics: 'Óptica',
+        attr_muzzle: 'Cano',
+        attr_underbarrel: 'Sob o cano',
+        attr_tactical: 'Tático',
+        attr_ammunition: 'Munição',
+        attr_stock: 'Coronha',
 
         //  Promo Codes Page 
         page_promo_codes: 'CÓDIGOS PROMO',
@@ -843,8 +943,20 @@ const TRANSLATIONS = {
         home_wiki_contributors: 'УЧАСТНИКИ ВИКИ',
         home_no_staff: 'Команда не указана.',
         home_no_contributors: 'Участники не указаны.',
-        home_viewers_title: 'СЧЁТЧИК ПРОСМОТРОВ',
-        home_viewers_subtext: 'УНИКАЛЬНЫХ ИДЕНТИФИКАЦИЙ ЗАПИСАНО',
+        home_viewers_title: 'КОЛИЧЕСТВО ПОСЕТИТЕЛЕЙ',
+        home_viewers_subtext: 'ЗАРЕГИСТРИРОВАННЫЕ УНИКАЛЬНЫЕ ЛИЧНОСТИ',
+        home_featured_videos: 'РЕКОМЕНДУЕМЫЕ ВИДЕО',
+        home_combat_desc: 'Характеристики оружия, модули и цены.',
+        home_vehicles_desc: 'Характеристики транспорта, управление и модификации (скоро).',
+        home_gun_crates_desc: 'Оружейные ящики и их местоположение.',
+        home_locations_desc: 'Карта ключевых локаций.',
+        home_npcs_desc: 'NPC и их диалоги.',
+        home_missions_desc: 'Информация о миссиях и способах их прохождения.',
+        home_events_desc: 'Информация о праздничных игровых событиях.',
+        home_atms_desc: 'Информация о банкоматах и хранилищах.',
+        home_store_desc: 'Информация о внутриигровом магазине.',
+        home_valuables_desc: 'Информация о ценностях и их ценах.',
+        home_promo_codes_desc: 'Активные промокоды и награды.',
 
         //  Weapons Page 
         page_weapons: 'ОРУЖИЕ',
@@ -882,6 +994,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'ЯЩИКИ С ОРУЖИЕМ',
         stat_cost: 'Стоимость',
         stat_content: 'Содержимое',
+        stat_cooldown: 'Перезарядка',
 
         //  Locations Page 
         page_locations: 'ЛОКАЦИИ',
@@ -927,6 +1040,13 @@ const TRANSLATIONS = {
         stat_rarity: 'Редкость',
         stat_weight: 'Вес',
         stat_common_location: 'Обычное Местоположение',
+        free: 'Бесплатно',
+        attr_optics: 'Оптика',
+        attr_muzzle: 'Дуло',
+        attr_underbarrel: 'Подствольный',
+        attr_tactical: 'Тактический',
+        attr_ammunition: 'Боеприпасы',
+        attr_stock: 'Приклад',
 
         //  Promo Codes Page 
         page_promo_codes: 'ПРОМОКОДЫ',
@@ -999,8 +1119,20 @@ const TRANSLATIONS = {
         home_wiki_contributors: 'مساهمو الويكي',
         home_no_staff: 'لا يوجد فريق مسجّل.',
         home_no_contributors: 'لا يوجد مساهمون مسجّلون.',
-        home_viewers_title: 'عداد الزوار',
-        home_viewers_subtext: 'هويات فريدة مسجّلة',
+        home_viewers_title: 'عدد المشاهدين',
+        home_viewers_subtext: 'الهويات الفريدة المسجلة',
+        home_featured_videos: 'فيديوهات مميزة',
+        home_combat_desc: 'إحصائيات الأسلحة والمرفقات والأسعار.',
+        home_vehicles_desc: 'إحصائيات المركبات والتعامل معها والتعديلات (قريباً).',
+        home_gun_crates_desc: 'صناديق الأسلحة ومواقعها.',
+        home_locations_desc: 'خريطة المواقع الرئيسية.',
+        home_npcs_desc: 'الشخصيات غير اللاعبة وحواراتهم.',
+        home_missions_desc: 'معلومات حول المهمات وكيفية إكمالها.',
+        home_events_desc: 'معلومات حول فعاليات اللعبة الاحتفالية.',
+        home_atms_desc: 'معلومات حول أجهزة الصراف الآلي والخزائن.',
+        home_store_desc: 'معلومات حول المتجر داخل اللعبة.',
+        home_valuables_desc: 'معلومات حول الأشياء الثمينة وأسعارها.',
+        home_promo_codes_desc: 'أكواد ترويجية نشطة ومكافآت.',
 
         //  Weapons Page 
         page_weapons: 'الأسلحة',
@@ -1038,6 +1170,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'صناديق الأسلحة',
         stat_cost: 'التكلفة',
         stat_content: 'المحتوى',
+        stat_cooldown: 'وقت الانتظار',
 
         //  Locations Page 
         page_locations: 'المواقع',
@@ -1082,7 +1215,14 @@ const TRANSLATIONS = {
         stat_value: 'القيمة',
         stat_rarity: 'الندرة',
         stat_weight: 'الوزن',
-        stat_common_location: 'الموقع الشائع',
+        stat_common_location: 'الموقع المشترك',
+        free: 'مجاني',
+        attr_optics: 'البصريات',
+        attr_muzzle: 'الفوهة',
+        attr_underbarrel: 'تحت السبطانة',
+        attr_tactical: 'تكتيكي',
+        attr_ammunition: 'الذخيرة',
+        attr_stock: 'الأخمص',
 
         //  Promo Codes Page 
         page_promo_codes: 'رموز العروض',
@@ -1155,8 +1295,20 @@ const TRANSLATIONS = {
         home_wiki_contributors: 'WİKİ KATILIMCILARI',
         home_no_staff: 'Personel listesi yok.',
         home_no_contributors: 'Katılımcı listesi yok.',
-        home_viewers_title: 'ZİYARETÇİ SAYACI',
+        home_viewers_title: 'İZLEYİCİ SAYISI',
         home_viewers_subtext: 'KAYDEDİLEN BENZERSİZ KİMLİKLER',
+        home_featured_videos: 'ÖNE ÇIKAN VİDEOLAR',
+        home_combat_desc: 'Silah istatistikleri, eklentiler ve fiyatlar.',
+        home_vehicles_desc: 'Araç istatistikleri, yol tutuşu ve modifikasyonlar (yakında).',
+        home_gun_crates_desc: 'Silah sandıkları ve konumları.',
+        home_locations_desc: 'Önemli konumların haritası.',
+        home_npcs_desc: "NPC'ler ve diyalogları.",
+        home_missions_desc: 'Görevler ve nasıl tamamlanacakları hakkında bilgi.',
+        home_events_desc: 'Oyun festivalleri hakkında bilgi.',
+        home_atms_desc: 'ATM\'ler ve Kasalar hakkında bilgi.',
+        home_store_desc: 'Oyun içi mağaza hakkında bilgi.',
+        home_valuables_desc: 'Değerli eşyalar ve fiyatları hakkında bilgi.',
+        home_promo_codes_desc: 'Aktif promosyon kodları ve ödüller.',
 
         //  Weapons Page 
         page_weapons: 'SİLAHLAR',
@@ -1194,6 +1346,7 @@ const TRANSLATIONS = {
         page_gun_crates: 'SANDIKLAR',
         stat_cost: 'Maliyet',
         stat_content: 'İçerik',
+        stat_cooldown: 'Bekleme Süresi',
 
         //  Locations Page 
         page_locations: 'KONUMLAR',
@@ -1239,6 +1392,13 @@ const TRANSLATIONS = {
         stat_rarity: 'Nadirlik',
         stat_weight: 'Ağırlık',
         stat_common_location: 'Yaygın Konum',
+        free: 'Ücretsiz',
+        attr_optics: 'Optik',
+        attr_muzzle: 'Namlu',
+        attr_underbarrel: 'Namlu Altı',
+        attr_tactical: 'Taktik',
+        attr_ammunition: 'Mühimmat',
+        attr_stock: 'Dipçik',
 
         //  Promo Codes Page 
         page_promo_codes: 'PROMO KODLAR',
@@ -1311,8 +1471,20 @@ const TRANSLATIONS = {
         home_wiki_contributors: '维基贡献者',
         home_no_staff: 'No staff listed.',
         home_no_contributors: 'No contributors listed.',
-        home_viewers_title: '访客数量',
-        home_viewers_subtext: '个个体已记录',
+        home_viewers_title: '观看人数',
+        home_viewers_subtext: '已记录的唯一身份',
+        home_featured_videos: '推荐视频',
+        home_combat_desc: '武器属性、配件和价格。',
+        home_vehicles_desc: '车辆属性、操控和改装（即将推出）。',
+        home_gun_crates_desc: '武器箱及其位置。',
+        home_locations_desc: '关键地点地图。',
+        home_npcs_desc: 'NPC 及其对话。',
+        home_missions_desc: '关于任务及如何完成它们的信息。',
+        home_events_desc: '关于游戏节日活动的信息。',
+        home_atms_desc: '关于 ATM 和金库的信息。',
+        home_store_desc: '关于游戏内商店的信息。',
+        home_valuables_desc: '关于高价值物品及其价格的信息。',
+        home_promo_codes_desc: '有效的兑换码和奖励。',
 
         //  Weapons Page 
         page_weapons: '武器',
@@ -1350,6 +1522,7 @@ const TRANSLATIONS = {
         page_gun_crates: '武器箱',
         stat_cost: 'Cost',
         stat_content: '包含',
+        stat_cooldown: '冷却时间',
 
         //  Locations Page 
         page_locations: '重要地点',
@@ -1394,7 +1567,14 @@ const TRANSLATIONS = {
         stat_value: '价格',
         stat_rarity: '稀有程度',
         stat_weight: '重量',
-        stat_common_location: '常见地点',
+        stat_common_location: '常见位置',
+        free: '免费',
+        attr_optics: '光学镜',
+        attr_muzzle: '枪口',
+        attr_underbarrel: '下挂配件',
+        attr_tactical: '战术配件',
+        attr_ammunition: '弹药',
+        attr_stock: '枪托',
 
         //  Promo Codes Page 
         page_promo_codes: '兑换码',

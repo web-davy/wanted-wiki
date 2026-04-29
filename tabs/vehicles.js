@@ -16,26 +16,26 @@ function renderVehicles(sort = "high") {
 
   const makeCard = (item, isFlying) => {
     const visibleContent = `
-      ${renderPriceTag(item.contractPrice)}
-      <h3>${item.name}</h3>
+      ${renderPriceTag(tv(item, 'contractPrice'))}
+      <h3>${tv(item, 'name')}</h3>
     `;
     const hiddenContent = isFlying ? `
-      ${renderStat(t('stat_obtaining'),     item.obtaining)}
+      ${renderStat(t('stat_obtaining'),     tv(item, 'obtaining'))}
       ${renderStat(t('stat_repair'),        formatPrice(item.repairPrice))}
       ${renderStat(t('stat_garage_repair'), formatPrice(item.repairPriceGarage))}
       ${renderStatSuffix(t('stat_top_speed'),   item.stats.topSpeed, '%')}
       ${renderStatSuffix(t('stat_handling'),    item.stats.handling, '%')}
       ${renderStatSuffix(t('stat_spool_time'),  item.stats.spoolTime, 's')}
-      ${renderStat(t('stat_health'), item.stats.Health)}
+      ${renderStat(t('stat_health'), tv(item.stats, 'Health'))}
       ${renderStat(t('stat_armor'),      item.stats.armor)}
     ` : `
-      ${renderStat(t('stat_obtaining'),     item.obtaining)}
+      ${renderStat(t('stat_obtaining'),     tv(item, 'obtaining'))}
       ${renderStat(t('stat_repair'),        formatPrice(item.repairPrice))}
       ${renderStat(t('stat_garage_repair'), formatPrice(item.repairPriceGarage))}
       ${renderStatSuffix(t('stat_top_speed'),   item.stats.topSpeed, '%')}
       ${renderStatSuffix(t('stat_acceleration'),item.stats.acceleration, '%')}
       ${renderStatSuffix(t('stat_braking'),     item.stats.braking, '%')}
-      ${renderStat(t('stat_health'), item.stats.Health)}
+      ${renderStat(t('stat_health'), tv(item.stats, 'Health'))}
       ${renderStat(t('stat_armor'),      item.stats.armor)}
     `;
     return renderExpandableCardJPG(item, null, visibleContent, hiddenContent, 'vehicles');

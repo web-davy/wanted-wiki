@@ -15,8 +15,8 @@ function renderPromoCodes(filter = "all") {
         const visibleContent = `
             <h3>${item.code}</h3>
             ${renderStat(t('stat_status'),      statusHtml)}
-            ${renderStat(t('stat_code_reward'), item.reward)}
-            ${renderStat(t('stat_description'), item.description)}
+            ${renderStat(t('stat_code_reward'), tv(item, 'reward'))}
+            ${renderStat(t('stat_description'), tv(item, 'description'))}
         `;
 
         const slug = generateSlug(item.code);
